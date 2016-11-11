@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WildFly Testsuite Overview - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="previous"><a accesskey="p" href="Testsuite.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="next"><a accesskey="n" href="Modules_details.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                              </ul>
+                    <div>
+            <h1>WildFly Testsuite Overview</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+This document will detail the implementation of the  testsuite Integration submodule as it guides you on adding your own test  cases.    </p>
+    <p>
+The WildFly integration test suite has been designed with the following goals:    </p>
+<ul class=" "><li class=" ">    <p>
+support execution of all identified test case use cases    </p>
+</li><li class=" ">    <p>
+employ a design/organization which is scalable and maintainable    </p>
+</li><li class=" ">    <p>
+provide  support for the automated measurement of test suite quality (generation  of feature coverage reports, code coverage reports)    </p>
+</li></ul>    <p>
+In addition, these requirements were considered:    </p>
+<ul class=" "><li class=" ">    <p>
+identifying  distinct test case runs of the same test case with a different set of  client side parameters and server side parameters    </p>
+</li><li class=" ">    <p>
+separately maintaining server side execution results (e.g. logs, the original server configuration) for post-execution debugging    </p>
+</li><li class=" ">    <p>
+running the testsuite in conjunction with a debugger    </p>
+</li><li class=" ">    <p>
+the execution of a single test (for debugging purposes)    </p>
+</li><li class=" ">    <p>
+running test cases against different container modes (managed in the main, but also remote and embedded)    </p>
+</li><li class=" ">    <p>
+configuring client and server JVMs separately (e.g.,&nbsp; IPv6 testing)    </p>
+</li></ul>    <div class="section-2"  id="80873470_WildFlyTestsuiteOverview-TestSuiteOrganization"  >
+        <h2>Test Suite Organization</h2>
+    
+    <p>
+The testsuite module has a small number of submodules:    </p>
+<ul class=" "><li class=" ">    <p>
+<strong class=" ">benchmark</strong> - holds all benchmark tests intended to assess relative performance of specific feature    </p>
+</li><li class=" ">    <p>
+<strong class=" ">domain</strong> - holds all domain management tests    </p>
+</li><li class=" ">    <p>
+<strong class=" ">integration</strong> - holds all integration tests    </p>
+</li><li class=" ">    <p>
+<strong class=" ">stress</strong> - holds all stress tests    </p>
+</li></ul>    <p>
+It is expected that&nbsp; test contributions fit into one of these categories.    </p>
+    <p>
+The pom.xml file located in the testsuite module is inherited by all submodules and is used to do the following:    </p>
+<ul class=" "><li class=" ">    <p>
+set defaults for common testsuite system properties (which can then be overridden on the command line)    </p>
+</li><li class=" ">    <p>
+define dependencies common to all tests (Arquillian, junit or testng, and container type)    </p>
+</li><li class=" ">    <p>
+provide a workaround for @Resource(lookup=...) which requires libraries in jbossas/endorsed    </p>
+</li></ul>    <p>
+It should not:    </p>
+<ul class=" "><li class=" ">    <p>
+define module-specific server configuration build steps    </p>
+</li><li class=" ">    <p>
+define module-specific surefire executions    </p>
+</li></ul>    <p>
+These elements should be defined in logical profiles associated with each logical grouping of tests; e.g., in the pom for the module which contains the tests.&nbsp; The submodule poms contain additional details of their function and purpose as well as expanded information as shown in this document.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873470_WildFlyTestsuiteOverview-Profiles"  >
+        <h2>Profiles</h2>
+    
+    <p>
+You should not activate the abovementioned profiles by -P, because that disables other profiles which are activated by default.    </p>
+    <p>
+Instead, you should always use activating properties, which are in parenthesis in the lists below.    </p>
+    <p>
+<strong class=" ">Testsuite profiles</strong> are used to group tests into logical groups.    </p>
+<ul class=" "><li class=" ">    <p>
+all-modules.module.profile&nbsp; (all-modules)    </p>
+</li><li class=" ">    <p>
+integration.module.profile&nbsp;&nbsp; (integration.module)    </p>
+</li><li class=" ">    <p>
+compat.module.profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (compat.module)    </p>
+</li><li class=" ">    <p>
+domain.module.profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (domain.module)    </p>
+</li><li class=" ">    <p>
+benchmark.module.profile&nbsp; (benchmark.module)    </p>
+</li><li class=" ">    <p>
+stress.module.profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (stress.module)    </p>
+</li></ul>    <p>
+They also pprepare WildFly instances and resources for respective testsuite submodules.    </p>
+<ul class=" "><li class=" ">    <p>
+jpda.profile - sets surefire.jpda.args&nbsp;&nbsp;&nbsp; (debug)    </p>
+</li><li class=" ">    <p>
+ds.profile&nbsp; -sets database properties and prepares the datasource&nbsp; (ds=&lt;db id&gt;)    </p>
+<ul class=" "><li class=" ">    <p>
+Has related database-specific profiles, like mysql51.profile etc.    </p>
+</li></ul></li></ul>    <p>
+<strong class=" ">Integration testsuite profiles</strong> configure surefire executions.    </p>
+<ul class=" "><li class=" ">    <p>
+smoke.integration.tests.profile    </p>
+</li><li class=" ">    <p>
+basic.integration.tests.profile    </p>
+</li><li class=" ">    <p>
+clustering.integration.tests.profile    </p>
+</li></ul>    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="previous"><a accesskey="p" href="Testsuite.html"><strong>Prev</strong>Testsuite</a></li>
+                                                                                                                                                                                                                                                                                                  <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="next"><a accesskey="n" href="Modules_details.html"><strong>Next</strong>Modules details</a></li>
+                                                                                                                                                                                                                                                                                                                                                                            </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

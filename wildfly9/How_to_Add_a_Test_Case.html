@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>How to Add a Test Case - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="previous"><a accesskey="p" href="WildFly_Testsuite_Test_Developer_Guide.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="next"><a accesskey="n" href="Pre-requisites_-_test_quality_standards.html"><strong>Next</strong></a></li>
+                                                                                                                                                    </ul>
+                    <div>
+            <h1>How to Add a Test Case</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+<i class=" ">(Please don't (re)move - this is a landing page from a Jira link.)</i>    </p>
+    <p>
+<strong class=" ">Thank you for finding time to contribute to WildFly 8 quality.</strong><br/>Covering corner cases found by community users with tests is very important to increase stability.<br/>If you're providing a test case to support your bug report, it's very likely that your bug will be fixed much sooner.    </p>
+    <div class="section-2"  id="80873463_HowtoAddaTestCase-1%29Createatestcase."  >
+        <h2>1) Create a test case.</h2>
+    
+    <p>
+It's quite easy - a simple use case may even consist of one short .java file.    </p>
+    <p>
+Check WildFly 8 <a href="https://github.com/wildfly/wildfly/tree/master/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration">test suite test cases</a> for examples.    </p>
+    <p>
+For more information, see <a href="https://docs.jboss.org/author/display/WFLY8/WildFly+Testsuite+Test+Developer+Guide">WildFly Testsuite Test Developer Guide</a>. Check the requirements for a test to be included in the testsuite.    </p>
+    <p>
+Ask for help at WildFly 8 forum or at IRC - #wildfly @ FreeNode.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873463_HowtoAddaTestCase-2%29PushyourtestcasetoGitHubandcreateapullrequest."  >
+        <h2>2) Push your test case to GitHub and create a pull request.</h2>
+    
+    <p>
+For information on how to create a GitHub account and push your code therein, see <a href="https://community.jboss.org/wiki/HackingOnWildFly">Hacking on WildFly</a>.    </p>
+    <p>
+If you're not into Git, send a diff file to JBoss forums, someone might pick it up.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873463_HowtoAddaTestCase-3%29Waitfortheoutcome."  >
+        <h2>3) Wait for the outcome.</h2>
+    
+    <p>
+Your test case will be reviewed and eventually added. It may take few days.    </p>
+    <p>
+When something happens, you'll receive a notification e-mail.    </p>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="previous"><a accesskey="p" href="WildFly_Testsuite_Test_Developer_Guide.html"><strong>Prev</strong>WildFly Testsuite Test Developer Guide</a></li>
+                                                                                                                                    <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="next"><a accesskey="n" href="Pre-requisites_-_test_quality_standards.html"><strong>Next</strong>requisites - test quality standards</a></li>
+                                                                                                                                                  </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

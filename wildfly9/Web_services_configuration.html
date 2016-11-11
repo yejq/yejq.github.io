@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Web services configuration - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="previous"><a accesskey="p" href="Using_Wildfly_as_a_Load_Balancer.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="next"><a accesskey="n" href="Target_Audience.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                    <div>
+            <h1>Web services configuration</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+JBossWS components are provided to the application server through the webservices subsystem.&nbsp; JBossWS components handle the processing of WS endpoints.&nbsp; The subsystem supports the configuration of published endpoint addresses, and endpoint handler chains.&nbsp; A default webservice subsystem is provided in the server's domain and standalone configuration files.    </p>
+    <div class="section-2"  id="80873132_Webservicesconfiguration-Structureofthewebservicessubsystem"  >
+        <h2>Structure of the webservices subsystem</h2>
+    
+    <div class="section-3"  id="80873132_Webservicesconfiguration-Publishedendpointaddress"  >
+        <h3>Published endpoint address</h3>
+    
+    <p>
+JBossWS supports the rewriting of the <tt class=" ">&lt;soap:address&gt;</tt>&nbsp;element of endpoints published in WSDL contracts.&nbsp; This feature is useful for controlling the server address that is advertised to clients for each endpoint.    </p>
+    <p>
+The following elements are available and can be modified (all are optional):    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Type    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+modify-wsdl-address    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+boolean    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This boolean enables and disables the address rewrite functionality.<br/><br/>When modify-wsdl-address is set to true and the content of &lt;soap:address&gt; is a valid URL, JBossWS will rewrite the URL using the values of wsdl-host and wsdl-port or wsdl-secure-port.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>When modify-wsdl-address is set to false and the content of &lt;soap:address&gt; is a valid URL, JBossWS will not rewrite the URL.&nbsp; The &lt;soap:address&gt; URL will be used.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br/>When the content of &lt;soap:address&gt; is not a valid URL, JBossWS will rewrite it no matter what the setting of modify-wsdl-address.<br/><br/>If modify-wsdl-address is set to true and wsdl-host is not defined or explicitly set to <i class=" ">'</i><tt class=" ">jbossws.undefined.host</tt><i class=" ">'&nbsp;</i> the content of &lt;soap:address&gt; URL is use.&nbsp; JBossWS uses the requester's host when rewriting the &lt;soap:address&gt;<br/><br/>When modify-wsdl-address is not defined JBossWS uses a default value of true.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-host    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The hostname / IP address to be used for rewriting <tt class=" ">&lt;soap:address&gt;</tt>.<br/>If&nbsp;<tt class=" ">wsdl-host</tt>&nbsp;is set to&nbsp;<tt class=" ">jbossws.undefined.host</tt>, JBossWS uses the requester's host when rewriting the&nbsp;<tt class=" ">&lt;soap:address&gt;</tt><br/>When wsdl-host is not defined JBossWS uses a default value of '<tt class=" ">jbossws.undefined.host</tt>'.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-port    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+int    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Set this property to explicitly define the HTTP port that will be used for rewriting the SOAP address.<br/>Otherwise the HTTP port will be identified by querying the list of installed HTTP connectors.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-secure-port    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+int    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Set this property to explicitly define the HTTPS port that will be used for rewriting the SOAP address.<br/>Otherwise the HTTPS port will be identified by querying the list of installed HTTPS connectors.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-uri-scheme    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This property explicitly sets the URI scheme to use for rewriting <tt class=" ">&lt;soap:address&gt;</tt> . Valid values are <tt class=" ">http</tt> and <tt class=" ">https</tt>. This configuration overrides scheme computed by processing the endpoint (even if a transport guarantee<br/>is specified). The provided values for <tt class=" ">wsdl-port</tt> and <tt class=" ">wsdl-secure-port</tt> (or their default values) are used depending on specified scheme.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-path-rewrite-rule    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This string defines a SED substitution command (e.g., 's/regexp/replacement/g') that JBossWS executes against the path component of each &lt;soap:address&gt; URL published from the server.<br/>When wsdl-path-rewrite-rule is not defined, JBossWS retains the original path component of each &lt;soap:address&gt; URL.<br/>When 'modify-wsdl-address' is set to &quot;false&quot; this element is ignored.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    <div class="section-3"  id="80873132_Webservicesconfiguration-Predefinedendpointconfigurations"  >
+        <h3>Predefined endpoint configurations</h3>
+    
+    <p>
+JBossWS enables extra setup configuration data to be predefined and associated with an endpoint implementation.&nbsp; Predefined endpoint configurations can be used for JAX-WS client and JAX-WS endpoint setup.&nbsp; Endpoint configurations can include JAX-WS handlers and key/value properties declarations.&nbsp; This feature provides a convenient way to add handlers to WS endpoints and to set key/value properties that control JBossWS and Apache CXF internals (<a href="https://docs.jboss.org/author/display/JBWS/Apache+CXF+integration#ApacheCXFintegration-Deploymentdescriptorproperties">see Apache CXF configuration</a>).    </p>
+    <p>
+The webservices subsystem provides <a href="http://www.jboss.org/schema/jbossas/jboss-as-webservices_1_2.xsd">schema</a> to support the definition of named sets of endpoint configuration data.&nbsp; Annotation, <i class=" ">org.jboss.ws.api.annotation.EndpointConfig</i> is provided to map the named configuration to the endpoint implementation.    </p>
+    <p>
+There is no limit to the number of endpoint configurations that can be defined within the webservices subsystem.&nbsp; Each endpoint configuration must have a name that is unique within the webservices subsystem.&nbsp; Endpoint configurations defined in the webservices subsystem are available for reference by name through the annotation to any endpoint in a deployed application.    </p>
+    <p>
+WildFly ships with two predefined endpoint configurations.&nbsp; Standard-Endpoint-Config is the default configuration.&nbsp; Recording-Endpoint-Config is an example of custom endpoint configuration and includes a recording handler.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] /subsystem=webservices:read-resource
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;endpoint&quot; =&gt; {},
+        &quot;modify-wsdl-address&quot; =&gt; true,
+        &quot;wsdl-host&quot; =&gt; expression &quot;${jboss.bind.address:127.0.0.1}&quot;,
+        &quot;endpoint-config&quot; =&gt; {
+            &quot;Standard-Endpoint-Config&quot; =&gt; undefined,
+            &quot;Recording-Endpoint-Config&quot; =&gt; undefined
+        }
+    }
+}</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+The <tt class=" ">Standard-Endpoint-Config</tt> is a special endpoint configuration.&nbsp; It is used for any endpoint that does not have an explicitly assigned endpoint configuration.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873132_Webservicesconfiguration-Endpointconfigs"  >
+        <h4>Endpoint configs</h4>
+    
+    <p>
+Endpoint configs are defined using <tt class=" ">the endpoint-config</tt> element.&nbsp; Each endpoint configuration may include properties and handlers set to the endpoints associated to the configuration.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] /subsystem=webservices/endpoint-config=Recording-Endpoint-Config:read-resource
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;post-handler-chain&quot; =&gt; undefined,
+        &quot;property&quot; =&gt; undefined,
+        &quot;pre-handler-chain&quot; =&gt; {&quot;recording-handlers&quot; =&gt; undefined}
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+A new endpoint configuration can be added as follows:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] /subsystem=webservices/endpoint-config=My-Endpoint-Config:add
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;response-headers&quot; =&gt; {
+        &quot;operation-requires-restart&quot; =&gt; true,
+        &quot;process-state&quot; =&gt; &quot;restart-required&quot;
+    }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="80873132_Webservicesconfiguration-Handlerchains"  >
+        <h4>Handler chains</h4>
+    
+    <p>
+Each endpoint configuration may be associated with zero or more PRE and POST handler chains.&nbsp; Each handler chain may include JAXWS handlers.&nbsp; For outbound messages the PRE handler chains are executed before any handler that is attached to the endpoint using the standard means, such as with annotation @HandlerChain, and POST handler chains are executed after those objects have executed.&nbsp; For inbound messages the POST handler chains are executed before any handler that is attached to the endpoint using the standard means and the PRE handler chains are executed after those objects have executed.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">* Server inbound messages
+Client --&gt; ... --&gt; POST HANDLER --&gt; ENDPOINT HANDLERS --&gt; PRE HANDLERS --&gt; Endpoint
+
+* Server outbound messages
+Endpoint --&gt; PRE HANDLER --&gt; ENDPOINT HANDLERS --&gt; POST HANDLERS --&gt; ... --&gt; Client</pre>
+        </div>
+    </div>
+    <p>
+The protocol-binding attribute must be used to set the protocols for which the chain will be triggered.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] /subsystem=webservices/endpoint-config=Recording-Endpoint-Config/pre-handler-chain=recording-handlers:read-resource
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;protocol-bindings&quot; =&gt; &quot;##SOAP11_HTTP ##SOAP11_HTTP_MTOM ##SOAP12_HTTP ##SOAP12_HTTP_MTOM&quot;,
+        &quot;handler&quot; =&gt; {&quot;RecordingHandler&quot; =&gt; undefined}
+    },
+    &quot;response-headers&quot; =&gt; {&quot;process-state&quot; =&gt; &quot;restart-required&quot;}
+}</pre>
+        </div>
+    </div>
+    <p>
+A new handler chain can be added as follows:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] /subsystem=webservices/endpoint-config=My-Endpoint-Config/post-handler-chain=my-handlers:add(protocol-bindings=&quot;##SOAP11_HTTP&quot;)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;response-headers&quot; =&gt; {
+        &quot;operation-requires-restart&quot; =&gt; true,
+        &quot;process-state&quot; =&gt; &quot;restart-required&quot;
+    }
+}
+[standalone@localhost:9999 /] /subsystem=webservices/endpoint-config=My-Endpoint-Config/post-handler-chain=my-handlers:read-resource
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;handler&quot; =&gt; undefined,
+        &quot;protocol-bindings&quot; =&gt; &quot;##SOAP11_HTTP&quot;
+    },
+    &quot;response-headers&quot; =&gt; {&quot;process-state&quot; =&gt; &quot;restart-required&quot;}
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="80873132_Webservicesconfiguration-Handlers"  >
+        <h4>Handlers</h4>
+    
+    <p>
+JAXWS handler can be added in handler chains:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] /subsystem=webservices/endpoint-config=Recording-Endpoint-Config/pre-handler-chain=recording-handlers/handler=RecordingHandler:read-resource
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {&quot;class&quot; =&gt; &quot;org.jboss.ws.common.invocation.RecordingServerHandler&quot;},
+    &quot;response-headers&quot; =&gt; {&quot;process-state&quot; =&gt; &quot;restart-required&quot;}
+}
+[standalone@localhost:9999 /] /subsystem=webservices/endpoint-config=My-Endpoint-Config/post-handler-chain=my-handlers/handler=foo-handler:add(class=&quot;org.jboss.ws.common.invocation.RecordingServerHandler&quot;)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;response-headers&quot; =&gt; {
+        &quot;operation-requires-restart&quot; =&gt; true,
+        &quot;process-state&quot; =&gt; &quot;restart-required&quot;
+    }
+}</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-note">
+            <div class="title">Endpoint-config handler classloading</div>
+        
+    <p>
+The <tt class=" ">class</tt> attribute is used to provide the fully qualified class name of the handler.&nbsp; At deploy time, an instance of the class is created for each referencing deployment.&nbsp; For class creation to succeed, the deployment classloader must to be able to load the handler class.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873132_Webservicesconfiguration-Runtimeinformation"  >
+        <h2>Runtime information</h2>
+    
+    <p>
+Each web service endpoint is exposed through the deployment that provides the endpoint implementation. Each endpoint can be queried as a deployment resource. For further information please consult the chapter &quot;Application Deployment&quot;. Each web service endpoint specifies a web context and a WSDL Url:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] /deployment=&quot;*&quot;/subsystem=webservices/endpoint=&quot;*&quot;:read-resource
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; [{
+       &quot;address&quot; =&gt; [
+           (&quot;deployment&quot; =&gt; &quot;jaxws-samples-handlerchain.war&quot;),
+           (&quot;subsystem&quot; =&gt; &quot;webservices&quot;),
+           (&quot;endpoint&quot; =&gt; &quot;jaxws-samples-handlerchain:TestService&quot;)
+       ],
+       &quot;outcome&quot; =&gt; &quot;success&quot;,
+       &quot;result&quot; =&gt; {
+           &quot;class&quot; =&gt; &quot;org.jboss.test.ws.jaxws.samples.handlerchain.EndpointImpl&quot;,
+           &quot;context&quot; =&gt; &quot;jaxws-samples-handlerchain&quot;,
+           &quot;name&quot; =&gt; &quot;TestService&quot;,
+           &quot;type&quot; =&gt; &quot;JAXWS_JSE&quot;,
+           &quot;wsdl-url&quot; =&gt; &quot;http://localhost:8080/jaxws-samples-handlerchain?wsdl&quot;
+       }
+   }]
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="80873132_Webservicesconfiguration-ComponentReference"  >
+        <h2>Component Reference</h2>
+    
+    <p>
+    <span style="color: #333333;">
+The web service subsystem is provided by the JBossWS project. For a detailed description of the available configuration properties, please consult the project documentation.    </span>
+    </p>
+    <div class="confbox panel">
+    <ul class=" "><li class=" ">    <p>
+JBossWS homepage:&nbsp;<a href="http://www.jboss.org/jbossws">http://www.jboss.org/jbossws</a>    </p>
+</li><li class=" ">    <p>
+Project Documentation: &nbsp;<a href="https://docs.jboss.org/author/display/JBWS">https://docs.jboss.org/author/display/JBWS</a>    </p>
+</li></ul>    </div>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="previous"><a accesskey="p" href="Using_Wildfly_as_a_Load_Balancer.html"><strong>Prev</strong>Using Wildfly as a Load Balancer</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="next"><a accesskey="n" href="Target_Audience.html"><strong>Next</strong>Target Audience</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

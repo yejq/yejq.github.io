@@ -1,0 +1,2807 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Management tasks - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                      <li class="previous"><a accesskey="p" href="Default_Native_Interface_Security.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="next"><a accesskey="n" href="Application_deployment.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                    <div>
+            <h1>Management tasks</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <div class="section-2"  id="80873114_Managementtasks-Controllingoperationviacommandlineparameters"  >
+        <h2>Controlling operation via command line parameters</h2>
+    
+    <p>
+To start up a WildFly 8 managed domain, execute the <tt class=" ">$JBOSS_HOME/bin/domain.sh</tt> script. To start up a standalone server, execute the&nbsp;<tt class=" ">$JBOSS_HOME/bin/standalone.sh</tt>. With no arguments, the default configuration is used. You can override the default configuration by providing arguments on the command line, or in your calling script.    </p>
+    <div class="section-3"  id="80873114_Managementtasks-Systemproperties"  >
+        <h3>System properties</h3>
+    
+    <p>
+To set a system property, pass its new value using the standard jvm <tt class=" ">-Dkey=value</tt> options:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh -Djboss.home.dir=some/location/WildFly/jboss-as \
+    -Djboss.server.config.dir=some/location/WildFly/jboss-as/custom-standalone</pre>
+        </div>
+    </div>
+    <p>
+This command starts up a standalone server instance using a non-standard AS home directory and a custom configuration directory. For specific information about system properties, refer to the definitions below.    </p>
+    <p>
+Instead of passing the parameters directly, you can put them into a properties file, and pass the properties file to the script, as in the two examples below.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/domain.sh --properties=/some/location/jboss.properties
+$JBOSS_HOME/bin/domain.sh -P=/some/location/jboss.properties</pre>
+        </div>
+    </div>
+    <p>
+Note however, that properties set this way are not processed as part of JVM launch. They are processed early in the boot process, but this mechanism should not be used for setting properties that control JVM behavior (e.g. java.net.perferIPv4Stack) or the behavior of the JBoss Modules classloading system.    </p>
+    <p>
+The syntax for passing in parameters and properties files is the same regardless of whether you are running the <tt class=" ">domain.sh</tt>, <tt class=" ">standalone.sh</tt>, or the Microsoft Windows scripts<tt class=" ">domain.bat</tt> or <tt class=" ">standalone.bat</tt>.    </p>
+    <p>
+The properties file is a standard Java property file containing <tt class=" ">key=value</tt> pairs:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">jboss.home.dir=/some/location/WildFly/jboss-as
+jboss.domain.config.dir=/some/location/WildFly/custom-domain</pre>
+        </div>
+    </div>
+    <p>
+System properties can also be set via the xml configuration files. Note however that for a standalone server properties set this way will not be set until the xml configuration is parsed and the commands created by the parser have been executed. So this mechanism should not be used for setting properties whose value needs to be set before this point.    </p>
+    <p>
+    <span id="80873114_Managementtasks-standalonesystemproperties"><a name="80873114_Managementtasks-standalonesystemproperties"></a></span>
+    </p>
+    <div class="section-4"  id="80873114_Managementtasks-Controllingfilesystemlocationswithsystemproperties"  >
+        <h4>Controlling filesystem locations with system properties</h4>
+    
+    <p>
+The standalone and the managed domain modes each use a default configuration which expects various files and writable directories to exist in standard locations. Each of these standard locations is associated with a system property, which has a default value. To override a system property, pass its new value using the one of the mechanisms above. The locations which can be controlled via system property are:    </p>
+    <div class="section-5"  id="80873114_Managementtasks-Standalone"  >
+        <h5>Standalone</h5>
+    
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Property name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Usage    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Default value    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">java.ext.dirs</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The JDK extension directory paths    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">null</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.home.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The root directory of the WildFly 8 installation.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Set by <tt class=" ">standalone.sh</tt> to <tt class=" ">$JBOSS_HOME</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.base.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The base directory for server content.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.home.dir</tt>/standalone    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.config.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The base configuration directory.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.base.dir</tt>/configuration    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.data.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The directory used for persistent data file storage.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.base.dir</tt>/data    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.log.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The directory containing the <tt class=" ">server.log</tt> file.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.base.dir</tt>/log    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.temp.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The directory used for temporary file storage.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.base.dir</tt>/tmp    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.deploy.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The directory used to store deployed content    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.server.data.dir</tt>/content    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+    <span id="80873114_Managementtasks-domainsystemproperties"><a name="80873114_Managementtasks-domainsystemproperties"></a></span>
+    </p>
+    </div>
+    
+    <div class="section-5"  id="80873114_Managementtasks-ManagedDomain"  >
+        <h5>Managed Domain</h5>
+    
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Property name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Usage    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Default value    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.home.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The root directory of the WildFly installation.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Set by <tt class=" ">domain.sh</tt> to <tt class=" ">$JBOSS_HOME</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.base.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The base directory for domain content.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.home.dir</tt>/domain    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.config.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The base configuration directory    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.base.dir</tt>/configuration    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.data.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The directory used for persistent data file storage.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.base.dir</tt>/data    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.log.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The directory containing the <tt class=" ">host-controller.log</tt> and <tt class=" ">process-controller.log</tt> files    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.base.dir</tt>/log    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.temp.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The directory used for temporary file storage    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.base.dir</tt>/tmp    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.deployment.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The directory used to store deployed content    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.base.dir</tt>/content    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.servers.dir</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The directory containing the output for the managed server instances    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.domain.base.dir</tt>/servers    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+    <span id="80873114_Managementtasks-parameters"><a name="80873114_Managementtasks-parameters"></a></span>
+    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-Othercommandlineparameters"  >
+        <h3>Other command line parameters</h3>
+    
+    <p>
+The first acceptable format for command line arguments to the WildFly launch scripts is    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">--name=value</pre>
+        </div>
+    </div>
+    <p>
+For example:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh --server-config=standalone-ha.xml</pre>
+        </div>
+    </div>
+    <p>
+If the parameter name is a single character, it is prefixed by a single '-' instead of two. Some parameters have both a long and short option.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">-x=value</pre>
+        </div>
+    </div>
+    <p>
+For example:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh -P=/some/location/jboss.properties</pre>
+        </div>
+    </div>
+    <p>
+For some command line arguments frequently used in previous major releases of WildFly, replacing the &quot;=&quot; in the above examples with a space is supported, for compatibility.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">-b 192.168.100.10</pre>
+        </div>
+    </div>
+    <p>
+If possible, use the <tt class=" ">-x=value</tt> syntax. New parameters will always support this syntax.    </p>
+    <p>
+The sections below describe the command line parameter names that are available in standalone and domain mode.    </p>
+    <div class="section-4"  id="80873114_Managementtasks-Standalone2"  >
+        <h4>Standalone</h4>
+    
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Default if absent    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Value    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--admin-only</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+-    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Set the server's running type to ADMIN_ONLY causing it to open administrative interfaces and accept                                   management requests but not start other runtime services or accept end user requests.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config</tt><br/><tt class=" ">-c</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+standalone.xml    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A relative path which is interpreted to be relative to <tt class=" ">jboss.server.config.dir</tt>. The name of the configuration file to use.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--read-only-server-config</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+-    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A relative path which is interpreted to be relative to <tt class=" ">jboss.server.config.dir</tt>. This is similar to <tt class=" ">--server-config</tt> but if this alternative is specified the server will not overwrite the file when the management model is changed. However a full versioned history is maintained of the file.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    <div class="section-4"  id="80873114_Managementtasks-ManagedDomain2"  >
+        <h4>Managed Domain</h4>
+    
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Default if absent    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Value    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--admin-only</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+-    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Set the server's running type to ADMIN_ONLY causing it to open administrative interfaces and accept                                   management requests but not start servers or, if this host controller is the master for the domain, accept incoming connections from slave host controllers.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--domain-config</tt><br/><tt class=" ">-c</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+domain.xml    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A relative path which is interpreted to be relative to <tt class=" ">jboss.domain.config.dir</tt>. The name of the domain wide configuration file to use.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--read-only-domain-config</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+-    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A relative path which is interpreted to be relative to <tt class=" ">jboss.domain.config.dir</tt>. This is similar to <tt class=" ">--domain-config</tt> but if this alternative is specified the host controller will not overwrite the file when the management model is changed. However a full versioned history is maintained of the file.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--host-config</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+host.xml    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A relative path which is interpreted to be relative to <tt class=" ">jboss.domain.config.dir</tt>. The name of the host-specific configuration file to use.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--read-only-host-config</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+-    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A relative path which is interpreted to be relative to <tt class=" ">jboss.domain.config.dir</tt>. This is similar to <tt class=" ">--host-config</tt> but if this alternative is specified the host controller will not overwrite the file when the management model is changed. However a full versioned history is maintained of the file.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+The following parameters take no value and are only usable on slave host controllers (i.e. hosts configured to connect to a <tt class=" ">remote</tt> domain controller.)    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Function    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--backup</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Causes the slave host controller to create and maintain a local copy of the domain configuration file    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--cached-dc</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+If the slave host controller is unable to contact the master domain controller to get its configuration at boot, boot from a local copy previously created using <tt class=" ">--backup</tt>. The slave host controller will not be able make any modifications to the domain configuration, but it will be able to launch servers.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+    <span id="80873114_Managementtasks-commonparameters"><a name="80873114_Managementtasks-commonparameters"></a></span>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873114_Managementtasks-Commonparameters"  >
+        <h4>Common parameters</h4>
+    
+    <p>
+These parameters apply in both standalone or managed domain mode:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Function    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">-b=&lt;value&gt;</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Sets system property <tt class=" ">jboss.bind.address</tt> to &lt;value&gt;. See <a href="Management_tasks.html#80873114_Managementtasks-bindaddress">Controlling the Bind Address with -b</a> for further details.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">-b&lt;name&gt;=&lt;value&gt;</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Sets system property <tt class=" ">jboss.bind.address.&lt;name&gt;</tt> to &lt;value&gt; where <i class=" ">name</i> can vary. See <a href="Management_tasks.html#80873114_Managementtasks-bindaddress">Controlling the Bind Address with -b</a> for further details.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">-u=&lt;value&gt;</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Sets system property <tt class=" ">jboss.default.multicast.address</tt> to &lt;value&gt;. See <a href="Management_tasks.html#80873114_Managementtasks-defaultmulticastaddress">Controlling the Default Multicast Address with -u</a> for further details.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--version</tt><br/><tt class=" ">-v</tt><br/><tt class=" ">-V</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Prints the version of WildFly to standard output and exits the JVM.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--help</tt><br/><tt class=" ">-h</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Prints a help message explaining the options and exits the JVM.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+    <span id="80873114_Managementtasks-bindaddress"><a name="80873114_Managementtasks-bindaddress"></a></span>
+    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-ControllingtheBindAddresswith%5Cb"  >
+        <h3>Controlling the Bind Address with -b</h3>
+    
+    <p>
+WildFly&nbsp;binds sockets to the IP addresses and interfaces contained in the <tt class=" ">&lt;interfaces&gt;</tt> elements in <tt class=" ">standalone.xml</tt>, <tt class=" ">domain.xml</tt> and <tt class=" ">host.xml</tt>. (See <a href="General_configuration_concepts.html#80873112_Generalconfigurationconcepts-interfaces">Interfaces</a> and <a href="General_configuration_concepts.html#80873112_Generalconfigurationconcepts-socketbindings">Socket Bindings</a> for further information on these elements.) The standard configurations that ship with WildFly includes two interface configurations:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;interfaces&gt;
+    &lt;interface name=&quot;management&quot;&gt;
+        &lt;inet-address value=&quot;${jboss.bind.address.management:127.0.0.1}&quot;/&gt;
+    &lt;/interface&gt;
+    &lt;interface name=&quot;public&quot;&gt;
+       &lt;inet-address value=&quot;${jboss.bind.address:127.0.0.1}&quot;/&gt;
+    &lt;/interface&gt;
+&lt;/interfaces&gt;</pre>
+        </div>
+    </div>
+    <p>
+Those configurations use the values of system properties <tt class=" ">jboss.bind.address.management</tt> and <tt class=" ">jboss.bind.address</tt> if they are set. If they are not set, 127.0.0.1 is used for each value.    </p>
+    <p>
+As noted in <a href="Management_tasks.html#80873114_Managementtasks-commonparameters">Common Parameters</a>, the AS supports the <tt class=" ">-b</tt> and <tt class=" ">-b&lt;name&gt;</tt> command line switches. The only function of these switches is to set system properties <tt class=" ">jboss.bind.address</tt> and <tt class=" ">jboss.bind.address.&lt;name&gt;</tt> respectively. However, because of the way the standard WildFly configuration files are set up, using the <tt class=" ">-b</tt> switches can indirectly control how the AS binds sockets.    </p>
+    <p>
+<i class=" ">If your interface configurations match those shown above</i>, using this as your launch command causes all sockets associated with interface named &quot;public&quot; &nbsp;to be bound to <tt class=" ">192.168.100.10</tt>.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh -b=192.168.100.10</pre>
+        </div>
+    </div>
+    <p>
+In the standard config files, public interfaces are those not associated with server management. Public interfaces handle normal end-user requests.    </p>
+    <div class="confbox admonition admonition-info">
+            <div class="title">Interface names</div>
+        
+    <p>
+The interface named &quot;public&quot; is not inherently special. It is provided as a convenience. You can name your interfaces to suit your environment.    </p>
+    </div>
+    
+    <p>
+To bind the public interfaces to all IPv4 addresses (the IPv4 wildcard address), use the following syntax:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh -b=0.0.0.0</pre>
+        </div>
+    </div>
+    <p>
+You can also bind the management interfaces, as follows:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh -bmanagement=192.168.100.10</pre>
+        </div>
+    </div>
+    <p>
+In the standard config files, management interfaces are those sockets associated with server management, such as the socket used by the CLI, the HTTP socket used by the admin console, and the JMX connector socket.    </p>
+    <div class="confbox admonition admonition-note">
+            <div class="title">Be Careful</div>
+        
+    <p>
+The <tt class=" ">-b</tt> switch only controls the interface bindings because the standard config files that ship with WildFly sets things up that way. If you change the <tt class=" ">&lt;interfaces&gt;</tt> section in your configuration to ignore the system properties controlled by <tt class=" ">-b</tt>, then setting <tt class=" ">-b</tt> in your launch command will have no effect.    </p>
+    <p>
+For example, this perfectly valid setting for the &quot;public&quot; interface causes &nbsp;<tt class=" ">-b</tt> to have no effect on the &quot;public&quot; interface:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;interface name=&quot;public&quot;&gt;
+   &lt;nic name=&quot;eth0&quot;/&gt;
+&lt;/interface&gt;</pre>
+        </div>
+    </div>
+    <p>
+The key point is <strong class=" ">the contents of the configuration files determine the configuration. Settings like</strong> <tt class=" ">-b</tt> <strong class=" ">are not overrides of the configuration files.</strong>&nbsp;They only provide a shorter syntax for setting a system properties that may or may not be referenced in the configuration files. They are provided as a convenience, and you can choose to modify your configuration to ignore them.    </p>
+    </div>
+    
+    <p>
+    <span id="80873114_Managementtasks-defaultmulticastaddress"><a name="80873114_Managementtasks-defaultmulticastaddress"></a></span>
+    </p>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-ControllingtheDefaultMulticastAddresswith%5Cu"  >
+        <h3>Controlling the Default Multicast Address with -u</h3>
+    
+    <p>
+WildFly 8 may use multicast communication for some services, particularly those involving high availability clustering. The multicast addresses and ports used are configured using the <tt class=" ">socket-binding</tt> elements in <tt class=" ">standalone.xml</tt> and <tt class=" ">domain.xml</tt>. (See <a href="General_configuration_concepts.html#80873112_Generalconfigurationconcepts-socketbindings">Socket Bindings</a> for further information on these elements.) The standard HA configurations that ship with WildFly include two socket binding configurations that use a default multicast address:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;socket-binding name=&quot;jgroups-mping&quot; port=&quot;0&quot; multicast-address=&quot;${jboss.default.multicast.address:230.0.0.4}&quot; multicast-port=&quot;45700&quot;/&gt;
+&lt;socket-binding name=&quot;jgroups-udp&quot; port=&quot;55200&quot; multicast-address=&quot;${jboss.default.multicast.address:230.0.0.4}&quot; multicast-port=&quot;45688&quot;/&gt;</pre>
+        </div>
+    </div>
+    <p>
+Those configurations use the values of system property <tt class=" ">jboss.default.multicast.address</tt> if it is set. If it is not set, 230.0.0.4 is used for each value. (The configuration may include other socket bindings for multicast-based services that are not meant to use the default multicast address; e.g. a binding the mod-cluster services use to communicate on a separate address/port with Apache httpd servers.)    </p>
+    <p>
+As noted in <a href="Management_tasks.html#80873114_Managementtasks-commonparameters">Common Parameters</a>, the AS supports the <tt class=" ">-u</tt> command line switch. The only function of this switch is to set system property <tt class=" ">jboss.default.multicast.address</tt>. However, because of the way the standard AS configuration files are set up, using the <tt class=" ">-u</tt> switches can indirectly control how the AS uses multicast.    </p>
+    <p>
+<i class=" ">If your socket binding configurations match those shown above</i>, using this as your launch command causes the service using those sockets configurations to be communicate over multicast address <tt class=" ">230.0.1.2</tt>.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh -u=230.0.1.2</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-note">
+            <div class="title">Be Careful</div>
+        
+    <p>
+As with the <tt class=" ">-b</tt> switch, the <tt class=" ">-u</tt> switch only controls the multicast address used because the standard config files that ship with WildFly 8&nbsp;sets things up that way. If you change the <tt class=" ">&lt;socket-binding&gt;</tt> sections in your configuration to ignore the system properties controlled by <tt class=" ">-u</tt>, then setting <tt class=" ">-u</tt> in your launch command will have no effect.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873114_Managementtasks-Applicationdeployment"  >
+        <h2>Application deployment</h2>
+    
+    <div class="section-3"  id="80873114_Managementtasks-ManagedDomain3"  >
+        <h3>Managed Domain</h3>
+    
+    <p>
+In a managed domain, deployments are associated with a <tt class=" ">server group</tt> (see &#65279;<a href="https://docs.jboss.org/author/display/WFLY8/Core+management+concepts">Core management concepts</a>). Any server within the server group will then be provided with that deployment.    </p>
+    <p>
+The domain and host controller components manage the distribution of binaries across network boundaries.    </p>
+    <div class="section-4"  id="80873114_Managementtasks-DeploymentCommands"  >
+        <h4>Deployment Commands</h4>
+    
+    <p>
+Distributing deployment binaries involves two steps: uploading the deployment to the repository the domain controller will use to distribute its contents, and then assigning the deployment to one or more server groups.    </p>
+    <p>
+You can do this in one sweep with the CLI:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] deploy ~/Desktop/test-application.war
+Either --all-server-groups or --server-groups must be specified.
+
+[domain@localhost:9999 /] deploy ~/Desktop/test-application.war --all-server-groups
+'test-application.war' deployed successfully.
+
+[domain@localhost:9999 /] deploy --help
+[...]</pre>
+        </div>
+    </div>
+    <p>
+After you've uploaded the binary using the <tt class=" ">deploy</tt> command, it will be available to the domain controller, and assigned to a server group:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] :read-children-names(child-type=deployment)
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; [
+       &quot;mysql-connector-java-5.1.15.jar&quot;,
+       &quot;test-application.war&quot;
+   ]
+}
+
+[domain@localhost:9999 /] /server-group=main-server-group/deployment=test-application.war:read-resource
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; {
+       &quot;enabled&quot; =&gt; true,
+       &quot;name&quot; =&gt; &quot;test-application.war&quot;,
+       &quot;runtime-name&quot; =&gt; &quot;test-application.war&quot;
+   }
+}
+</pre>
+        </div>
+    </div>
+    <p>
+You can remove binaries from server groups with the <tt class=" ">undeploy</tt> command:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] undeploy test-application.war --all-relevant-server-groups
+Successfully undeployed test-application.war.
+
+[domain@localhost:9999 /] /server-group=main-server-group:read-children-names(child-type=deployment)
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; []
+}
+</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-tip">
+        
+    <p>
+Managing deployments through the web interface provides an alternate, sometimes simpler approach.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-4"  id="80873114_Managementtasks-ContentRepository"  >
+        <h4>Content Repository</h4>
+    
+    <p>
+Deployments are referenced in the domain configuration file, and co-located with the domain controller:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[...]
+&lt;deployments&gt;
+   &lt;deployment name=&quot;test-application.war&quot;
+               runtime-name=&quot;test-application.war&quot;&gt;
+       &lt;content sha1=&quot;dda9881fa7811b22f1424b4c5acccb13c71202bd&quot;/&gt;
+   &lt;/deployment&gt;
+&lt;/deployments&gt;
+[...]
+&lt;server-groups&gt;
+   &lt;server-group name=&quot;main-server-group&quot; profile=&quot;default&quot;&gt;
+       [...]
+       &lt;deployments&gt;
+           &lt;deployment name=&quot;test-application.war&quot; runtime-name=&quot;test-application.war&quot;/&gt;
+       &lt;/deployments&gt;
+   &lt;/server-group&gt;
+&lt;/server-groups&gt;
+[...]</pre>
+        </div>
+    </div>
+    <p>
+<sub class=" ">(See domain/configuration/domain.xml)</sub>    </p>
+    <p>
+The actual binaries are stored in the content subdirectory:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">ls domain/content/
+  |---/47
+  |-----95cc29338b5049e238941231b36b3946952991
+  |---/dd
+  |-----a9881fa7811b22f1424b4c5acccb13c71202bd</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-StandaloneServer"  >
+        <h3>Standalone Server</h3>
+    
+    <p>
+Deployments on a standalone server work in a similar way to those on managed domains. The main difference is that there are no server group associations.    </p>
+    <div class="section-4"  id="80873114_Managementtasks-DeploymentCommands2"  >
+        <h4>Deployment Commands</h4>
+    
+    <p>
+The same CLI commands used for managed domains work for standalone servers when deploying and removing an application:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] deploy ~/Desktop/test-application.war
+'test-application.war' deployed successfully.
+
+[standalone@localhost:9999 /] undeploy test-application.war
+Successfully undeployed test-application.war.</pre>
+        </div>
+    </div>
+    <p>
+    <span id="80873114_Managementtasks-filesystemdeployments"><a name="80873114_Managementtasks-filesystemdeployments"></a></span>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873114_Managementtasks-FileSystemDeployments"  >
+        <h4>File System Deployments</h4>
+    
+    <p>
+Deployment content (for example, war, ear, jar, and sar files) can be placed in the standalone/deployments directory of the WildFly 8 distribution, in order to be automatically deployed into the server runtime.    </p>
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+Users are encouraged to use the WildFly 8 management APIs to upload and deploy deployment content instead of relying on the deployment scanner that periodically scans the directory, particularly if running production systems.    </p>
+    </div>
+    
+    <div class="section-5"  id="80873114_Managementtasks-DeploymentModes"  >
+        <h5>Deployment Modes</h5>
+    
+    <p>
+The WildFly 8 filesystem deployment scanner operates in one of two different modes, depending on whether it will directly monitor the deployment content in order to decide to deploy or redeploy it.    </p>
+    <p>
+<u class=" ">Auto-deploy mode</u>:    </p>
+    <p>
+The scanner will directly monitor the deployment content, automatically deploying new content and redeploying content whose timestamp has changed. This is similiar to the behavior of previous AS releases, although there are differences:    </p>
+<ul class=" "><li class=" ">    <p>
+A change in any file in an exploded deployment triggers redeploy. Because EE 6 applications do not require deployment descriptors,<br/>there is no attempt to monitor deployment descriptors and only redeploy when a deployment descriptor changes.    </p>
+</li><li class=" ">    <p>
+The scanner will place marker files in this directory as an indication of the status of its attempts to deploy or undeploy content. These are detailed below.    </p>
+</li></ul>    <p>
+<u class=" ">Manual deploy mode</u>:    </p>
+    <p>
+The scanner will not attempt to directly monitor the  deployment content and decide if or when the end user wishes the content to be deployed. Instead, the scanner relies on a system of marker  files, with the user's addition or removal of a marker file serving as a sort of command telling the scanner to deploy, undeploy or redeploy content.    </p>
+    <p>
+Auto-deploy mode and manual deploy mode can be independently configured for  zipped deployment content and exploded deployment content. This is done via the &quot;auto-deploy&quot; attribute on the deployment-scanner element in the standalone.xml configuration file:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;deployment-scanner scan-interval=&quot;5000&quot; relative-to=&quot;jboss.server.base.dir&quot;
+   path=&quot;deployments&quot; auto-deploy-zipped=&quot;true&quot; auto-deploy-exploded=&quot;false&quot;/&gt;</pre>
+        </div>
+    </div>
+    <p>
+By default, auto-deploy of zipped content is enabled, and auto-deploy of exploded content is disabled. Manual deploy mode is strongly recommended for exploded content, as exploded content is inherently vulnerable to the scanner trying to auto-deploy partially copied content.    </p>
+    </div>
+    
+    <div class="section-5"  id="80873114_Managementtasks-MarkerFiles"  >
+        <h5>Marker Files</h5>
+    
+    <p>
+The marker files always have the same name as the deployment content to which they relate, but with an additional file suffix appended. For example, the marker file to indicate the example.war file should be deployed is named example.war.dodeploy. Different marker file suffixes have different meanings.    </p>
+    <p>
+The relevant marker file types are:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+File    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Purpose    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+.dodeploy    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Placed by the user to indicate that the given content should<br/>be deployed into the runtime (or redeployed if already<br/>deployed in the runtime.)    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+.skipdeploy    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Disables auto-deploy of the content for as long as the file<br/>is present. Most useful for allowing updates to exploded<br/>content without having the scanner initiate redeploy in the<br/>middle of the update. Can be used with zipped content as<br/>well, although the scanner will detect in-progress changes<br/>to zipped content and wait until changes are complete.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+.isdeploying    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Placed by the deployment scanner service to indicate that it<br/>has noticed a .dodeploy file or new or updated auto-deploy<br/>mode content and is in the process of deploying the content.<br/>This marker file will be deleted when the deployment process<br/>completes.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+.deployed    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Placed by the deployment scanner service to indicate that the<br/>given content has been deployed into the runtime. If an end<br/>user deletes this file, the content will be undeployed.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+.failed    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Placed by the deployment scanner service to indicate that the<br/>given content failed to deploy into the runtime. The content<br/>of the file will include some information about the cause of<br/>the failure. Note that with auto-deploy mode, removing this<br/>file will make the deployment eligible for deployment again.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+.isundeploying    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Placed by the deployment scanner service to indicate that it<br/>has noticed a .deployed file has been deleted and the<br/>content is being undeployed. This marker file will be deleted<br/>when the undeployment process completes.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+.undeployed    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Placed by the deployment scanner service to indicate that the<br/>given content has been undeployed from the runtime. If an end<br/>user deletes this file, it has no impact.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+.pending    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Placed by the deployment scanner service to indicate that it<br/>has noticed the need to deploy content but has not yet<br/>instructed the server to deploy it. This file is created if<br/>the scanner detects that some auto-deploy content is still in<br/>the process of being copied or if there is some problem that<br/>prevents auto-deployment. The scanner will not instruct the<br/>server to deploy or undeploy any content (not just the<br/>directly affected content) as long as this condition holds.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+<strong class=" ">Basic workflows:</strong><br/>All examples assume variable $JBOSS_HOME points to the root of the WildFly 8 distribution.    </p>
+    <p>
+A) Add new zipped content and deploy it:    </p>
+<ol class=" "><li class=" ">    <p>
+cp target/example.war/ $JBOSS_HOME/standalone/deployments    </p>
+</li><li class=" ">    <p>
+(Manual mode only) touch $JBOSS_HOME/standalone/deployments/example.war.dodeploy    </p>
+</li></ol>    <p>
+B) Add new unzipped content and deploy it:    </p>
+<ol class=" "><li class=" ">    <p>
+cp -r target/example.war/ $JBOSS_HOME/standalone/deployments    </p>
+</li><li class=" ">    <p>
+(Manual mode only) touch $JBOSS_HOME/standalone/deployments/example.war.dodeploy    </p>
+</li></ol>    <p>
+C) Undeploy currently deployed content:    </p>
+<ol class=" "><li class=" ">    <p>
+rm $JBOSS_HOME/standalone/deployments/example.war.deployed    </p>
+</li></ol>    <p>
+D) Auto-deploy mode only: Undeploy currently deployed content:    </p>
+<ol class=" "><li class=" ">    <p>
+rm $JBOSS_HOME/standalone/deployments/example.war    </p>
+</li></ol>    <p>
+E) Replace currently deployed zipped content with a new version and deploy it:    </p>
+<ol class=" "><li class=" ">    <p>
+cp target/example.war/ $JBOSS_HOME/standalone/deployments    </p>
+</li><li class=" ">    <p>
+(Manual mode only) touch $JBOSS_HOME/standalone/deployments/example.war.dodeploy    </p>
+</li></ol>    <p>
+F) Manual mode only: Replace currently deployed unzipped content with a new version and deploy it:    </p>
+<ol class=" "><li class=" ">    <p>
+rm $AS/standalone/deployments/example.war.deployed    </p>
+</li><li class=" ">    <p>
+wait for $JBOSS_HOME/standalone/deployments/example.war.undeployed file to appear    </p>
+</li><li class=" ">    <p>
+cp -r target/example.war/ $JBOSS_HOME/standalone/deployments    </p>
+</li><li class=" ">    <p>
+touch $JBOSS_HOME/standalone/deployments/example.war.dodeploy    </p>
+</li></ol>    <p>
+G) Auto-deploy mode only: Replace currently deployed unzipped content with a new version and deploy it:    </p>
+<ol class=" "><li class=" ">    <p>
+touch $JBOSS_HOME/standalone/deployments/example.war.skipdeploy    </p>
+</li><li class=" ">    <p>
+cp -r target/example.war/ $JBOSS_HOME/standalone/deployments    </p>
+</li><li class=" ">    <p>
+rm $JBOSS_HOME/standalone/deployments/example.war.skipdeploy    </p>
+</li></ol>    <p>
+H) Manual mode only: Live replace portions of currently deployed unzipped content without redeploying:    </p>
+<ol class=" "><li class=" ">    <p>
+cp -r target/example.war/foo.html $JBOSS_HOME/standalone/deployments/example.war    </p>
+</li></ol>    <p>
+I) Auto-deploy mode only: Live replace portions of currently deployed unzipped content without redeploying:    </p>
+<ol class=" "><li class=" ">    <p>
+touch $JBOSS_HOME/standalone/deployments/example.war.skipdeploy    </p>
+</li><li class=" ">    <p>
+cp -r target/example.war/foo.html $JBOSS_HOME/standalone/deployments/example.war    </p>
+</li></ol>    <p>
+J) Manual or auto-deploy mode: Redeploy currently deployed content (i.e. bounce it with no content change):    </p>
+<ol class=" "><li class=" ">    <p>
+touch $JBOSS_HOME/standalone/deployments/example.war.dodeploy    </p>
+</li></ol>    <p>
+K) Auto-deploy mode only: Redeploy currently deployed content (i.e. bounce it with no content change):    </p>
+<ol class=" "><li class=" ">    <p>
+touch $JBOSS_HOME/standalone/deployments/example.war    </p>
+</li></ol>    <div class="confbox admonition admonition-info">
+        
+    <p>
+The above examples use Unix shell commands. Windows equivalents are:    </p>
+    <p>
+cp src dest --&gt; xcopy /y src dest<br/>cp -r src dest --&gt; xcopy /e /s /y src dest<br/>rm afile --&gt; del afile<br/>touch afile --&gt; echo&gt;&gt; afile    </p>
+    <p>
+Note that the behavior of 'touch' and 'echo' are different but the differences are not relevant to the usages in the examples above.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873114_Managementtasks-Deploymentoverlays"  >
+        <h2>Deployment overlays</h2>
+    
+    <p>
+Deployment overlays are our way of 'overlaying' content into an existing deployment, without physically modifying the contents of the deployment archive. Possible use cases include swapping out deployment descriptors, modifying static web resources to change the branding of an application, or even replacing jar libraries with different versions.    </p>
+    <p>
+Deployment overlays have a different lifecycle to a deployment. In order to use a deployment overlay, you first create the overlay, using the CLI or the management API. You then add files to the overlay, specifying the deployment paths you want them to overlay. Once you have created the overlay you then have to link it to a deployment name (which is done slightly differently depending on if you are in standalone or domain mode). Once you have created the link any deployment that matches the specified deployment name will have the overlay applied.    </p>
+    <p>
+When you modify or create an overlay it will not affect existing deployments, they must be redeployed in order to take effect    </p>
+    <div class="section-3"  id="80873114_Managementtasks-Creatingadeploymentoverlay"  >
+        <h3>Creating a deployment overlay</h3>
+    
+    <p>
+To create a deployment overlay the CLI provides a high level command to do all the steps specified above in one go. An example command is given below for both standalone and domain mode:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">deployment-overlay add --name=myOverlay --content=/WEB-INF/web.xml=/myFiles/myWeb.xml,/WEB-INF/ejb-jar.xml=/myFiles/myEjbJar.xml --deployments=test.war,*-admin.war --redeploy-affected</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">deployment-overlay add --name=myOverlay --content=/WEB-INF/web.xml=/myFiles/myWeb.xml,/WEB-INF/ejb-jar.xml=/myFiles/myEjbJar.xml --deployments=test.war,*-admin.war --server-groups=main-server-group --redeploy-affected</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873114_Managementtasks-Starting%26stoppingServersinaManagedDomain"  >
+        <h2>Starting &amp; stopping Servers in a Managed Domain</h2>
+    
+    <p>
+Starting a standalone server is done through the <tt class=" ">bin/standalone.sh</tt> script. However in a managed domain server instances are managed by the domain controller and need to be started through the management layer:    </p>
+    <p>
+First of all, get to know which <tt class=" ">servers</tt> are configured on a particular <tt class=" ">host</tt>:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] :read-children-names(child-type=host)
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; [&quot;local&quot;]
+}
+
+
+[domain@localhost:9999 /] /host=local:read-children-names(child-type=server-config)
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; [
+       &quot;my-server&quot;,
+       &quot;server-one&quot;,
+       &quot;server-three&quot;
+   ]
+}
+</pre>
+        </div>
+    </div>
+    <p>
+Now that we know, that there are two <tt class=" ">servers</tt> configured on <tt class=" ">host</tt> &quot;<i class=" ">local</i>&quot;, we can go ahead and check their status:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] /host=local/server-config=server-one:read-resource(include-runtime=true)
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; {
+       &quot;auto-start&quot; =&gt; true,
+       &quot;group&quot; =&gt; &quot;main-server-group&quot;,
+       &quot;interface&quot; =&gt; undefined,
+       &quot;name&quot; =&gt; &quot;server-one&quot;,
+       &quot;path&quot; =&gt; undefined,
+       &quot;socket-binding-group&quot; =&gt; undefined,
+       &quot;socket-binding-port-offset&quot; =&gt; undefined,
+       &quot;status&quot; =&gt; &quot;STARTED&quot;,
+       &quot;system-property&quot; =&gt; undefined,
+       &quot;jvm&quot; =&gt; {&quot;default&quot; =&gt; undefined}
+   }
+}</pre>
+        </div>
+    </div>
+    <p>
+You can change the server state through the &quot;<i class=" ">start</i>&quot; and &quot;<i class=" ">stop</i>&quot; operations    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] /host=local/server-config=server-one:stop
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; &quot;STOPPING&quot;
+}
+</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-tip">
+        
+    <p>
+Navigating through the domain topology is much more simple when you use the web interface.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873114_Managementtasks-ControllingJVMsettings"  >
+        <h2>Controlling JVM settings</h2>
+    
+    <p>
+Configuration of the JVM settings is different for a managed domain and a standalone server. In a managed domain, the domain controller components are responsible for starting and stoping server processes and hence determine the JVM settings. For a standalone server, it's the responsibility of the process that started the server (e.g. passing them as command line arguments).    </p>
+    <div class="section-3"  id="80873114_Managementtasks-ManagedDomain4"  >
+        <h3>Managed Domain</h3>
+    
+    <p>
+In a managed domain the JVM settings can be declared at different scopes: For a specific server group, for a host or for a particular server. If not declared, the settings are inherited from the parent scope. This allows you to customize or extend the JVM settings within every layer.    </p>
+    <p>
+Let's take a look at the JVM declaration for a server group:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;server-groups&gt;
+       &lt;server-group name=&quot;main-server-group&quot; profile=&quot;default&quot;&gt;
+           &lt;jvm name=&quot;default&quot;&gt;
+               &lt;heap size=&quot;64m&quot; max-size=&quot;512m&quot;/&gt;
+           &lt;/jvm&gt;
+           &lt;socket-binding-group ref=&quot;standard-sockets&quot;/&gt;
+       &lt;/server-group&gt;
+       &lt;server-group name=&quot;other-server-group&quot; profile=&quot;default&quot;&gt;
+           &lt;jvm name=&quot;default&quot;&gt;
+               &lt;heap size=&quot;64m&quot; max-size=&quot;512m&quot;/&gt;
+           &lt;/jvm&gt;
+           &lt;socket-binding-group ref=&quot;standard-sockets&quot;/&gt;
+       &lt;/server-group&gt;
+&lt;/server-groups&gt;
+</pre>
+        </div>
+    </div>
+    <p>
+<sub class=" ">(See</sub> <tt class=" ">domain/configuration/domain.xml</tt><sub class=" ">)</sub>    </p>
+    <p>
+In this example the server group &quot;main-server-group&quot; declares a heap size of <tt class=" ">64m</tt> and a maximum heap size of <tt class=" ">512m</tt>. Any server that belongs to this group will inherit these settings. You can change these settings for the group as a whole, or a specific server or host:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;servers&gt;
+       &lt;server name=&quot;server-one&quot; group=&quot;main-server-group&quot; auto-start=&quot;true&quot;&gt;
+           &lt;jvm name=&quot;default&quot;/&gt;
+       &lt;/server&gt;
+       &lt;server name=&quot;server-two&quot; group=&quot;main-server-group&quot; auto-start=&quot;true&quot;&gt;
+           &lt;jvm name=&quot;default&quot;&gt;
+               &lt;heap size=&quot;64m&quot; max-size=&quot;256m&quot;/&gt;
+           &lt;/jvm&gt;
+           &lt;socket-binding-group ref=&quot;standard-sockets&quot; port-offset=&quot;150&quot;/&gt;
+       &lt;/server&gt;
+       &lt;server name=&quot;server-three&quot; group=&quot;other-server-group&quot; auto-start=&quot;false&quot;&gt;
+           &lt;socket-binding-group ref=&quot;standard-sockets&quot; port-offset=&quot;250&quot;/&gt;
+       &lt;/server&gt;
+&lt;/servers&gt;</pre>
+        </div>
+    </div>
+    <p>
+<sub class=" ">(See domain/configuration/host.xml)</sub>    </p>
+    <p>
+In this case, <i class=" ">server-two</i>, belongs to the <i class=" ">main-server-group</i> and inherits the JVM settings named <i class=" ">default</i>, but declares a lower maximum heap size.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] /host=local/server-config=server-two/jvm=default:read-resource
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; {
+       &quot;heap-size&quot; =&gt; &quot;64m&quot;,
+       &quot;max-heap-size&quot; =&gt; &quot;256m&quot;,
+   }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-StandaloneServer2"  >
+        <h3>Standalone Server</h3>
+    
+    <p>
+For a standalone sever you have to pass in the JVM settings either as command line arguments when executing the <tt class=" ">$JBOSS_HOME/bin/standalone.sh</tt> script, or by declaring them in <tt class=" ">$JBOSS_HOME/bin/standalone.conf</tt>. (For Windows users, the script to execute is <tt class=" ">%JBOSS_HOME%/bin/standalone.bat</tt> while the JVM settings can be declared in <tt class=" ">%JBOSS_HOME%/bin/standalone.conf.bat.)</tt>    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873114_Managementtasks-Administrativeauditlogging"  >
+        <h2>Administrative audit logging</h2>
+    
+    <p>
+WildFly comes with audit logging built in for management operations affecting the management model. By default it is turned off. The information is output as JSON records.    </p>
+    <p>
+The default configuration of audit logging in standalone.xml looks as follows:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">    &lt;management&gt;
+        &lt;security-realms&gt;
+...
+        &lt;/security-realms&gt;
+        &lt;audit-log&gt;
+            &lt;formatters&gt;
+                &lt;json-formatter name=&quot;json-formatter&quot;/&gt;
+            &lt;/formatters&gt;
+            &lt;handlers&gt;
+                &lt;file-handler name=&quot;file&quot; formatter=&quot;json-formatter&quot; path=&quot;audit-log.log&quot; relative-to=&quot;jboss.server.data.dir&quot;/&gt;
+            &lt;/handlers&gt;
+            &lt;logger log-boot=&quot;true&quot; log-read-only=&quot;true&quot; enabled=&quot;false&quot;&gt;
+                &lt;handlers&gt;
+                    &lt;handler name=&quot;file&quot;/&gt;
+                &lt;/handlers&gt;
+            &lt;/logger&gt;
+        &lt;/audit-log&gt;
+...</pre>
+        </div>
+    </div>
+    <p>
+Looking at this via the CLI it looks like    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/access=audit:read-resource(recursive=true)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;file-handler&quot; =&gt; {&quot;file&quot; =&gt; {
+            &quot;formatter&quot; =&gt; &quot;json-formatter&quot;,
+            &quot;max-failure-count&quot; =&gt; 10,
+            &quot;path&quot; =&gt; &quot;audit-log.log&quot;,
+            &quot;relative-to&quot; =&gt; &quot;jboss.server.data.dir&quot;
+        }},
+        &quot;json-formatter&quot; =&gt; {&quot;json-formatter&quot; =&gt; {
+            &quot;compact&quot; =&gt; false,
+            &quot;date-format&quot; =&gt; &quot;yyyy-MM-dd HH:mm:ss&quot;,
+            &quot;date-separator&quot; =&gt; &quot; - &quot;,
+            &quot;escape-control-characters&quot; =&gt; false,
+            &quot;escape-new-line&quot; =&gt; false,
+            &quot;include-date&quot; =&gt; true
+        }},
+        &quot;logger&quot; =&gt; {&quot;audit-log&quot; =&gt; {
+            &quot;enabled&quot; =&gt; false,
+            &quot;log-boot&quot; =&gt; true,
+            &quot;log-read-only&quot; =&gt; false,
+            &quot;handler&quot; =&gt; {&quot;file&quot; =&gt; {}}
+        }},
+        &quot;syslog-handler&quot; =&gt; undefined
+    }
+}</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+The audit logging subsystem has a lot of internal dependencies, and it logs operations changing, enabling and disabling its components. When configuring or changing things at runtime it is a good idea to make these changes as part of a CLI batch. For example if you are adding a syslog handler you need to add the handler and its information as one step. Similarly if you are using a file handler, and want to change its <tt class=" ">path</tt> and <tt class=" ">relative-to</tt> attributes, that needs to happen as one step.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-JSONFormatter"  >
+        <h3>JSON Formatter</h3>
+    
+    <p>
+The first thing that needs configuring is the formatter, we currently support outputting log records as JSON. You can define several formatters, for use with different handlers. A log record has the following format, and it is the formatter's job to format the data presented:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">2013-08-12 11:01:12 - {
+    &quot;type&quot; : &quot;core&quot;,
+    &quot;r/o&quot; : false,
+    &quot;booting&quot; : false,
+    &quot;version&quot; : &quot;8.0.0.Alpha4&quot;,
+    &quot;user&quot; : &quot;$local&quot;,
+    &quot;domainUUID&quot; : null,
+    &quot;access&quot; : &quot;NATIVE&quot;,
+    &quot;remote-address&quot; : &quot;127.0.0.1/127.0.0.1&quot;,
+    &quot;success&quot; : true,
+    &quot;ops&quot; : [JMX|WFLY8:JMX subsystem configuration],
+        &quot;operation&quot; : &quot;write-attribute&quot;,
+        &quot;name&quot; : &quot;enabled&quot;,
+        &quot;value&quot; : true,
+        &quot;operation-headers&quot; : {&quot;caller-type&quot; : &quot;user&quot;}
+    }]
+}</pre>
+        </div>
+    </div>
+    <p>
+It includes an optional timestamp and then the following information in the json record    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Field name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">type</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This can have the values <tt class=" ">core</tt>, meaning it is a management operation, or <tt class=" ">jmx</tt> meaning it comes from the jmx subsystem (see the jmx subsystem for configuration of the jmx subsystem's audit logging)    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">r/o</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> if the operation does not change the management model, <tt class=" ">false</tt> otherwise    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">booting</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> if the operation was executed during the bootup process, <tt class=" ">false</tt> if it was executed once the server is up and running    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">version</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The version number of the WildFly instance    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">user</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The username of the authenticated user. In this case the operation has been logged via the CLI on the same machine as the running server, so the special <tt class=" ">$local</tt> user is used    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">domainUUID</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+An ID to link together all operations as they are propagated from the Doman Controller to it servers, slave Host Controllers, and slave Host Controller servers    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">access</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This can have one of the following values:<br/>*<tt class=" ">NATIVE</tt> - The operation came in through the native management interface, for example the CLI<br/>*<tt class=" ">HTTP</tt> - The operation came in through the domain HTTP interface, for example the admin console<br/>*<tt class=" ">JMX</tt> - The operation came in through the JMX subsystem. See <a href="JMX_subsystem_configuration.html">JMX</a> for how to configure audit logging for JMX.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">remote-address</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The address of the client executing this operation    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">success</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> if the operation succeeded, <tt class=" ">false</tt> if it was rolled back    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">ops</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The operations being executed. This is a list of the operations serialized to JSON. At boot this will be all the operations resulting from parsing the xml. Once booted the list will typically just contain a single entry    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+The json formatter resource has the following attributes:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">include-date</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Boolan toggling whether or not to include the timestamp in the formatted log records    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">date-separator</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A string containing characters to separate the date and the rest of the formatted log message. Will be ignored if <tt class=" ">include-date=false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">date-format</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The date format to use for the timestamp as understood by <tt class=" ">java.text.SimpleDateFormat</tt>. Will be ignored if <tt class=" ">include-date=false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">compact</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+If true will format the JSON on one line. There may still be values containing new lines, so if having the whole record on one line is important, set escape-new-line or escape-control-characters to true    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">escape-control-characters</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+If <tt class=" ">true</tt> it will escape all control characters (ascii entries with a decimal value &lt; 32) with the ascii code in octal, e.g. a new line becomes '#012'. If this is <tt class=" ">true</tt>, it will override <tt class=" ">escape-new-line=false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">escape-new-line</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+If <tt class=" ">true</tt> it will escape all new lines with the ascii code in octal, e.g. &quot;#012&quot;.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-Handlers"  >
+        <h3>Handlers</h3>
+    
+    <p>
+A handler is responsible for taking the formatted data and logging it to a location. There are currently two types of handlers, File and Syslog. You can configure several of each type of handler and use them to log information.    </p>
+    <div class="section-4"  id="80873114_Managementtasks-Filehandler"  >
+        <h4>File handler</h4>
+    
+    <p>
+The file handlers log the audit log records to a file on the server. The attributes for the file handler are    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Read Only    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">formatter</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of a JSON formatter to use to format the log records    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">path</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The path of the audit log file    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">relative-to</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of another previously named path, or of one of the standard paths provided by the system. If <tt class=" ">relative-to</tt> is provided, the value of the <tt class=" ">path</tt> attribute is treated as relative to the path specified by this attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">failure-count</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The number of logging failures since the handler was initialized    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">max-failure-count</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The maximum number of logging failures before disabling this handler    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">disabled-due-to-failure</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> if this handler was disabled due to logging failures    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt>    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+In our standard configuration <tt class=" ">path=audit-log.log</tt> and <tt class=" ">relative-to=jboss.server.data.dir</tt>, typically this will be <tt class=" ">$JBOSS_HOME/standalone/data/audit-log.log</tt>    </p>
+    </div>
+    
+    <div class="section-4"  id="80873114_Managementtasks-Sysloghandler"  >
+        <h4>Syslog handler</h4>
+    
+    <p>
+The default configuration does not have syslog audit logging set up. Syslog is a better choice for audit logging since you can log to a remote syslog server, and secure the authentication to happen over TLS with client certificate authentication. Syslog servers vary a lot in their capabilities so not all settings in this section apply to all syslog servers. We have tested with <a href="http://www.rsyslog.com">rsyslog</a>.    </p>
+    <p>
+The address for the syslog handler is <tt class=" ">/core-service=management/access=audit/syslog-handler=*</tt> and just like file handlers you can add as many syslog entries as you like. The syslog handler resources reference the main RFC's for syslog a fair bit, for reference they can be found at:<br/>*<a href="http://www.ietf.org/rfc/rfc3164.txt">http://www.ietf.org/rfc/rfc3164.txt</a><br/>*<a href="http://www.ietf.org/rfc/rfc5424.txt">http://www.ietf.org/rfc/rfc5424.txt</a><br/>*<a href="http://www.ietf.org/rfc/rfc6587.txt">http://www.ietf.org/rfc/rfc6587.txt</a>    </p>
+    <p>
+The syslog handler resource has the following attributes:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">formatter</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of a JSON formatter to use to format the log records    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">failure-count</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The number of logging failures since the handler was initialized    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">max-failure-count</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The maximum number of logging failures before disabling this handler    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">disabled-due-to-failure</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> if this handler was disabled due to logging failures    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">syslog-format</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Whether to set the syslog format to the one specified in RFC-5424 or RFC-3164    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">max-length</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The maximum length in bytes a log message, including the header, is allowed to be. If undefined, it will default to 1024 bytes if the syslog-format is RFC3164, or 2048 bytes if the syslog-format is RFC5424.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">false</tt>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">truncate</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Whether or not a message, including the header, should truncate the message if the length in bytes is greater than the maximum length. If set to false messages will be split and sent with the same header values    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">false</tt>    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+When adding a syslog handler you also need to add the protocol it will use to communicate with the syslog server. The valid choices for protocol are <tt class=" ">UDP</tt>,<tt class=" ">TCP</tt> and <tt class=" ">TLS</tt>. The protocol must be added at the same time as you add the syslog handler, or it will fail. Also, you can only add one protocol for the handler.    </p>
+    <div class="section-5"  id="80873114_Managementtasks-UDP"  >
+        <h5>UDP</h5>
+    
+    <p>
+Configures the handler to use UDP to communicate with the syslog server. The address of the <tt class=" ">UDP</tt> resource is <tt class=" ">/core-service=management/access=audit/syslog-handler=*/protocol=udp</tt>. The attributes of the <tt class=" ">UDP</tt> resource are:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">host</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The host of the syslog server for the udp requests    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">port</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The port of the syslog server listening for the udp requests    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    <div class="section-5"  id="80873114_Managementtasks-TCP"  >
+        <h5>TCP</h5>
+    
+    <p>
+Configures the handler to use TCP to communicate with the syslog server. The address of the <tt class=" ">TCP</tt> resource is <tt class=" ">/core-service=management/access=audit/syslog-handler=*/protocol=tcp</tt>. The attributes of the <tt class=" ">TCP</tt> resource are:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">host</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The host of the syslog server for the tcp requests    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">port</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The port of the syslog server listening for the tcp requests    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">message-transfer</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The message transfer setting as described in section 3.4 of RFC-6587. This can either be OCTET_COUNTING as described in section 3.4.1 of RFC-6587, or NON_TRANSPARENT_FRAMING as described in section 3.4.1 of RFC-6587    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    <div class="section-5"  id="80873114_Managementtasks-TLS"  >
+        <h5>TLS</h5>
+    
+    <p>
+Configures the handler to use TLC to communicate securely with the syslog server. The address of the <tt class=" ">TLS</tt> resource is <tt class=" ">/core-service=management/access=audit/syslog-handler=*/protocol=tls</tt>. The attributes of the <tt class=" ">TLS</tt> resource are the same as for <tt class=" ">TCP</tt>:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">host</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The host of the syslog server for the tls requests    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">port</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The port of the syslog server listening for the tls requests    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">message-transfer</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The message transfer setting as described in section 3.4 of RFC-6587. This can either be OCTET_COUNTING as described in section 3.4.1 of RFC-6587, or NON_TRANSPARENT_FRAMING as described in section 3.4.1 of RFC-6587    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+If the syslog server's TLS certificate is not signed by a certificate signing authority, you will need to set up a truststore to trust the certificate. The resource for the trust store is a child of the <tt class=" ">TLS</tt> resource, and the full address is <tt class=" ">/core-service=management/access=audit/syslog-handler=*/protocol=tls/authentication=truststore</tt>. The attributes of the truststore resource are:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">keystore-password</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The password for the truststore    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">keystore-path</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The path of the truststore    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">keystore-relative-to</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of another previously named path, or of one of the standard paths provided by the system. If <tt class=" ">keystore-relative-to</tt> is provided, the value of the <tt class=" ">keystore-path</tt> attribute is treated as relative to the path specified by this attribute    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <div class="section-6"  id="80873114_Managementtasks-TLSwithClientcertificateauthentication."  >
+        <h6>TLS with Client certificate authentication.</h6>
+    
+    <p>
+If you have set up the syslog server to require client certificate authentication, when creating your handler you will also need to set up a client certificate store containing the certificate to be presented to the syslog server. The address of the client certificate store resource is <tt class=" ">/core-service=management/access=audit/syslog-handler=*/protocol=tls/authentication=client-certificate-store</tt> and its attributes are:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">keystore-password</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The password for the keystore    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">key-password</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The password for the keystore key    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">keystore-path</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The path of the keystore    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">keystore-relative-to</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of another previously named path, or of one of the standard paths provided by the system. If <tt class=" ">keystore-relative-to</tt> is provided, the value of the <tt class=" ">keystore-path</tt> attribute is treated as relative to the path specified by this attribute    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-Loggerconfiguration"  >
+        <h3>Logger configuration</h3>
+    
+    <p>
+The final part that needs configuring is the logger for the management operations. This references one or more handlers and is configured at <tt class=" ">/core-service=management/access=audit/logger=audit-log</tt>. The attributes for this resource are:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">enabled</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> to enable logging of the management operations    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">log-boot</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> to log the management operations when booting the server, <tt class=" ">false</tt> otherwise    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">log-read-only</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+If <tt class=" ">true</tt> all operations will be audit logged, if <tt class=" ">false</tt> only operations that change the model will be logged    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+Then which handlers are used to log the management operations are configured as <tt class=" ">handler=*</tt> children of the logger.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-DomainMode%28hostspecificconfiguration%29"  >
+        <h3>Domain Mode (host specific configuration)</h3>
+    
+    <p>
+In domain mode audit logging is configured for each host in its <tt class=" ">host.xml</tt> file. This means that when connecting to the DC, the configuration of the audit logging is under the host's entry, e.g. here is the default configuration:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /host=master/core-service=management/access=audit:read-resource(recursive=true)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;file-handler&quot; =&gt; {
+            &quot;host-file&quot; =&gt; {
+                &quot;formatter&quot; =&gt; &quot;json-formatter&quot;,
+                &quot;max-failure-count&quot; =&gt; 10,
+                &quot;path&quot; =&gt; &quot;audit-log.log&quot;,
+                &quot;relative-to&quot; =&gt; &quot;jboss.domain.data.dir&quot;
+            },
+            &quot;server-file&quot; =&gt; {
+                &quot;formatter&quot; =&gt; &quot;json-formatter&quot;,
+                &quot;max-failure-count&quot; =&gt; 10,
+                &quot;path&quot; =&gt; &quot;audit-log.log&quot;,
+                &quot;relative-to&quot; =&gt; &quot;jboss.server.data.dir&quot;
+            }
+        },
+        &quot;json-formatter&quot; =&gt; {&quot;json-formatter&quot; =&gt; {
+            &quot;compact&quot; =&gt; false,
+            &quot;date-format&quot; =&gt; &quot;yyyy-MM-dd HH:mm:ss&quot;,
+            &quot;date-separator&quot; =&gt; &quot; - &quot;,
+            &quot;escape-control-characters&quot; =&gt; false,
+            &quot;escape-new-line&quot; =&gt; false,
+            &quot;include-date&quot; =&gt; true
+        }},
+        &quot;logger&quot; =&gt; {&quot;audit-log&quot; =&gt; {
+            &quot;enabled&quot; =&gt; false,
+            &quot;log-boot&quot; =&gt; true,
+            &quot;log-read-only&quot; =&gt; false,
+            &quot;handler&quot; =&gt; {&quot;host-file&quot; =&gt; {}}
+        }},
+        &quot;server-logger&quot; =&gt; {&quot;audit-log&quot; =&gt; {
+            &quot;enabled&quot; =&gt; false,
+            &quot;log-boot&quot; =&gt; true,
+            &quot;log-read-only&quot; =&gt; false,
+            &quot;handler&quot; =&gt; {&quot;server-file&quot; =&gt; {}}
+        }},
+        &quot;syslog-handler&quot; =&gt; undefined
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+We now have two file handlers, one called <tt class=" ">host-file</tt> used to configure the file to log management operations on the host, and one called <tt class=" ">server-file</tt> used to log management operations executed on the servers. Then <tt class=" ">logger=audit-log</tt> is used to configure the logger for the host controller, referencing the <tt class=" ">host-file</tt> handler. <tt class=" ">server-logger=audit-log</tt> is used to configure the logger for the managed servers, referencing the <tt class=" ">server-file</tt> handler. The attributes for <tt class=" ">server-logger=audit-log</tt> are the same as for <tt class=" ">server-logger=audit-log</tt> in the previous section. Having the host controller and server loggers configured independently means we can control audit logging for managed servers and the host controller independently.&nbsp;    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873114_Managementtasks-Cancelingmanagementoperations"  >
+        <h2>Canceling management operations</h2>
+    
+    <p>
+WildFly 9 includes the ability to use the CLI to cancel management requests that are not proceeding normally.    </p>
+    <div class="section-3"  id="80873114_Managementtasks-The%7B%7Bcancelnonprogressingoperation%7D%7Doperation"  >
+        <h3>The  cancel-non-progressing-operation  operation</h3>
+    
+    <p>
+The <tt class=" ">cancel-non-progressing-operation</tt> operation instructs the target process to find any operation that isn't proceeding normally and cancel it.    </p>
+    <p>
+On a standalone server:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations:cancel-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; &quot;-1155777943&quot;
+}</pre>
+        </div>
+    </div>
+    <p>
+The result value is an internal identification number for the operation that was cancelled.    </p>
+    <p>
+On a managed domain host controller, the equivalent resource is in the host=&lt;hostname&gt; portion of the management resource tree:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /host=host-a/core-service=management/service=management-operations:cancel-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; &quot;2156877946&quot;
+}</pre>
+        </div>
+    </div>
+    <p>
+An operation can be cancelled on an individual managed domain server as well:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /host=host-a/server=server-one/core-service=management/service=management-operations:cancel-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; &quot;6497786512&quot;
+}</pre>
+        </div>
+    </div>
+    <p>
+An operation is considered to be not proceeding normally if it has been executing with the exclusive operation lock held for longer than 15 seconds. Read-only operations do not acquire the exclusive operation lock, so this operation will not cancel read-only operations. Operations blocking waiting for another operation to release the exclusive lock will also not be cancelled.    </p>
+    <p>
+If there isn't any operation that is failing to proceed normally, there will be a failure response:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations:cancel-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;failed&quot;,
+    &quot;failure-description&quot; =&gt; &quot;WFLYDM0089: No operation was found that has been holding the operation execution write lock for long than [15] seconds&quot;,
+    &quot;rolled-back&quot; =&gt; true
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-The%7B%7Bfindnonprogressingoperation%7D%7Doperation"  >
+        <h3>The  find-non-progressing-operation  operation</h3>
+    
+    <p>
+To simply learn the id of an operation that isn't proceeding normally, but not cancel it, use the <tt class=" ">find-non-progressing-operation</tt> operation:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations:find-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; &quot;-1155777943&quot;
+}</pre>
+        </div>
+    </div>
+    <p>
+If there is no non-progressing operation, the outcome will still be <tt class=" ">success</tt> but the result will be <tt class=" ">undefined</tt>.    </p>
+    <p>
+Once the id of the operation is known, the management resource for the operation can be examined to learn more about its status.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-Examiningthestatusofanactiveoperation"  >
+        <h3>Examining the status of an active operation</h3>
+    
+    <p>
+There is a management resource for any currently executing operation that can be queried:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations/active-operation=-1155777943:read-resource(include-runtime=true)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;access-mechanism&quot; =&gt; &quot;undefined&quot;,
+        &quot;address&quot; =&gt; [
+            (&quot;deployment&quot; =&gt; &quot;example&quot;)
+        ],
+        &quot;caller-thread&quot; =&gt; &quot;management-handler-thread - 24&quot;,
+        &quot;cancelled&quot; =&gt; false,
+        &quot;exclusive-running-time&quot; =&gt; 101918273645L,
+        &quot;execution-status&quot; =&gt; &quot;awaiting-stability&quot;,
+        &quot;operation&quot; =&gt; &quot;deploy&quot;,
+        &quot;running-time&quot; =&gt; 101918279999L
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+The response includes the following attributes:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Field    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Meaning    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+access-mechanism    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The mechanism used to submit a request to the server. NATIVE, JMX, HTTP    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+address    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The address of the resource targeted by the operation. The value in the final element of the address will be '&lt;hidden&gt;' if the caller is not authorized to address the operation's target resource.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+caller-thread    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of the thread that is executing the operation.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+cancelled    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Whether the operation has been cancelled.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+exclusive-running-time    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Amount of time in nanoseconds the operation has been executing with the exclusive operation execution lock held, or -1 if the operation does not hold the exclusive execution lock.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+execution-status    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The current activity of the operation. See below for details.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+operation    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of the operation, or '&lt;hidden&gt;' if the caller is not authorized to address the operation's target resource.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+running-time    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Amount of time the operation has been executing, in nanoseconds.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+The following are the values for the <tt class=" ">exclusive-running-time</tt> attribute:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Value    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Meaning    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+executing    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The caller thread is actively executing    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+awaiting-other-operation    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The caller thread is blocking waiting for another operation to release the exclusive execution lock    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+awaiting-stability    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The caller thread has made changes to the service container and is waiting for the service container to stabilize    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+completing    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The operation is committed and is completing execution    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+rolling-back    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The operation is rolling back    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+All currently executing operations can be viewed in one request using the <tt class=" ">read-children-resources</tt> operation:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations:read-children-resources(child-type=active-operation)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {&quot;-1155777943&quot; =&gt; {
+        &quot;access-mechanism&quot; =&gt; &quot;undefined&quot;,
+        &quot;address&quot; =&gt; [
+            (&quot;deployment&quot; =&gt; &quot;example&quot;)
+        ],
+        &quot;caller-thread&quot; =&gt; &quot;management-handler-thread - 24&quot;,
+        &quot;cancelled&quot; =&gt; false,
+        &quot;exclusive-running-time&quot; =&gt; 101918273645L,
+        &quot;execution-status&quot; =&gt; &quot;awaiting-stability&quot;,
+        &quot;operation&quot; =&gt; &quot;deploy&quot;,
+        &quot;running-time&quot; =&gt; 101918279999L
+    },
+    {&quot;-1246693202&quot; =&gt; {
+        &quot;access-mechanism&quot; =&gt; &quot;undefined&quot;,
+        &quot;address&quot; =&gt; [
+            (&quot;core-service&quot; =&gt; &quot;management&quot;),
+            (&quot;service&quot; =&gt; &quot;management-operations&quot;)
+        ],
+        &quot;caller-thread&quot; =&gt; &quot;management-handler-thread - 30&quot;,
+        &quot;cancelled&quot; =&gt; false,
+        &quot;exclusive-running-time&quot; =&gt; -1L,
+        &quot;execution-status&quot; =&gt; &quot;executing&quot;,
+        &quot;operation&quot; =&gt; &quot;read-children-resources&quot;,
+        &quot;running-time&quot; =&gt; 3356000L
+    }}
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-Cancelingaspecificoperation"  >
+        <h3>Canceling a specific operation</h3>
+    
+    <p>
+The <tt class=" ">cancel-non-progressing-operation</tt> operation is a convenience operation for identifying and canceling an operation. However, an administrator can examine the active-operation resources to identify any operation, and then directly cancel it by invoking the <tt class=" ">cancel</tt> operation on the resource for the desired operation.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations/active-operation=-1155777943:cancel
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-Controllingoperationblockingtime"  >
+        <h3>Controlling operation blocking time</h3>
+    
+    <p>
+As an operation executes, the execution thread may block at various points, particularly while waiting for the service container to stabilize following any changes. Since an operation may be holding the exclusive execution lock while blocking, in WildFly 9 execution behavior was changed to ensure that blocking will eventually time out, resulting in roll back of the operation.    </p>
+    <p>
+The default blocking timeout is 300 seconds. This is intentionally long, as the idea is to only trigger a timeout when something has definitely gone wrong with the operation, without any false positives.    </p>
+    <p>
+An administrator can control the blocking timeout for an individual operation by using the <tt class=" ">blocking-timeout</tt> operation header. For example, if a particular deployment is known to take an extremely long time to deploy, the default 300 second timeout could be increased:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] deploy /tmp/mega.war --headers={blocking-timeout=450}</pre>
+        </div>
+    </div>
+    <p>
+Note the blocking timeout is <strong class=" ">not</strong> a guaranteed maximum execution time for an operation. If it only a timeout that will be enforced at various points during operation execution.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873114_Managementtasks-Configurationfilehistory"  >
+        <h2>Configuration file history</h2>
+    
+    <p>
+The management operations may modify the model. When this occurs the xml backing the model is written out again reflecting the latest changes. In addition a full history of the file is maintained. The history of the file goes in a separate directory under the configuration directory.    </p>
+    <p>
+As mentioned in <a href="https://docs.jboss.org/author/display/AS7/Command+line+parameters#Commandlineparameters-parameters">Command line parameters#parameters</a> the default configuration file can be selected using a command-line parameter. For a standalone server instance the history of the active <tt class=" ">standalone.xml</tt> is kept in <tt class=" ">jboss.server.config.dir</tt>/standalone_xml_history (See <a href="https://docs.jboss.org/author/display/AS7/Command+line+parameters#Commandlineparameters-standalonesystemproperties">Command line parameters#standalone_system_properties</a> for more details). For a domain the active <tt class=" ">domain.xml</tt> and <tt class=" ">host.xml</tt> histories are kept in <tt class=" ">jboss.domain.config.dir</tt>/domain_xml_history and <tt class=" ">jboss.domain.config.dir</tt>/host_xml_history.    </p>
+    <p>
+The rest of this section will only discuss the history for <tt class=" ">standalone.xml</tt>. The concepts are exactly the same for <tt class=" ">domain.xml</tt> and <tt class=" ">host.xml</tt>.    </p>
+    <p>
+Within <tt class=" ">standalone_xml_history</tt> itself following a successful first time boot we end up with three new files:<br/>*<tt class=" ">standalone.initial.xml</tt> - This contains the original configuration that was used the first time we successfully booted. This file will never be overwritten. You may of course delete the history directory and any files in it at any stage.<br/>*<tt class=" ">standalone.boot.xml</tt> - This contains the original configuration that was used for the last successful boot of the server. This gets overwritten every time we boot the server successfully.<br/>*<tt class=" ">standalone.last.xml</tt> - At this stage the contents will be identical to <tt class=" ">standalone.boot.xml.&nbsp; This file gets overwritten each time the server successfully writes the configuration, if there was an unexpected failure writing the configuration this file is the last known successful write.</tt>    </p>
+    <p>
+<tt class=" ">standalone_xml_history</tt> contains a directory called <tt class=" ">current</tt> which should be empty. Now if we execute a management operation that modifies the model, for example adding a new system property using the CLI:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] /system-property=test:add(value=&quot;test123&quot;)
+{&quot;outcome&quot; =&gt; &quot;success&quot;}</pre>
+        </div>
+    </div>
+    <p>
+What happens is:    </p>
+<ul class=" "><li class=" ">    <p>
+The original configuration file is backed up to <tt class=" ">standalone_xml_history/current/standalone.v1.xml</tt>. The next change to the model would result in a file called <tt class=" ">standalone.v2.xml</tt> etc. The 100 most recent of these files are kept.    </p>
+</li><li class=" ">    <p>
+The change is applied to the original configuration file    </p>
+</li><li class=" ">    <p>
+The changed original configuration file is copied to <tt class=" ">standalone.last.xml</tt>    </p>
+</li></ul>    <p>
+When restarting the server, any existing <tt class=" ">standalone_xml_history/current</tt> directory is moved to a new timestamped folder within the <tt class=" ">standalone_xml_history</tt>, and a new <tt class=" ">current</tt> folder is created. These timestamped folders are kept for 30 days.    </p>
+    <div class="section-3"  id="80873114_Managementtasks-Snapshots"  >
+        <h3>Snapshots</h3>
+    
+    <p>
+In addition to the backups taken by the server as described above you can manually take take snapshots which will be stored in the <tt class=" ">snapshot</tt> folder under the <tt class=" ">_xml_history</tt> folder, the automatic backups described above are subject to automatic house keeping so will eventually be automatically removed, the snapshots on the other hand can be entirely managed by the administrator.    </p>
+    <p>
+You may also take your own snapshots using the CLI:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] :take-snapshot
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {&quot;name&quot; =&gt; &quot;/Users/kabir/jboss-7.0.0.CR1/standalone/configuration/standalone_xml_history/snapshot/20110630-172258657standalone.xml&quot;}
+}</pre>
+        </div>
+    </div>
+    <p>
+You can also use the CLI to list all the snapshots    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] :list-snapshots
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;directory&quot; =&gt; &quot;/Users/kabir/jboss-7.0.0.CR1/standalone/configuration/standalone_xml_history/snapshot&quot;,
+        &quot;names&quot; =&gt; [
+            &quot;20110630-165714239standalone.xml&quot;,
+            &quot;20110630-165821795standalone.xml&quot;,
+            &quot;20110630-170113581standalone.xml&quot;,
+            &quot;20110630-171411463standalone.xml&quot;,
+            &quot;20110630-171908397standalone.xml&quot;,
+            &quot;20110630-172258657standalone.xml&quot;
+        ]
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+&nbsp;To delete a particular snapshot:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] :delete-snapshot(name=&quot;20110630-165714239standalone.xml&quot;)
+{&quot;outcome&quot; =&gt; &quot;success&quot;}</pre>
+        </div>
+    </div>
+    <p>
+and to delete all snapshots:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] :delete-snapshot(name=&quot;all&quot;)
+{&quot;outcome&quot; =&gt; &quot;success&quot;}</pre>
+        </div>
+    </div>
+    <p>
+In domain mode executing the snapshot operations against the root node will work against the domain model. To do this for a host model you need to navigate to the host in question:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] /host=master:list-snapshots
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;domain-results&quot; =&gt; {&quot;step-1&quot; =&gt; {
+            &quot;directory&quot; =&gt; &quot;/Users/kabir/jboss-7.0.0.CR1/domain/configuration/host_xml_history/snapshot&quot;,
+            &quot;names&quot; =&gt; [
+                &quot;20110630-141129571host.xml&quot;,
+                &quot;20110630-172522225host.xml&quot;
+            ]
+        }},
+        &quot;server-operations&quot; =&gt; undefined
+    }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873114_Managementtasks-SubsequentStarts"  >
+        <h3>Subsequent Starts</h3>
+    
+    <p>
+For subsequent server starts it may be desirable to take the state of the server back to one of the previously known states, for a number of items an abbreviated reverence to the file can be used: -    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Abreviation    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Parameter    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">initial</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=initial</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This will start the server using the initial configuration first used to start the server.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">boot</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=boot</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This will use the configuration from the last successful boot of the server.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">last</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=last</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This will start the server using the configuration backed up from the last successful save.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">v?</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=v?</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This will server the _xml_history/current folder for the configuration where ? is the number of the backup to use.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">????</tt>    <cite>
+<tt class=" "></tt>    </cite>
+<tt class=" ">-</tt>    <cite>
+<tt class=" "></tt>    </cite>
+<tt class=" ">?????</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=????</tt>    <cite>
+<tt class=" "></tt>    </cite>
+<tt class=" ">-</tt>    <cite>
+<tt class=" "></tt>    </cite>
+<tt class=" ">?????</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The server will be started after searching the snapshot folder for the configuration which matches this prefix.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+In addition to this the <tt class=" ">--server-config</tt> parameter can always be used to specify a configuration relative to the <tt class=" ">jboss.server.config.dir</tt> and finally if no matching configuration is found an attempt to locate the configuration as an absolute path will be made.    </p>
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                    <li class="previous"><a accesskey="p" href="Default_Native_Interface_Security.html"><strong>Prev</strong>Default Native Interface Security</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="next"><a accesskey="n" href="Application_deployment.html"><strong>Next</strong>Application deployment</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

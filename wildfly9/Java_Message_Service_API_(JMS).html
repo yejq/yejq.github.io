@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Java Message Service API (JMS) - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="previous"><a accesskey="p" href="Bean_Validation.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="JavaEE_Connector_Architecture_(JCA).html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
+                    <div>
+            <h1>Java Message Service API (JMS)</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <div class="confbox admonition admonition-note">
+            <div class="title">Coming Soon</div>
+        
+    <p>
+This guide is still under development, check back soon!    </p>
+    </div>
+    
+<ul class=" "><li class=" ">    <p>
+<a href="Java_Message_Service_API_(JMS).html#80873432_JavaMessageServiceAPI%28JMS%29-ConfigureJBossASforMessaging">Configure JBossAS for Messaging</a>    </p>
+</li><li class=" ">    <p>
+<a href="Java_Message_Service_API_(JMS).html#80873432_JavaMessageServiceAPI%28JMS%29-Addingthemessagedestinations">Adding the message destinations</a>    </p>
+</li></ul>    <div class="section-2"  id="80873432_JavaMessageServiceAPI%28JMS%29-ConfigureJBossASforMessaging"  >
+        <h2>Configure JBossAS for Messaging</h2>
+    
+    <p>
+Currently, the default configuration does not include the JMS subsystem. To enable JMS in the standalone server you need to add these configuration items to standalone.xml or simply use standalone-full.xml.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;extension module=&quot;org.jboss.as.messaging&quot;/&gt;
+
+&lt;subsystem xmlns=&quot;urn:jboss:domain:messaging:1.0&quot;&gt;
+    &lt;!-- Default journal file size is 10Mb, reduced here to 100k for faster first boot --&gt;
+    &lt;journal-file-size&gt;102400&lt;/journal-file-size&gt;
+    &lt;journal-min-files&gt;2&lt;/journal-min-files&gt;
+    &lt;journal-type&gt;NIO&lt;/journal-type&gt;
+    &lt;!-- disable messaging persistence --&gt;
+    &lt;persistence-enabled&gt;false&lt;/persistence-enabled&gt;
+
+    &lt;connectors&gt;
+       &lt;netty-connector name=&quot;netty&quot; socket-binding=&quot;messaging&quot; /&gt;
+       &lt;netty-connector name=&quot;netty-throughput&quot; socket-binding=&quot;messaging-throughput&quot;&gt;
+          &lt;param key=&quot;batch-delay&quot; value=&quot;50&quot;/&gt;
+       &lt;/netty-connector&gt;
+       &lt;in-vm-connector name=&quot;in-vm&quot; server-id=&quot;0&quot; /&gt;
+    &lt;/connectors&gt;
+
+    &lt;acceptors&gt;
+       &lt;netty-acceptor name=&quot;netty&quot; socket-binding=&quot;messaging&quot; /&gt;
+       &lt;netty-acceptor name=&quot;netty-throughput&quot; socket-binding=&quot;messaging-throughput&quot;&gt;
+          &lt;param key=&quot;batch-delay&quot; value=&quot;50&quot;/&gt;
+          &lt;param key=&quot;direct-deliver&quot; value=&quot;false&quot;/&gt;
+       &lt;/netty-acceptor&gt;
+        &lt;acceptor name=&quot;stomp-acceptor&quot;&gt;
+         &lt;factory-class&gt;org.hornetq.core.remoting.impl.netty.NettyAcceptorFactory&lt;/factory-class&gt;
+         &lt;param key=&quot;protocol&quot; value=&quot;stomp&quot; /&gt;
+         &lt;param key=&quot;port&quot; value=&quot;61613&quot; /&gt;
+       &lt;/acceptor&gt;
+       &lt;in-vm-acceptor name=&quot;in-vm&quot; server-id=&quot;0&quot; /&gt;
+    &lt;/acceptors&gt;
+
+    &lt;security-settings&gt;
+       &lt;security-setting match=&quot;#&quot;&gt;
+           &lt;permission type=&quot;createNonDurableQueue&quot; roles=&quot;guest&quot;/&gt;
+           &lt;permission type=&quot;deleteNonDurableQueue&quot; roles=&quot;guest&quot;/&gt;
+            &lt;permission type=&quot;consume&quot; roles=&quot;guest&quot;/&gt;
+            &lt;permission type=&quot;send&quot; roles=&quot;guest&quot;/&gt;
+       &lt;/security-setting&gt;
+    &lt;/security-settings&gt;
+
+    &lt;address-settings&gt;
+       &lt;!--default for catch all--&gt;
+       &lt;address-setting match=&quot;#&quot;&gt;
+          &lt;dead-letter-address&gt;jms.queue.DLQ&lt;/dead-letter-address&gt;
+          &lt;expiry-address&gt;jms.queue.ExpiryQueue&lt;/expiry-address&gt;
+          &lt;redelivery-delay&gt;0&lt;/redelivery-delay&gt;
+          &lt;max-size-bytes&gt;10485760&lt;/max-size-bytes&gt;
+          &lt;message-counter-history-day-limit&gt;10&lt;/message-counter-history-day-limit&gt;
+          &lt;address-full-policy&gt;BLOCK&lt;/address-full-policy&gt;
+       &lt;/address-setting&gt;
+    &lt;/address-settings&gt;
+
+    &lt;!--JMS Stuff--&gt;
+   &lt;jms-connection-factories&gt;
+      &lt;connection-factory name=&quot;InVmConnectionFactory&quot;&gt;
+         &lt;connectors&gt;
+            &lt;connector-ref connector-name=&quot;in-vm&quot;/&gt;
+         &lt;/connectors&gt;
+         &lt;entries&gt;
+            &lt;entry name=&quot;java:/ConnectionFactory&quot;/&gt;
+         &lt;/entries&gt;
+      &lt;/connection-factory&gt;
+      &lt;connection-factory name=&quot;RemoteConnectionFactory&quot;&gt;
+         &lt;connectors&gt;
+            &lt;connector-ref connector-name=&quot;netty&quot;/&gt;
+         &lt;/connectors&gt;
+         &lt;entries&gt;
+            &lt;entry name=&quot;RemoteConnectionFactory&quot;/&gt;
+         &lt;/entries&gt;
+      &lt;/connection-factory&gt;
+      &lt;pooled-connection-factory name=&quot;hornetq-ra&quot;&gt;
+         &lt;transaction mode=&quot;xa&quot;/&gt;
+         &lt;connectors&gt;
+            &lt;connector-ref connector-name=&quot;in-vm&quot;/&gt;
+         &lt;/connectors&gt;
+         &lt;entries&gt;
+            &lt;entry name=&quot;java:/JmsXA&quot;/&gt;
+            &lt;!-- Global JNDI entry used to provide a default JMS Connection factory to EE application --&gt;
+            &lt;entry name=&quot;java:jboss/DefaultJMSConnectionFactory&quot;/&gt;
+         &lt;/entries&gt;
+      &lt;/pooled-connection-factory&gt;
+   &lt;/jms-connection-factories&gt;
+
+   &lt;jms-destinations&gt;
+      &lt;jms-queue name=&quot;testQueue&quot;&gt;
+         &lt;entry name=&quot;queue/test&quot;/&gt;
+      &lt;/jms-queue&gt;
+      &lt;jms-topic name=&quot;testTopic&quot;&gt;
+         &lt;entry name=&quot;topic/test&quot;/&gt;
+      &lt;/jms-topic&gt;
+   &lt;/jms-destinations&gt;
+&lt;/subsystem&gt;
+
+&lt;socket-binding name=&quot;messaging&quot; port=&quot;5445&quot; /&gt;
+&lt;socket-binding name=&quot;messaging-throughput&quot; port=&quot;5455&quot;/&gt;</pre>
+        </div>
+    </div>
+    <p>
+Alternatively run the server using the preview configuration    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$ bin/standalone.sh --server-config=standalone-preview.xml</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="80873432_JavaMessageServiceAPI%28JMS%29-Addingthemessagedestinations"  >
+        <h2>Adding the message destinations</h2>
+    
+    <p>
+For this tutorial we use two message destinations    </p>
+<ul class=" "><li class=" ">    <p>
+BidQueue - The queue that receives the client bids    </p>
+</li><li class=" ">    <p>
+AuctionTopic - The topic that publishes the start of a new auction    </p>
+</li></ul>    <p>
+You can either add the message destinations by using the Command Line Interface (CLI)    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$ bin/jboss-admin.sh --connect
+Connected to standalone controller at localhost:9999
+[standalone@localhost:9999 /] jms-queue add --queue-address=BidQueue --entries=queue/bid
+[standalone@localhost:9999 /] jms-topic add --topic-address=AuctionTopic --entries=topic/auction
+[standalone@localhost:9999 /] exit
+Closed connection to localhost:9999</pre>
+        </div>
+    </div>
+    <p>
+or by adding them to the subsytem configuration as shown above.    </p>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="previous"><a accesskey="p" href="Bean_Validation.html"><strong>Prev</strong>Bean Validation</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="next"><a accesskey="n" href="JavaEE_Connector_Architecture_(JCA).html"><strong>Next</strong>JavaEE Connector Architecture (JCA)</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reliable Messaging - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="previous"><a accesskey="p" href="SAML_Holder-Of-Key_Assertion_Scenario.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="next"><a accesskey="n" href="SOAP_over_JMS.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                    <div>
+            <h1>Reliable Messaging</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+JBoss Web Services inherits full WS-Reliable Messaging capabilities from the  underlying Apache CXF implementation. At the time of writing, Apache CXF provides support for the <a href="http://schemas.xmlsoap.org/ws/2005/02/rm/">WS-Reliable Messaging 1.0</a> (February 2005) version of the specification.    </p>
+    <div class="section-2"  id="80873269_WS-ReliableMessaging-EnablingWSReliableMessaging"  >
+        <h2>Enabling WS-Reliable Messaging</h2>
+    
+    <p>
+WS-Reliable Messaging is implemented internally in Apache CXF through a set of interceptors that deal with the low level requirements of the reliable messaging protocol. In order for enabling WS-Reliable Messaging, users need to either:    </p>
+<ul class=" "><li class=" ">    <p>
+consume a WSDL contract that specifies proper WS-Reliable Messaging policies / assertions    </p>
+</li><li class=" ">    <p>
+manually add / configure the reliable messaging interceptors    </p>
+</li><li class=" ">    <p>
+specify the reliable messaging policies in an optional CXF Spring XML descriptor    </p>
+</li><li class=" ">    <p>
+specify the Apache CXF reliable messaging feature in an optional CXF Spring XML descriptor    </p>
+</li></ul>    <p>
+The former approach relies on the Apache CXF WS-Policy engine and is the only portable one. The other approaches are Apache CXF proprietary ones, however they allow for fine-grained configuration of protocol aspects that are not covered by the WS-Reliable Messaging Policy. More details are available in the <a href="http://cxf.apache.org/docs/wsrmconfiguration.html">Apache CXF documentation</a>.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873269_WS-ReliableMessaging-Example"  >
+        <h2>Example</h2>
+    
+    <p>
+In this example we configure WS-Reliable Messaging endpoint and client through the WS-Policy support.    </p>
+    <div class="section-3"  id="80873269_WS-ReliableMessaging-Endpoint"  >
+        <h3>Endpoint</h3>
+    
+    <p>
+We go with a contract-first approach, so we start by creating a proper WSDL contract, containing the WS-Reliable Messaging and WS-Addressing policies (the latter is a requirement of the former):    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;wsdl:definitions name=&quot;SimpleService&quot; targetNamespace=&quot;http://www.jboss.org/jbossws/ws-extensions/wsrm&quot;
+  xmlns:tns=&quot;http://www.jboss.org/jbossws/ws-extensions/wsrm&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+  xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot;
+  xmlns:wsp=&quot;http://www.w3.org/2006/07/ws-policy&quot;&gt;
+
+  &lt;wsdl:types&gt;
+&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://www.jboss.org/jbossws/ws-extensions/wsrm&quot;
+  attributeFormDefault=&quot;unqualified&quot; elementFormDefault=&quot;unqualified&quot;
+  targetNamespace=&quot;http://www.jboss.org/jbossws/ws-extensions/wsrm&quot;&gt;
+&lt;xsd:element name=&quot;ping&quot; type=&quot;tns:ping&quot;/&gt;
+&lt;xsd:complexType name=&quot;ping&quot;&gt;
+&lt;xsd:sequence/&gt;
+&lt;/xsd:complexType&gt;
+&lt;xsd:element name=&quot;echo&quot; type=&quot;tns:echo&quot;/&gt;
+&lt;xsd:complexType name=&quot;echo&quot;&gt;
+&lt;xsd:sequence&gt;
+&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;arg0&quot; type=&quot;xsd:string&quot;/&gt;
+&lt;/xsd:sequence&gt;
+&lt;/xsd:complexType&gt;
+&lt;xsd:element name=&quot;echoResponse&quot; type=&quot;tns:echoResponse&quot;/&gt;
+&lt;xsd:complexType name=&quot;echoResponse&quot;&gt;
+&lt;xsd:sequence&gt;
+&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;return&quot; type=&quot;xsd:string&quot;/&gt;
+&lt;/xsd:sequence&gt;
+&lt;/xsd:complexType&gt;
+&lt;/xsd:schema&gt;
+  &lt;/wsdl:types&gt;
+  &lt;wsdl:message name=&quot;echoResponse&quot;&gt;
+    &lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:echoResponse&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;echo&quot;&gt;
+    &lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:echo&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;ping&quot;&gt;
+    &lt;wsdl:part name=&quot;parameters&quot; element=&quot;tns:ping&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:portType name=&quot;SimpleService&quot;&gt;
+    &lt;wsdl:operation name=&quot;ping&quot;&gt;
+      &lt;wsdl:input name=&quot;ping&quot; message=&quot;tns:ping&quot;&gt;
+    &lt;/wsdl:input&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;echo&quot;&gt;
+      &lt;wsdl:input name=&quot;echo&quot; message=&quot;tns:echo&quot;&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;echoResponse&quot; message=&quot;tns:echoResponse&quot;&gt;
+    &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:portType&gt;
+  &lt;wsdl:binding name=&quot;SimpleServiceSoapBinding&quot; type=&quot;tns:SimpleService&quot;&gt;
+    &lt;wsp:Policy&gt;
+      &lt;!-- WS-Addressing and basic WS-Reliable Messaging policy assertions --&gt;
+      &lt;wswa:UsingAddressing xmlns:wswa=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot;/&gt;
+      &lt;wsrmp:RMAssertion xmlns:wsrmp=&quot;http://schemas.xmlsoap.org/ws/2005/02/rm/policy&quot;/&gt;
+      &lt;!-- --------------------------------------------------------------- --&gt;
+    &lt;/wsp:Policy&gt;
+    &lt;soap:binding style=&quot;document&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;/&gt;
+    &lt;wsdl:operation name=&quot;ping&quot;&gt;
+      &lt;soap:operation soapAction=&quot;&quot; style=&quot;document&quot;/&gt;
+      &lt;wsdl:input name=&quot;ping&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;/&gt;
+      &lt;/wsdl:input&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;echo&quot;&gt;
+      &lt;soap:operation soapAction=&quot;&quot; style=&quot;document&quot;/&gt;
+      &lt;wsdl:input name=&quot;echo&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;echoResponse&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name=&quot;SimpleService&quot;&gt;
+    &lt;wsdl:port name=&quot;SimpleServicePort&quot; binding=&quot;tns:SimpleServiceSoapBinding&quot;&gt;
+      &lt;soap:address location=&quot;http://localhost:8080/jaxws-samples-wsrm-api&quot;/&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;</pre>
+        </div>
+    </div>
+    <p>
+Then we use the <i class=" ">wsconsume</i> tool to generate both standard JAX-WS client and endpoint.    </p>
+    <p>
+We provide a basic JAX-WS implementation for the endpoint, nothing special in it:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">package org.jboss.test.ws.jaxws.samples.wsrm.service;
+
+import javax.jws.Oneway;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+@WebService
+(
+   name = &quot;SimpleService&quot;,
+   serviceName = &quot;SimpleService&quot;,
+   wsdlLocation = &quot;WEB-INF/wsdl/SimpleService.wsdl&quot;,
+   targetNamespace = &quot;http://www.jboss.org/jbossws/ws-extensions/wsrm&quot;
+)
+public class SimpleServiceImpl
+{
+   @Oneway
+   @WebMethod
+   public void ping()
+   {
+      System.out.println(&quot;ping()&quot;);
+   }
+
+   @WebMethod
+   public String echo(String s)
+   {
+      System.out.println(&quot;echo(&quot; + s + &quot;)&quot;);
+      return s;
+   }
+}</pre>
+        </div>
+    </div>
+    <p>
+Finally we package the generated POJO endpoint together with a basic web.xml the usual way and deploy to the application server. The webservices stack automatically detects the policies and enables WS-Reliable Messaging.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873269_WS-ReliableMessaging-Client"  >
+        <h3>Client</h3>
+    
+    <p>
+The endpoint advertises his  RM capabilities (and requirements) through the published WSDL and the client is required to  also enable WS-RM for successfully exchanging messages with the server.    </p>
+    <p>
+So a regular JAX WS client is enough if the user does not need to tune any specific detail of the RM subsystem.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">QName serviceName = new QName(&quot;http://www.jboss.org/jbossws/ws-extensions/wsrm&quot;, &quot;SimpleService&quot;);
+URL wsdlURL = new URL(&quot;http://localhost:8080/jaxws-samples-wsrm-api?wsdl&quot;);
+Service service = Service.create(wsdlURL, serviceName);
+proxy = (SimpleService)service.getPort(SimpleService.class);
+proxy.echo(&quot;Hello World!&quot;);</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873269_WS-ReliableMessaging-Additionalconfiguration"  >
+        <h3>Additional configuration</h3>
+    
+    <p>
+Fine-grained tuning of WS-Reliable Messaging engine requires setting up proper RM features and attach them for instance to the client proxy. Here is an example:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">package org.jboss.test.ws.jaxws.samples.wsrm.client;
+
+//...
+import javax.xml.ws.Service;
+import org.apache.cxf.ws.rm.feature.RMFeature;
+import org.apache.cxf.ws.rm.manager.AcksPolicyType;
+import org.apache.cxf.ws.rm.manager.DestinationPolicyType;
+import org.jboss.test.ws.jaxws.samples.wsrm.generated.SimpleService;
+
+// ...
+Service service = Service.create(wsdlURL, serviceName);
+
+RMFeature feature = new RMFeature();
+RMAssertion rma = new RMAssertion();
+RMAssertion.BaseRetransmissionInterval bri = new RMAssertion.BaseRetransmissionInterval();
+bri.setMilliseconds(4000L);
+rma.setBaseRetransmissionInterval(bri);
+AcknowledgementInterval ai = new AcknowledgementInterval();
+ai.setMilliseconds(2000L);
+rma.setAcknowledgementInterval(ai);
+feature.setRMAssertion(rma);
+DestinationPolicyType dp = new DestinationPolicyType();
+AcksPolicyType ap = new AcksPolicyType();
+ap.setIntraMessageThreshold(0);
+dp.setAcksPolicy(ap);
+feature.setDestinationPolicy(dp);
+
+SimpleService proxy = (SimpleService)service.getPort(SimpleService.class, feature);
+proxy.echo(&quot;Hello World&quot;);</pre>
+        </div>
+    </div>
+    <p>
+The same can of course be achieved by factoring the feature into a custom pojo extending <tt class=" ">org.apache.cxf.ws.rm.feature.RMFeature</tt> and setting the obtained property in a client configuration:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">package org.jboss.test.ws.jaxws.samples.wsrm.client;
+
+import org.apache.cxf.ws.rm.feature.RMFeature;
+import org.apache.cxf.ws.rm.manager.AcksPolicyType;
+import org.apache.cxf.ws.rm.manager.DestinationPolicyType;
+import org.apache.cxf.ws.rmp.v200502.RMAssertion;
+import org.apache.cxf.ws.rmp.v200502.RMAssertion.AcknowledgementInterval;
+
+public class CustomRMFeature extends RMFeature
+{
+  public CustomRMFeature() {
+    super();
+    RMAssertion rma = new RMAssertion();
+    RMAssertion.BaseRetransmissionInterval bri = new RMAssertion.BaseRetransmissionInterval();
+    bri.setMilliseconds(4000L);
+    rma.setBaseRetransmissionInterval(bri);
+    AcknowledgementInterval ai = new AcknowledgementInterval();
+    ai.setMilliseconds(2000L);
+    rma.setAcknowledgementInterval(ai);
+    super.setRMAssertion(rma);
+    DestinationPolicyType dp = new DestinationPolicyType();
+    AcksPolicyType ap = new AcksPolicyType();
+    ap.setIntraMessageThreshold(0);
+    dp.setAcksPolicy(ap);
+    super.setDestinationPolicy(dp);
+  }
+}</pre>
+        </div>
+    </div>
+    <p>
+... this is how the <tt class=" ">jaxws-client-config.xml</tt> descriptor would look:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;jaxws-config xmlns=&quot;urn:jboss:jbossws-jaxws-config:4.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:javaee=&quot;http://java.sun.com/xml/ns/javaee&quot;
+xsi:schemaLocation=&quot;urn:jboss:jbossws-jaxws-config:4.0 schema/jbossws-jaxws-config_4_0.xsd&quot;&gt;
+
+&lt;client-config&gt;
+&lt;config-name&gt;Custom Client Config&lt;/config-name&gt;
+&lt;property&gt;
+&lt;property-name&gt;cxf.features&lt;/property-name&gt;
+&lt;property-value&gt;org.jboss.test.ws.jaxws.samples.wsrm.client.CustomRMFeature&lt;/property-value&gt;
+&lt;/property&gt;
+&lt;/client-config&gt;
+
+&lt;/jaxws-config&gt;</pre>
+        </div>
+    </div>
+    <p>
+... and this is how the client would set the configuration:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">import org.jboss.ws.api.configuration.ClientConfigUtil;
+import org.jboss.ws.api.configuration.ClientConfigurer;
+
+//...
+Service service = Service.create(wsdlURL, serviceName);
+SimpleService proxy = (SimpleService)service.getPort(SimpleService.class);
+
+ClientConfigurer configurer = ClientConfigUtil.resolveClientConfigurer();
+configurer.setConfigProperties(proxy, &quot;META-INF/jaxws-client-config.xml&quot;, &quot;Custom Client Config&quot;);
+proxy.echo(&quot;Hello World!&quot;);</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="previous"><a accesskey="p" href="SAML_Holder-Of-Key_Assertion_Scenario.html"><strong>Prev</strong>SAML Holder-Of-Key Assertion Scenario</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="next"><a accesskey="n" href="SOAP_over_JMS.html"><strong>Next</strong>SOAP over JMS</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

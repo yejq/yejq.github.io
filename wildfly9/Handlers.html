@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Handlers - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="previous"><a accesskey="p" href="Logging_Configuration.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="next"><a accesskey="n" href="How_To.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </ul>
+                    <div>
+            <h1>Handlers</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <div class="confbox admonition admonition-info">
+            <div class="title">WIP</div>
+        
+    <p>
+This is still a work in progress. Please feel free to edit any mistakes you find     <img src="images/author/images/icons/emoticons/smile.gif" alt="images/author/images/icons/emoticons/smile.gif" />
+.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873141_Handlers-Overview"  >
+        <h2>Overview</h2>
+    
+    <p>
+Handlers are used to determine what happens with a log message if the <a href="Loggers.html#80873140_Loggers-Logger">logger</a> determines the message is loggable.    </p>
+    <p>
+There are 6 main handlers provided with WildFly and 1 generic handler;    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-asynchandler">async-handler</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-consolehandler">console-handler</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-filehandler">file-handler</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-periodicrotatingfilehandler">periodic-rotating-file-handler</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-sizerotatingfilehandler">size-rotating-file-handler</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-sysloghandler">syslog-handler</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-customhandler">custom-handler</a>    </p>
+</li></ul>    <div class="section-3"  id="80873141_Handlers-asynchandler"  >
+        <h3>async-handler</h3>
+    
+    <p>
+An <tt class=" ">async-handler</tt> is a handler that asynchronously writes log messages to it's child handlers. This type of handler is generally used for other handlers that take a substantial time to write logged messages.    </p>
+    <div class="section-4"  id="80873141_Handlers-Attributes"  >
+        <h4>Attributes</h4>
+    
+<ul class=" "><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-enabled">enabled</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-filterspec">filter-spec</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-level">level</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-overflowaction">overflow-action</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-queuelength">queue-length</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-subhandlers">subhandlers</a>    </p>
+</li></ul>    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873141_Handlers-consolehandler"  >
+        <h3>console-handler</h3>
+    
+    <p>
+A <tt class=" ">console-handler</tt> is a handler that writes log messages to the console. Generally this writes to <tt class=" ">stdout</tt>, but can be set to write to <tt class=" ">stderr</tt>.    </p>
+    <div class="section-4"  id="80873141_Handlers-Attributes2"  >
+        <h4>Attributes</h4>
+    
+<ul class=" "><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-autoflush">autoflush</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-enabled">enabled</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-encoding">encoding</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-filterspec">filter-spec</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-formatter">formatter</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-level">level</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-namedformatter">named-formatter</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-target">target</a>    </p>
+</li></ul>    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873141_Handlers-filehandler"  >
+        <h3>file-handler</h3>
+    
+    <p>
+A <tt class=" ">file-handler</tt> is a handler that writes log messages to the specified file.    </p>
+    <div class="section-4"  id="80873141_Handlers-Attributes3"  >
+        <h4>Attributes</h4>
+    
+<ul class=" "><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-autoflush">autoflush</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-enabled">enabled</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-encoding">encoding</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-filterspec">filter-spec</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-formatter">formatter</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-level">level</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-namedformatter">named-formatter</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-file">file</a>    </p>
+</li></ul>    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873141_Handlers-periodicrotatingfilehandler"  >
+        <h3>periodic-rotating-file-handler</h3>
+    
+    <p>
+A <tt class=" ">periodic-rotating-file-handler</tt> is a handler that writes log messages to the specified file. The file rotates on the date pattern specified in the <a href="Handlers.html#80873141_Handlers-suffix">suffix</a> attribute. The suffix must be a valid pattern recognized by the <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html"><tt class=" ">java.text.SimpleDateFormat</tt></a> and must not rotate on seconds or milliseconds.    </p>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+The rotate happens before the next message is written by the handler.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-Attributes4"  >
+        <h4>Attributes</h4>
+    
+<ul class=" "><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-autoflush">autoflush</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-enabled">enabled</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-encoding">encoding</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-filterspec">filter-spec</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-formatter">formatter</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-level">level</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-namedformatter">named-formatter</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-file">file</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-suffix">suffix</a>    </p>
+</li></ul>    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873141_Handlers-sizerotatingfilehandler"  >
+        <h3>size-rotating-file-handler</h3>
+    
+    <p>
+A <tt class=" ">size-rotating-file-handler</tt> is a handler that writes log messages to the specified file. The file rotates when the file size is greater than the <a href="Handlers.html#80873141_Handlers-rotatesize">rotate-size</a> attribute. The rotated file will be kept and the index appended to the name moving previously rotated file indexes up by 1 until the <a href="Handlers.html#80873141_Handlers-maxbackupindex">max-backup-index</a> is reached. Once the <a href="Handlers.html#80873141_Handlers-maxbackupindex">max-backup-index</a> is reached, the indexed files will be overwritten.    </p>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+The rotate happens before the next message is written by the handler.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-Attributes5"  >
+        <h4>Attributes</h4>
+    
+<ul class=" "><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-autoflush">autoflush</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-enabled">enabled</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-encoding">encoding</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-filterspec">filter-spec</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-formatter">formatter</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-level">level</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-namedformatter">named-formatter</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-file">file</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-maxbackupindex">max-backup-index</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-rotatesize">rotate-size</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-rotateonboot">rotate-on-boot</a>    </p>
+</li></ul>    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873141_Handlers-sysloghandler"  >
+        <h3>syslog-handler</h3>
+    
+    <p>
+A <tt class=" ">syslog-handler</tt> is a handler that writes to a syslog server. The handler support <a href="http://www.ietf.org/rfc/rfc3164.txt">RFC3164</a> or <a href="http://www.ietf.org/rfc/rfc5424.txt">RFC5424</a> formats.    </p>
+    <div class="section-4"  id="80873141_Handlers-Attributes6"  >
+        <h4>Attributes</h4>
+    
+<ul class=" "><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-port">port</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-appname">app-name</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-enabled">enabled</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-level">level</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-facility">facility</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-serveraddress">server-address</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-hostname">hostname</a>    </p>
+</li><li class=" ">    <p>
+<a href="Handlers.html#80873141_Handlers-syslogformat">syslog-format</a>    </p>
+</li></ul>    <div class="confbox admonition admonition-tip">
+        
+    <p>
+The syslog-handler is missing some configuration properties that may be useful in some scenarios like setting a formatter. Use the <tt class=" ">org.jboss.logmanager.handlers.SyslogHandler</tt> in module <tt class=" ">org.jboss.logmanager</tt> as a <a href="Handlers.html#80873141_Handlers-customhandler">custom-handler</a> to exploit these benefits. Additional attributes will be added at some point so this will no longer be necessary.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873141_Handlers-customhandler"  >
+        <h3>custom-handler</h3>
+    
+    </div>
+    
+    <div class="section-3"  id="80873141_Handlers-Attributes7"  >
+        <h3>Attributes</h3>
+    
+    <div class="section-4"  id="80873141_Handlers-autoflush"  >
+        <h4>autoflush</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Indicates whether a flush should happen after each write.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+boolean    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+true    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+true or false    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-enabled"  >
+        <h4>enabled</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+boolean    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+true    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+true or false    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-encoding"  >
+        <h4>encoding</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The character encoding used by this Handler.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+null    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Any valid encoding    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-file"  >
+        <h4>file</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+An object describing the file the handler should write to.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+object    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+null    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+An object optionally containing a relative-to property and a path. The path is a required property of the object.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-namedformatter"  >
+        <h4>named-formatter</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of a defined formatter to be used on the handler.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+null    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">TODO</strong> add link    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-formatter"  >
+        <h4>formatter</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Defines a pattern for a pattern formatter.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">TODO</strong> add link    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-filterspec"  >
+        <h4>filter-spec</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A filter expression value to define a filter.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+null    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-FilterExpressions">See Filter Expression </a>    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-level"  >
+        <h4>level</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description :    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+ALL    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+    <ul class=" "><li class=" ">    <p>
+ALL    </p>
+</li><li class=" ">    <p>
+FINEST    </p>
+</li><li class=" ">    <p>
+FINER    </p>
+</li><li class=" ">    <p>
+TRACE    </p>
+</li><li class=" ">    <p>
+DEBUG    </p>
+</li><li class=" ">    <p>
+FINE    </p>
+</li><li class=" ">    <p>
+CONFIG    </p>
+</li><li class=" ">    <p>
+INFO    </p>
+</li><li class=" ">    <p>
+WARN    </p>
+</li><li class=" ">    <p>
+WARNING    </p>
+</li><li class=" ">    <p>
+ERROR    </p>
+</li><li class=" ">    <p>
+SEVERE    </p>
+</li><li class=" ">    <p>
+FATAL    </p>
+</li><li class=" ">    <p>
+OFF    </p>
+</li></ul>            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-maxbackupindex"  >
+        <h4>backup-index</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The maximum number of rotated files to keep.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+integer    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+1    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+any integer greater than 0    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-overflowaction"  >
+        <h4>overflow-action</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Specify what action to take when the overflowing.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+BLOCK    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+BLOCK or DISCARD    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-queuelength"  >
+        <h4>queue-length</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The queue length to use before flushing writing    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+integer    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+0    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+any positive integer    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-rotateonboot"  >
+        <h4>rotate-on-boot</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Indicates whether or not the file should be rotated each time the <a href="Handlers.html#80873141_Handlers-file">file</a> attribute is changed.    </p>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+If set to <tt class=" ">true</tt> will rotate on each boot of the server.    </p>
+    </div>
+    
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+boolean    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+false    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+true or false    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-rotatesize"  >
+        <h4>rotate-size</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The size at which the file should be rotated.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+2m    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Any positive integer with a size type appended to the end. Valid types are b for bytes, k for kilobytes, m for megabytes, g for gigabytes or t for terabytes. Type character is not case sensitive.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-subhandlers"  >
+        <h4>subhandlers</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The handlers to associate with the async handler    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+list of strings    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+null    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+An array of valid handler names    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-suffix"  >
+        <h4>suffix</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The pattern used to determine when the file should be rotated.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+null    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Any valid <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html"><tt class=" ">java.text.SimpleDateFormat</tt></a> pattern.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-4"  id="80873141_Handlers-target"  >
+        <h4>target</h4>
+    
+    <div class="confbox panel">
+        <div class="tablewrap">
+        <table>
+<thead class=" "></thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Description:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Defines the target of the console handler.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Type:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Default Value:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+System.out    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Allowed Values:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+System.out or System.err    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="previous"><a accesskey="p" href="Logging_Configuration.html"><strong>Prev</strong>Logging Configuration</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="next"><a accesskey="n" href="How_To.html"><strong>Next</strong>How To</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

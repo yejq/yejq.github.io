@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Predefined client and endpoint configurations - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="previous"><a accesskey="p" href="Advanced_User_Guide.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="next"><a accesskey="n" href="Authentication.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </ul>
+                    <div>
+            <h1>Predefined client and endpoint configurations</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+<ul class=" "><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-Overview">Overview</a>    </p>
+</li><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-Assigningconfigurations">Assigning configurations</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-Endpointconfigurationassignment">Endpoint configuration assignment</a>    </p>
+</li><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-EndpointConfigurationDeploymentDescriptor">Endpoint Configuration Deployment Descriptor</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-Applicationserverconfigurations">Application server configurations</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-Standardconfigurations">Standard configurations</a>    </p>
+</li><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-Handlersclassloading">Handlers classloading</a>    </p>
+</li><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-Examples">Examples</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-EndpointConfigannotation">EndpointConfig annotation</a>    </p>
+</li><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-JAXWSFeature">JAXWS Feature</a>    </p>
+</li><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-ExplicitsetupthroughAPI">Explicit setup through API</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-Automaticconfigurationfromdefaultdescriptors">Automatic configuration from default descriptors</a>    </p>
+</li><li class=" ">    <p>
+<a href="Predefined_client_and_endpoint_configurations.html#80873272_Predefinedclientandendpointconfigurations-Automaticconfigurationassignmentfromcontainersetup">Automatic configuration assignment from container setup</a>    </p>
+</li></ul></li></ul>    <div class="section-2"  id="80873272_Predefinedclientandendpointconfigurations-Overview"  >
+        <h2>Overview</h2>
+    
+    <p>
+JBossWS permits extra setup configuration data to be predefined and associated with an endpoint or a client. Configurations can include JAX-WS handlers and key/value property declarations that control JBossWS and Apache CXF internals. Predefined configurations can be used for JAX-WS client and JAX-WS endpoint setup.    </p>
+    <p>
+Configurations can be defined in the webservice subsystem and in an application's deployment descriptor file. There can be many configuration definitions in the webservice subsystem and in an application. Each configuration must have a name that is unique within the server.&nbsp; Configurations defined in an application are local to the application. Endpoint implementations declare the use of a specific configuration through the use of the <tt class=" ">org.jboss.ws.api.annotation.EndpointConfig</tt> annotation. An endpoint configuration defined in the webservices subsystem is available to all deployed applications on the server container and can be referenced by name in the annotation. An endpoint configuration defined in an application must be referenced by both deployment descriptor file name and configuration name by the annotation.    </p>
+    <p>
+<strong class=" ">Handlers</strong>    </p>
+    <p>
+Each endpoint configuration may be associated with zero or more PRE and  POST handler chains. Each handler chain may include JAXWS handlers. For outbound messages the PRE handler chains are executed before any  handler that is attached to the endpoint using the standard means, such  as with annotation @HandlerChain, and POST handler chains are executed  after those objects have executed. For inbound messages the POST  handler chains are executed before any handler that is attached to the  endpoint using the standard means and the PRE handler chains are  executed after those objects have executed.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">* Server inbound messages
+Client --&gt; ... --&gt; POST HANDLER --&gt; ENDPOINT HANDLERS --&gt; PRE HANDLERS --&gt; Endpoint
+
+* Server outbound messages
+Endpoint --&gt; PRE HANDLER --&gt; ENDPOINT HANDLERS --&gt; POST HANDLERS --&gt; ... --&gt; Client</pre>
+        </div>
+    </div>
+    <p>
+The same applies for client configurations.    </p>
+    <p>
+<strong class=" ">Properties</strong>    </p>
+    <p>
+Key/value properties are used for controlling both some Apache CXF internals and some JBossWS options. Specific supported values are mentioned where relevant in the rest of the documentation.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873272_Predefinedclientandendpointconfigurations-Assigningconfigurations"  >
+        <h2>Assigning configurations</h2>
+    
+    <p>
+Endpoints and clients are assigned configuration through different means. Users can explicitly require a given configuration or rely on container defaults. The assignment process can be split up as follows:    </p>
+<ul class=" "><li class=" ">    <p>
+Explicit assignment through annotations (for endpoints) or API programmatic usage (for clients)    </p>
+</li><li class=" ">    <p>
+Automatic assignment of configurations from default descriptors    </p>
+</li><li class=" ">    <p>
+Automatic assignment of configurations from container    </p>
+</li></ul>    <div class="section-3"  id="80873272_Predefinedclientandendpointconfigurations-Endpointconfigurationassignment"  >
+        <h3>Endpoint configuration assignment</h3>
+    
+    <p>
+The explicit configuration assignment is meant for developer that know in advance their endpoint or client has to be setup according to a specified configuration. The configuration is either coming from a descriptor that is included in the application deployment, or is included in the application server webservices subsystem management model.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873272_Predefinedclientandendpointconfigurations-EndpointConfigurationDeploymentDescriptor"  >
+        <h3>Endpoint Configuration Deployment Descriptor</h3>
+    
+    <p>
+Java EE archives that can contain JAX-WS client and endpoint implementations can also contain predefined client and endpoint configuration declarations. All endpoint/client configuration definitions for a given archive must be provided in a single deployment descriptor file, which must be an implementation of schema <a href="http://anonsvn.jboss.org/repos/jbossws/spi/tags/jbossws-spi-2.1.0.Final/src/main/resources/schema/jbossws-jaxws-config_4_0.xsd">jbossws-jaxws-config</a>. Many endpoint/client configurations can be defined in the deployment descriptor file. Each configuration must have a name that is unique within the server on which the application is deployed. The configuration name can't be referred to by endpoint/client implementations outside the application. Here is an example of a descriptor, containing two endpoint configurations:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;jaxws-config xmlns=&quot;urn:jboss:jbossws-jaxws-config:4.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:javaee=&quot;http://java.sun.com/xml/ns/javaee&quot;
+xsi:schemaLocation=&quot;urn:jboss:jbossws-jaxws-config:4.0 schema/jbossws-jaxws-config_4_0.xsd&quot;&gt;
+&lt;endpoint-config&gt;
+&lt;config-name&gt;org.jboss.test.ws.jaxws.jbws3282.Endpoint4Impl&lt;/config-name&gt;
+&lt;pre-handler-chains&gt;
+&lt;javaee:handler-chain&gt;
+&lt;javaee:handler&gt;
+&lt;javaee:handler-name&gt;Log Handler&lt;/javaee:handler-name&gt;
+&lt;javaee:handler-class&gt;org.jboss.test.ws.jaxws.jbws3282.LogHandler&lt;/javaee:handler-class&gt;
+&lt;/javaee:handler&gt;
+&lt;/javaee:handler-chain&gt;
+&lt;/pre-handler-chains&gt;
+&lt;post-handler-chains&gt;
+&lt;javaee:handler-chain&gt;
+&lt;javaee:handler&gt;
+&lt;javaee:handler-name&gt;Routing Handler&lt;/javaee:handler-name&gt;
+&lt;javaee:handler-class&gt;org.jboss.test.ws.jaxws.jbws3282.RoutingHandler&lt;/javaee:handler-class&gt;
+&lt;/javaee:handler&gt;
+&lt;/javaee:handler-chain&gt;
+&lt;/post-handler-chains&gt;
+&lt;/endpoint-config&gt;
+&lt;endpoint-config&gt;
+&lt;config-name&gt;EP6-config&lt;/config-name&gt;
+&lt;post-handler-chains&gt;
+&lt;javaee:handler-chain&gt;
+&lt;javaee:handler&gt;
+&lt;javaee:handler-name&gt;Authorization Handler&lt;/javaee:handler-name&gt;
+&lt;javaee:handler-class&gt;org.jboss.test.ws.jaxws.jbws3282.AuthorizationHandler&lt;/javaee:handler-class&gt;
+&lt;/javaee:handler&gt;
+&lt;/javaee:handler-chain&gt;
+&lt;/post-handler-chains&gt;
+&lt;/endpoint-config&gt;
+&lt;/jaxws-config&gt;</pre>
+        </div>
+    </div>
+    <p>
+Similarly, client configurations can be specified in descriptors (still implementing the schema mentioned above):    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;jaxws-config xmlns=&quot;urn:jboss:jbossws-jaxws-config:4.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:javaee=&quot;http://java.sun.com/xml/ns/javaee&quot;
+xsi:schemaLocation=&quot;urn:jboss:jbossws-jaxws-config:4.0 schema/jbossws-jaxws-config_4_0.xsd&quot;&gt;
+&lt;client-config&gt;
+&lt;config-name&gt;Custom Client Config&lt;/config-name&gt;
+&lt;pre-handler-chains&gt;
+&lt;javaee:handler-chain&gt;
+&lt;javaee:handler&gt;
+&lt;javaee:handler-name&gt;Routing Handler&lt;/javaee:handler-name&gt;
+&lt;javaee:handler-class&gt;org.jboss.test.ws.jaxws.clientConfig.RoutingHandler&lt;/javaee:handler-class&gt;
+&lt;/javaee:handler&gt;
+&lt;javaee:handler&gt;
+&lt;javaee:handler-name&gt;Custom Handler&lt;/javaee:handler-name&gt;
+&lt;javaee:handler-class&gt;org.jboss.test.ws.jaxws.clientConfig.CustomHandler&lt;/javaee:handler-class&gt;
+&lt;/javaee:handler&gt;
+&lt;/javaee:handler-chain&gt;
+&lt;/pre-handler-chains&gt;
+&lt;/client-config&gt;
+&lt;client-config&gt;
+&lt;config-name&gt;Another Client Config&lt;/config-name&gt;
+&lt;post-handler-chains&gt;
+&lt;javaee:handler-chain&gt;
+&lt;javaee:handler&gt;
+&lt;javaee:handler-name&gt;Routing Handler&lt;/javaee:handler-name&gt;
+&lt;javaee:handler-class&gt;org.jboss.test.ws.jaxws.clientConfig.RoutingHandler&lt;/javaee:handler-class&gt;
+&lt;/javaee:handler&gt;
+&lt;/javaee:handler-chain&gt;
+&lt;/post-handler-chains&gt;
+&lt;/client-config&gt;
+&lt;/jaxws-config&gt;</pre>
+        </div>
+    </div>
+    <div class="section-4"  id="80873272_Predefinedclientandendpointconfigurations-Applicationserverconfigurations"  >
+        <h4>Application server configurations</h4>
+    
+    <p>
+WildFly allows declaring JBossWS client and server predefined configurations in the <i class=" ">webservices</i> subsystem section of the server model. As a consequence it is possible to declare server-wide handlers to be added to the chain of each endpoint or client assigned to a given configuration.    </p>
+    <p>
+Please refer to the <a href="https://docs.jboss.org/author/display/WFLY9/Web+services+configuration">WildFly documentation</a> for details on managing the <i class=" ">webservices</i> subsystem such as adding, removing and modifying handlers and properties.    </p>
+    <p>
+The allowed contents in the <i class=" ">webservices</i> subsystem are defined by the <a href="https://github.com/jbossas/jboss-as/blob/7.2.0.Final/build/src/main/resources/docs/schema/jboss-as-webservices_1_2.xsd">schema</a> included in the application server.    </p>
+    <div class="section-5"  id="80873272_Predefinedclientandendpointconfigurations-Standardconfigurations"  >
+        <h5>Standard configurations</h5>
+    
+    <p>
+Clients running in-container as well as endpoints are assigned standard configurations by default. The defaults are used unless different configurations are set as described on this page. This enables administrators to tune the default handler chains for client and endpoint configurations. The names of the default client and endpoint configurations, used in the webservices subsystem are&nbsp;<tt class=" ">Standard-Client-Config</tt> and <tt class=" ">Standard-Endpoint-Config</tt> respectively.    </p>
+    </div>
+    
+    <div class="section-5"  id="80873272_Predefinedclientandendpointconfigurations-Handlersclassloading"  >
+        <h5>Handlers classloading</h5>
+    
+    <p>
+When setting a server-wide handler, please note the handler class needs to be available through each ws deployment classloader. As a consequence proper module dependencies might need to be specified in the deployments that are going to leverage a given predefined configuration. A shortcut is to add a dependency to the module containing the handler class in one of the modules which are already automatically set as dependencies to any deployment, for instance <tt class=" ">org.jboss.ws.spi</tt>.    </p>
+    </div>
+    
+    <div class="section-5"  id="80873272_Predefinedclientandendpointconfigurations-Examples"  >
+        <h5>Examples</h5>
+    
+    <div class="confbox programlisting">
+                    <div class="title">JBoss AS 7.2 default configurations</div>
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;subsystem xmlns=&quot;urn:jboss:domain:webservices:2.0&quot;&gt;
+&lt;!-- ... --&gt;
+&lt;endpoint-config name=&quot;Standard-Endpoint-Config&quot;/&gt;
+&lt;endpoint-config name=&quot;Recording-Endpoint-Config&quot;&gt;
+&lt;pre-handler-chain name=&quot;recording-handlers&quot; protocol-bindings=&quot;##SOAP11_HTTP ##SOAP11_HTTP_MTOM ##SOAP12_HTTP ##SOAP12_HTTP_MTOM&quot;&gt;
+&lt;handler name=&quot;RecordingHandler&quot; class=&quot;org.jboss.ws.common.invocation.RecordingServerHandler&quot;/&gt;
+&lt;/pre-handler-chain&gt;
+&lt;/endpoint-config&gt;
+&lt;client-config name=&quot;Standard-Client-Config&quot;/&gt;
+&lt;/subsystem&gt;</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                    <div class="title">A configuration file for a deployment specific ws-security endpoint setup</div>
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;jaxws-config xmlns=&quot;urn:jboss:jbossws-jaxws-config:4.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+xmlns:javaee=&quot;http://java.sun.com/xml/ns/javaee&quot; xsi:schemaLocation=&quot;urn:jboss:jbossws-jaxws-config:4.0 schema/jbossws-jaxws-config_4_0.xsd&quot;&gt;
+&lt;endpoint-config&gt;
+&lt;config-name&gt;Custom WS-Security Endpoint&lt;/config-name&gt;
+&lt;property&gt;
+&lt;property-name&gt;ws-security.signature.properties&lt;/property-name&gt;
+&lt;property-value&gt;bob.properties&lt;/property-value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;property-name&gt;ws-security.encryption.properties&lt;/property-name&gt;
+&lt;property-value&gt;bob.properties&lt;/property-value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;property-name&gt;ws-security.signature.username&lt;/property-name&gt;
+&lt;property-value&gt;bob&lt;/property-value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;property-name&gt;ws-security.encryption.username&lt;/property-name&gt;
+&lt;property-value&gt;alice&lt;/property-value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;property-name&gt;ws-security.callback-handler&lt;/property-name&gt;
+&lt;property-value&gt;org.jboss.test.ws.jaxws.samples.wsse.policy.basic.KeystorePasswordCallback&lt;/property-value&gt;
+&lt;/property&gt;
+&lt;/endpoint-config&gt;
+&lt;/jaxws-config&gt;</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                    <div class="title">JBoss AS 7.2 default configurations modified to default to SOAP messages schema-validation on</div>
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;subsystem xmlns=&quot;urn:jboss:domain:webservices:2.0&quot;&gt;
+&lt;!-- ... --&gt;
+&lt;endpoint-config name=&quot;Standard-Endpoint-Config&quot;&gt;
+&lt;property name=&quot;schema-validation-enabled&quot; value=&quot;true&quot;/&gt;
+&lt;/endpoint-config&gt;
+&lt;!-- ... --&gt;
+&lt;client-config name=&quot;Standard-Client-Config&quot;&gt;
+&lt;property name=&quot;schema-validation-enabled&quot; value=&quot;true&quot;/&gt;
+&lt;/client-config&gt;
+&lt;/subsystem&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-4"  id="80873272_Predefinedclientandendpointconfigurations-EndpointConfigannotation"  >
+        <h4>EndpointConfig annotation</h4>
+    
+    <p>
+Once a configuration is available to a given application, the <tt class=" ">org.jboss.ws.api.annotation.EndpointConfig</tt> annotation is used to assign an endpoint configuration to a JAX-WS endpoint implementation. When assigning a configuration that is defined in the webservices subsystem only the configuration name is specified.&nbsp; When assigning a configuration that is defined in the application, the relative path to the deployment descriptor and the configuration name must be specified.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">@EndpointConfig(configFile = &quot;WEB-INF/my-endpoint-config.xml&quot;, configName = &quot;Custom WS-Security Endpoint&quot;)
+public class ServiceImpl implements ServiceIface
+{
+public String sayHello()
+{
+return &quot;Secure Hello World!&quot;;
+}
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="80873272_Predefinedclientandendpointconfigurations-JAXWSFeature"  >
+        <h4>JAXWS Feature</h4>
+    
+    <p>
+The most practical way of setting a configuration is using <tt class=" ">org.jboss.ws.api.configuration.ClientConfigFeature</tt>, a JAXWS <tt class=" ">Feature</tt> extension provided by JBossWS:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">import org.jboss.ws.api.configuration.ClientConfigFeature;
+
+...
+
+Service service = Service.create(wsdlURL, serviceName);
+Endpoint port = service.getPort(Endpoint.class, new ClientConfigFeature(&quot;META-INF/my-client-config.xml&quot;, &quot;Custom Client Config&quot;));
+port.echo(&quot;Kermit&quot;);
+
+... or ....
+
+port = service.getPort(Endpoint.class, new ClientConfigFeature(&quot;META-INF/my-client-config.xml&quot;, &quot;Custom Client Config&quot;), true); //setup properties too from the configuration
+port.echo(&quot;Kermit&quot;);
+... or ...
+
+port = service.getPort(Endpoint.class, new ClientConfigFeature(null, testConfigName)); //reads from current container configurations if available
+port.echo(&quot;Kermit&quot;);</pre>
+        </div>
+    </div>
+    <p>
+JBossWS parses the specified configuration file.&nbsp; The configuration file must be found as a resource by the classloader of the current thread.&nbsp; The&nbsp;<a href="http://anonsvn.jboss.org/repos/jbossws/spi/tags/jbossws-spi-2.1.0.Beta1/src/main/resources/schema/jbossws-jaxws-config_4_0.xsd">jbossws-jaxws-config schema</a>&nbsp;defines the descriptor contents and is included in the&nbsp;<i class=" ">jbossws-spi</i>&nbsp;artifact.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873272_Predefinedclientandendpointconfigurations-ExplicitsetupthroughAPI"  >
+        <h4>Explicit setup through API</h4>
+    
+    <p>
+Alternatively, JBossWS API comes with facility classes that can be used for assigning configurations when building a client.&nbsp; JAXWS handlers read from client configurations as follows:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">import org.jboss.ws.api.configuration.ClientConfigUtil;
+import org.jboss.ws.api.configuration.ClientConfigurer;
+
+...
+
+Service service = Service.create(wsdlURL, serviceName);
+Endpoint port = service.getPort(Endpoint.class);
+BindingProvider bp = (BindingProvider)port;
+ClientConfigUtil.setConfigHandlers(bp, &quot;META-INF/my-client-config.xml&quot;, &quot;Custom Client Config 1&quot;);
+port.echo(&quot;Kermit&quot;);
+
+...
+
+ClientConfigurer configurer = ClientConfigUtil.resolveClientConfigurer();
+configurer.setConfigHandlers(bp, &quot;META-INF/my-client-config.xml&quot;, &quot;Custom Client Config 2&quot;);
+port.echo(&quot;Kermit&quot;);
+
+...
+
+configurer.setConfigHandlers(bp, &quot;META-INF/my-client-config.xml&quot;, &quot;Custom Client Config 3&quot;);
+port.echo(&quot;Kermit&quot;);
+
+
+...
+
+configurer.setConfigHandlers(bp, null, &quot;Container Custom Client Config&quot;); //reads from current container configurations if available
+port.echo(&quot;Kermit&quot;);</pre>
+        </div>
+    </div>
+    <p>
+... similarly, properties are read from client configurations as follows:    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">import org.jboss.ws.api.configuration.ClientConfigUtil;
+import org.jboss.ws.api.configuration.ClientConfigurer;
+
+...
+
+Service service = Service.create(wsdlURL, serviceName);
+Endpoint port = service.getPort(Endpoint.class);
+
+ClientConfigUtil.setConfigProperties(port, &quot;META-INF/my-client-config.xml&quot;, &quot;Custom Client Config 1&quot;);
+port.echo(&quot;Kermit&quot;);
+
+...
+
+ClientConfigurer configurer = ClientConfigUtil.resolveClientConfigurer();
+configurer.setConfigProperties(port, &quot;META-INF/my-client-config.xml&quot;, &quot;Custom Client Config 2&quot;);
+port.echo(&quot;Kermit&quot;);
+
+...
+
+configurer.setConfigProperties(port, &quot;META-INF/my-client-config.xml&quot;, &quot;Custom Client Config 3&quot;);
+port.echo(&quot;Kermit&quot;);
+
+
+...
+
+configurer.setConfigProperties(port, null, &quot;Container Custom Client Config&quot;); //reads from current container configurations if available
+port.echo(&quot;Kermit&quot;);</pre>
+        </div>
+    </div>
+    </p>
+    <p>
+The default <tt class=" ">ClientConfigurer</tt> implementation parses the specified configuration file, if any, after having resolved it as a resources using the current thread context classloader. The&nbsp;<a href="http://anonsvn.jboss.org/repos/jbossws/spi/tags/jbossws-spi-2.1.0.Beta1/src/main/resources/schema/jbossws-jaxws-config_4_0.xsd">jbossws-jaxws-config schema</a>&nbsp;defines the descriptor contents and is included in the&nbsp;<i class=" ">jbossws-spi</i>&nbsp;artifact.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873272_Predefinedclientandendpointconfigurations-Automaticconfigurationfromdefaultdescriptors"  >
+        <h3>Automatic configuration from default descriptors</h3>
+    
+    <p>
+In some cases, the application developer might not be aware of the configuration that will need to be used for its client and endpoint implementation, perhaps because that's a concern of the application deployer. In other cases, explicit usage (compile time dependency) of JBossWS API might not be accepted. To cope with such scenarios, JBossWS allows including default client (<tt class=" ">jaxws-client-config.xml</tt>) and endpoint (<tt class=" ">jaxws-endpoint-config.xml</tt>) descriptor within the application (in its root), which are parsed for getting configurations any time a configuration file name is not specified.    </p>
+    <p>
+If the configuration name is also not specified, JBossWS automatically looks for a configuration named the same as    </p>
+<ul class=" "><li class=" ">    <p>
+the endpoint implementation class (full qualified name), in case of JAX-WS endpoints;    </p>
+</li><li class=" ">    <p>
+the service endpoint interface (full qualified name), in case of JAX-WS clients.    </p>
+</li></ul>    <p>
+No automatic configuration name is selected for <tt class=" ">Dispatch</tt> clients.    </p>
+    <p>
+So, for instance, an endpoint implementation class <tt class=" ">org.foo.bar.EndpointImpl</tt> for which no pre-defined configuration is explicitly set will cause JBossWS to look for a <i class=" ">org.foo.bar.EndpointImpl</i> named configuration within a <i class=" ">jaxws-endpoint-config.xml</i> descriptor in the root of the application deployment. Similarly, on client side, a client proxy implementing <tt class=" ">org.foo.bar.Endpoint</tt> interface (SEI) will have the setup read from a <i class=" ">org.foo.bar.Endpoint</i> named configuration in <i class=" ">jaxws-client-config.xml</i> descriptor.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873272_Predefinedclientandendpointconfigurations-Automaticconfigurationassignmentfromcontainersetup"  >
+        <h3>Automatic configuration assignment from container setup</h3>
+    
+    <p>
+JBossWS fall-backs to getting predefined configurations from the container setup whenever no explicit configuration has been provided and the default descriptors are either not available or do not contain relevant configurations. This gives additional control on the JAX-WS client and endpoint setup to administrators, as the container setup can be managed independently from the deployed applications.<br/>JBossWS hence accesses the webservices subsystem the same as explained above for explicitly named configuration; the default configuration names used for look are    </p>
+<ul class=" "><li class=" ">    <p>
+the endpoint implementation class (full qualified name), in case of JAX-WS endpoints;    </p>
+</li><li class=" ">    <p>
+the service endpoint interface (full qualified name), in case of JAX-WS clients.<br/><tt class=" ">Dispatch</tt> clients are not automatically configured. If no configuration is found using names computed as above, the <tt class=" ">Standard-Client-Config</tt> and <tt class=" ">Standard-Endpoint-Config</tt> configurations are used for clients and endpoints respectively    </p>
+</li></ul>    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="previous"><a accesskey="p" href="Advanced_User_Guide.html"><strong>Prev</strong>Advanced User Guide</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="next"><a accesskey="n" href="Authentication.html"><strong>Next</strong>Authentication</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Getting Started Developing Applications Presentation &amp; Demo - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="previous"><a accesskey="p" href="Developing_JSF_Project_Using_JBoss_AS7,_Maven_and_IntelliJ.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="next"><a accesskey="n" href="Getting_Started_Guide.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
+                    <div>
+            <h1>Getting Started Developing Applications Presentation &amp; Demo</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+<ul class=" "><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction">Introduction</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Prerequisitesforusingthescript">Prerequisites for using the script</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-ImportexamplesintoEclipseandsetupJBossAS">Import examples into Eclipse and set up JBoss AS</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-TheHelloworldQuickstart">The Helloworld Quickstart</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction">Introduction</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-UsingMaven">Using Maven</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-UsingtheCommandLineInterface%28CLI%29">Using the Command Line Interface (CLI)</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Usingthewebmanagementinterface">Using the web management interface</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Usingthefilesystem">Using the filesystem</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-UsingEclipse">Using Eclipse</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Diggingintotheapp">Digging into the app</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Thenumberguessquickstart">The numberguess quickstart</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction">Introduction</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Runtheapp">Run the app</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Deploymentdescriptors%7B%7Bsrc%2Fmain%2Fwebapp%2FWEBINF%7D%7D">Deployment descriptors <tt class=" ">src/main/webapp/WEB-INF</tt></a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Views">Views</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Beans">Beans</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Theloginquickstart">The login quickstart</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction">Introduction</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Runtheapp">Run the app</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-DeploymentDescriptors">Deployment Descriptors</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Views">Views</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Beans">Beans</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Thekitchensinkquickstart">The kitchensink quickstart</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction">Introduction</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Runtheapp">Run the app</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-BeanValidation">Bean Validation</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-JAXRS">JAX-RS</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html#80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Arquillian">Arquillian</a>    </p>
+</li></ul></li></ul>    <div class="section-2"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction"  >
+        <h2>Introduction</h2>
+    
+    <p>
+This document is a &ldquo;script&rdquo; for use with the quickstarts associated with the <a href="Getting_Started_Developing_Applications_Guide.html">Getting Started Developing Applications Guide</a>. It can be used as the basis for demoing/explaining the Java EE 6 programming model with JBoss AS 7.    </p>
+    <p>
+There is an associated presentation &ndash; JBoss AS - Getting Started Developing Applications &ndash; which can be used to introduce the Java EE 6 ecosystem.    </p>
+    <p>
+The emphasis here is on the programming model, not on OAM/dev-ops, performance etc.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Prerequisitesforusingthescript"  >
+        <h2>Prerequisites for using the script</h2>
+    
+<ul class=" "><li class=" ">    <p>
+JBoss AS 7 downloaded and installed    </p>
+</li><li class=" ">    <p>
+Eclipse Indigo with m2eclipse and JBoss Tools installed    </p>
+</li><li class=" ">    <p>
+The quickstarts downloaded and imported into Eclipse    </p>
+</li><li class=" ">    <p>
+Make sure <tt class=" ">$JBOSS_HOME</tt> is set.    </p>
+</li><li class=" ">    <p>
+Make sure <tt class=" ">src/test/resources/arquillian.xml</tt> has the correct path to your JBoss AS install for kitchensink    </p>
+</li><li class=" ">    <p>
+Make sure your font size is set in Eclipse so everyone can read the text!    </p>
+</li></ul>    </div>
+    
+    <div class="section-2"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-ImportexamplesintoEclipseandsetupJBossAS"  >
+        <h2>Import examples into Eclipse and set up JBoss AS</h2>
+    
+    <p>
+TODO    </p>
+    </div>
+    
+    <div class="section-2"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-TheHelloworldQuickstart"  >
+        <h2>The Helloworld Quickstart</h2>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction2"  >
+        <h3>Introduction</h3>
+    
+    <p>
+This quickstart is extremely basic, and is really useful for nothing more than showing than the app server is working properly, and our deployment mechanism is working. We recommend you use this quickstart to demonstrate the various ways you can deploy apps to JBoss AS 7.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-UsingMaven"  >
+        <h3>Using Maven</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Start JBoss AS 7 from the console    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Deploy the app using Maven    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn clean package jboss-as:deploy</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+The quickstarts use the jboss-as maven plugin to deploy and undeploy applications. This plugin uses the JBoss AS Native Java Detyped Management API to communicate with the server. The Detyped API is used by management tools to control an entire domain of servers, and exposes only a small number of types, allowing for backwards and forwards compatibility.    </p>
+    </div>
+    
+</li><li class=" ">    <p>
+Show the app has deployed in the terminal    </p>
+</li><li class=" ">    <p>
+Visit <a href="http://localhost:8080/jboss-as-helloworld">http://localhost:8080/jboss-as-helloworld</a>    </p>
+</li><li class=" ">    <p>
+Undeploy the app using Maven    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn jboss-as:undeploy</pre>
+        </div>
+    </div>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-UsingtheCommandLineInterface%28CLI%29"  >
+        <h3>Using the Command Line Interface (CLI)</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Start JBoss AS 7 from the console (if not already running)    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Build the war    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn clean package</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Start the CLI    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/jboss-admin.sh --connect</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+The command line also uses the Deptyped Management API to communicate with the server. It's designed to be as &quot;unixy&quot; as possible, allowing you to &quot;cd&quot; into nodes, with full tab completion etc. The CLI allows you to deploy and undeploy applications, create JMS queues, topics etc., create datasources (normal and XA). It also fully supports the domain node.    </p>
+    </div>
+    
+</li><li class=" ">    <p>
+Deploy the app    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">deploy target/jboss-as-helloworld.war</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Show the app has deployed    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">undeploy jboss-as-helloworld.war</pre>
+        </div>
+    </div>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Usingthewebmanagementinterface"  >
+        <h3>Using the web management interface</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Start JBoss AS 7 from the console (if not already running)    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Build the war    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn clean package</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Open up the web management interface <a href="http://localhost:9990/console">http://localhost:9990/console</a>    </p>
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+The web maangement interface offers the same functionality as the CLI (and again uses the Detyped Management API), but does so using a pretty GWT interface! You can set up virtual servers, interrogate sub systems and more.    </p>
+    </div>
+    
+</li><li class=" ">    <p>
+Navigate <tt class=" ">Manage Deployments -&gt; Add content</tt>. Click on choose file and locate <tt class=" ">helloworld/target/jboss-as-helloworld.war</tt>.    </p>
+</li><li class=" ">    <p>
+Click <tt class=" ">Next</tt> and <tt class=" ">Finish</tt> to upload the war to the server.    </p>
+</li><li class=" ">    <p>
+Now click <tt class=" ">Enable</tt> and <tt class=" ">Ok</tt> to start the application    </p>
+</li><li class=" ">    <p>
+Switch to the console to show it deployed    </p>
+</li><li class=" ">    <p>
+Now click <tt class=" ">Remove</tt>    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Usingthefilesystem"  >
+        <h3>Using the filesystem</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Start JBoss AS 7 from the console (if not already running)    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$JBOSS_HOME/bin/standalone.sh</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Build the war    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn clean package</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+Of course, you can still use the good ol' file system to deploy. Just copy the file to <tt class=" ">$JBOSS_HOME/standalone/deployments</tt>.    </p>
+    </div>
+    
+</li><li class=" ">    <p>
+Copy the war    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">cp target/jboss-as-helloworld.war $JBOSS_HOME/standalone/deployments</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Show the war deployed    </p>
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+The filesystem deployment uses marker files to indicate the status of a deployment. As this deployment succeeded we get a <tt class=" ">$JBOSS_HOME/standalone/deployments/jboss-as-helloworld.war.deployed</tt> file. If the deployment failed, you would get a <tt class=" ">.failed</tt> file etc.    </p>
+    </div>
+    
+</li><li class=" ">    <p>
+Undeploy the war    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">rm $JBOSS_HOME/standalone/deployments/jboss-as-helloworld.war.deployed</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Show the deployment stopping!    </p>
+</li><li class=" ">    <p>
+Start and stop the appserver, show that the deployment really is gone!    </p>
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+This gives you much more precise control over deployments than before    </p>
+    </div>
+    
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-UsingEclipse"  >
+        <h3>Using Eclipse</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Add a JBoss AS server    </p>
+<ol class=" "><li class=" ">    <p>
+Bring up the Server view    </p>
+</li><li class=" ">    <p>
+Right click in it, and choose <tt class=" ">New -&gt; Server</tt>    </p>
+</li><li class=" ">    <p>
+Choose JBoss AS 7.0 and hit Next    </p>
+</li><li class=" ">    <p>
+Locate the server on your disc    </p>
+</li><li class=" ">    <p>
+Hit Finish    </p>
+</li></ol></li><li class=" ">    <p>
+Start JBoss AS in Eclipse    </p>
+<ol class=" "><li class=" ">    <p>
+Select the server    </p>
+</li><li class=" ">    <p>
+Click the Run button    </p>
+</li></ol></li><li class=" ">    <p>
+Deploy the app    </p>
+<ol class=" "><li class=" ">    <p>
+right click on the app, choose <tt class=" ">Run As -&gt; Run On Server</tt>    </p>
+</li><li class=" ">    <p>
+Select the AS 7 instance you want to use    </p>
+</li><li class=" ">    <p>
+Hit finish    </p>
+</li></ol></li><li class=" ">    <p>
+Load the app at <a href="http://localhost:8080/jboss-as-helloworld">http://localhost:8080/jboss-as-helloworld</a>    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Diggingintotheapp"  >
+        <h3>Digging into the app</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Open up the helloworld quickstart in Eclipse, and open up <tt class=" ">src/main/webapp</tt>.    </p>
+</li><li class=" ">    <p>
+Point out that we don't require a <tt class=" ">web.xml</tt> anymore!    </p>
+</li><li class=" ">    <p>
+Show <tt class=" ">beans.xml</tt> and explain it's a marker file used to JBoss AS to enable CDI (open it, show that it is empty)    </p>
+</li><li class=" ">    <p>
+Show <tt class=" ">index.html</tt>, and explain it is just used to kick the user into the app (open it, show the meta-refresh)    </p>
+</li><li class=" ">    <p>
+Open up the <tt class=" ">pom.xm</tt> - and emphasise that it's pretty simple.    </p>
+<ol class=" "><li class=" ">    <p>
+There is no parent pom, everything for the build is <strong class=" ">here</strong>    </p>
+</li><li class=" ">    <p>
+Show that we are enabling the JBoss Maven repo - explain you can do this in your POM or in system wide (<tt class=" ">settings.xml</tt>)    </p>
+</li><li class=" ">    <p>
+Show the <tt class=" ">dependencyManagement</tt> section. Here we import the JBoss AS 7 Web Profile API. Explain that this gives you all the versions for all of the JBoss AS 7 APIs that are in the web profile. Explain we could also depend on this directly, which would give us the whole set of APIs, but that here we've decided to go for slightly tighter control and specify each dependency ourselves    </p>
+</li><li class=" ">    <p>
+Show the import for CDI, JSR-250 and Servlet API. Show that these are all provided - we are depending on build in server implementations, not packaging this stuff!    </p>
+</li><li class=" ">    <p>
+Show the plugin sections - nothing that exciting here, the war plugin is out of date and requires you to provide <tt class=" ">web.xml</tt>     <img src="images/author/images/icons/emoticons/wink.gif" alt="images/author/images/icons/emoticons/wink.gif" />
+, configure the JBoss AS Maven Plugin, set the Java version to 6.    </p>
+</li></ol></li><li class=" ">    <p>
+Open up <tt class=" ">src/main/java</tt> and open up the <tt class=" ">HelloWorldServlet</tt>.    </p>
+<ol class=" "><li class=" ">    <p>
+Point out the <tt class=" ">@WebServlet</tt> - explain this one annotation removes about 8 lines of XML - no need to separately map a path either. This is much more refactor safe    </p>
+</li><li class=" ">    <p>
+Show that we can inject services into a Servlet    </p>
+</li><li class=" ">    <p>
+Show that we use the service (line 41)<br/>#Cmd-click on <tt class=" ">HelloService</tt>    </p>
+</li><li class=" ">    <p>
+This is a CDI bean - very simple, no annotations required!    </p>
+</li><li class=" ">    <p>
+Explain injection    </p>
+<ol class=" "><li class=" ">    <p>
+Probably used to string based bean resolution    </p>
+</li><li class=" ">    <p>
+This is typesafe (refactor safe, take advantage of the compiler and the IDE - we just saw that!)    </p>
+</li><li class=" ">    <p>
+When CDI needs to inject something, the first thing it looks at is the type - and if the type of the injection point is assignable from a bean, CDI will inject that bean    </p>
+</li></ol></li></ol></li></ol>    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Thenumberguessquickstart"  >
+        <h2>The numberguess quickstart</h2>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction3"  >
+        <h3>Introduction</h3>
+    
+    <p>
+This quickstart adds in a &quot;complete&quot; view layer into the mix. Java EE ships with a JSF. JSF is a server side rendering, component orientated framework, where you write markup using an HTML like language, adding in dynamic behavior by binding components to beans in the back end. The quickstart also makes more use of CDI to wire the application together.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Runtheapp"  >
+        <h3>Run the app</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Start JBoss AS in Eclipse    </p>
+</li><li class=" ">    <p>
+Deploy it using Eclipse - just right click on the app, choose <tt class=" ">Run As -&gt; Run On Server</tt>    </p>
+</li><li class=" ">    <p>
+Select the AS 7 instance you want to use    </p>
+</li><li class=" ">    <p>
+Hit finish    </p>
+</li><li class=" ">    <p>
+Load the app at <a href="http://localhost:8080/jboss-as-numberguess">http://localhost:8080/jboss-as-numberguess</a>    </p>
+</li><li class=" ">    <p>
+Make a few guesses    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Deploymentdescriptors%7B%7Bsrc%2Fmain%2Fwebapp%2FWEBINF%7D%7D"  >
+        <h3>Deployment descriptors  src/main/webapp/WEB-INF</h3>
+    
+    <p>
+Emphasize the lack of them!    </p>
+    <p>
+No need to open any of them, just point them out    </p>
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">web.xml</tt> - don't need it!    </p>
+</li><li class=" ">    <p>
+<tt class=" ">beans.xml</tt> - as before, marker file    </p>
+</li><li class=" ">    <p>
+<tt class=" ">faces-config.xml</tt> - nice feature from AS7 - we can just put <tt class=" ">faces-config.xml</tt> into the WEB-INF and it enables JSF (inspiration from CDI)    </p>
+</li><li class=" ">    <p>
+<tt class=" ">pom.xml</tt> we saw this before, this time it's the same but adds in JSF API    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Views"  >
+        <h3>Views</h3>
+    
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">index.html</tt> - same as before, just kicks us into the app    </p>
+</li><li class=" ">    <p>
+<tt class=" ">home.xhtml</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+Lines 19 - 25 &ndash; these are messages output depending on state of beans (minimise coupling between controller and view layer by interrogating state, not pushing)    </p>
+</li></ol></li><li class=" ">    <p>
+Line 20 &ndash; output any messages pushed out by the controller    </p>
+</li><li class=" ">    <p>
+Line 39 - 42 &ndash; the input field is bound to the guess field on the game bean. We validate the input by calling a method on the game bean.    </p>
+</li><li class=" ">    <p>
+Line 43 - 45 &ndash; the command button is used to submit the form, and calls a method on the game bean    </p>
+</li><li class=" ">    <p>
+Line 48, 49, The reset button again calls a method on the game bean    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Beans"  >
+        <h3>Beans</h3>
+    
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">Game.java</tt> &ndash; this is the main controller for the game. App has no persistence etc.    </p>
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">@Named</tt> &ndash; As we discussed CDI is typesafe, (beans are injected by type) but sometimes need to access in a non-typesafe fashion. @Named exposes the Bean in EL - and allows us to access it from JSF    </p>
+</li><li class=" ">    <p>
+<tt class=" ">@SessionScoped</tt> &ndash; really simple app, we keep the game data in the session - to play two concurrent games, need two sessions. This is not a limitation of CDI, but simply keeps this demo very simple. CDI will create a bean instance the first time the game bean is accessed, and then always load that for you    </p>
+</li><li class=" ">    <p>
+<tt class=" ">@Inject maxNumber</tt> &ndash; here we inject the maximum number we can guess. This allows us to externalize the config of the game    </p>
+</li><li class=" ">    <p>
+<tt class=" ">@Inject rnadomNumber</tt> &ndash; here we inject the random number we need to guess. Two things to discuss here    </p>
+<ol class=" "><li class=" ">    <p>
+Instance - normally we can inject the object itself, but sometimes it's useful to inject a &quot;provider&quot; of the object (in this case so that we can get a new random number when the game is reset!). Instance allows us to <tt class=" ">get()</tt> a new instance when needed    </p>
+</li><li class=" ">    <p>
+Qualifiers - now we have two types of Integer (CDI auto-boxes types when doing injection) so we need to disambiguate. Explain qualifiers and development time approach to disambiguation. You will want to open up <tt class=" ">@MaxNumber</tt> and <tt class=" ">@Random</tt> here.    </p>
+</li></ol></li><li class=" ">    <p>
+<tt class=" ">@PostConstruct</tt> &ndash; here is our reset method - we also call it on startup to set up initial values. Show use of <tt class=" ">Instance.get()</tt>.    </p>
+</li></ol></li><li class=" ">    <p>
+<tt class=" ">Generator.java</tt> This bean acts as our random number generator.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">@ApplicationScoped</tt> explain about other scopes available in CDI + extensibility.    </p>
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">next()</tt> Explain about producers being useful for determining bean instance at runtime    </p>
+</li><li class=" ">    <p>
+<tt class=" ">getMaxNumber()</tt> Explain about producers allowing for loose coupling    </p>
+</li></ol></li></ol>    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Theloginquickstart"  >
+        <h2>The login quickstart</h2>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction4"  >
+        <h3>Introduction</h3>
+    
+    <p>
+The login quickstart builds on the knowledge of CDI and JSF we have got from numberguess. New stuff we will learn about is how to use JPA to store data in a database, how to use JTA to control transactions, and how to use EJB for declarative TX control.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Runtheapp2"  >
+        <h3>Run the app</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Start JBoss AS in Eclipse    </p>
+</li><li class=" ">    <p>
+Deploy it using Eclipse - just right click on the app, choose <tt class=" ">Run As -&gt; Run On Server</tt>    </p>
+</li><li class=" ">    <p>
+Select the AS 7 instance you want to use    </p>
+</li><li class=" ">    <p>
+Hit finish    </p>
+</li><li class=" ">    <p>
+Load the app at <a href="http://localhost:8080/jboss-as-login">http://localhost:8080/jboss-as-login</a>    </p>
+</li><li class=" ">    <p>
+Login as admin/admin    </p>
+</li><li class=" ">    <p>
+Create a new user    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-DeploymentDescriptors"  >
+        <h3>Deployment Descriptors</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Show that we have the same ones we are used in <tt class=" ">src/main/webapp</tt> &ndash; <tt class=" ">beans.xml</tt>, <tt class=" ">faces-config.xml</tt>    </p>
+</li><li class=" ">    <p>
+We have a couple of new ones in <tt class=" ">src/main/resources</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">persistence.xml</tt>. Not too exciting. We are using a datasource that AS7 ships with. It's backed by the H2 database and is purely a sample datasource to use in sample applications. We also tell Hibernate to auto-create tables - as you always have.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">import.sql</tt> Again, the same old thing you are used to in Hibernate - auto-import data when the app starts.    </p>
+</li></ol></li><li class=" ">    <p>
+<tt class=" ">pom.xml</tt> is the same again, but just adds in dependencies for JPA, JTA and EJB    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Views2"  >
+        <h3>Views</h3>
+    
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">template.xhtml</tt> One of the updates added to JSF 2.0 was templating ability. We take advantage of that in this app, as we have multiple views    </p>
+<ol class=" "><li class=" ">    <p>
+Actually nothing too major here, we define the app &quot;title&quot; and we could easily define a common footer etc. (we can see this done in the kitchensink app)    </p>
+</li><li class=" ">    <p>
+The <tt class=" ">ui:insert</tt> command inserts the actual content from the templated page.<br/>#<tt class=" ">home.xhtml</tt>    </p>
+</li><li class=" ">    <p>
+Uses the template    </p>
+</li><li class=" ">    <p>
+Has some input fields for the login form, button to login and logout, link to add users.    </p>
+</li><li class=" ">    <p>
+Binds fields to credentials bean}}    </p>
+</li><li class=" ">    <p>
+Buttons link to login bean which is the controller    </p>
+</li></ol></li><li class=" ">    <p>
+<tt class=" ">users.xhtml</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+Uses the template    </p>
+</li><li class=" ">    <p>
+Displays all users using a table    </p>
+</li><li class=" ">    <p>
+Has a form with input fields to add users.    </p>
+</li><li class=" ">    <p>
+Binds fields to the newUser bean    </p>
+</li><li class=" ">    <p>
+Methods call on userManager bean    </p>
+</li></ol></li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Beans2"  >
+        <h3>Beans</h3>
+    
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">Credentials.java</tt> Backing bean for the login form field, pretty trivial. It's request scoped (natural for a login field) and named so we can get it from JSF.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">Login.java</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+Is session scoped (a user is logged in for the length of their session or until they log out}}    </p>
+</li><li class=" ">    <p>
+Is accessible from EL    </p>
+</li><li class=" ">    <p>
+Injects the current credentials    </p>
+</li><li class=" ">    <p>
+Uses the userManager service to load the user, and sends any messages to JSF as needed    </p>
+</li><li class=" ">    <p>
+Uses a producer method to expose the @LoggedIn user (producer methods used as we don't know which user at development time)    </p>
+</li></ol></li><li class=" ">    <p>
+<tt class=" ">User.java</tt> Is a pretty straightforward JPA entity. Mapped with <tt class=" ">@Entity</tt>, has an natural id.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">UserManager.java</tt> This is an interface, and by default we use the ManagedBean version, which requires manual TX control    </p>
+</li><li class=" ">    <p>
+<tt class=" ">ManagedBeanUserManager.java</tt> - accessible from EL, request scoped.    </p>
+<ol class=" "><li class=" ">    <p>
+Injects a logger (we'll see how that is produced in a minute)    </p>
+</li><li class=" ">    <p>
+Injects the entity manager (again, just a min)    </p>
+</li><li class=" ">    <p>
+Inject the UserTransaction (this is provided by CDI)    </p>
+</li><li class=" ">    <p>
+<tt class=" ">getUsers()</tt> standard JPA-QL that we know and love - but lots of ugly TX handling code.    </p>
+</li><li class=" ">    <p>
+Same for <tt class=" ">addUser()</tt> and <tt class=" ">findUser()</tt> methods - very simple JPA but...    </p>
+</li><li class=" ">    <p>
+Got a couple of producer methods.    </p>
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">getUsers()</tt> is obvious - loads all the users in the database. No ambiguity - CDI takes into account generic types when injecting. Also note that CDI names respect JavaBean naming conventions    </p>
+</li><li class=" ">    <p>
+<tt class=" ">getNewUser()</tt> is used to bind the new user form to from the view layer - very nice as it decreases coupling - we could completely change the wiring on the server side (different approach to creating the newUser bean) and no need to change the view layer.    </p>
+</li></ol></li></ol></li><li class=" ">    <p>
+<tt class=" ">EJBUserManager.java</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+It's an alternative &ndash; explain alternatives, and that they allow selection of beans at deployment time    </p>
+</li><li class=" ">    <p>
+Much simple now we have declarative TX control.    </p>
+</li><li class=" ">    <p>
+Start to see how we can introduce EJB to get useful enterprise services such as declarative TX control    </p>
+</li></ol></li><li class=" ">    <p>
+<tt class=" ">Resources.java</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+{EntityManager}} - explain resource producer pattern    </p>
+</li></ol></li></ol>    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Thekitchensinkquickstart"  >
+        <h2>The kitchensink quickstart</h2>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Introduction5"  >
+        <h3>Introduction</h3>
+    
+    <p>
+The kitchensink quickstart is generated from an archetype available for JBoss AS (tell people to check the <span class=" error">[Getting Started Developing Applications]</span> Guide for details). It demonstrates CDI, JSF, EJB, JPA (which we've seen before) and JAX-RS and Bean Validation as well. We add in Arquillian for testing.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Runtheapp3"  >
+        <h3>Run the app</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Start JBoss AS in Eclipse    </p>
+</li><li class=" ">    <p>
+Deploy it using Eclipse - just right click on the app, choose <tt class=" ">Run As -&gt; Run On Server</tt>    </p>
+</li><li class=" ">    <p>
+Select the AS 7 instance you want to use    </p>
+</li><li class=" ">    <p>
+Hit finish    </p>
+</li><li class=" ">    <p>
+Load the app at <a href="http://localhost:8080/jboss-as-kitchensink">http://localhost:8080/jboss-as-kitchensink</a>    </p>
+</li><li class=" ">    <p>
+Register a member - make sure to enter an invalid email and phone - show bean validation at work    </p>
+</li><li class=" ">    <p>
+Click on the member URL and show the output from JAX-RS    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-BeanValidation"  >
+        <h3>Bean Validation</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Explain the benefits of bean validation - need your data always valid (protect your data) AND good errors for your user. BV allows you to express once, apply often.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">index.xhtml</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+Show the input fields &ndash; no validators attached    </p>
+</li><li class=" ">    <p>
+Show the message output    </p>
+</li></ol></li><li class=" ">    <p>
+<tt class=" ">Member.java</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+Hightlight the various validation annotations    </p>
+</li></ol></li><li class=" ">    <p>
+Java EE automatically applies the validators in both the persistence layer and in your views    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-JAXRS"  >
+        <h3>RS</h3>
+    
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">index.xhtml</tt> - Show that URL generation is just manual    </p>
+</li><li class=" ">    <p>
+<tt class=" ">JaxRsActivator.java</tt> - simply activates JAX-RS    </p>
+</li><li class=" ">    <p>
+<tt class=" ">Member.java</tt> - add JAXB annotation to make JAXB process the class properly    </p>
+</li><li class=" ">    <p>
+<tt class=" ">MemberResourceRESTService.java</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+<tt class=" ">@Path</tt> sets the JAX-RS resource    </p>
+</li><li class=" ">    <p>
+JAX-RS services can use injection    </p>
+</li><li class=" ">    <p>
+<tt class=" ">@GET</tt> methods are auto transformed to XML using JAXB    </p>
+</li></ol></li><li class=" ">    <p>
+And that is it!    </p>
+</li></ol>    </div>
+    
+    <div class="section-3"  id="80873408_GettingStartedDevelopingApplicationsPresentation%26Demo-Arquillian"  >
+        <h3>Arquillian</h3>
+    
+<ol class=" "><li class=" ">    <p>
+Make sure JBoss AS is running    </p>
+</li><li class=" ">    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn clean test -Parq-jbossas-remote</pre>
+        </div>
+    </div>
+<ol class=" "><li class=" ">    <p>
+Explain the difference between managed and remote    </p>
+</li></ol></li><li class=" ">    <p>
+Make sure JBoss AS is stopped    </p>
+</li><li class=" ">    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn clean test -Parq-jbossas-managed</pre>
+        </div>
+    </div>
+</li><li class=" ">    <p>
+Start JBoss AS in Eclipse    </p>
+</li><li class=" ">    <p>
+Update the project to use the <tt class=" ">arq-jbossas-remote</tt> profile    </p>
+</li><li class=" ">    <p>
+Run the test from Eclipse    </p>
+<ol class=" "><li class=" ">    <p>
+Right click on test, <tt class=" ">Run As -&gt; JUnit Test</tt>    </p>
+</li></ol></li><li class=" ">    <p>
+<tt class=" ">MemberRegistrationTest.java</tt>    </p>
+<ol class=" "><li class=" ">    <p>
+Discuss micro deployments    </p>
+</li><li class=" ">    <p>
+Explain Arquilian allows you to use injection    </p>
+</li><li class=" ">    <p>
+Explain that Arquillian allows you to concentrate just on your test logic    </p>
+</li></ol></li></ol>    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="previous"><a accesskey="p" href="Developing_JSF_Project_Using_JBoss_AS7,_Maven_and_IntelliJ.html"><strong>Prev</strong>Developing JSF Project Using JBoss AS7, Maven and IntelliJ</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="next"><a accesskey="n" href="Getting_Started_Guide.html"><strong>Next</strong>Getting Started Guide</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

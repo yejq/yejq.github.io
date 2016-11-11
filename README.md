@@ -1,2 +1,2 @@
 # yejq.github.io
-yejq的技术博客2
+yejq的技术博客

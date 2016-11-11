@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Apache CXF integration - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="previous"><a accesskey="p" href="Authentication.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="next"><a accesskey="n" href="WS-Addressing.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </ul>
+                    <div>
+            <h1>Apache CXF integration</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+<ul class=" "><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-JBossWSintegrationlayerwithApacheCXF">JBossWS integration layer with Apache CXF</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-BuildingWSapplicationstheJBossway">Building WS applications the JBoss way</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Portableapplications">Portable applications</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-DirectApacheCXFAPIusage">Direct Apache CXF API usage</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Bususage">Bus usage</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-CreatingaBusinstance">Creating a Bus instance</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-UsingexistingBusinstances">Using existing Bus instances</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-BusselectionstrategiesforJAXWSclients">Bus selection strategies for JAXWS clients</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Threadbusstrategy%28THREADBUS%29">Thread bus strategy (THREAD_BUS)</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Newbusstrategy%28NEWBUS%29">New bus strategy (NEW_BUS)</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Threadcontextclassloaderbusstrategy%28TCCLBUS%29">Thread context classloader bus strategy (TCCL_BUS)</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Strategyconfiguration">Strategy configuration</a>    </p>
+</li></ul></li></ul></li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-ServerSideIntegrationCustomization">Server Side Integration Customization</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Deploymentdescriptorproperties">Deployment descriptor properties</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-WorkQueueconfiguration">WorkQueue configuration</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Policyalternativeselector">Policy alternative selector</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-MBeanmanagement">MBean management</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Schemavalidation">Schema validation</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Interceptors">Interceptors</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Features">Features</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-WSDiscoveryenablement">WS-Discovery enablement</a>    </p>
+</li></ul></li></ul></li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-ApacheCXFinterceptors">Apache CXF interceptors</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-ApacheCXFfeatures">Apache CXF features</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-Propertiesdrivenbeancreation">Properties driven bean creation</a>    </p>
+</li><li class=" ">    <p>
+<a href="Apache_CXF_integration.html#80873266_ApacheCXFintegration-HTTPConduitconfiguration">HTTPConduit configuration</a>    </p>
+</li></ul>    <div class="section-2"  id="80873266_ApacheCXFintegration-JBossWSintegrationlayerwithApacheCXF"  >
+        <h2>JBossWS integration layer with Apache CXF</h2>
+    
+    <p>
+All JAX-WS functionalities provided by JBossWS on top of WildFly are currently served through a proper integration of the JBoss Web Services stack with most of the <a href="http://cxf.apache.org/">Apache CXF</a> project modules.    </p>
+    <p>
+Apache CXF is an open source services framework. It allows building and  developing services using frontend programming APIs (including JAX-WS), with services speaking a variety of protocols such as SOAP and  XML/HTTP over a variety of transports  such as HTTP and JMS.    </p>
+    <p>
+The integration layer (<i class=" ">JBossWS-CXF</i> in short hereafter) is mainly meant for:    </p>
+<ul class=" "><li class=" ">    <p>
+allowing  using standard webservices APIs (including JAX-WS) on WildFly; this is performed internally leveraging Apache  CXF without requiring the user to deal with it;    </p>
+</li><li class=" ">    <p>
+allowing using  Apache CXF advanced features (including WS-*) on top of WildFly without requiring the user to deal with / setup /  care about the required integration steps for running in such a  container.    </p>
+</li></ul>    <p>
+In order for achieving the goals above, the JBossWS-CXF integration supports the JBoss ws endpoint deployment mechanism and comes with many internal customizations on top of Apache CXF.    </p>
+    <p>
+In the next sections a list of technical suggestions and notes on the integration is provided; please also refer to the <a href="http://cxf.apache.org/docs/index.html">Apache CXF official documentation</a> for in-depth details on the CXF architecture.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873266_ApacheCXFintegration-BuildingWSapplicationstheJBossway"  >
+        <h2>Building WS applications the JBoss way</h2>
+    
+    <p>
+The Apache CXF client and endpoint configuration as explained in the <a href="http://cxf.apache.org/docs/index.html">Apache CXF official user guide</a> is heavily based on Spring. Apache CXF basically parses Spring <tt class=" ">cxf.xml</tt> descriptors; those may contain any basic bean plus specific ws client and endpoint beans which CXF has custom parsers for. Apache CXF can be used to deploy webservice endpoints on any servlet container by including its libraries in the deployment; in such a scenario Spring basically serves as a convenient configuration option, given direct Apache CXF API usage won't be very handy. Similar reasoning applies on client side, where a Spring based descriptor offers a shortcut for setting up Apache CXF internals.    </p>
+    <p>
+This said, nowadays&nbsp;almost any Apache CXF functionality can be configured&nbsp;and used through direct API usage, without Spring. As a consequence of that and given the considerations in the sections below, the JBossWS integration with Apache CXF does not rely on Spring descriptors.    </p>
+    <div class="section-3"  id="80873266_ApacheCXFintegration-Portableapplications"  >
+        <h3>Portable applications</h3>
+    
+    <p>
+WildFly is much more then a servlet container; it actually provides users with a fully compliant target platform for Java EE applications.    </p>
+    <p>
+Generally speaking, <i class=" ">users are encouraged to write portable applications</i> by relying only on <i class=" ">JAX-WS specification</i>&nbsp;whenever possible. That would by the way ensure easy migrations to and from other compliant platforms. Being a Java EE container, WildFly already comes with a JAX-WS compliant implementation, which is basically Apache CXF plus the JBossWS-CXF integration layer. So users just need to write their JAX-WS application; <i class=" ">no need for embedding any Apache CXF or any ws related dependency library in user deployments</i>. Please refer to the&nbsp;<a href="https://docs.jboss.org/author/display/WFLY8/JAX-WS+User+Guide">JAX-WS User Guide</a> section of the documentation for getting started.    </p>
+    <p>
+WS-* usage (including WS-Security, WS-Addressing, WS-ReliableMessaging, ...) should also be configured in the most portable way; that is by <i class=" ">relying on proper WS-Policy assertions</i> on the endpoint WSDL contracts, so that client and endpoint configuration is basically a matter of setting few ws context properties. The WS-* related sections of this documentation cover all the details on configuring applications making use of WS-* through policies.    </p>
+    <p>
+As a consequence of the reasoning above, the JBossWS-CXF integration is currently built directly on the Apache CXF API and aims at allowing users to configure webservice clients and endpoints&nbsp;<i class=" ">without Spring descriptors</i>.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873266_ApacheCXFintegration-DirectApacheCXFAPIusage"  >
+        <h3>Direct Apache CXF API usage</h3>
+    
+    <p>
+Whenever users can't really meet their application requirements with JAX-WS plus WS-Policy, it is of course still possible to rely on direct Apache CXF API usage (given that's included in the AS), loosing the Java EE portability of the application. That could be the case of a&nbsp;user needing specific Apache CXF functionalities, or having to consume WS-* enabled endpoints advertised through legacy wsdl contracts without WS-Policy assertions.    </p>
+    <p>
+On server side, direct Apache CXF API usage might not be always possible or end up being not very easy. For this reason,&nbsp;the JBossWS integration comes with a convenient alternative through customization options in the <tt class=" ">jboss-webservices.xml</tt> descriptor described below on this page. Properties can be declared in <tt class=" ">jboss-webservices.xml</tt> to control Apache CXF internals like <i class=" ">interceptors</i>, <i class=" ">features</i>, etc.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873266_ApacheCXFintegration-Bususage"  >
+        <h2>Bus usage</h2>
+    
+    <div class="section-3"  id="80873266_ApacheCXFintegration-CreatingaBusinstance"  >
+        <h3>Creating a Bus instance</h3>
+    
+    <p>
+Most of the Apache CXF features are configurable using the <tt class=" ">org.apache.cxf.Bus</tt> class. While for basic JAX-WS usage the user might never need to  explicitly deal with Bus, using Apache CXF specific features generally  requires getting a handle to a&nbsp; <tt class=" ">org.apache.cxf.Bus</tt> instance. This can happen on client side as well as in a ws endpoint or handler business code.    </p>
+    <p>
+New Bus instances are produced by the currently configured <tt class=" ">org.apache.cxf.BusFactory</tt> implementation the following way:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">Bus bus = BusFactory.newInstance().createBus();</pre>
+        </div>
+    </div>
+    <p>
+The  algorithm for selecting the actual implementation of <tt class=" ">BusFactory</tt> to be  used leverages the Service API, basically looking for optional  configurations in <i class=" ">META-INF/services/...</i> location using the current  thread context classloader. JBossWS-CXF integration comes with its own  implementation of <tt class=" ">BusFactory</tt>, <tt class=" ">org.jboss.wsf.stack.cxf.client.configuration.JBossWSBusFactory</tt>,  that allows for seamless setup of JBossWS customizations on top of Apache CXF. So,  assuming the JBossWS-CXF libraries are available in the current thread  context classloader, the <tt class=" ">JBossWSBusFactory</tt> is <i class=" ">automatically</i> retrieved by the <tt class=" ">BusFactory.newInstance()</tt> call above.    </p>
+    <p>
+JBossWS users willing to explicitly use functionalities of <tt class=" ">org.apache.cxf.bus.CXFBusFactory</tt><i class=" ">,</i> get the same API with JBossWS additions through <tt class=" ">JBossWSBusFactory</tt>:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">Map&lt;Class, Object&gt; myExtensions = new HashMap&lt;Class, Object&gt;();
+myExtensions.put(...);
+Bus bus = new JBossWSBusFactory().createBus(myExtensions);</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873266_ApacheCXFintegration-UsingexistingBusinstances"  >
+        <h3>Using existing Bus instances</h3>
+    
+    <p>
+Apache  CXF keeps reference to a global default <tt class=" ">Bus</tt> instance as well as to a  thread default bus for each thread. That is performed through static  members in <tt class=" ">org.apache.cxf.BusFactory</tt><i class=" ">,</i> which also comes with the following methods in the public API:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">public static synchronized Bus getDefaultBus()
+public static synchronized Bus getDefaultBus(boolean createIfNeeded)
+public static synchronized void setDefaultBus(Bus bus)
+public static Bus getThreadDefaultBus()
+public static Bus getThreadDefaultBus(boolean createIfNeeded)
+public static void setThreadDefaultBus(Bus bus)</pre>
+        </div>
+    </div>
+    <p>
+Please note that the default behaviour of <tt class=" ">getDefaultBus()</tt> <i class=" ">/</i> <tt class=" ">getDefaultBus(true)</tt> <i class=" ">/</i> <tt class=" ">getThreadDefaultBus()</tt> <i class=" ">/</i> <tt class=" ">getThreadDefaultBus(true)</tt> is to create a new Bus instance if that's not set yet. Moreover <i class=" ">getThreadDefaultBus()</i> and <i class=" ">getThreadDefaultBus(true)</i> first fallback to retrieving the configured global default bus before  actually trying creating a new instance (and the created new instance is  set as global default bus if that was not set there yet).    </p>
+    <p>
+The  drawback of this mechanism (which is basically fine in JSE environment)  is that when running in WildFly container you need to be careful in  order not to (mis)use a bus over multiple applications (assuming the  Apache CXF classes are loaded by the same classloader, which is  currently the case with WildFly).    </p>
+    <p>
+Here is a list of general suggestions to avoid problems when running in-container:    </p>
+<ul class=" "><li class=" ">    <p>
+forget about the global default bus; you don't need that, so don't do <tt class=" ">getDefaultBus()</tt> <i class=" ">/</i> <tt class=" ">getDefaultBus(true)</tt> <i class=" ">/</i> <tt class=" ">setDefaultBus()</tt> in your code;    </p>
+</li><li class=" ">    <p>
+avoid <tt class=" ">getThreadDefaultBus()</tt> <i class=" ">/</i> <tt class=" ">getThreadDefaultBus(true)</tt> unless you already know for sure the default bus is already set;    </p>
+</li><li class=" ">    <p>
+keep  in mind thread pooling whenever you customize a thread default bus  instance (for instance adding bus scope interceptors, ...), as that  thread and bus might be later reused; so either shutdown the bus when  you're done or explicitly remove it from the BusFactory thread  association.    </p>
+</li></ul>    <p>
+Finally, remember that each time you explictly  create a new Bus instance (factory.createBus()) that is set as thread  default bus and global default bus if those are not set yet. The JAXWS <tt class=" ">Provider</tt> implementation also creates <tt class=" ">Bus</tt> instances internally, in particular the JBossWS version of JAXWS <tt class=" ">Provider</tt> makes sure the default bus is never internally used and instead a new <tt class=" ">Bus</tt> is created if required (more details on this in the next paragraph).    </p>
+    </div>
+    
+    <div class="section-3"  id="80873266_ApacheCXFintegration-BusselectionstrategiesforJAXWSclients"  >
+        <h3>Bus selection strategies for JAXWS clients</h3>
+    
+    <p>
+JAXWS clients require an Apache CXF Bus to be available; the client is registered within the Bus and the Bus affects the client behavior (e.g. through the configured CXF interceptors). The way a bus is internally selected for serving a given JAXWS client is very important, especially for in-container clients; for this reason, JBossWS users can choose the preferred Bus selection strategy. The strategy is enforced in the <tt class=" ">javax.xml.ws.spi.Provider</tt> implementation from the JBossWS integration, being that called whenever a JAXWS <tt class=" ">Service</tt> (client) is requested.    </p>
+    <div class="section-4"  id="80873266_ApacheCXFintegration-Threadbusstrategy%28THREADBUS%29"  >
+        <h4>Thread bus strategy (THREAD_BUS)</h4>
+    
+    <p>
+Each time the vanilla JAXWS api is used to create a Bus, the JBossWS-CXF integration will automatically make sure a Bus is currently associated to the current thread in the BusFactory. If that's not the case, a new Bus is created and linked to the current thread (to prevent the user from relying on the default Bus). The Apache CXF engine will then create the client using the current thread Bus.    </p>
+    <p>
+This is the default strategy, and the most straightforward one in Java SE environments; it lets users automatically reuse a previously created Bus instance and allows using customized Bus that can possibly be created and associated to the thread before building up a JAXWS client.    </p>
+    <p>
+The drawback of the strategy is that the link between the Bus instance and the thread needs to be eventually cleaned up (when not needed anymore). This is really evident in a Java EE environment (hence when running in-container), as threads from pools (e.g. serving web requests) are re-used.    </p>
+    <p>
+When relying on this strategy, the safest approach to be sure of cleaning up the link is to surround the JAXWS client with a <tt class=" ">try/finally</tt> block as below:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">try {
+Service service = Service.create(wsdlURL, serviceQName);
+MyEndpoint port = service.getPort(MyEndpoint.class);
+//...
+} finally {
+BusFactory.setThreadDefaultBus(null);
+// OR (if you don't need the bus and the client anymore)
+ Bus bus = BusFactory.getThreadDefaultBus(false);
+bus.shutdown(true);
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="80873266_ApacheCXFintegration-Newbusstrategy%28NEWBUS%29"  >
+        <h4>New bus strategy (NEW_BUS)</h4>
+    
+    <p>
+Another strategy is to have the JAXWS Provider from the JBossWS integration create a new Bus each time a JAXWS client is built. The main benefit of this approach is that a fresh bus won't rely on any formerly cached information (e.g. cached WSDL / schemas) which might have changed after the previous client creation. The main drawback is of course worse performance as the Bus creation takes time.    </p>
+    <p>
+If there's a bus already associated to the current thread before the JAXWS client creation, that is automatically restored when returning control to the user; in other words, the newly created bus will be used only for the created JAXWS client but won't stay associated to the current thread at the end of the process. Similarly, if the thread was not associated to any bus before the client creation, no bus will be associated to the thread at the end of the client creation.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873266_ApacheCXFintegration-Threadcontextclassloaderbusstrategy%28TCCLBUS%29"  >
+        <h4>Thread context classloader bus strategy (TCCL_BUS)</h4>
+    
+    <p>
+The last strategy is to have the bus created for serving the client be associated to the current thread context classloader (TCCL). That basically means the same Bus instance is shared by JAXWS clients running when the same TCCL is set. This is particularly interesting as each web application deployment usually has its own context classloader, so this strategy is possibly a way to keep the number of created Bus instances bound to the application number in WildFly container.    </p>
+    <p>
+If there's a bus already associated to the current thread before the JAXWS client creation, that is automatically restored when returning control to the user; in other words, the bus corresponding to the current thread context classloader will be used only for the created JAXWS client but won't stay associated to the current thread at the end of the process. If the thread was not associated to any bus before the client creation, a new bus will be created (and later user for any other client built with this strategy and the same TCCL in place); no bus will be associated to the thread at the end of the client creation.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873266_ApacheCXFintegration-Strategyconfiguration"  >
+        <h4>Strategy configuration</h4>
+    
+    <p>
+Users can request a given Bus selection strategy to be used for the client being built by specifying one of the following JBossWS features (which extend <tt class=" ">javax</tt><tt class=" ">.</tt><tt class=" ">xml</tt><tt class=" ">.</tt><tt class=" ">ws</tt><tt class=" ">.</tt><tt class=" ">WebServiceFeature</tt>):    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Feature    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Strategy    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">org.jboss.wsf.stack.cxf.client.UseThreadBusFeature</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+THREAD_BUS    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">org</tt><tt class=" ">.</tt><tt class=" ">jboss</tt><tt class=" ">.</tt><tt class=" ">wsf</tt><tt class=" ">.</tt><tt class=" ">stack</tt><tt class=" ">.</tt><tt class=" ">cxf</tt><tt class=" ">.</tt><tt class=" ">client.</tt><tt class=" ">UseNewBusFeature</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+NEW_BUS    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">org</tt><tt class=" ">.</tt><tt class=" ">jboss</tt><tt class=" ">.</tt><tt class=" ">wsf</tt><tt class=" ">.</tt><tt class=" ">stack</tt><tt class=" ">.</tt><tt class=" ">cxf</tt><tt class=" ">.</tt><tt class=" ">client.</tt><tt class=" ">UseTCCLBusFeature</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+TCCL_BUS    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+The feature is specified as follows:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">Service service = Service.create(wsdlURL, serviceQName, new UseThreadBusFeature());</pre>
+        </div>
+    </div>
+    <p>
+If no feature is explicitly specified, the system default strategy is used, which can be modified through the <tt class=" ">org.jboss.ws.cxf.jaxws-client.bus.strategy</tt> system property when starting the JVM. The valid values for the property are <tt class=" ">THREAD_BUS</tt>, <tt class=" ">NEW_BUS</tt> and <tt class=" ">TCCL_BUS</tt>. The default is <tt class=" ">THREAD_BUS</tt>.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873266_ApacheCXFintegration-ServerSideIntegrationCustomization"  >
+        <h2>Server Side Integration Customization</h2>
+    
+    <p>
+The  JBossWS-CXF server side integration takes care of internally creating  proper Apache CXF structures (including a <tt class=" ">Bus</tt> instance, of course) for the provided ws deployment. Should the deployment include multiple endpoints, those would all live within the same Apache CXF Bus, which would of course be completely separated by the other deployments' bus instances.    </p>
+    <p>
+While JBossWS sets sensible defaults for most of the Apache CXF configuration options on server side, users might want to fine tune the <tt class=" ">Bus</tt> instance that's created for their deployment; a <tt class=" ">jboss-webservices.xml</tt> descriptor can be used for deployment level customizations.    </p>
+    <div class="section-3"  id="80873266_ApacheCXFintegration-Deploymentdescriptorproperties"  >
+        <h3>Deployment descriptor properties</h3>
+    
+    <p>
+The <tt class=" ">jboss-webservices.xml</tt> descriptor can be used to <a href="https://docs.jboss.org/author/display/WFLY8/Advanced+User+Guide">provide property values</a>.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;webservices xmlns=&quot;http://www.jboss.com/xml/ns/javaee&quot; version=&quot;1.2&quot;&gt;
+  ...
+  &lt;property&gt;
+    &lt;name&gt;...&lt;/name&gt;
+    &lt;value&gt;...&lt;/value&gt;
+  &lt;/property&gt;
+  ...
+&lt;/webservices&gt;</pre>
+        </div>
+    </div>
+    <p>
+JBossWS-CXF integration comes with a set of allowed property names to control Apache CXF internals.    </p>
+    <div class="section-4"  id="80873266_ApacheCXFintegration-WorkQueueconfiguration"  >
+        <h4>WorkQueue configuration</h4>
+    
+    <p>
+Apache CXF uses WorkQueue instances for dealing with some operations (e.g. @Oneway requests processing). A <a href="http://cxf.apache.org/javadoc/latest-2.5.x/org/apache/cxf/workqueue/WorkQueueManager.html">WorkQueueManager</a> is installed in the Bus as an extension and allows for adding / removing queues as well as controlling the existing ones.    </p>
+    <p>
+On server side, queues can be provided by using the <tt class=" ">cxf.queue.&lt;queue-name&gt;.*</tt> properties in <tt class=" ">jboss-webservices.xml</tt> (e.g. <tt class=" ">cxf.queue.default.maxQueueSize</tt>&nbsp;for controlling the max queue size of the <tt class=" ">default</tt> workqueue). At deployment time, the JBossWS integration can add new instances of <a href="http://cxf.apache.org/javadoc/latest-2.5.x/org/apache/cxf/workqueue/AutomaticWorkQueueImpl.html">AutomaticWorkQueueImpl</a> to the currently configured WorkQueueManager; the properties below are used to fill in parameter into the <a href="http://cxf.apache.org/javadoc/latest-2.5.x/org/apache/cxf/workqueue/AutomaticWorkQueueImpl.html#AutomaticWorkQueueImpl(int,%20int,%20int,%20int,%20long,%20java.lang.String)">AutomaticWorkQueueImpl constructor</a>:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Property    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Default value    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">cxf.queue.&lt;queue-name&gt;.maxQueueSize</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+256    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">cxf.queue.&lt;queue-name&gt;.initialThreads</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+0    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">cxf.queue.&lt;queue-name&gt;.highWaterMark</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+25    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">cxf.queue.&lt;queue-name&gt;.lowWaterMark</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+5    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">cxf.queue.&lt;queue-name&gt;.dequeueTimeout</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+120000    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    <div class="section-4"  id="80873266_ApacheCXFintegration-Policyalternativeselector"  >
+        <h4>Policy alternative selector</h4>
+    
+    <p>
+The Apache CXF policy engine supports different strategies to deal with policy alternatives. JBossWS-CXF integration currently defaults to the <a href="http://cxf.apache.org/javadoc/latest-2.5.x/org/apache/cxf/ws/policy/selector/MaximalAlternativeSelector.html">MaximalAlternativeSelector</a>, but still allows for setting different selector implementation using the <tt class=" ">cxf.policy.alternativeSelector</tt> property in <tt class=" ">jboss-webservices.xml</tt>.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873266_ApacheCXFintegration-MBeanmanagement"  >
+        <h4>MBean management</h4>
+    
+    <p>
+Apache CXF allows managing its MBean objects that are installed into the WildFly MBean server. The feature is enabled on a deployment basis through the <tt class=" ">cxf.management.enabled</tt> property in <tt class=" ">jboss-webservices.xml</tt>. The <tt class=" ">cxf.management.installResponseTimeInterceptors</tt> property can also be used to control installation of CXF response time interceptors, which are added by default when enabling MBean management, but might not be desired in some cases. Here is an example:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;webservices xmlns=&quot;http://www.jboss.com/xml/ns/javaee&quot; version=&quot;1.2&quot;&gt;
+&lt;property&gt;
+&lt;name&gt;cxf.management.enabled&lt;/name&gt;
+&lt;value&gt;true&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;cxf.management.installResponseTimeInterceptors&lt;/name&gt;
+&lt;value&gt;false&lt;/value&gt;
+&lt;/property&gt;
+&lt;/webservices&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="80873266_ApacheCXFintegration-Schemavalidation"  >
+        <h4>Schema validation</h4>
+    
+    <p>
+Schema validation of exchanged messages can also be enabled in <tt class=" ">jboss-webservices.xml</tt>. Further details available <a href="Advanced_User_Guide.html">here</a>.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873266_ApacheCXFintegration-Interceptors"  >
+        <h4>Interceptors</h4>
+    
+    <p>
+The <tt class=" ">jboss-webservices.xml</tt> descriptor also allows specifying the <tt class=" ">cxf.interceptors.in</tt> and <tt class=" ">cxf.interceptors.out</tt> properties; those allows declaring interceptors to be attached to the Bus instance that's created for serving the deployment.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;webservices
+xmlns=&quot;http://www.jboss.com/xml/ns/javaee&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+version=&quot;1.2&quot;
+xsi:schemaLocation=&quot;http://www.jboss.com/xml/ns/javaee&quot;&gt;
+
+&lt;property&gt;
+&lt;name&gt;cxf.interceptors.in&lt;/name&gt;
+&lt;value&gt;org.jboss.test.ws.jaxws.cxf.interceptors.BusInterceptor&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;cxf.interceptors.out&lt;/name&gt;
+&lt;value&gt;org.jboss.test.ws.jaxws.cxf.interceptors.BusCounterInterceptor&lt;/value&gt;
+&lt;/property&gt;
+&lt;/webservices&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="80873266_ApacheCXFintegration-Features"  >
+        <h4>Features</h4>
+    
+    <p>
+The <tt class=" ">jboss-webservices.xml</tt> descriptor also allows specifying the <tt class=" ">cxf.features</tt> property; that allows declaring features to be attached to any endpoint belonging to the Bus instance that's created for serving the deployment.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;webservices
+xmlns=&quot;http://www.jboss.com/xml/ns/javaee&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+version=&quot;1.2&quot;
+xsi:schemaLocation=&quot;http://www.jboss.com/xml/ns/javaee&quot;&gt;
+
+&lt;property&gt;
+&lt;name&gt;cxf.features&lt;/name&gt;
+&lt;value&gt;org.apache.cxf.feature.FastInfosetFeature&lt;/value&gt;
+&lt;/property&gt;
+&lt;/webservices&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="80873266_ApacheCXFintegration-WSDiscoveryenablement"  >
+        <h4>Discovery enablement</h4>
+    
+    <p>
+WS-Discovery support can be turned on in <tt class=" ">jboss-webservices</tt> for the current deployment. Further details available <a href="WS-Discovery.html">here</a>.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873266_ApacheCXFintegration-ApacheCXFinterceptors"  >
+        <h2>Apache CXF interceptors</h2>
+    
+    <p>
+Apache CXF supports declaring interceptors using one of the following approaches:    </p>
+<ul class=" "><li class=" ">    <p>
+Annotation usage on endpoint classes (<tt class=" ">@org.apache.cxf.interceptor.InInterceptor</tt>, <tt class=" ">@org.apache.cxf.interceptor.OutInterceptor</tt>)    </p>
+</li><li class=" ">    <p>
+Direct API usage on client side (through the <tt class=" ">org.apache.cxf.interceptor.InterceptorProvider</tt> interface)    </p>
+</li><li class=" ">    <p>
+Spring descriptor usage (<i class=" ">cxf.xml</i>)    </p>
+</li></ul>    <p>
+As the Spring descriptor usage is not supported, the JBossWS integration adds an additional descriptor based approach to avoid requiring modifications to the actual client/endpoint code. Users can declare interceptors within <a href="https://docs.jboss.org/author/display/JBWS/Predefined+client+and+endpoint+configurations">predefined client and endpoint configurations</a> by specifying a list of interceptor class names for the <tt class=" ">cxf.interceptors.in</tt> and <tt class=" ">cxf.interceptors.out</tt> properties.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;jaxws-config xmlns=&quot;urn:jboss:jbossws-jaxws-config:4.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:javaee=&quot;http://java.sun.com/xml/ns/javaee&quot;
+xsi:schemaLocation=&quot;urn:jboss:jbossws-jaxws-config:4.0 schema/jbossws-jaxws-config_4_0.xsd&quot;&gt;
+&lt;endpoint-config&gt;
+&lt;config-name&gt;org.jboss.test.ws.jaxws.cxf.interceptors.EndpointImpl&lt;/config-name&gt;
+&lt;property&gt;
+&lt;property-name&gt;cxf.interceptors.in&lt;/property-name&gt;
+&lt;property-value&gt;org.jboss.test.ws.jaxws.cxf.interceptors.EndpointInterceptor,org.jboss.test.ws.jaxws.cxf.interceptors.FooInterceptor&lt;/property-value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;property-name&gt;cxf.interceptors.out&lt;/property-name&gt;
+&lt;property-value&gt;org.jboss.test.ws.jaxws.cxf.interceptors.EndpointCounterInterceptor&lt;/property-value&gt;
+&lt;/property&gt;
+&lt;/endpoint-config&gt;
+&lt;/jaxws-config&gt;</pre>
+        </div>
+    </div>
+    <p>
+A new instance of each specified interceptor class will be added to the client or endpoint the configuration is assigned to. The interceptor classes must have a no-argument constructor.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873266_ApacheCXFintegration-ApacheCXFfeatures"  >
+        <h2>Apache CXF features</h2>
+    
+    <p>
+Apache CXF supports declaring features using one of the following approaches:    </p>
+<ul class=" "><li class=" ">    <p>
+Annotation usage on endpoint classes (<tt class=" ">@org.apache.cxf.feature.Features</tt>)    </p>
+</li><li class=" ">    <p>
+Direct API usage on client side (through extensions of the <tt class=" ">org.apache.cxf.feature.AbstractFeature</tt> class)    </p>
+</li><li class=" ">    <p>
+Spring descriptor usage (<i class=" ">cxf.xml</i>)    </p>
+</li></ul>    <p>
+As the Spring descriptor usage is not supported, the JBossWS integration adds an additional descriptor based approach to avoid requiring modifications to the actual client/endpoint code. Users can declare features within <a href="https://docs.jboss.org/author/display/JBWS/Predefined+client+and+endpoint+configurations">predefined client and endpoint configurations</a> by specifying a list of feature class names for the <tt class=" ">cxf.features</tt> property.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;jaxws-config xmlns=&quot;urn:jboss:jbossws-jaxws-config:4.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:javaee=&quot;http://java.sun.com/xml/ns/javaee&quot;
+xsi:schemaLocation=&quot;urn:jboss:jbossws-jaxws-config:4.0 schema/jbossws-jaxws-config_4_0.xsd&quot;&gt;
+&lt;endpoint-config&gt;
+&lt;config-name&gt;Custom FI Config&lt;/config-name&gt;
+&lt;property&gt;
+&lt;property-name&gt;cxf.features&lt;/property-name&gt;
+&lt;property-value&gt;org.apache.cxf.feature.FastInfosetFeature&lt;/property-value&gt;
+&lt;/property&gt;
+&lt;/endpoint-config&gt;
+&lt;/jaxws-config&gt;</pre>
+        </div>
+    </div>
+    <p>
+A new instance of each specified feature class will be added to the client or endpoint the configuration is assigned to. The feature classes must have a no-argument constructor.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873266_ApacheCXFintegration-Propertiesdrivenbeancreation"  >
+        <h2>Properties driven bean creation</h2>
+    
+    <p>
+Sections above explain how to declare CXF interceptors and features through properties either in a client/endpoint predefined configuration or in a <tt class=" ">jboss-webservices.xml</tt> descriptor. By getting the feature/interceptor class name only specified, the container simply tries to create a bean instance using the class default constructor. This sets a limitation on the feature/interceptor configuration, unless custom extensions of vanilla CXF classes are provided, with the default constructor setting properties before eventually using the super constructor.    </p>
+    <p>
+To cope with this issue, JBossWS integration comes with a mechanism for configuring simple bean hierarchies when building them up from properties. Properties can have bean reference values, that is strings starting with <tt class=" ">##</tt>. Property reference keys are used to specify the bean class name and the value for for each attribute. So for instance the following properties:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Key    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Value    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+cxf.features    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+##foo, ##bar    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+##foo    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+org.jboss.Foo    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+##foo.par    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+34    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+##bar    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+org.jboss.Bar    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+##bar.color    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+blue    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+would result into the stack installing two feature instances, the same that would have been created by    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">import org.Bar;
+import org.Foo;
+
+...
+
+Foo foo = new Foo();
+foo.setPar(34);
+Bar bar = new Bar();
+bar.setColor(&quot;blue&quot;);</pre>
+        </div>
+    </div>
+    <p>
+The mechanism assumes that the classes are valid beans with proper getter and setter methods; value objects are cast to the correct primitive type by inspecting the class definition. Nested beans can of course be configured.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873266_ApacheCXFintegration-HTTPConduitconfiguration"  >
+        <h2>HTTPConduit configuration</h2>
+    
+    <p>
+HTTP transport setup in Apache CXF is achieved through <tt class=" ">org.apache.cxf.transport.http.HTTPConduit</tt> <a href="http://cxf.apache.org/docs/client-http-transport-including-ssl-support.html">configurations</a>. When running on top of the JBossWS integration, conduits can be programmatically modified using the Apache CXF API as follows:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">import org.apache.cxf.frontend.ClientProxy;
+import org.apache.cxf.transport.http.HTTPConduit;
+import org.apache.cxf.transports.http.configuration.HTTPClientPolicy;
+
+//set chunking threshold before using a JAX-WS port client
+...
+HTTPConduit conduit = (HTTPConduit)ClientProxy.getClient(port).getConduit();
+HTTPClientPolicy client = conduit.getClient();
+
+client.setChunkingThreshold(8192);
+...</pre>
+        </div>
+    </div>
+    <p>
+Users can also control the default values for the most common HTTPConduit parameters by setting specific system properties; the provided values will override Apache CXF defaut values.    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Property    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+cxf.client.allowChunking    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A boolean to tell Apache CXF whether to allow send messages using chunking.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+cxf.client.chunkingThreshold    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+An integer value to tell Apache CXF the threshold at which switching from non-chunking to chunking mode.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+cxf.client.connectionTimeout    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A long value to tell Apache CXF how many milliseconds to set the connection timeout to    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+cxf.client.receiveTimeout    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A long value to tell Apache CXF how many milliseconds to set the receive timeout to    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+cxf.client.connection    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A string to tell Apache CXF to use <tt class=" ">Keep-Alive</tt> or <tt class=" ">close</tt> connection type    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+cxf.tls-client.disableCNCheck    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A boolean to tell Apache CXF whether disabling CN host name check or not    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+The vanilla Apache CXF defaults apply when the system properties above are not set.    </p>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="previous"><a accesskey="p" href="Authentication.html"><strong>Prev</strong>Authentication</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="WS-Addressing.html"><strong>Next</strong>Addressing</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

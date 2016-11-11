@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WildFly Testsuite Test Developer Guide - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="previous"><a accesskey="p" href="Shortened_Maven_Run_Overview.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="next"><a accesskey="n" href="How_to_Add_a_Test_Case.html"><strong>Next</strong></a></li>
+                                                                                                                                                                        </ul>
+                    <div>
+            <h1>WildFly Testsuite Test Developer Guide</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+<strong class=" ">See also:</strong> <a href="WildFly_Integration_Testsuite_User_Guide.html">WildFly Integration Testsuite User Guide</a>    </p>
+    <div class="section-2"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Prerequisites"  >
+        <h2>requisites</h2>
+    
+    <p>
+Please be sure to read <a href="https://docs.jboss.org/author/display/AS71/Pre-requisites+-+test+quality+standards">Pre-requisites - test quality standards</a> and follow those guidelines.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Arquilliancontainerconfiguration"  >
+        <h2>Arquillian container configuration</h2>
+    
+    <p>
+See <a href="https://docs.jboss.org/author/display/ARQ/JBoss+AS+7.1%2C+JBoss+EAP+6.0+-+Managed">AS 7.1 managed container adapter refrence</a>.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-ManagementClientandModelNodeusageexample"  >
+        <h2>ManagementClient and ModelNode usage example</h2>
+    
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">final ModelNode operation = new ModelNode();
+operation.get(ModelDescriptionConstants.OP).set(ModelDescriptionConstants.READ_RESOURCE_OPERATION);
+operation.get(ModelDescriptionConstants.OP_ADDR).set(address);
+operation.get(ModelDescriptionConstants.RECURSIVE).set(true);
+
+final ModelNode result = managementClient.getControllerClient().execute(operation);
+Assert.assertEquals(ModelDescriptionConstants.SUCCESS, result.get(ModelDescriptionConstants.OUTCOME).asString());</pre>
+        </div>
+    </div>
+    <p>
+ManagementClient can be obtained as described below.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Arquillianfeaturesavailableintests"  >
+        <h2>Arquillian features available in tests</h2>
+    
+    <p>
+@ServerSetup    </p>
+    <p>
+TBD    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">@ContainerResource private ManagementClient managementClient;
+final ModelNode result = managementClient.getControllerClient().execute(operation);</pre>
+        </div>
+    </div>
+    <p>
+TBD    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">@ArquillianResource private ManagementClient managementClient;
+ModelControllerClient client = managementClient.getControllerClient();</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">@ArquillianResource ContainerController cc;
+
+@Test
+public void test() {
+    cc.setup(&quot;test&quot;, ...properties..)
+    cc.start(&quot;test&quot;)
+}</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;arquillian&gt;
+    &lt;container qualifier=&quot;test&quot; mode=&quot;manual&quot; /&gt;
+&lt;/arquillian&gt;</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">// Targeted containers HTTP context.
+@ArquillianResource URL url;</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">// Targeted containers HTTP context where servlet is located.
+@ArquillianResource(SomeServlet.class) URL url;</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">// Targeted containers initial context.
+@ArquillianResource InitialContext|Context context;</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">// The manual deployer.
+@ArquillianResource Deployer deployer;</pre>
+        </div>
+    </div>
+    <p>
+See <a href="https://docs.jboss.org/author/display/ARQ/Resource+injection">Arquillian's Resource Injection docs</a> for more info, <a href="https://github.com/arquillian/arquillian-examples">https://github.com/arquillian/arquillian-examples</a> for examples.    </p>
+    <p>
+See also <a href="https://docs.jboss.org/author/display/ARQ/Reference+Guide">Arquillian Reference</a>.    </p>
+    <p>
+Note to @ServerSetup annotation: It works as expected only on non-manual containers. In case of manual mode containers it calls setup() method after each server start up which is right (or actually before deployment), but the tearDown() method is called only at AfterClass event, i.e. usually after your manual shutdown of the server. Which limits you on the ability to revert some configuration changes on the server and so on. I cloned the annotation and changed it to fit the manual mode, but it is still in my github branch :)    </p>
+    </div>
+    
+    <div class="section-2"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Propertiesavailableintests"  >
+        <h2>Properties available in tests</h2>
+    
+    <div class="section-3"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Directories"  >
+        <h3>Directories</h3>
+    
+<ul class=" "><li class=" ">    <p>
+jbosssa.project.dir&nbsp;&nbsp;&nbsp;&nbsp; - Project's root dir (where ./build.sh is).    </p>
+</li><li class=" ">    <p>
+jbossas.ts.dir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Testsuite dir.    </p>
+</li><li class=" ">    <p>
+jbossas.ts.integ.dir&nbsp;&nbsp;&nbsp; - Testsuite's integration module dir.    </p>
+</li><li class=" ">    <p>
+jboss.dist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Path to AS distribution, either built (build/target/jboss-as-...) or user-provided via -Djboss.dist    </p>
+</li><li class=" ">    <p>
+jboss.inst&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - (Arquillian in-container only)&nbsp; Path to the AS instance in which the test is running (until ARQ-650 is possibly done)    </p>
+</li></ul><ul class=" "><li class=" ">    <p>
+<del class=" ">jboss.home</del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <u class=" ">Deprecated</u> as it's name is unclear and confusing. Use jboss.dist or jboss.inst.    </p>
+</li></ul>    </div>
+    
+    <div class="section-3"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Networking"  >
+        <h3>Networking</h3>
+    
+<ul class=" "><li class=" ">    <p>
+node0    </p>
+</li><li class=" ">    <p>
+node1    </p>
+</li><li class=" ">    <p>
+230.0.0.4    </p>
+</li></ul>    </div>
+    
+    <div class="section-3"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Timerelatedcoefficients%28ratios%29"  >
+        <h3>Time-related coefficients (ratios)</h3>
+    
+    <p>
+In case some of the following causes timeouts, you may prolong the timeouts by setting value &gt;= 100:    </p>
+    <p>
+100 = leave as is,<br/>150 = 50 % longer, etc.    </p>
+<ul class=" "><li class=" ">    <p>
+timeout.ratio.gen - General ratio - can be used to adjust all timeouts.When this and specific are defined, both apply.    </p>
+</li></ul><ul class=" "><li class=" ">    <p>
+timeout.ratio.fs- Filesystem IO    </p>
+</li><li class=" ">    <p>
+timeout.ratio.net - Network IO    </p>
+</li><li class=" ">    <p>
+timeout.ratio.mem - Memory IO    </p>
+</li><li class=" ">    <p>
+timeout.ratio.cpu - Processor    </p>
+</li><li class=" ">    <p>
+timeout.ratio.db - Database    </p>
+</li></ul>    <p>
+Time ratios will soon be provided by <tt class=" ">org.jboss.as.test.shared.time.TimeRatio.for*()</tt> methods.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Negativetests"  >
+        <h2>Negative tests</h2>
+    
+    <p>
+To test invalid deployment handling:&nbsp; @ShouldThrowException    </p>
+    <p>
+Currently doesn't work due to <a href="https://issues.jboss.org/browse/WFLY-673">WFLY-673</a>.    </p>
+    <p>
+optionally you might be able to catch it using the manual deployer    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">@Deployment(name = &quot;X&quot;, managed = false) ...
+
+@Test
+public void shouldFail(@ArquillianResource Deployer deployer) throws Exception {
+  try {
+    deployer.deploy(&quot;X&quot;)
+  }
+  catch(Exception e) {
+   // do something
+  }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Clusteringtests%28WFLY616%29"  >
+        <h2>Clustering tests (WFLY-616)</h2>
+    
+    <p>
+You need to deploy the same thing twice, so two deployment methods that just return the same thing.<br/>And then you have tests that run against each.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">@Deployment(name = &quot;deplA&quot;, testable = false)
+    @TargetsContainer(&quot;serverB&quot;)
+    public static Archive&lt;?&gt; deployment()
+
+    @Deployment(name = &quot;deplB&quot;, testable = false)
+    @TargetsContainer(&quot;serverA&quot;)
+    public static Archive&lt;?&gt; deployment(){ ... }
+
+    @Test
+    @OperateOnDeployment(&quot;deplA&quot;)
+    public void testA(){ ... }
+
+    @Test
+    @OperateOnDeployment(&quot;deplA&quot;)
+    public void testA() {...}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="80873461_WildFlyTestsuiteTestDeveloperGuide-Howtogettheteststomaster"  >
+        <h2>How to get the tests to master</h2>
+    
+<ul class=" "><li class=" ">    <p>
+First of all, <strong class=" ">be sure to read the &quot;Before you add a test&quot; section</strong>.    </p>
+</li><li class=" ">    <p>
+<strong class=" ">Fetch</strong> the newest mater: <tt class=" ">git fetch upstream&nbsp; # Provided you have the jbossas/jbossas GitHub repo</tt> <tt class=" ">as a remote called 'upstream'.</tt>    </p>
+</li><li class=" ">    <p>
+<strong class=" ">Rebase</strong> your branch: git checkout WFLY-1234-your-branch;&nbsp; git rebase upstream/master    </p>
+</li><li class=" ">    <p>
+<strong class=" ">Run</strong> <strong class=" "><i class=" ">whole</i></strong> <strong class=" ">testsuite</strong> (integration-tests -DallTests). You may use <a href="https://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/wildfly-as-testsuite-RHEL-matrix-openJDK7/lastCompletedBuild/testReport/">https://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/wildfly-as-testsuite-RHEL-matrix-openJDK7/lastCompletedBuild/testReport/</a>.    </p>
+<ul class=" "><li class=" ">    <p>
+If any tests fail and they do not fail in master, fix it and go back to the &quot;Fetch&quot; step.    </p>
+</li></ul></li><li class=" ">    <p>
+<strong class=" ">Push</strong> to a new branch in your GitHub repo: <tt class=" ">git push origin WFLY-1234-new-XY-tests</tt>    </p>
+</li><li class=" ">    <p>
+<strong class=" ">Create a pull-request</strong> on GitHub. Go to your branch and click on &quot;Pull Request&quot;.&nbsp;    </p>
+<ul class=" "><li class=" ">    <p>
+If you have a jira, start the title with it, like - WFLY-1234 New tests for XYZ.    </p>
+</li><li class=" ">    <p>
+If you don't, write some apposite title. In the description, describe in detail what was done and why should it be merged. Keep in mind that the diff will be visible under your description.    </p>
+</li></ul></li><li class=" ">    <p>
+<strong class=" ">Keep the branch rebased daily</strong> until it's merged (see the Fetch step). If you don't, you're dramatically decreasing chance to get it merged.    </p>
+</li><li class=" ">    <p>
+There's a mailing list, jbossas-pull-requests, which is notified of every pull-request.    </p>
+</li><li class=" ">    <p>
+You might have someone with merge privileges to cooperate with you, so they know what you're doing, and expect your pull request.    </p>
+</li><li class=" ">    <p>
+When your pull request is reviewed and merged, you'll be notified by mail from GitHub.    </p>
+</li><li class=" ">    <p>
+You may also check if it was merged by the following:&nbsp; <tt class=" ">git fetch upstream; git cherry</tt> <tt class=" ">&lt;branch&gt;&nbsp; ## Or</tt> git branch --contains{{&lt;branch&gt; - see}} <tt class=" ">here</tt>    </p>
+</li><li class=" ">    <p>
+Your commits will appear in master. They will have the same hash as in your branch.    </p>
+<ul class=" "><li class=" ">    <p>
+You are now safe to delete both your local and remote branches: <tt class=" ">git branch -D WFLY-1234-your-branch; git push origin :WFLY-1234-your-branch</tt>    </p>
+</li></ul></li></ul>    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="previous"><a accesskey="p" href="Shortened_Maven_Run_Overview.html"><strong>Prev</strong>Shortened Maven Run Overview</a></li>
+                                                                                                                                                  <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="next"><a accesskey="n" href="How_to_Add_a_Test_Case.html"><strong>Next</strong>How to Add a Test Case</a></li>
+                                                                                                                                                                      </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

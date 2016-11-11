@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Deployment Descriptors used In WildFly - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="previous"><a accesskey="p" href="Class_Loading_in_WildFly.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="next"><a accesskey="n" href="Development_Guidelines_and_Recommended_Practices.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </ul>
+                    <div>
+            <h1>Deployment Descriptors used In WildFly</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+This page gives a list and a description of all the valid deployment descriptors that a WildFly&nbsp;deployment can use. This document is a work in progress.    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Descriptor    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Location    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Specification    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Info    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss-deployment-structure.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> or <tt class=" ">WEB-INF</tt> of the top level deployment    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This file can be used to control class loading for the deployment    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="https://docs.jboss.org/author/display/AS71/Class+Loading+in+AS7">Class Loading in WildFly</a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">beans.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">WEB-INF</tt> or <tt class=" ">META-INF</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+CDI    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The presence of this descriptor (even if empty) activates CDI    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="http://docs.jboss.org/weld/reference/1.0.0/en-US/html_single/">Weld Reference Guide </a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">web.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">WEB-INF</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Servlet    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Web deployment descriptor    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss-web.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">WEB-INF</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+JBoss Web deployment descriptor. This can be use to override settings from web.xml, and to set WildFly&nbsp;specific options    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">ejb-jar.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">WEB-INF</tt> of a war, or <tt class=" ">META-INF</tt> of an EJB jar    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+EJB    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The EJB spec deployment descriptor    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd">ejb-jar.xml schema</a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss-ejb3.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">WEB-INF</tt> of a war, or <tt class=" ">META-INF</tt> of an EJB jar    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The JBoss EJB deployment descriptor, this can be used to override settings from <tt class=" ">ejb-jar.xml</tt>, and to set WildFly&nbsp;specific settings    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">application.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> of an EAR    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Java EE Platform Specification    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="http://java.sun.com/xml/ns/javaee/application_6.xsd">application.xml schema</a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss-app.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> of an EAR    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+JBoss application deployment descriptor, can be used to override settings application.xml, and to set WildFly&nbsp;specific settings    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">persistence.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+JPA    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+JPA descriptor used for defining persistence units    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="http://docs.jboss.org/hibernate/entitymanager/3.5/reference/en/html/configuration.html">Hibernate Reference Guide</a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss-ejb-client.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">WEB-INF</tt> of a war, or <tt class=" ">META-INF</tt> of an EJB jar    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Remote EJB settings. This file is used to setup the EJB client context for a deployment that is used for remote EJB invocations    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="https://docs.jboss.org/author/display/AS71/EJB+invocations+from+a+remote+server+instance">EJB invocations from a remote server instance</a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jbosscmp-jdbc.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> of an EJB jar    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+CMP deployment descriptor. Used to map CMP entity beans to a database. The format is largely unchanged from previous versions.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">ra.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> of a rar archive    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Spec deployment descriptor for resource adaptor deployments    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="http://docs.jboss.org/ironjacamar/userguide/1.0/en-US/html_single/">IronJacamar Reference Guide</a> <a href="http://java.sun.com/xml/ns/javaee/connector_1_6.xsd">Schema</a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">ironjacamar.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> of a rar archive    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+JBoss deployment descriptor for resource adaptor deployments    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="http://docs.jboss.org/ironjacamar/userguide/1.0/en-US/html_single/">IronJacamar Reference Guide</a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">*-jms.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> or <tt class=" ">WEB-INF</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+JMS message destination deployment descriptor, used to deploy message destinations with a deployment    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">*-ds.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> or <tt class=" ">WEB-INF</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Datasource deployment descriptor, use to bundle datasources with a deployment    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="https://docs.jboss.org/author/display/WFLY8/DataSource+configuration">DataSource Configuration</a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">application-client.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> of an application client jar    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Java EE6 Platform Specification    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The spec deployment descriptor for application client deployments    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<a href="http://java.sun.com/xml/ns/javaee/application-client_6.xsd">application-client.xml schema</a>    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss-client.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> of an application client jar    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The WildFly&nbsp;specific deployment descriptor for application client deployments    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss-webservices.xml</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">META-INF</tt> for EJB webservice deployments or <tt class=" ">WEB-INF</tt> for POJO webservice deployments/EJB webservice endpoints bundled in .war    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The JBossWS 4.0.x specific deployment descriptor for webservice endpoints    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="previous"><a accesskey="p" href="Class_Loading_in_WildFly.html"><strong>Prev</strong>Class Loading in WildFly</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="Development_Guidelines_and_Recommended_Practices.html"><strong>Next</strong>Development Guidelines and Recommended Practices</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

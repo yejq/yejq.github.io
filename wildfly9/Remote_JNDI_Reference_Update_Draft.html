@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Remote JNDI Access - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </ul>
+                    <div>
+            <h1>Remote JNDI Access</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+WildFly supports two different types of remote JNDI.    </p>
+    <div class="section-2"  id="80873215_RemoteJNDIReferenceUpdateDraft-httpremoting%3A"  >
+        <h2>http-remoting:</h2>
+    
+    <p>
+The <tt class=" ">http-remoting:</tt> protocol implementation is provided by JBoss Remote Naming project, and uses http upgrade to lookup items from the servers local JNDI. To use it, you must have the appropriate jars on the class path, if you are maven user can be done simply by adding the following to your <tt class=" ">pom.xml</tt> dependencies:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;dependency&gt;
+  &lt;groupId&gt;org.wildfly&lt;/groupId&gt;
+  &lt;artifactId&gt;wildfly-ejb-client-bom&lt;/artifactId&gt;
+  &lt;version&gt;8.0.0.Final&lt;/version&gt;
+  &lt;type&gt;pom&lt;/type&gt;
+&lt;/dependency&gt;</pre>
+        </div>
+    </div>
+    <p>
+If you are not using maven a shaded jar that contains all required classes<br/>can be found in the <tt class=" ">bin/client</tt> directory of WildFly's distribution.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">final Properties env = new Properties();
+env.put(Context.INITIAL_CONTEXT_FACTORY, &quot;org.jboss.naming.remote.client.InitialContextFactory&quot;);
+env.put(Context.PROVIDER_URL, &quot;http-remoting://localhost:8080&quot;);
+// the property below is required ONLY if there is no ejb client configuration loaded (such as a
+// jboss-ejb-client.properties in the class path) and the context will be used to lookup EJBs
+env.put(&quot;jboss.naming.client.ejb.context&quot;, true);
+InitialContext remoteContext = new InitialContext(env);
+RemoteCalculator ejb = (RemoteCalculator) remoteContext.lookup(&quot;wildfly-http-remoting-ejb/CalculatorBean!&quot;
+                + RemoteCalculator.class.getName());</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+The http-remoting client assumes JNDI names in remote lookups are relative to java:jboss/exported namespace, a lookup of an absolute JNDI name will fail.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873215_RemoteJNDIReferenceUpdateDraft-ejb%3A"  >
+        <h2>ejb:</h2>
+    
+    <p>
+The ejb: namespace implementation is provided by the jboss-ejb-client library, and allows the lookup of EJB's using their application name, module name, ejb name and interface type. To use it, you must have the appropriate jars on the class path, if you are maven user can be done simply by adding the following to your <tt class=" ">pom.xml</tt> dependencies:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;dependency&gt;
+  &lt;groupId&gt;org.wildfly&lt;/groupId&gt;
+  &lt;artifactId&gt;wildfly-ejb-client-bom&lt;/artifactId&gt;
+  &lt;version&gt;8.0.0.Final&lt;/version&gt;
+  &lt;type&gt;pom&lt;/type&gt;
+&lt;/dependency&gt;</pre>
+        </div>
+    </div>
+    <p>
+If you are not using maven a shaded jar that contains all required classes<br/>can be found in the <tt class=" ">bin/client</tt> directory of WildFly's distribution.    </p>
+    <p>
+This is a client side JNDI implementation. Instead of looking up an EJB on the server the lookup name contains enough information for the client side library to generate a proxy with the EJB information. When you invoke a method on this proxy it will use the current EJB client context to perform the invocation. If the current context does not have a connection to a server with the specified EJB deployed then an error will occur. Using this protocol it is possible to look up EJB's that do not actually exist, and no error will be thrown until the proxy is actually used. The exception to this is stateful session beans, which need to connect to a server when they are created in order to create the session bean instance on the server.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">final Properties env = new Properties();
+env.put(Context.URL_PKG_PREFIXES, &quot;org.jboss.ejb.client.naming&quot;);
+InitialContext remoteContext = new InitialContext(env);
+MyRemoteInterface myRemote = (MyRemoteInterface) remoteContext.lookup(&quot;ejb:myapp/myejbjar/MyEjbName\!com.test.MyRemoteInterface&quot;);
+MyStatefulRemoteInterface myStatefulRemote = (MyStatefulRemoteInterface) remoteContext.lookup(&quot;ejb:myapp/myejbjar/MyStatefulName\!comp.test.MyStatefulRemoteInterface?stateful&quot;);</pre>
+        </div>
+    </div>
+    <p>
+The first example is a lookup of a singleton, stateless or EJB 2.x home interface. This lookup will not hit the server, instead a proxy will be generated for the remote interface specified in the name. The second example is for a stateful session bean, in this case the JNDI lookup will hit the server, in order to tell the server to create the SFSB session.    </p>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+For more details on how the server connections are configured, including the <strong class=" ">required</strong> jboss ejb client setup, please see <a href="EJB_invocations_from_a_remote_client_using_JNDI.html">EJB invocations from a remote client using JNDI</a>.    </p>
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

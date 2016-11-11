@@ -1,0 +1,1494 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Getting Started Guide - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="previous"><a accesskey="p" href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="next"><a accesskey="n" href="JavaEE_6_Tutorial.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </ul>
+                    <div>
+            <h1>Getting Started Guide</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+<ul class=" "><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-GettingStartedwithWildFly8"> <strong class=" ">Getting Started with WildFly 8</strong></a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-Download">Download</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-Requirements">Requirements</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-Installation">Installation</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-WildFlyAQuickTour">WildFly - A Quick Tour</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-WildFly8DirectoryStructure">WildFly 8 Directory Structure</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-WildFly8Configurations">WildFly 8 Configurations</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-StartingWildFly8">Starting WildFly 8</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-StartingWildFly8withanAlternateConfiguration">Starting WildFly 8 with an Alternate Configuration</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-ManagingyourWildFly8">Managing your WildFly 8</a>    </p>
+</li><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-ModifyingtheExampleDataSource">Modifying the Example DataSource</a>    </p>
+</li></ul></li></ul></li><li class=" ">    <p>
+<a href="Getting_Started_Guide.html#80873418_GettingStartedGuide-AllWildFly8documentation">All WildFly 8 documentation</a>    </p>
+</li></ul>    <div class="section-2"  id="80873418_GettingStartedGuide-GettingStartedwithWildFly8"  >
+        <h2>Getting Started with WildFly 8</h2>
+    
+    <p>
+WildFly 8 is the latest release in a series of JBoss open-source application server offerings.&nbsp; WildFly 8 is an exceptionally fast, lightweight and powerful implementation of the Java Enterprise Edition 7 Platform specifications.&nbsp;   The state-of-the-art architecture built on the Modular Service Container enables services on-demand when your application requires them.&nbsp; The table below lists the Java Enterprise Edition 7 technologies and the technologies available in Wildfly 8 server configuration profiles.    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Java EE 7 Platform Technology    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Java EE 7<br/>Full Profile    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Java EE 7<br/>Web Profile    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+WildFly 8<br/>Full Profile    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+WildFly 8<br/>Web Profile    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-356: Java API for Web Socket    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-353:&nbsp; Java API for JSON &#65279;Processing    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-340:&nbsp; Java Servlet 3.1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-344:&nbsp; JavaServer Faces 2.2    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-341:&nbsp; Expression Language 3.0    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-245:&nbsp; JavaServer Pages 2.3    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-52:&nbsp; Standard Tag Library for JavaServer Pages (JSTL) 1.2    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-352:&nbsp; Batch Applications for the Java Platform 1.0    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-236:&nbsp; Concurrency Utilities for Java EE 1.0    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-346:&nbsp; Contexts and Dependency Injection for Java 1.1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-330:&nbsp; Dependency Injection for Java 1.0    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-349:&nbsp; Bean Validation 1.1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-345:&nbsp; Enterprise JavaBeans 3.2    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X<br/>CMP 2.0<br/>Optional    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X<br/>(Lite)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X<br/>CMP 2.0<br/>Not Available    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X<br/>(Lite)    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-318:&nbsp; Interceptors 1.2    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-322:&nbsp; Java EE Connector Architecture 1.7    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-338:&nbsp; Java Persistence 2.1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-250:&nbsp; Common Annotations for the Java Platform 1.2    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-343:&nbsp; Java Message Service API 2.0    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-907:&nbsp; Java Transaction API 1.2    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-919:&nbsp; JavaMail 1.5    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-339:&nbsp; Java API for RESTFul Web Services 2.0    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-109:&nbsp; Implementing Enterprise Web Services 1.3    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-224:&nbsp; Java API for XML-Based Web Services 2.2    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-181:&nbsp; Web Services Metadata for the Java Platform    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-101:&nbsp; Java API for XML-Based RPC 1.1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Optional    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-67:&nbsp; Java APIs for XML Messaging 1.3    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-93:&nbsp; Java API for XML Registries    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Optional    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-196:&nbsp; Java Authentication Service Provider Interface for Containers 1.1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-115:&nbsp; Java Authorization Contract for Containers 1.5    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-88:&nbsp; Java EE Application Deployment 1.2    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Optional    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+--    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-77:&nbsp; J2EE Management 1.1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JSR-45:&nbsp; Debugging Support for Other Languages 1.0    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+X    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <div class="confbox admonition admonition-warning">
+            <div class="title">Missing HornetQ and JMS?</div>
+        
+    <p>
+The WildFly Web Profile doesn't include JMS (provided by HornetQ) by default.&nbsp; If you want to use messaging, make sure you start the server using the &quot;Full Profile&quot; configuration.    </p>
+    </div>
+    
+    <p>
+This document provides a quick overview on how to  download and get started using WildFly 8 for your  application development.&nbsp; For in-depth content on administrative features, refer to the WildFly 8 Admin Guide.    </p>
+    <div class="section-3"  id="80873418_GettingStartedGuide-Download"  >
+        <h3>Download</h3>
+    
+    <p>
+Wildfly 8 distributions can be obtained from:    </p>
+    <p>
+<a href="http://www.wildfly.org/downloads/">wildfly.org/downloads</a>    </p>
+    <p>
+WildFly 8 provides a single distribution available in zip or tar file formats.&nbsp;    </p>
+<ul class=" "><li class=" ">    <p>
+<strong class=" ">wildfly-8.0.0.Final.zip</strong>    </p>
+</li><li class=" ">    <p>
+<strong class=" ">wildfly-8.0.0.Final.tar.gz</strong>    </p>
+</li></ul>    </div>
+    
+    <div class="section-3"  id="80873418_GettingStartedGuide-Requirements"  >
+        <h3>Requirements</h3>
+    
+<ul class=" "><li class=" ">    <p>
+Java SE 7 or later (we recommend that you use the latest update available)    </p>
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+Java SE 8 can be used with Wildfly 8    </p>
+    </div>
+    
+</li></ul>    </div>
+    
+    <div class="section-3"  id="80873418_GettingStartedGuide-Installation"  >
+        <h3>Installation</h3>
+    
+    <p>
+Simply extract your chosen download to the directory of your choice.  You can install WildFly 8 on any operating system that supports the zip or tar formats. Refer to the Release Notes for additional information related to the release.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873418_GettingStartedGuide-WildFlyAQuickTour"  >
+        <h3>WildFly - A Quick Tour</h3>
+    
+    <p>
+Now that you&rsquo;ve downloaded WildFly 8, the next thing to discuss is the layout of  the distribution and explore the server directory structure,  key  configuration files, log files, user deployments and so on.  It&rsquo;s worth  familiarizing yourself with the layout so that you&rsquo;ll be able to find  your way around when it comes to deploying your own applications.    </p>
+    <div class="section-4"  id="80873418_GettingStartedGuide-WildFly8DirectoryStructure"  >
+        <h4>WildFly 8 Directory Structure</h4>
+    
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+DIRECTORY    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+DESCRIPTION    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+appclient    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Configuration files, deployment content, and writable areas used by the  application client container run from this installation.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+bin    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Start up scripts, start up configuration files and various command line utilities like Vault, add-user and Java diagnostic report&nbsp;<br/>available for Unix and Windows environments    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+bin/client    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Contains a client jar for use by non-maven based clients.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+docs/schema    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+XML schema definition files    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+docs/examples/configs    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Example configuration files representing specific use cases    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+domain    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Configuration files, deployment content, and writable areas used by the domain mode processes run from this installation.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+modules    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+WildFly 8 is based on a modular classloading architecture. The various modules used in the server are stored here.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+standalone    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Configuration files, deployment content, and writable areas used by the single standalone server run from this installation.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+welcome-content    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Default Welcome Page content    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <div class="section-5"  id="80873418_GettingStartedGuide-StandaloneDirectoryStructure"  >
+        <h5>Standalone Directory Structure</h5>
+    
+    <p>
+In &quot;<strong class=" "><i class=" ">standalone</i></strong>&quot; mode each WildFly 8 server instance is an independent process (similar to previous  JBoss AS versions; e.g.,&nbsp; 3, 4, 5, or 6). The configuration files, deployment content and writable areas used by the single standalone server run from a WildFly installation are found in the following subdirectories under the top level &quot;standalone&quot; directory:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+DIRECTORY    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+DESCRIPTION    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+configuration    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Configuration files for the standalone server that runs off of this installation.   All configuration information for the running server is located here and is the single place for configuration modifications for the standalone server.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+data    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Persistent information written by the server to survive a restart of the server    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+deployments    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+End user deployment content can be placed in this directory for automatic detection and deployment of that content into the server's runtime.&nbsp;<br/>NOTE: The server's management API is recommended for installing deployment content.  File system based deployment scanning capabilities remain for developer convenience.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+lib/ext    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Location for installed library jars referenced by applications using the Extension-List mechanism    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+log    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+standalone server log files    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+tmp    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+location for temporary files written by the server    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+tmp/auth    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Special location used to exchange authentication tokens with local clients so they can confirm that they are local to the running AS process.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    <div class="section-5"  id="80873418_GettingStartedGuide-DomainDirectoryStructure"  >
+        <h5>Domain Directory Structure</h5>
+    
+    <p>
+A key feature of WildFly 8 is the managing multiple servers from a single  control point.&nbsp;&nbsp;&nbsp; A collection of multiple servers are referred to  as a &quot;<strong class=" "><i class=" ">domain</i></strong>&quot;. Domains can span multiple physical (or virtual) machines  with all WildFly instances on a given host under the control of a Host  Controller process. The Host Controllers interact with the Domain  Controller to control the lifecycle of the WildFly instances running on that  host and to assist the Domain Controller in managing them. The configuration files, deployment content and writeable areas used by domain mode processes run from a WildFly installation are found  in the following subdirectories under the top level &quot;domain&quot;  directory:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+DIRECTORY    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+DESCRIPTION    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+configuration    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Configuration files for the domain and for the Host Controller and any servers running off of this installation. All configuration information for the servers managed wtihin the domain is located here and is the single place for configuration information.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+content    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+an internal working area for the Host Controller that controls this installation. This is where it internally stores deployment content. This directory is not meant to be manipulated by end users.<br/>Note that &quot;<i class=" ">domain</i>&quot; mode does not support deploying content based on scanning a file system.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+lib/ext    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Location for installed library jars referenced by applications using the Extension-List mechanism    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+log    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Location where the Host Controller process writes its logs. The Process Controller, a small lightweight process that actually spawns the other Host Controller process and any Application Server processes also writes a log here.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+servers    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Writable area used by each Application Server instance that runs from this installation. Each Application Server instance will have its  own subdirectory, created when the server is first started. In each  server's subdirectory there will be the following subdirectories:<br/>data -- information written by the server that needs to survive a restart of the server<br/>log -- the server's log files<br/>tmp -- location for temporary files written by the server    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+tmp    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+location for temporary files written by the server    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+tmp/auth    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Special location used to exchange authentication tokens with local  clients so they can confirm that they are local to the running AS  process.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-4"  id="80873418_GettingStartedGuide-WildFly8Configurations"  >
+        <h4>WildFly 8 Configurations</h4>
+    
+    <div class="section-5"  id="80873418_GettingStartedGuide-StandaloneServerConfigurations"  >
+        <h5>Standalone Server Configurations</h5>
+    
+<ul class=" "><li class=" ">    <p>
+standalone.xml (<i class=" ">default</i>)    </p>
+<ul class=" "><li class=" ">    <p>
+Java Enterprise Edition 7 web profile certified configuration with the required technologies plus those noted in the table above.    </p>
+</li></ul></li></ul><ul class=" "><li class=" ">    <p>
+standalone-ha.xml    </p>
+<ul class=" "><li class=" ">    <p>
+Java Enterprise Edition 7 web profile certified configuration with high availability    </p>
+</li></ul></li></ul><ul class=" "><li class=" ">    <p>
+standalone-full.xml    </p>
+<ul class=" "><li class=" ">    <p>
+Java Enterprise Edition 7 full profile certified configuration including all the required EE 7 technologies    </p>
+</li></ul></li></ul><ul class=" "><li class=" ">    <p>
+standalone-full-ha.xml    </p>
+<ul class=" "><li class=" ">    <p>
+Java Enterprise Edition 7 full profile certified configuration with high availability    </p>
+</li></ul></li></ul>    </div>
+    
+    <div class="section-5"  id="80873418_GettingStartedGuide-DomainServerConfigurations"  >
+        <h5>Domain Server Configurations</h5>
+    
+<ul class=" "><li class=" ">    <p>
+domain.xml    </p>
+<ul class=" "><li class=" ">    <p>
+Java Enterprise Edition 7 full and web profiles available with or without high availability    </p>
+</li></ul></li></ul>    <p>
+Important to note is that the <strong class=" "><i class=" ">domain</i></strong> and <strong class=" "><i class=" ">standalone</i></strong> modes determine how the servers are managed not what capabilities they provide.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-4"  id="80873418_GettingStartedGuide-StartingWildFly8"  >
+        <h4>Starting WildFly 8</h4>
+    
+    <p>
+To start WildFly 8 using the default web profile configuration in &quot;<i class=" ">standalone</i>&quot; mode, change directory to $JBOSS_HOME/bin.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./standalone.sh</pre>
+        </div>
+    </div>
+    <p>
+To start the default web profile configuration using domain management capabilities,    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./domain.sh</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="80873418_GettingStartedGuide-StartingWildFly8withanAlternateConfiguration"  >
+        <h4>Starting WildFly 8 with an Alternate Configuration</h4>
+    
+    <p>
+If you choose to start your server with one of the other provided configurations, they can be accessed by passing the --server-config argument with the server-config file to be used.&nbsp;    </p>
+    <p>
+To use the full profile with clustering capabilities, use the following syntax from $JBOSS_HOME/bin:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./standalone.sh --server-config=standalone-full-ha.xml</pre>
+        </div>
+    </div>
+    <p>
+Similarly to start an alternate configuration in <i class=" ">domain</i> mode:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./domain.sh --domain-config=my-domain-configuration.xml</pre>
+        </div>
+    </div>
+    <p>
+&nbsp;Alternatively, you can create your own selecting the  additional subsystems you want to add, remove, or modify.    </p>
+    <div class="section-5"  id="80873418_GettingStartedGuide-TestYourInstallation"  >
+        <h5>Test Your Installation</h5>
+    
+    <p>
+After executing one of the above commands, you should see output similar to what's shown below.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">=========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /work/wildfly-8.0.0.Final
+
+  JAVA: /usr/jdk1.7/bin/java
+
+  JAVA_OPTS: -server -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true
+  -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000
+  -Djboss.modules.system.pkgs=org.jboss.byteman
+
+=========================================================================
+
+22:58:56,741 INFO&nbsp; [org.jboss.modules] (main) JBoss Modules version 1.3.0.Final
+22:58:56,964 INFO&nbsp; [org.jboss.msc] (main) JBoss MSC version 1.2.0.Final
+22:58:57,046 INFO&nbsp; [org.jboss.as] (MSC service thread 1-6) JBAS015899: WildFly 8.0.0.Final &quot;WildFly&quot; starting
+&lt;snip&gt;
+23:04:27,150 INFO&nbsp; [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.0.0.Final &quot;WildFly&quot; started in 1974ms - Started 183 of 232 services (80 services are lazy, passive or on-demand)</pre>
+        </div>
+    </div>
+    <p>
+As with previous JBoss releases, you can point your browser to <strong class=" "><i class=" "><a href="http://localhost:8080">http://localhost:8080</a></i></strong> (if using the default configured http port) which brings you to the Welcome Screen:    </p>
+    <p>
+    <img src="images/author/download/attachments/80873418/wildfly.png" alt="images/author/download/attachments/80873418/wildfly.png" />
+        </p>
+    <p>
+From here you can access links to the WildFly community documentation set, stay up-to-date on the latest project information, have a discussion in the user forum and access the enhanced web-based Administration Console.&nbsp; Or, if you uncover a defect while using WildFly, report an issue to inform us (attached patches will be reviewed).&nbsp; This landing page is recommended for convenient access to information about WildFly 8 but can easily be replaced with your own if desired.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-4"  id="80873418_GettingStartedGuide-ManagingyourWildFly8"  >
+        <h4>Managing your WildFly 8</h4>
+    
+    <p>
+WildFly 8 offers two administrative mechanisms for managing your running instance:&nbsp;    </p>
+<ul class=" "><li class=" ">    <p>
+web-based Administration Console    </p>
+</li><li class=" ">    <p>
+command-line interface    </p>
+</li></ul>    <div class="section-5"  id="80873418_GettingStartedGuide-Authentication"  >
+        <h5>Authentication</h5>
+    
+    <p>
+By default WildFly 8 is now distributed with security enabled for the management interfaces, this means that before you connect using the administration console or remotely using the CLI you will need to add a new user, this can be achieved simply by using the <i class=" ">add-user.sh</i> script in the bin folder.    </p>
+    <p>
+After starting the script you will be guided through the process to add a new user: -    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./add-user.sh
+What type of user do you wish to add?
+ a) Management User (mgmt-users.properties)
+ b) Application User (application-users.properties)
+(a):</pre>
+        </div>
+    </div>
+    <p>
+In this case a new user is being added for the purpose of managing the servers so select option a.    </p>
+    <p>
+You will then be prompted to enter the details of the new user being added: -    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">Enter the details of the new user to add.
+Realm (ManagementRealm) :
+Username :
+Password :
+Re-enter Password :</pre>
+        </div>
+    </div>
+    <p>
+It is important to leave the name of the realm as 'ManagementRealm' as this needs to match the name used in the server's configuration, for the remaining fields enter the new username, password and password confirmation.    </p>
+    <p>
+Provided there are no errors in the values entered you will then be asked to confirm that you want to add the user, the user will be written to the properties files used for authentication and a confirmation message will be displayed.    </p>
+    <p>
+The modified time of the properties files are inspected at the time of authentication and the files reloaded if they have changed, for this reason you do not need to re-start the server after adding a new user.    </p>
+    </div>
+    
+    <div class="section-5"  id="80873418_GettingStartedGuide-AdministrationConsole"  >
+        <h5>Administration Console</h5>
+    
+    <p>
+To access the web-based Administration Console, simply follow the link from the Welcome Screen.&nbsp; To directly access the Management Console, point your browser at:    </p>
+    <p>
+<strong class=" "><i class=" "><a href="http://localhost:9990/console">http://localhost:9990/console</a></i></strong>    </p>
+    <p>
+NOTE:&nbsp;&nbsp; port 9990 is the default port configured.&nbsp;&nbsp;    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;management-interfaces&gt;
+   &lt;native-interface security-realm=&quot;ManagementRealm&quot;&gt;
+      &lt;socket-binding native=&quot;management-native&quot;/&gt;
+   &lt;/native-interface&gt;
+   &lt;http-interface security-realm=&quot;ManagementRealm&quot;&gt;
+      &lt;socket-binding http=&quot;management-http&quot;/&gt;
+   &lt;/http-interface&gt;
+&lt;/management-interfaces&gt;</pre>
+        </div>
+    </div>
+    <p>
+If you modify the <i class=" ">management-http</i> socket binding in your running configuration: adjust the above command accordingly.&nbsp;&nbsp;&nbsp; If such modifications are made, then the link from the Welcome Screen will also be inaccessible.    </p>
+    <p>
+If you have not yet added at least one management user an error page will be displayed asking you to add a new user, after a user has been added you can click on the 'Try Again' link at the bottom of the error page to try connecting to the administration console again.    </p>
+    </div>
+    
+    <div class="section-5"  id="80873418_GettingStartedGuide-CommandLineInterface"  >
+        <h5>Command-Line Interface</h5>
+    
+    <p>
+If you prefer to manage your server from the command line (or batching), the <i class=" ">jboss-cli.sh</i> script provides the same capabilities available via the web-based UI.&nbsp; This script is accessed from $JBOSS_HOME/bin directory; e.g.,    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">cd $JBOSS_HOME/bin
+./jboss-cli.sh --connect
+Connected to standalone controller at localhost:9999</pre>
+        </div>
+    </div>
+    <p>
+Notice if no host or port information provided, it will default to localhost:9999.    </p>
+    <p>
+When running locally to the WildFly process the CLI will silently authenticate against the server by exchanging tokens on the file system, the purpose of this exchange is to verify that the client does have access to the local file system.&nbsp; If the CLI is connecting to a remote WildFly installation then you will be prompted to enter the username and password of a user already added to the realm.    </p>
+    <p>
+Once connected you can add, modify, remove resources and deploy or undeploy applications.&nbsp; For a complete list of commands and command syntax, type <strong class=" "><i class=" ">help</i></strong> once connected.    </p>
+    <div class="confbox admonition admonition-info">
+            <div class="title">5 Ways to Deploy your Application to WildFly 8</div>
+        
+    <p>
+Check out this <a href="http://vimeo.com/25831010">video</a> showing step-by-step options for deploying your application to WildFly 8    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-4"  id="80873418_GettingStartedGuide-ModifyingtheExampleDataSource"  >
+        <h4>Modifying the Example DataSource</h4>
+    
+    <p>
+As with previous JBoss application server releases, a default data source, <strong class=" "><i class=" ">ExampleDS</i></strong>, is configured using the embedded H2 database for developer convenience.&nbsp; There are two ways to define datasource configurations:    </p>
+<ol class=" "><li class=" ">    <p>
+as a module    </p>
+</li><li class=" ">    <p>
+as a deployment    </p>
+</li></ol>    <p>
+In the provided configurations, H2 is configured as a module.&nbsp; The module is located in the $JBOSS_HOME/modules/com/h2database/h2 directory.&nbsp; The H2 datasource configuration is shown below.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;subsystem xmlns=&quot;urn:jboss:domain:datasources:1.0&quot;&gt;
+    &lt;datasources&gt;
+        &lt;datasource jndi-name=&quot;java:jboss/datasources/ExampleDS&quot; pool-name=&quot;ExampleDS&quot;&gt;
+            &lt;connection-url&gt;jdbc:h2:mem:test;DB_CLOSE_DELAY=-1&lt;/connection-url&gt;
+            &lt;driver&gt;h2&lt;/driver&gt;
+            &lt;pool&gt;
+                &lt;min-pool-size&gt;10&lt;/min-pool-size&gt;
+                &lt;max-pool-size&gt;20&lt;/max-pool-size&gt;
+                &lt;prefill&gt;true&lt;/prefill&gt;
+            &lt;/pool&gt;
+            &lt;security&gt;
+                &lt;user-name&gt;sa&lt;/user-name&gt;
+                &lt;password&gt;sa&lt;/password&gt;
+            &lt;/security&gt;
+        &lt;/datasource&gt;
+        &lt;xa-datasource&nbsp;jndi-name=&quot;java:jboss/datasources/ExampleXADS&quot;&nbsp;pool-name=&quot;ExampleXADS&quot;&gt;
+          &nbsp;&lt;driver&gt;h2&lt;/driver&gt;
+       &nbsp;&nbsp;&nbsp; &lt;xa-datasource-property&nbsp;name=&quot;URL&quot;&gt;jdbc:h2:mem:test&lt;/xa-datasource-property&gt;
+           &lt;xa-pool&gt;
+                &lt;min-pool-size&gt;10&lt;/min-pool-size&gt;
+                &lt;max-pool-size&gt;20&lt;/max-pool-size&gt;
+                &lt;prefill&gt;true&lt;/prefill&gt;
+           &lt;/xa-pool&gt;
+       &nbsp;&nbsp;&nbsp; &lt;security&gt;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;user-name&gt;sa&lt;/user-name&gt;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;password&gt;sa&lt;/password&gt;
+       &nbsp;&nbsp;&nbsp; &lt;/security&gt;
+      &nbsp; &lt;/xa-datasource&gt;
+        &lt;drivers&gt;
+           &nbsp;&lt;driver name=&quot;h2&quot; module=&quot;com.h2database.h2&quot;&gt;
+                &lt;xa-datasource-class&gt;org.h2.jdbcx.JdbcDataSource&lt;/xa-datasource-class&gt;
+            &lt;/driver&gt;
+        &lt;/drivers&gt;
+  &lt;/datasources&gt;
+&lt;/subsystem&gt;</pre>
+        </div>
+    </div>
+    <p>
+The datasource subsystem is provided by the <a href="http://www.jboss.org/ironjacamar">IronJacamar</a> project. For a detailed description of the available configuration properties, please consult the project documentation.    </p>
+<ul class=" "><li class=" ">    <p>
+IronJacamar homepage:&nbsp;<a href="http://www.jboss.org/ironjacamar">http://www.jboss.org/ironjacamar</a>    </p>
+</li><li class=" ">    <p>
+Project Documentation: &nbsp;<a href="http://www.jboss.org/ironjacamar/docs">http://www.jboss.org/ironjacamar/docs</a>    </p>
+</li><li class=" ">    <p>
+Schema description: <a href="http://docs.jboss.org/ironjacamar/userguide/1.0/en-US/html/deployment.html#deployingds_descriptor">http://docs.jboss.org/ironjacamar/userguide/1.0/en-US/html/deployment.html#deployingds_descriptor</a>    </p>
+</li></ul>    <div class="section-5"  id="80873418_GettingStartedGuide-ConfigureLogginginWildFly8"  >
+        <h5>Configure Logging in WildFly 8</h5>
+    
+    <p>
+WildFly 8 logging can be configured in the XML configuration files, the web console or the command line interface. You can get more detail on the&nbsp;<a href="https://docs.jboss.org/author/display/WFLY8/Logging+Configuration">Logging Configuration</a>&nbsp;page.    </p>
+    <p>
+Turn on debugging for a specific category:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;subsystem xmlns=&quot;urn:jboss:domain:logging:1.0&quot;&gt;
+   &lt;console-handler name=&quot;CONSOLE&quot; autoflush=&quot;true&quot;&gt;
+       &lt;level name=&quot;DEBUG&quot;/&gt;
+       &lt;formatter&gt;
+           &lt;pattern-formatter pattern=&quot;%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n&quot;/&gt;
+       &lt;/formatter&gt;
+   &lt;/console-handler&gt;
+   [...]
+   &lt;logger category=&quot;org.jboss.as&quot;&gt;
+       &lt;level name=&quot;DEBUG&quot;/&gt;
+   &lt;/logger&gt;
+   [...]
+&lt;/subsystem&gt;</pre>
+        </div>
+    </div>
+    <p>
+By default the <tt class=" ">server.log</tt> is configured to include all levels in it's log output. In the above example we changed the console to also display debug messages.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873418_GettingStartedGuide-AllWildFly8documentation"  >
+        <h2>All WildFly 8 documentation</h2>
+    
+<div class=" error">    <p>
+Couldn't find a page to include called: All WildFly 8 documentation    </p>
+</div>    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="previous"><a accesskey="p" href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html"><strong>Prev</strong>Getting Started Developing Applications Presentation &amp; Demo</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="JavaEE_6_Tutorial.html"><strong>Next</strong>JavaEE 6 Tutorial</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

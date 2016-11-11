@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>RS Reference Guide - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="previous"><a accesskey="p" href="Implicit_module_dependencies_for_deployments.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="next"><a accesskey="n" href="JNDI_Reference.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                    <div>
+            <h1>RS Reference Guide</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+This page outlines the three options you have for deploying JAX-RS applications in WildFly 8. These three methods are specified in the JAX-RS 1.1 specification in section 2.3.2.    </p>
+    <div class="section-2"  id="80873216_JAX-RSReferenceGuide-Subclassing%7B%7Bjavax.ws.rs.core.Application%7D%7Dandusing%7B%7B%40ApplicationPath%7D%7D"  >
+        <h2>Subclassing  javax.ws.rs.core.Application  and using  @ApplicationPath</h2>
+    
+    <p>
+This is the easiest way and does not require any xml configuration. Simply include a subclass of <tt class=" ">javax.ws.rs.core.Application</tt> in your application, and annotate it with the path that you want your JAX-RS classes to be available. For example:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">@ApplicationPath(&quot;/mypath&quot;)
+public class MyApplication extends Application {
+}</pre>
+        </div>
+    </div>
+    <p>
+This will make your JAX-RS resources available under <tt class=" ">/</tt><tt class=" ">mywebappcontext</tt><tt class=" ">/mypath</tt>.    </p>
+    <div class="confbox admonition admonition-warning">
+        
+    <p>
+Note that that the path is <tt class=" ">/mypath</tt> not <tt class=" ">/mypath/*</tt>    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873216_JAX-RSReferenceGuide-Subclassing%7B%7Bjavax.ws.rs.core.Application%7D%7Dandusing%7B%7Bweb.xml%7D%7D"  >
+        <h2>Subclassing  javax.ws.rs.core.Application  and using  web.xml</h2>
+    
+    <p>
+If you do not wish to use <tt class=" ">@ApplicationPath</tt> but still need to subclass <tt class=" ">Application</tt> you can set up the JAX-RS mapping in web.xml:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">public class MyApplication extends Application {
+}</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;com.acme.MyApplication&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/hello/*&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;</pre>
+        </div>
+    </div>
+    <p>
+This will make your JAX-RS resources available under <tt class=" ">/</tt><tt class=" ">mywebappcontext</tt><tt class=" ">/hello</tt>.    </p>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+You can also use this approach to override an application path set with the <tt class=" ">@ApplicationPath</tt> annotation.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873216_JAX-RSReferenceGuide-Using%7B%7Bweb.xml%7D%7D"  >
+        <h2>Using  web.xml</h2>
+    
+    <p>
+If you don't wan't to subclass <tt class=" ">Application</tt> you can set the JAX-RS mapping in web.xml as follows:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;javax.ws.rs.core.Application&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/hello/*&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;</pre>
+        </div>
+    </div>
+    <p>
+This will make your JAX-RS resources available under <tt class=" ">/</tt><tt class=" ">mywebappcontext</tt><tt class=" ">/hello</tt>.    </p>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+Note that you only have to add the mapping, not the corresponding servlet. The server is responsible for adding the corresponding servlet automatically.    </p>
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="previous"><a accesskey="p" href="Implicit_module_dependencies_for_deployments.html"><strong>Prev</strong>Implicit module dependencies for deployments</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="next"><a accesskey="n" href="JNDI_Reference.html"><strong>Next</strong>JNDI Reference</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

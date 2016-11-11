@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Configuration file history - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                            <li class="previous"><a accesskey="p" href="Command_line_parameters.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="Deployment_Overlays.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                    <div>
+            <h1>Configuration file history</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+The management operations may modify the model. When this occurs the xml backing the model is written out again reflecting the latest changes. In addition a full history of the file is maintained. The history of the file goes in a separate directory under the configuration directory.    </p>
+    <p>
+As mentioned in <a href="https://docs.jboss.org/author/display/AS7/Command+line+parameters#Commandlineparameters-parameters">Command line parameters#parameters</a> the default configuration file can be selected using a command-line parameter. For a standalone server instance the history of the active <tt class=" ">standalone.xml</tt> is kept in <tt class=" ">jboss.server.config.dir</tt>/standalone_xml_history (See <a href="https://docs.jboss.org/author/display/AS7/Command+line+parameters#Commandlineparameters-standalonesystemproperties">Command line parameters#standalone_system_properties</a> for more details). For a domain the active <tt class=" ">domain.xml</tt> and <tt class=" ">host.xml</tt> histories are kept in <tt class=" ">jboss.domain.config.dir</tt>/domain_xml_history and <tt class=" ">jboss.domain.config.dir</tt>/host_xml_history.    </p>
+    <p>
+The rest of this section will only discuss the history for <tt class=" ">standalone.xml</tt>. The concepts are exactly the same for <tt class=" ">domain.xml</tt> and <tt class=" ">host.xml</tt>.    </p>
+    <p>
+Within <tt class=" ">standalone_xml_history</tt> itself following a successful first time boot we end up with three new files:<br/>*<tt class=" ">standalone.initial.xml</tt> - This contains the original configuration that was used the first time we successfully booted. This file will never be overwritten. You may of course delete the history directory and any files in it at any stage.<br/>*<tt class=" ">standalone.boot.xml</tt> - This contains the original configuration that was used for the last successful boot of the server. This gets overwritten every time we boot the server successfully.<br/>*<tt class=" ">standalone.last.xml</tt> - At this stage the contents will be identical to <tt class=" ">standalone.boot.xml.&nbsp; This file gets overwritten each time the server successfully writes the configuration, if there was an unexpected failure writing the configuration this file is the last known successful write.</tt>    </p>
+    <p>
+<tt class=" ">standalone_xml_history</tt> contains a directory called <tt class=" ">current</tt> which should be empty. Now if we execute a management operation that modifies the model, for example adding a new system property using the CLI:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] /system-property=test:add(value=&quot;test123&quot;)
+{&quot;outcome&quot; =&gt; &quot;success&quot;}</pre>
+        </div>
+    </div>
+    <p>
+What happens is:    </p>
+<ul class=" "><li class=" ">    <p>
+The original configuration file is backed up to <tt class=" ">standalone_xml_history/current/standalone.v1.xml</tt>. The next change to the model would result in a file called <tt class=" ">standalone.v2.xml</tt> etc. The 100 most recent of these files are kept.    </p>
+</li><li class=" ">    <p>
+The change is applied to the original configuration file    </p>
+</li><li class=" ">    <p>
+The changed original configuration file is copied to <tt class=" ">standalone.last.xml</tt>    </p>
+</li></ul>    <p>
+When restarting the server, any existing <tt class=" ">standalone_xml_history/current</tt> directory is moved to a new timestamped folder within the <tt class=" ">standalone_xml_history</tt>, and a new <tt class=" ">current</tt> folder is created. These timestamped folders are kept for 30 days.    </p>
+    <div class="section-2"  id="80873116_Configurationfilehistory-Snapshots"  >
+        <h2>Snapshots</h2>
+    
+    <p>
+In addition to the backups taken by the server as described above you can manually take take snapshots which will be stored in the <tt class=" ">snapshot</tt> folder under the <tt class=" ">_xml_history</tt> folder, the automatic backups described above are subject to automatic house keeping so will eventually be automatically removed, the snapshots on the other hand can be entirely managed by the administrator.    </p>
+    <p>
+You may also take your own snapshots using the CLI:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] :take-snapshot
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {&quot;name&quot; =&gt; &quot;/Users/kabir/jboss-7.0.0.CR1/standalone/configuration/standalone_xml_history/snapshot/20110630-172258657standalone.xml&quot;}
+}</pre>
+        </div>
+    </div>
+    <p>
+You can also use the CLI to list all the snapshots    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] :list-snapshots
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;directory&quot; =&gt; &quot;/Users/kabir/jboss-7.0.0.CR1/standalone/configuration/standalone_xml_history/snapshot&quot;,
+        &quot;names&quot; =&gt; [
+            &quot;20110630-165714239standalone.xml&quot;,
+            &quot;20110630-165821795standalone.xml&quot;,
+            &quot;20110630-170113581standalone.xml&quot;,
+            &quot;20110630-171411463standalone.xml&quot;,
+            &quot;20110630-171908397standalone.xml&quot;,
+            &quot;20110630-172258657standalone.xml&quot;
+        ]
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+&nbsp;To delete a particular snapshot:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] :delete-snapshot(name=&quot;20110630-165714239standalone.xml&quot;)
+{&quot;outcome&quot; =&gt; &quot;success&quot;}</pre>
+        </div>
+    </div>
+    <p>
+and to delete all snapshots:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9999 /] :delete-snapshot(name=&quot;all&quot;)
+{&quot;outcome&quot; =&gt; &quot;success&quot;}</pre>
+        </div>
+    </div>
+    <p>
+In domain mode executing the snapshot operations against the root node will work against the domain model. To do this for a host model you need to navigate to the host in question:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] /host=master:list-snapshots
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;domain-results&quot; =&gt; {&quot;step-1&quot; =&gt; {
+            &quot;directory&quot; =&gt; &quot;/Users/kabir/jboss-7.0.0.CR1/domain/configuration/host_xml_history/snapshot&quot;,
+            &quot;names&quot; =&gt; [
+                &quot;20110630-141129571host.xml&quot;,
+                &quot;20110630-172522225host.xml&quot;
+            ]
+        }},
+        &quot;server-operations&quot; =&gt; undefined
+    }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="80873116_Configurationfilehistory-SubsequentStarts"  >
+        <h2>Subsequent Starts</h2>
+    
+    <p>
+For subsequent server starts it may be desirable to take the state of the server back to one of the previously known states, for a number of items an abbreviated reverence to the file can be used: -    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Abreviation    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Parameter    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">initial</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=initial</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This will start the server using the initial configuration first used to start the server.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">boot</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=boot</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This will use the configuration from the last successful boot of the server.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">last</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=last</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This will start the server using the configuration backed up from the last successful save.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">v?</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=v?</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This will server the _xml_history/current folder for the configuration where ? is the number of the backup to use.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">????</tt>    <cite>
+<tt class=" "></tt>    </cite>
+<tt class=" ">-</tt>    <cite>
+<tt class=" "></tt>    </cite>
+<tt class=" ">?????</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">--server-config=????</tt>    <cite>
+<tt class=" "></tt>    </cite>
+<tt class=" ">-</tt>    <cite>
+<tt class=" "></tt>    </cite>
+<tt class=" ">?????</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The server will be started after searching the snapshot folder for the configuration which matches this prefix.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+In addition to this the <tt class=" ">--server-config</tt> parameter can always be used to specify a configuration relative to the <tt class=" ">jboss.server.config.dir</tt> and finally if no matching configuration is found an attempt to locate the configuration as an absolute path will be made.    </p>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                          <li class="previous"><a accesskey="p" href="Command_line_parameters.html"><strong>Prev</strong>Command line parameters</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="next"><a accesskey="n" href="Deployment_Overlays.html"><strong>Next</strong>Deployment Overlays</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

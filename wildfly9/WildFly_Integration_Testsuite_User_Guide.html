@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WildFly Integration Testsuite User Guide - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="previous"><a accesskey="p" href="Modules_details.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="next"><a accesskey="n" href="Troubleshooting_Common_Issues.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                </ul>
+                    <div>
+            <h1>WildFly Integration Testsuite User Guide</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+<strong class=" ">See also:</strong>&nbsp;<a href="WildFly_Testsuite_Test_Developer_Guide.html">&nbsp;WildFly Testsuite Test Developer Guide</a>    </p>
+    <p>
+<strong class=" ">Target Audience:</strong> Those interested in running the testsuite or a subset thereof, with various configuration options.    </p>
+    <div class="section-2"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Runningthetestsuite"  >
+        <h2>Running the testsuite</h2>
+    
+    <p>
+The tests can be run using:    </p>
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">build.sh</tt> or <tt class=" ">build.bat</tt>, as a part of WildFly build.    </p>
+<ul class=" "><li class=" ">    <p>
+By default, only smoke tests are run. To run all tests, run build.sh install -DallTests.    </p>
+</li></ul></li><li class=" ">    <p>
+<tt class=" ">integration-tests.sh</tt> or <tt class=" ">integration-tests.bat</tt>, a convenience script which uses bundled Maven (currently 3.0.3), and runs all parent testsuite modules (which configure the AS server).    </p>
+</li><li class=" ">    <p>
+pure maven run, using <tt class=" ">mvn install</tt>.    </p>
+</li></ul>    <p>
+The scripts are wrappers around Maven-based build. Their arguments are passed to Maven (with few exceptions described below). This means you can use:    </p>
+<ul class=" "><li class=" ">    <p>
+build.sh (defaults to install)    </p>
+</li><li class=" ">    <p>
+build.sh install    </p>
+</li><li class=" ">    <p>
+build.sh clean install    </p>
+</li><li class=" ">    <p>
+integration-tests.sh install    </p>
+</li><li class=" ">    <p>
+...etc.    </p>
+</li></ul>    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-SupportedMavenphases"  >
+        <h3>Supported Maven phases</h3>
+    
+    <p>
+Testsuite actions are bounds to various Maven phases up to <tt class=" ">verify</tt>. Running the build with earlier &#65279;phases may fail in the submodules due to missed configuration steps. Therefore, the only Maven phases you may safely run, are:    </p>
+<ul class=" "><li class=" ">    <p>
+clean    </p>
+</li><li class=" ">    <p>
+install    </p>
+</li><li class=" ">    <p>
+site    </p>
+</li></ul>    <p>
+The <tt class=" ">test</tt> phase is not recommended to be used for scripted jobs as we are planning to switch to the <tt class=" ">failsafe</tt> plugin bound to the <tt class=" ">integration-test</tt> and <tt class=" ">verify</tt> phases. See <a href="https://issues.jboss.org/browse/WFLY-625">WFLY-625</a>&nbsp;and <a href="https://issues.jboss.org/browse/WFLY-228">WFLY-228</a>.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Testsuitestructure"  >
+        <h3>Testsuite structure</h3>
+    
+    <p>
+testsuite<br/>&nbsp;&nbsp;&nbsp; integration<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smoke<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; basic<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clust<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iiop<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; multinode<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xts<br/>&nbsp;&nbsp;&nbsp; compat<br/>&nbsp;&nbsp;&nbsp; domain<br/>&nbsp; &nbsp; mixed-domain<br/>&nbsp;&nbsp;&nbsp; stress<br/>&nbsp;&nbsp;&nbsp; benchmark    </p>
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Testgroups"  >
+        <h3>Test groups</h3>
+    
+    <p>
+To define groups of tests to be run, these properties are available:    </p>
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">-DallTests</tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Runs all subgroups.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-DallInteg</tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Runs all integration tests. Same as <tt class=" ">cd testsuite/integration; mvn clean install -DallTests</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-Dts.integ</tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Basic integration + clustering tests.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-Dts.clust</tt>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Clustering tests.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-Dts.iiop</tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - IIOP tests.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-Dts.multinode &nbsp;</tt>- Tests with many nodes.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-Dts.manualmode</tt> - Tests with manual mode Arquillian containers.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-Dts.bench</tt>&nbsp; &nbsp; &nbsp; &nbsp; - Benchmark tests.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-Dts.stress</tt>&nbsp; &nbsp; &nbsp; - Stress tests.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-Dts.domain</tt>&nbsp; &nbsp;&nbsp;&nbsp; - Domain mode tests.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">-Dts.compat</tt>&nbsp; &nbsp; &nbsp; - Compatibility tests.    </p>
+</li></ul>    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Examples"  >
+        <h2>Examples</h2>
+    
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">integration-tests.sh&nbsp;[install]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt> <tt class=" ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt> <tt class=" ">-- Runs smoke tests.</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">integration-tests.sh clean install &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Cleans the target directory, then runs smoke tests.</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">integration-tests.sh install -Dts.smoke&nbsp;&nbsp;&nbsp;</tt> <tt class=" ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt> <tt class=" ">-- Same as above.</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">integration-tests.sh install -DallTests &nbsp;&nbsp;</tt> <tt class=" ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt> <tt class=" ">-- Runs all testsuite tests.</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">integration-tests.sh install -Dts.stress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- Runs smoke tests and stress tests.</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">integration-tests.sh install -Dts.stress -Dts.noSmoke &nbsp; -- Runs stress tests only.</tt>    </p>
+</li></ul>    <p>
+<strong class=" ">Pure maven</strong> - if you prefer not to use scripts, you may achieve the same result with:    </p>
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">mvn ... -rf testsuite</tt>    </p>
+</li></ul>    <p>
+The <tt class=" ">-rf ...</tt> parameter stands for &quot;resume from&quot; and causes Maven to run the specified module <i class=" ">and all successive</i>.    </p>
+    <p>
+It's possible to run only a single module (provided the ancestor modules were already run to create the AS copies) :    </p>
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">mvn ... -pl testsuite/integration/cluster</tt>    </p>
+</li></ul>    <p>
+The <tt class=" ">-pl ...</tt> parameter stands for &quot;project list&quot; and causes Maven to run the specified module <i class=" ">only</i>.    </p>
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-"  >
+        <h3></h3>
+    
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Outputtoconsole"  >
+        <h3>Output to console</h3>
+    
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">-DtestLogToFile</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Otheroptions"  >
+        <h3>Other options</h3>
+    
+    <p>
+<tt class=" ">-DnoWebProfile</tt> - Run all tests with the <i class=" ">full</i> profile (<tt class=" ">standalone-full.xml</tt>). By default, most tests are run under <i class=" ">web</i> profile (<tt class=" ">standalone.xml</tt>).    </p>
+    <p>
+<tt class=" ">-Dts.skipTests</tt> - Skip testsuite's tests. Defaults to the value of <tt class=" ">-DskipTests</tt>, which defaults to <tt class=" ">false</tt>. To build AS, skip unit tests and run testsuite, use <tt class=" ">-DskipTests -Dts.skipTests=false</tt>.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Timeouts"  >
+        <h3>Timeouts</h3>
+    
+    <div class="section-4"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Surefireexecutiontimeout"  >
+        <h4>Surefire execution timeout</h4>
+    
+    <p>
+Unfortunatelly, no math can be done in Maven, so instead of applying a timeout ratio, you need to specify timeout manually for Surefire.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">-Dsurefire.forked.process.timeout=900</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Intesttimeoutratios"  >
+        <h4>test timeout ratios</h4>
+    
+    <p>
+Ratio in prercent - 100 = default, 200 = two times longer timeouts for given category.    </p>
+    <p>
+Currently we have five different ratios. Later, it could be replaced with just one generic, one for database and one for deployment operations.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">-Dtimeout.ratio.fsio=100
+-Dtimeout.ratio.netio=100
+-Dtimeout.ratio.memio=100
+-Dtimeout.ratio.proc=100
+-Dtimeout.ratio.db=100</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Runningasingletest%28orspecifiedtests%29"  >
+        <h3>Running a single test (or specified tests)</h3>
+    
+    <p>
+Single test is run using <strong class=" ">-Dtest=...</strong> . Examples:    </p>
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">./integration-tests.sh install -Dtest='</tt><tt class=" ">*</tt><tt class=" ">Clustered</tt><tt class=" ">*</tt><tt class=" ">' -Dintegration.module</tt> <tt class=" ">-Dts.clust</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">./integration-tests.sh clean install -Dtest=org</tt><tt class=" ">/</tt><tt class=" ">jboss</tt><tt class=" ">/</tt><tt class=" ">as</tt><tt class=" ">/</tt><tt class=" ">test</tt><tt class=" ">/</tt><tt class=" ">integration</tt><tt class=" ">/</tt><tt class=" ">ejb/async/*TestCase.java</tt> <tt class=" ">-Dintegration.module</tt> <tt class=" ">-Dts.basic</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">cd testsuite; mvn install</tt> <tt class=" ">-Dtest='</tt><tt class=" ">*Clustered</tt><tt class=" ">*</tt><tt class=" ">'</tt> <tt class=" ">-Dts.basic&nbsp; #</tt> <tt class=" ">No need for -Dintegration.module - integration module is active by default.</tt>    </p>
+</li></ul>    <p>
+The same shortcuts listed in &quot;Test groups&quot; may be used to activate the module and group profile.    </p>
+    <p>
+Note that <tt class=" ">-Dtest=</tt> overrides <tt class=" ">&lt;includes&gt;</tt> and <tt class=" ">&lt;exludes&gt;</tt> defined in pom.xml, so do not rely on them when using wildcards - all compiled test classes matching the wildcard will be run.    </p>
+    <p>
+<strong class=" ">Which Surefire execution is used?</strong>    </p>
+    <p>
+Due to Surefire's design flaw, tests run multiple times if there are multiple surefire executions.<br/>To prevent this, if <tt class=" ">-Dtest=</tt>... is specified, non-default executions are disabled, and standalone-full is used for all tests.<br/>If you need it other way, you can overcome that need:    </p>
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">basic-integration-web.surefire with standalone.xml - Configure standalone.xml to be used as server config.</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">basic-integration-non-web.surefire &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - For tests included here, technically nothing changes.</tt>    </p>
+</li><li class=" ">    <p>
+<tt class=" ">basic-integration-2nd.surefire &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; - Simply run the second test in another invocation of Maven.</tt>    </p>
+</li></ul>    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-RunningagainstexistingAScopy%28nottheonefrombuild%2Ftarget%2Fjbossas%29"  >
+        <h3>Running against existing AS copy (not the one from build/target/jboss-as-*)</h3>
+    
+    <p>
+<strong class=" ">-Djboss.dist=&lt;path/to/jboss-as&gt;</strong> will tell the testsuite to copy that AS into submodules to run the tests against.    </p>
+    <p>
+For example, you might want to run the testsuite against AS located in <tt class=" ">/opt/wildfly-8</tt> :    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./integration-tests.sh -DallTests -Djboss.dist=/opt/wildfly-8</pre>
+        </div>
+    </div>
+    <p>
+The difference between jboss.dist and jboss.home:    </p>
+    <p>
+jboss.dist is the location of the tested binaries. It gets copied to testsuite submodules.    </p>
+    <p>
+jboss.home is internally used and points to those copied AS instances (for multinode tests, may be even different for each AS started by Arquillian).    </p>
+    <div class="section-4"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-RunningagainstarunningJBossASinstance"  >
+        <h4>Running against a running JBoss AS instance</h4>
+    
+    <p>
+Arquillian's WildFly 8 container adapter allows specifying <tt class=" ">allowConnectingToRunningServer</tt> in <tt class=" ">arquillian.xml</tt>, which makes it check whether AS is listening at <tt class=" ">managementAddress:managementPort</tt>, and if so, it uses that server instead of launching a new one, and doesn't shut it down at the end.    </p>
+    <p>
+All arquillian.xml's in the testsuite specify this parameter. Thus, if you have a server already running, it will be re-used.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-RunningagainstJBossEnterpriseApplicationPlatform%28EAP%296.0"  >
+        <h4>Running against JBoss Enterprise Application Platform (EAP) 6.0</h4>
+    
+    <p>
+To run the testsuite against AS included  JBoss Enterprise Application Platform 6.x (EAP), special steps are needed.    </p>
+    <p>
+Assuming you already have the sources available, and the distributed EAP maven repository unzipped in e.g. <tt class=" ">/opt/jboss/eap6-maven-repo/</tt> :    </p>
+    <p>
+1) Configure maven in settings.xml to use only the EAP repository. This repo contains all artifacts necessary for building EAP, including maven plugins.<br/>The build (unlike running testsuite) may be done offline.<br/>The recommended way of configuring is to use special settings.xml, not your local one (typically in .m2/settings.xml).    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&nbsp;&nbsp; &lt;mirror&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;id&gt;eap6-mirror-setting&lt;/id&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;mirrorOf&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *,!central-eap6,!central-eap6-plugins,!jboss-public-eap6,!jboss-public-eap6-plugins
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/mirrorOf&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;name&gt;Mirror Settings for EAP 6 build&lt;/name&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;url&gt;file:///opt/jboss/eap6-maven-repo&lt;/url&gt;
+&nbsp;&nbsp;&nbsp; &lt;/mirror&gt;
+&nbsp; &lt;/mirrors&gt;</pre>
+        </div>
+    </div>
+    <p>
+2) Build EAP. You won't use the resulting EAP build, though. The purpose is to get the artifacts which the testsuite depends on.<br/>    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn clean install -s settings.xml -Dmaven.repo.local=local-repo-eap</pre>
+        </div>
+    </div>
+3) Run the testsuite. Assuming that EAP is  located in <tt class=" ">/opt/eap6</tt>, you would run:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./integration-tests.sh -DallTests -Djboss.dist=/opt/eap6</pre>
+        </div>
+    </div>
+    <p>
+For further information on building EAP and running the testsuite against it, see the official EAP documentation (link to be added)<a href="https://docspace.corp.redhat.com/docs/DOC-86875">.</a>    </p>
+    <p>
+How-to for EAP QA can be found <a href="https://docspace.corp.redhat.com/docs/DOC-89200">here</a> (Red Hat internal only).    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Runningwithadebugger"  >
+        <h3>Running with a debugger</h3>
+    
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Argument    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+What will start with debugger    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Default port    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Port change arg.    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">-Ddebug</strong>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+AS instances run by Arquillian    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+8787    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+-Ddebug.port.as=...    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+-Djpda    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+alias for -Ddebug    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">-DdebugClient</strong>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Test JVMs (currently Surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+5050    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+-Ddebug.port.surefire=...    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">-DdebugCLI</strong>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+AS CLI    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+5051    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+-Ddebug.port.cli=...    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <div class="section-4"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Examples2"  >
+        <h4>Examples</h4>
+    
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./integration-tests.sh install -DdebugClient -Ddebug.port.surefire=4040
+
+...
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Listening for transport dt_socket at address: 4040</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./integration-tests.sh install -DdebugClient -Ddebug.port.surefire
+
+...
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Listening for transport dt_socket at address: 5050</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./integration-tests.sh install -Ddebug</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">./integration-tests.sh install -Ddebug -Ddebug.port.as=5005</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-warning">
+        
+    <p>
+JBoss AS is started by Arquillian, when the first test which requires given instance is run. Unless you pass <strong class=" ">-DtestLogToFile=false,</strong> <strong class=" ">there's (currently) no challenge text in the console</strong>; it will look like the first test is stuck. This is being solved in <a href="http://jira.codehaus.org/browse/SUREFIRE-781">http://jira.codehaus.org/browse/SUREFIRE-781</a>.    </p>
+    </div>
+    
+    <div class="confbox admonition admonition-info">
+        
+    <p>
+Depending on which test group(s) you run, multiple AS instances may be started. In that case, you need to attach the debugger multiple times.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Runningtestswithcustomdatabase"  >
+        <h3>Running tests with custom database</h3>
+    
+    <p>
+To run with different database, specify the <tt class=" ">-Dds</tt> and use these properties (with the following defaults):    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">-Dds.jdbc.driver=
+-Dds.jdbc.driver.version=
+-Dds.jdbc.url=
+-Dds.jdbc.user=test
+-Dds.jdbc.pass=test
+-Dds.jdbc.driver.jar=${ds.db}-jdbc-driver.jar</pre>
+        </div>
+    </div>
+    <p>
+<tt class=" ">driver</tt> is JDBC driver class. JDBC <tt class=" ">url</tt>, <tt class=" ">user</tt> and <tt class=" ">pass</tt> is as expected.    </p>
+    <p>
+<tt class=" ">driver.version</tt> is used for automated JDBC driver downloading. Users can set up internal Maven repository hosting JDBC drivers, with artifacts with    </p>
+    <p>
+GAV = <tt class=" ">jdbcdrivers:${ds.db}:${ds.jdbc.driver.version</tt>}    </p>
+    <p>
+Internally, JBoss has such repo at <a href="http://nexus.qa.jboss.com:8081/nexus/content/repositories/thirdparty/jdbcdrivers/">http://nexus.qa.jboss.com:8081/nexus/content/repositories/thirdparty/jdbcdrivers/</a> .    </p>
+    <p>
+The <tt class=" ">ds.db</tt> value is set depending on ds. E.g. <tt class=" ">-Dds=mssql2005</tt> sets <tt class=" ">ds.db=mssql</tt> (since they have the same driver). <tt class=" ">-Dds.db</tt> may be overriden to use different driver.    </p>
+    <p>
+<del class=" ">In case you don't want to use such driver, set just -Dds.db= (empty) and provide the driver to the AS manually.</del><br/><i class=" ">Not supported; work in progress on parameter to provide JDBC Driver jar.</i>    </p>
+    <div class="section-4"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Defaultvalues"  >
+        <h4>Default values</h4>
+    
+    <p>
+For WildFly continuous integration, there are some predefined values for some of databases, which can be set using:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">-Dds.db=&lt;database-identifier&gt;</pre>
+        </div>
+    </div>
+    <p>
+Where database-identifier is one of:&nbsp; <tt class=" ">h2</tt>, <tt class=" ">mysql51</tt>    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-RunningtestswithIPv6"  >
+        <h3>Running tests with IPv6</h3>
+    
+    <p>
+<tt class=" ">-Dipv6</tt> - Runs AS with <tt class=" ">-Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true</tt>    </p>
+    <p>
+and the following defaults, overridable by respective parameter:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Parameter    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+IPv4&nbsp; default    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+IPv6 default    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">-Dnode0</strong>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+127.0.0.1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+::1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Single-node tests.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">-Dnode1</strong>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+127.0.0.1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+::1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Two-node tests (e.g. cluster) use this for the 2nd node.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">-Dmcast</strong>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+230.0.0.4    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+ff01::1    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+ff01::1&nbsp; is IPv6 Node-Local scope mcast addr.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">-Dmcast.jgroupsDiag</strong>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+224.0.75.75    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+ff01::2    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+JGroups diagnostics multicast address.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<strong class=" ">-Dmcast.modcluster</strong>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+224.0.1.105    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+ff01::3    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+mod_cluster multicast address.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+Values are set in AS configuration XML, replaced in resources (like ejb-jar.xml) and used in tests.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Runningtestswithsecuritymanager%2Fcustomsecuritypolicy"  >
+        <h3>Running tests with security manager / custom security policy</h3>
+    
+    <p>
+<tt class=" ">-Dsecurity.manager</tt> - Run with default policy.    </p>
+    <p>
+<tt class=" ">-Dsecurity.policy=&lt;path&gt;</tt>&nbsp; - Run with the given policy.    </p>
+    <p>
+<tt class=" ">-Dsecurity.manager.other=&lt;set of Java properties&gt;</tt>&nbsp; - Run with the given properties. Whole set is included in all server startup parameters.    </p>
+    <p>
+Example:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: bash; gutter: false;">./integration-tests.sh clean install -Dintegration.module -DallTests \
+\&quot;-Dsecurity.manager.other=-Djava.security.manager \
+-Djava.security.policy==$(pwd)/testsuite/shared/src/main/resources/secman/permitt_all.policy \
+-Djava.security.debug=access:failure \&quot;</pre>
+        </div>
+    </div>
+    <p>
+Notice the \&quot; quotes delimiting the whole <tt class=" ">-Dsecurity.manager.other</tt> property.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Creatingtestreports"  >
+        <h3>Creating test reports</h3>
+    
+    <p>
+Test reports are created in the form known from EAP 5. To create them, simply run the testsuite, which will create Surefire XML files.    </p>
+    <p>
+Creation of the reports is bound to the <tt class=" ">site</tt> Maven phase, so it must be run separatedly afterwards. Use one of these:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: bash; gutter: false;">./integration-tests.sh site</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: bash; gutter: false;">cd testsuite; mvn site</pre>
+        </div>
+    </div>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn -pl testsuite site</pre>
+        </div>
+    </div>
+    <p>
+Note that it will take all test results under <tt class=" ">testsuite/integration/</tt> - the pattern is <tt class=" ">**/*TestCase.xml</tt>, without need to specify <tt class=" ">-DallTests</tt>.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Creatingcoveragereports"  >
+        <h3>Creating coverage reports</h3>
+    
+    <p>
+<strong class=" ">Jira:</strong>&nbsp;<a href="https://issues.jboss.org/browse/WFLY-585">https://issues.jboss.org/browse/WFLY-585</a>    </p>
+    <p>
+Coverage reports are created by <a href="http://www.eclemma.org/jacoco/trunk/index.html">JaCoCo</a>.    </p>
+    <p>
+During the integration tests, Arquillian is passed a JVM argument which makes it run with JaCoCo agent, which records the executions into <tt class=" ">${basedir}/target/jacoco</tt> .    </p>
+    <p>
+In the <tt class=" ">site</tt> phase, a HTML, XML and CSV reports are generated. That is done using&nbsp;<tt class=" ">jacoco:report</tt> Ant task in <tt class=" ">maven-ant-plugin</tt> since JaCoCo's maven report goal doesn't support getting classes outside target/classes.    </p>
+    <div class="section-4"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Usage"  >
+        <h4>Usage</h4>
+    
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: bash; gutter: false;">./build.sh clean install -DskipTests
+./integration-tests.sh clean install -DallTests -Dcoverage
+./integration-tests.sh site -DallTests -Dcoverage ## Must run in separatedly.</pre>
+        </div>
+    </div>
+    <p>
+Alternative:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: bash; gutter: false;">mvn clean install -DskipTests
+mvn -rf testsuite clean install -DallTests -Dcoverage
+mvn -rf testsuite site -DallTests -Dcoverage</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873459_WildFlyIntegrationTestsuiteUserGuide-Cleaningtheproject"  >
+        <h3>Cleaning the project</h3>
+    
+    <p>
+To have most stable build process, it should start with:    </p>
+<ul class=" "><li class=" ">    <p>
+clean target directories    </p>
+</li><li class=" ">    <p>
+only central Maven repo configured    </p>
+</li><li class=" ">    <p>
+clean local repository or at least:    </p>
+<ul class=" "><li class=" ">    <p>
+free of artefacts to be built    </p>
+</li><li class=" ">    <p>
+free of dependencies to be used (especially snapshots)    </p>
+</li></ul></li></ul>    <p>
+To use , you may use these commands:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: bash; gutter: false;">mvn clean install -DskipTests -DallTests  ## ...to clean all testsuite modules.
+mvn dependency:purge-local-repository build-helper:remove-project-artifact -Dbuildhelper.removeAll</pre>
+        </div>
+    </div>
+    <p>
+In case the build happens in a shared environment (e.g. network disk), it's recommended to use local repository:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: bash; gutter: false;">cp /home/hudson/.m2/settings.xml .
+sed &quot;s|&lt;settings&gt;|&lt;settings&gt;&lt;localRepository&gt;/home/ozizka/hudson-repos/$JOBNAME&lt;/localRepository&gt;|&quot; -i settings.xml</pre>
+        </div>
+    </div>
+    <p>
+Or:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn clean install ... -Dmaven.repo.local=localrepo</pre>
+        </div>
+    </div>
+    <p>
+See also <a href="https://issues.jboss.org/browse/WFLY-628">https://issues.jboss.org/browse/WFLY-628</a>.    </p>
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="previous"><a accesskey="p" href="Modules_details.html"><strong>Prev</strong>Modules details</a></li>
+                                                                                                                                                                                                                                                                <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="next"><a accesskey="n" href="Troubleshooting_Common_Issues.html"><strong>Next</strong>Troubleshooting Common Issues</a></li>
+                                                                                                                                                                                                                                                                                                                              </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

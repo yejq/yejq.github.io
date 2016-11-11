@@ -1,0 +1,1835 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Plugin executions matrix - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="previous"><a accesskey="p" href="How_the_JBoss_AS_instance_is_built_and_configured_for_testsuite_modules..html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="next"><a accesskey="n" href="Shortened_Maven_Run_Overview.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                      </ul>
+                    <div>
+            <h1>Plugin executions matrix</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+x - runs in this module<br/>xx - runs in this and all successive modules<br/>x! - runs but should not.    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+initialize    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+TS    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+integ    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+smoke    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+basic    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+clust    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+iiop    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+comp    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+domain    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+bench    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+stress    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-help-plugin     <img src="images/author/images/icons/emoticons/star_yellow.gif" alt="images/author/images/icons/emoticons/star_yellow.gif" />
+    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+properties-maven-plugin:write-project-properties    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-antrun-plugin:1.6:run (banner)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+process-resources    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-resources-plugin:2.5:resources (default-resources)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-dependency-plugin:2.3:copy (copy-annotations-endorsed)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx!    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+compile    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-compiler-plugin:2.3.2:compile (default-compile)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+generate-test-resources    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-resources-plugin:2.5:copy-resources (build-jbossas.server)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx!    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Should be:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-resources-plugin:2.5:copy-resources (ts.copy-jbossas)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-resources-plugin:2.5:copy-resources (ts.copy-jbossas.groups)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+?    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+?    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+?    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+!    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Should be:    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+process-test-resources    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-resources-plugin:2.5:testResources (default-testResources)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-antrun-plugin:1.6:run (build-smoke.server)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-antrun-plugin:1.6:run (prepare-jars-basic-integration.server)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-antrun-plugin:1.6:run (build-clustering.server)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x!?    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+test-compile    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-compiler-plugin:2.3.2:testCompile (default-testCompile)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+xml-maven-plugin:1.0:transform (update-ip-addresses-jbossas.server)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-antrun-plugin:1.6:run (build-jars)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+test    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (smoke-full.surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (smoke-web.surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (default-test)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (basic-integration-default-full.surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (basic-integration-default-web.surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (basic-integration-2nd.surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (tests-clust-multi-node-unm...surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (tests-clustering-single-node.surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (tests-clustering-multi-node.surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-surefire-plugin:2.10:test (tests-iiop-multi-node.surefire)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+package    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-jar-plugin:2.3.1:jar (default-jar)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx!    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-source-plugin:2.1.2:jar-no-fork (attach-sources)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+x    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+install    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+maven-install-plugin:2.3.1:install (default-install)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xx!    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+&nbsp;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+TS    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+integ    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+smoke    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+basic    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+clust    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+iiop    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+comp    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+domain    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+bench    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+stress    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="previous"><a accesskey="p" href="How_the_JBoss_AS_instance_is_built_and_configured_for_testsuite_modules..html"><strong>Prev</strong>How the JBoss AS instance is built and configured for testsuite modules.</a></li>
+                                                                                                                                                                                    <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="Shortened_Maven_Run_Overview.html"><strong>Next</strong>Shortened Maven Run Overview</a></li>
+                                                                                                                                                                                                                    </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

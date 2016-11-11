@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Documentation - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="next"><a accesskey="n" href="Admin_Guide.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </ul>
+                    <div>
+            <h1 class="title"><img src="spacelogo.png" /> WildFly 9</h1>
+          </div>
+          <div>
+            <h1>Documentation</h1>
+          </div>
+          <div>
+            <div class="authorgroup">
+              <div>
+               <p class="releaseinfo">Exported from <a href="https://docs.jboss.org/author/display/WFLY9">JBoss Community Documentation Editor</a> at 2016-11-09 19:37:53 EST.</p>
+              </div>
+              <div>
+                <p class="copyright">Copyright 2016 JBoss Community contributors.</p>
+              </div>  
+            </div>
+            <hr/>
+          </div>
+          <div class="toc">
+            <ul class="toc">
+                                                            <li><p><a href="Admin_Guide.html">Admin Guide</a></p>
+      <ul>
+                    <li><p><a href="CLI_Recipes.html">CLI Recipes</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Core_management_concepts.html">Core management concepts</a></p>
+      <ul>
+                    <li><p><a href="General_configuration_concepts.html">General configuration concepts</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Management_resources.html">Management resources</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Operating_modes.html">Operating modes</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Domain_Setup.html">Domain Setup</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Interfaces_and_ports.html">Interfaces and ports</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Management_API_reference.html">Management API reference</a></p>
+      <ul>
+                    <li><p><a href="Description_of_the_Management_Model.html">Description of the Management Model</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Detyped_management_and_the_jboss-dmr_library.html">Detyped management and the jboss-dmr library</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Global_operations.html">Global operations</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="The_HTTP_management_API.html">The HTTP management API</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="The_native_management_API.html">The native management API</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Management_Clients.html">Management Clients</a></p>
+      <ul>
+                    <li><p><a href="Default_HTTP_Interface_Security.html">Default HTTP Interface Security</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Default_Native_Interface_Security.html">Default Native Interface Security</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Management_tasks.html">Management tasks</a></p>
+      <ul>
+                    <li><p><a href="Application_deployment.html">Application deployment</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Audit_logging.html">Audit logging</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Canceling_Management_Operations.html">Canceling Management Operations</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Command_line_parameters.html">Command line parameters</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Configuration_file_history.html">Configuration file history</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Deployment_Overlays.html">Deployment Overlays</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="JVM_settings.html">JVM settings</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Starting_&amp;_stopping_Servers_in_a_Managed_Domain.html">Starting &amp; stopping Servers in a Managed Domain</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Suspend,_Resume_and_Graceful_shutdown.html">Suspend, Resume and Graceful shutdown</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="RBAC.html">RBAC</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Security_Realms.html">Security Realms</a></p>
+      <ul>
+                    <li><p><a href="add-user_utility.html">user utility</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Detailed_Configuration.html">Detailed Configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Examples.html">Examples</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Plug_Ins.html">Plug Ins</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Subsystem_configuration.html">Subsystem configuration</a></p>
+      <ul>
+                    <li><p><a href="DataSource_configuration.html">DataSource configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Deployment_Scanner_configuration.html">Deployment Scanner configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="EE_Subsystem_Configuration.html">EE Subsystem Configuration</a></p>
+      <ul>
+                    <li><p><a href="Default_EE_Bindings_Configuration.html">Default EE Bindings Configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="EE_Concurrency_Utilities_Configuration.html">EE Concurrency Utilities Configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Java_EE_Application_Deployment_Configuration.html">Java EE Application Deployment Configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="JMX_subsystem_configuration.html">JMX subsystem configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Logging_Configuration.html">Logging Configuration</a></p>
+      <ul>
+                    <li><p><a href="Handlers.html">Handlers</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="How_To.html">How To</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Loggers.html">Loggers</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Messaging_configuration.html">Messaging configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Naming_Subsystem_Configuration.html">Naming Subsystem Configuration</a></p>
+      <ul>
+                    <li><p><a href="Global_Bindings_Configuration.html">Global Bindings Configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Remote_JNDI_Configuration.html">Remote JNDI Configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="OSGi_subsystem_configuration.html">OSGi subsystem configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Resource_adapters.html">Resource adapters</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Security_subsystem_configuration.html">Security subsystem configuration</a></p>
+      <ul>
+                    <li><p><a href="Authentication_Modules.html">Authentication Modules</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Simple_configuration_subsystems.html">Simple configuration subsystems</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Threads_subsystem_configuration.html">Threads subsystem configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Undertow_(web)_subsystem_configuration.html">Undertow (web) subsystem configuration</a></p>
+      <ul>
+                    <li><p><a href="AJP_listeners.html">AJP listeners</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Using_Wildfly_as_a_Load_Balancer.html">Using Wildfly as a Load Balancer</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Web_services_configuration.html">Web services configuration</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Target_Audience.html">Target Audience</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                                      <li><p><a href="Developer_Guide.html">Developer Guide</a></p>
+      <ul>
+                    <li><p><a href="Application_Client_Reference.html">Application Client Reference</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="CDI_Reference.html">CDI Reference</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Class_Loading_in_WildFly.html">Class Loading in WildFly</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Deployment_Descriptors_used_In_WildFly.html">Deployment Descriptors used In WildFly</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Development_Guidelines_and_Recommended_Practices.html">Development Guidelines and Recommended Practices</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="EE_Concurrency_Utilities.html">EE Concurrency Utilities</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="EJB_3_Reference_Guide.html">EJB 3 Reference Guide</a></p>
+      <ul>
+                    <li><p><a href="Container_interceptors.html">Container interceptors</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="EJB3_Clustered_Database_Timers.html">EJB3 Clustered Database Timers</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="EJB3_subsystem_configuration_guide.html">EJB3 subsystem configuration guide</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="EJB_IIOP_Guide.html">EJB IIOP Guide</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="jboss-ejb3.xml_Reference.html">jboss-ejb3.xml Reference</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Securing_EJBs.html">Securing EJBs</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="EJB_invocations_from_a_remote_client_using_JNDI.html">EJB invocations from a remote client using JNDI</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="EJB_invocations_from_a_remote_server_instance.html">EJB invocations from a remote server instance</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Example_Applications_-_Migrated_to_WildFly.html">Example Applications - Migrated to WildFly</a></p>
+      <ul>
+                    <li><p><a href="Order_Application_Migration_from_EAP5.1_to_WildFly_8.html">Order Application Migration from EAP5.1 to WildFly 8</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Seam_2_Booking_EAR_Migration_of_Binaries_-_Step_by_Step.html">Seam 2 Booking EAR Migration of Binaries - Step by Step</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="How_do_I_migrate_my_application_from_AS7_to_WildFly_9.html">How do I migrate my application from AS7 to WildFly 9</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="How_do_I_migrate_my_application_to_WildFly_from_other_application_servers.html">How do I migrate my application to WildFly from other application servers</a></p>
+      <ul>
+                    <li><p><a href="How_do_I_migrate_my_application_from_WebLogic_to_WildFly.html">How do I migrate my application from WebLogic to WildFly</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="How_do_I_migrate_my_application_from_WebSphere_to_WildFly.html">How do I migrate my application from WebSphere to WildFly</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Implicit_module_dependencies_for_deployments.html">Implicit module dependencies for deployments</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="JAX-RS_Reference_Guide.html">RS Reference Guide</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="JNDI_Reference.html">JNDI Reference</a></p>
+      <ul>
+                    <li><p><a href="Local_JNDI_Reference.html">Local JNDI Reference</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Remote_JNDI_Reference.html">Remote JNDI Reference</a></p>
+      <ul>
+                    <li><p><a href="Remote_JNDI_Reference_Update_Draft.html">Remote JNDI Reference Update Draft</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="JPA_Reference_Guide.html">JPA Reference Guide</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="OSGi.html">OSGi</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Remote_EJB_invocations_via_JNDI_-_EJB_client_API_or_remote-naming_project.html">Remote EJB invocations via JNDI - EJB client API or remote-naming project</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Scoped_EJB_client_contexts.html">Scoped EJB client contexts</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Spring_applications_development_and_migration_guide.html">Spring applications development and migration guide</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Web_(Undertow)_Reference_Guide.html">Web (Undertow) Reference Guide</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Webservices_reference_guide.html">Webservices reference guide</a></p>
+      <ul>
+                    <li><p><a href="JAX-WS_User_Guide.html">WS User Guide</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="JAX-WS_Tools.html">WS Tools</a></p>
+      <ul>
+                    <li><p><a href="wsconsume.html">wsconsume</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="wsprovide.html">wsprovide</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Advanced_User_Guide.html">Advanced User Guide</a></p>
+      <ul>
+                    <li><p><a href="Predefined_client_and_endpoint_configurations.html">Predefined client and endpoint configurations</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Authentication.html">Authentication</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Apache_CXF_integration.html">Apache CXF integration</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="WS-Addressing.html">Addressing</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="WS-Security.html">Security</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="WS-Trust_and_STS.html">Trust and STS</a></p>
+      <ul>
+                    <li><p><a href="ActAs_WS-Trust_Scenario.html">ActAs WS-Trust Scenario</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="OnBehalfOf_WS-Trust_Scenario.html">OnBehalfOf WS-Trust Scenario</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="SAML_Bearer_Assertion_Scenario.html">SAML Bearer Assertion Scenario</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="SAML_Holder-Of-Key_Assertion_Scenario.html">SAML Holder-Of-Key Assertion Scenario</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="WS-Reliable_Messaging.html">Reliable Messaging</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="SOAP_over_JMS.html">SOAP over JMS</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="HTTP_Proxy.html">HTTP Proxy</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="WS-Discovery.html">Discovery</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="WS-Policy.html">Policy</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Published_WSDL_customization.html">Published WSDL customization</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="JBoss_Modules_and_WS_applications.html">JBoss Modules and WS applications</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+              </ul>
+    </li>
+                                      <li><p><a href="High_Availability_Guide.html">High Availability Guide</a></p>
+      <ul>
+                    <li><p><a href="Introduction_To_High_Availability_Services.html">Introduction To High Availability Services</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="HTTP_Services.html">HTTP Services</a></p>
+      <ul>
+                    <li><p><a href="Subsystem_Support.html">Subsystem Support</a></p>
+      <ul>
+                    <li><p><a href="JGroups_Subsystem.html">JGroups Subsystem</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Infinispan_Subsystem.html">Infinispan Subsystem</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Clustered_Web_Sessions.html">Clustered Web Sessions</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Clustered_SSO.html">Clustered SSO</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Load_Balancing.html">Load Balancing</a></p>
+      <ul>
+                    <li><p><a href="Apache_httpd.html">Apache httpd</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="mod_cluster_Subsystem.html">mod_cluster Subsystem</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="EJB_Services.html">EJB Services</a></p>
+      <ul>
+                    <li><p><a href="EJB_Subsystem.html">EJB Subsystem</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Hibernate.html">Hibernate</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Related_Issues.html">Related Issues</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Changes_From_Previous_Versions.html">Changes From Previous Versions</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="WildFly_9_Cluster_Howto.html">WildFly 9 Cluster Howto</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                                      <li><p><a href="Getting_Started_Developing_Applications_Guide.html">Getting Started Developing Applications Guide</a></p>
+      <ul>
+                    <li><p><a href="Introduction.html">Introduction</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Getting_started_with_WildFly.html">Getting started with WildFly</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Helloworld_quickstart.html">Helloworld quickstart</a></p>
+      <ul>
+                    <li><p><a href="Deploying_the_Helloworld_example_using_Eclipse.html">Deploying the Helloworld example using Eclipse</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="The_helloworld_example_in_depth.html">The helloworld example in depth</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Numberguess_quickstart.html">Numberguess quickstart</a></p>
+      <ul>
+                    <li><p><a href="Deploying_the_Numberguess_example_using_Eclipse.html">Deploying the Numberguess example using Eclipse</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="The_numberguess_example_in_depth.html">The numberguess example in depth</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Login_quickstart.html">Login quickstart</a></p>
+      <ul>
+                    <li><p><a href="Deploying_the_Login_example_using_Eclipse.html">Deploying the Login example using Eclipse</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="The_login_example_in_depth.html">The login example in depth</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Kitchensink_quickstart.html">Kitchensink quickstart</a></p>
+      <ul>
+                    <li><p><a href="Deploying_the_Kitchensink_example_using_Eclipse.html">Deploying the Kitchensink example using Eclipse</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="The_kitchensink_example_in_depth.html">The kitchensink example in depth</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Creating_your_own_application.html">Creating your own application</a></p>
+      <ul>
+                    <li><p><a href="Creating_your_own_application_using_Eclipse.html">Creating your own application using Eclipse</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="More_Resources.html">More Resources</a></p>
+      <ul>
+                    <li><p><a href="Developing_JSF_Project_Using_JBoss_AS7,_Maven_and_IntelliJ.html">Developing JSF Project Using JBoss AS7, Maven and IntelliJ</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Getting_Started_Developing_Applications_Presentation_&amp;_Demo.html">Getting Started Developing Applications Presentation &amp; Demo</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+              </ul>
+    </li>
+                                      <li><p><a href="Getting_Started_Guide.html">Getting Started Guide</a></p>
+      <ul>
+                    <li><p><a href="JavaEE_6_Tutorial.html">JavaEE 6 Tutorial</a></p>
+      <ul>
+                    <li><p><a href="Standard_JavaEE_6_Technologies.html">Standard JavaEE 6 Technologies</a></p>
+      <ul>
+                    <li><p><a href="Java_API_for_RESTful_Web_Services_(JAX-RS).html">Java API for RESTful Web Services (JAX-RS)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Java_Servlet_Technology.html">Java Servlet Technology</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Java_Server_Faces_Technology_(JSF).html">Java Server Faces Technology (JSF)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Java_Persistence_API_(JPA).html">Java Persistence API (JPA)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Java_Transaction_API_(JTA).html">Java Transaction API (JTA)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Managed_Beans.html">Managed Beans</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Contexts_and_Dependency_Injection_(CDI).html">Contexts and Dependency Injection (CDI)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Bean_Validation.html">Bean Validation</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Java_Message_Service_API_(JMS).html">Java Message Service API (JMS)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="JavaEE_Connector_Architecture_(JCA).html">JavaEE Connector Architecture (JCA)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="JavaMail_API.html">JavaMail API</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Java_Authorization_Contract_for_Containers_(JACC).html">Java Authorization Contract for Containers (JACC)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Java_Authentication_Service_Provider_Interface_for_Containers_(JASPIC).html">Java Authentication Service Provider Interface for Containers (JASPIC)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Enterprise_JavaBeans_Technology_(EJB).html">Enterprise JavaBeans Technology (EJB)</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Java_API_for_XML_Web_Services_(JAX-WS).html">Java API for XML Web Services (JAX-WS)</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="JBoss_AS7_Extension_Technologies.html">JBoss AS7 Extension Technologies</a></p>
+      <ul>
+                    <li><p><a href="Management_Interface.html">Management Interface</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+              </ul>
+    </li>
+              </ul>
+    </li>
+                                      <li><p><a href="Glossary.html">Glossary</a></p>
+      <ul>
+                    <li><p><a href="Glossary_--_Module.html">Glossary -- Module</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                                      <li><p><a href="Extending_WildFly.html">Extending WildFly</a></p>
+      <ul>
+                    <li><p><a href="Domain_Mode_Subsystem_Transformers.html">Domain Mode Subsystem Transformers</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Example_subsystem.html">Example subsystem</a></p>
+      <ul>
+                    <li><p><a href="Add_the_deployers.html">Add the deployers</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Create_the_schema.html">Create the schema</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Create_the_skeleton_project.html">Create the skeleton project</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Design_and_define_the_model_structure.html">Design and define the model structure</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Expressions.html">Expressions</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Integrate_with_WildFly_8.html">Integrate with WildFly 8</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Parsing_and_marshalling_of_the_subsystem_xml.html">Parsing and marshalling of the subsystem xml</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="Key_Interfaces_and_Classes_Relevant_to_Extension_Developers.html">Key Interfaces and Classes Relevant to Extension Developers</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Transformers.html">Transformers</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="WildFly_9_JNDI_Implementation.html">WildFly 9 JNDI Implementation</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                                      <li><p><a href="Common.html">Common</a></p>
+      <ul>
+                    <li><p><a href="All_WildFly_9_documentation.html">All WildFly 9 documentation</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                                      <li><p><a href="Testsuite.html">Testsuite</a></p>
+      <ul>
+                    <li><p><a href="WildFly_Testsuite_Overview.html">WildFly Testsuite Overview</a></p>
+      <ul>
+                    <li><p><a href="Modules_details.html">Modules details</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="WildFly_Integration_Testsuite_User_Guide.html">WildFly Integration Testsuite User Guide</a></p>
+      <ul>
+                    <li><p><a href="Troubleshooting_Common_Issues.html">Troubleshooting Common Issues</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="WildFly_Testsuite_Harness_Developer_Guide.html">WildFly Testsuite Harness Developer Guide</a></p>
+      <ul>
+                    <li><p><a href="Debug_parameters_propagation.html">Debug parameters propagation</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="How_the_JBoss_AS_instance_is_built_and_configured_for_testsuite_modules..html">How the JBoss AS instance is built and configured for testsuite modules.</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Plugin_executions_matrix.html">Plugin executions matrix</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Shortened_Maven_Run_Overview.html">Shortened Maven Run Overview</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+                      <li><p><a href="WildFly_Testsuite_Test_Developer_Guide.html">WildFly Testsuite Test Developer Guide</a></p>
+      <ul>
+                    <li><p><a href="How_to_Add_a_Test_Case.html">How to Add a Test Case</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Pre-requisites_-_test_quality_standards.html">requisites - test quality standards</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Shared_Test_Classes_and_Resources.html">Shared Test Classes and Resources</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+              </ul>
+    </li>
+                                      <li><p><a href="Quickstarts.html">Quickstarts</a></p>
+      <ul>
+                    <li><p><a href="Contributing_a_Quickstart.html">Contributing a Quickstart</a></p>
+      <ul>
+                    <li><p><a href="Maven_POM_Versions_Checklist.html">Maven POM Versions Checklist</a></p>
+      <ul>
+            </ul>
+    </li>
+                      <li><p><a href="Writing_a_quickstart.html">Writing a quickstart</a></p>
+      <ul>
+            </ul>
+    </li>
+              </ul>
+    </li>
+              </ul>
+    </li>
+                                        </ul>
+          </div>
+          </div>
+
+        <div class="block content">
+    <p>
+    <img src="images/www.jboss.org/dms/wildfly_splash/splash_wildflylogo_small.png" alt="images/www.jboss.org/dms/wildfly_splash/splash_wildflylogo_small.png" />
+        </p>
+    <p>
+Welcome to the WildFly 9 Documentation. The documentation for WildFly is split into two categories:    </p>
+<ul class=" "><li class=" ">    <p>
+<i class=" ">Administrator Guides</i> for those wanting to understand how to install and configure the server    </p>
+</li></ul><ul class=" "><li class=" ">    <p>
+<i class=" ">Developer Guides</i> for those wanting to understand how to develop applications for the server    </p>
+</li></ul>    <p>
+There is also the <a href="http://wildscribe.github.io/">WildFly Model Reference</a> that provides information about all subsystem configuration options generated directly from the management model.    </p>
+    <div class="section-2"  id="80873103_Documentation-AdministratorGuides"  >
+        <h2>Administrator Guides</h2>
+    
+<ul class=" "><li class=" ">    <p>
+The <a href="Getting_Started_Guide.html">Getting Started Guide</a> shows you how to install and start the server, how to configure logging, how to deploy an application, how to deploy a datasource, and how to get started using the command line interface and web management interface    </p>
+</li></ul><ul class=" "><li class=" ">    <p>
+The <a href="Admin_Guide.html">Admin Guide</a> provides detailed information on using the CLI and Web Management interface, how to use the domain configuration, and shows you how to configure key subsystems    </p>
+</li></ul><ul class=" "><li class=" ">    <p>
+The <a href="High_Availability_Guide.html">High Availability Guide</a> shows you how to create a cluster, how configure the web container and EJB container for clustering, and shows you how to configure load balancing and failover    </p>
+</li></ul>    </div>
+    
+    <div class="section-2"  id="80873103_Documentation-DeveloperGuides"  >
+        <h2>Developer Guides</h2>
+    
+<ul class=" "><li class=" ">    <p>
+The <a href="Getting_Started_Developing_Applications_Guide.html">Getting Started Developing Applications Guide</a> shows you how to build Java EE applications and deploy them to WildFly. The guide starts by showing you the simplest <i class=" ">helloworld</i> application using just Servlet and CDI, and then adds in JSF, persistence and transactions, EJB, Bean Validation, RESTful web services and more. You'll also discover how to deploy an OSGi bundle to WildFly. Finally, you'll get the opportunity to create your own skeleton project. Each tutorial is accompanied by a quickstart, which contains the source code, deployment descriptors and a Maven based build.    </p>
+</li></ul><ul class=" "><li class=" ">    <p>
+The <a href="Developer_Guide.html">Developer Guide</a> (<i class=" ">in progress</i>) takes you through every deployment descriptor and every annotation offered by WildFly.    </p>
+</li></ul><ul class=" "><li class=" ">    <p>
+The <a href="JavaEE_6_Tutorial.html">JavaEE 6 Tutorial</a> (<i class=" ">in progress</i>) builds on what you learnt in the <a href="Getting_Started_Developing_Applications_Guide.html">Getting Started Developing Applications Guide</a>, and shows you how to build a complex application using Java EE and portable extensions.    </p>
+</li></ul><ul class=" "><li class=" ">    <p>
+The <a href="Extending_WildFly.html">Extending WildFly</a> guide walks you through creating a new WildFly subsystem extension, in order to add more functionality to WildFly, and shows how to test it before plugging it into WildFly.    </p>
+</li></ul>    </div>
+    
+    <div class="section-2"  id="80873103_Documentation-Quickstarts"  >
+        <h2>Quickstarts</h2>
+    
+    <p>
+WildFly comes with a number of quickstarts, examples which introduce to a particular technology or feature of the application server. The <a href="Contributing_a_Quickstart.html">Contributing a Quickstart</a> section of the documentation details the available quickstarts    </p>
+    </div>
+    
+    <div class="section-2"  id="80873103_Documentation-MoreResources"  >
+        <h2>More Resources</h2>
+    
+<ul class=" "><li class=" ">    <p>
+<a href="Glossary.html">Glossary</a>    </p>
+</li><li class=" ">    <p>
+<a href="http://www.wildfly.org">WildFly project page</a>    </p>
+</li><li class=" ">    <p>
+<a href="https://issues.jboss.org/browse/WFLY">WildFly issue tracker</a>    </p>
+</li><li class=" ">    <p>
+<a href="https://community.jboss.org/en/wildfly">WildFly user forum</a>    </p>
+</li><li class=" ">    <p>
+<a href="https://community.jboss.org/en/wildfly/dev">WildFly wiki</a>    </p>
+</li><li class=" ">    <p>
+<a href="https://github.com/wildfly/wildfly/">WildFly source</a>    </p>
+</li></ul>    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                    <li class="next"><a accesskey="n" href="Admin_Guide.html"><strong>Next</strong>Admin Guide</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

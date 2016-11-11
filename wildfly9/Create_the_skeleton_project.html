@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create the skeleton project - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="previous"><a accesskey="p" href="Create_the_schema.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="Design_and_define_the_model_structure.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+                    <div>
+            <h1>Create the skeleton project</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+To make your life easier we have provided a maven archetype which will create a skeleton project for implementing subsystems.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">mvn archetype:generate \
+    -DarchetypeArtifactId=wildfly-subsystem \
+    -DarchetypeGroupId=org.wildfly.archetypes \
+    -DarchetypeVersion=8.0.0.Final \
+    -DarchetypeRepository=http://repository.jboss.org/nexus/content/groups/public</pre>
+        </div>
+    </div>
+    <p>
+Maven will download the archetype and it's dependencies, and ask you some questions:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$ mvn archetype:generate \
+    -DarchetypeArtifactId=wildfly-subsystem \
+    -DarchetypeGroupId=org.wildfly.archetypes \
+    -DarchetypeVersion=8.0.0.Final \
+    -DarchetypeRepository=http://repository.jboss.org/nexus/content/groups/public
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] ------------------------------------------------------------------------
+[INFO]
+
+.........
+
+Define value for property 'groupId': : com.acme.corp
+Define value for property 'artifactId': : acme-subsystem
+Define value for property 'version':  1.0-SNAPSHOT: :
+Define value for property 'package':  com.acme.corp: : com.acme.corp.tracker
+Define value for property 'module': : com.acme.corp.tracker
+[INFO] Using property: name = WildFly subsystem project
+Confirm properties configuration:
+groupId: com.acme.corp
+artifactId: acme-subsystem
+version: 1.0-SNAPSHOT
+package: com.acme.corp.tracker
+module: com.acme.corp.tracker
+name: WildFly subsystem project
+ Y: : Y
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1:42.563s
+[INFO] Finished at: Fri Jul 08 14:30:09 BST 2011
+[INFO] Final Memory: 7M/81M
+[INFO] ------------------------------------------------------------------------
+$</pre>
+        </div>
+    </div>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #000000;">
+&nbsp;    </span>
+    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #000000;">
+Instruction    </span>
+    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+1    </span>
+    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+Enter the&nbsp;    </span>
+    <span style="color: #333333;">
+<tt class=" ">groupId</tt>    </span>
+    <span style="color: #333333;">
+&nbsp;you wish to use    </span>
+    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+2    </span>
+    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+Enter the&nbsp;    </span>
+    <span style="color: #333333;">
+<tt class=" ">artifactId</tt>    </span>
+    <span style="color: #333333;">
+&nbsp;you wish to use    </span>
+    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+3    </span>
+    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+Enter the version you wish to use, or just hit&nbsp;    </span>
+    <span style="color: #333333;">
+<tt class=" ">Enter</tt>    </span>
+    <span style="color: #333333;">
+&nbsp;if you wish to accept the default&nbsp;    </span>
+    <span style="color: #333333;">
+<tt class=" ">1.0-SNAPSHOT</tt>    </span>
+    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+4    </span>
+    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+Enter the java package you wish to use, or just hit&nbsp;    </span>
+    <span style="color: #333333;">
+<tt class=" ">Enter</tt>    </span>
+    <span style="color: #333333;">
+&nbsp;if you wish to accept the default (which is copied from&nbsp;    </span>
+    <span style="color: #333333;">
+<tt class=" ">groupId</tt>    </span>
+    <span style="color: #333333;">
+).    </span>
+    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+5    </span>
+    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Enter the module name you wish to use for your extension.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+6    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+    <span style="color: #333333;">
+Finally, if you are happy with your choices, hit&nbsp;    </span>
+    <span style="color: #333333;">
+<tt class=" ">Enter</tt>    </span>
+    <span style="color: #333333;">
+&nbsp;and Maven will generate the project for you.    </span>
+    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+You can also do this in Eclipse, see <a href="https://docs.jboss.org/author/display/WFLY8/Creating+your+own+application">Creating your own application</a> for more details. We now have a skeleton project that you can use to implement a subsystem. Import the &#65279;<tt class=" ">acme-subsystem</tt> project&nbsp;into your favourite IDE. A nice side-effect of running this in the IDE is that you can see the javadoc of WildFly classes and interfaces imported by the skeleton code. If you do a <tt class=" ">mvn install</tt> in the project it will work if we plug it into WildFly 8, but before doing that we will change it to do something more useful.    </p>
+    <p>
+The rest of this section modifies the skeleton project created by the archetype to do something more useful, and the full code can be found in <a href="attachments/81199252/1/acme-subsystem.zip">acme-subsystem.zip</a>.    </p>
+    <p>
+If you do a <tt class=" ">mvn install</tt> in the created project, you will see some tests being run    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$mvn install
+[INFO] Scanning for projects...
+[...]
+[INFO] Surefire report directory: /Users/kabir/sourcecontrol/temp/archetype-test/acme-subsystem/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.acme.corp.tracker.extension.SubsystemBaseParsingTestCase
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.424 sec
+Running com.acme.corp.tracker.extension.SubsystemParsingTestCase
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 sec
+
+Results :
+
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[...]</pre>
+        </div>
+    </div>
+    <p>
+We will talk about these later in the&nbsp;<a href="Create_the_skeleton_project.html#80873446_Createtheskeletonproject-Testingtheparsers">Testing the parsers</a> section.    </p>
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="previous"><a accesskey="p" href="Create_the_schema.html"><strong>Prev</strong>Create the schema</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="next"><a accesskey="n" href="Design_and_define_the_model_structure.html"><strong>Next</strong>Design and define the model structure</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

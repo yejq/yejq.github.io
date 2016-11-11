@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JVM settings - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                        <li class="previous"><a accesskey="p" href="Deployment_Overlays.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="next"><a accesskey="n" href="Starting_&amp;_stopping_Servers_in_a_Managed_Domain.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+                    <div>
+            <h1>JVM settings</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+Configuration of the JVM settings is different for a managed domain and a standalone server. In a managed domain, the domain controller components are responsible for starting and stoping server processes and hence determine the JVM settings. For a standalone server, it's the responsibility of the process that started the server (e.g. passing them as command line arguments).    </p>
+    <div class="section-2"  id="80873118_JVMsettings-ManagedDomain"  >
+        <h2>Managed Domain</h2>
+    
+    <p>
+In a managed domain the JVM settings can be declared at different scopes: For a specific server group, for a host or for a particular server. If not declared, the settings are inherited from the parent scope. This allows you to customize or extend the JVM settings within every layer.    </p>
+    <p>
+Let's take a look at the JVM declaration for a server group:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;server-groups&gt;
+       &lt;server-group name=&quot;main-server-group&quot; profile=&quot;default&quot;&gt;
+           &lt;jvm name=&quot;default&quot;&gt;
+               &lt;heap size=&quot;64m&quot; max-size=&quot;512m&quot;/&gt;
+           &lt;/jvm&gt;
+           &lt;socket-binding-group ref=&quot;standard-sockets&quot;/&gt;
+       &lt;/server-group&gt;
+       &lt;server-group name=&quot;other-server-group&quot; profile=&quot;default&quot;&gt;
+           &lt;jvm name=&quot;default&quot;&gt;
+               &lt;heap size=&quot;64m&quot; max-size=&quot;512m&quot;/&gt;
+           &lt;/jvm&gt;
+           &lt;socket-binding-group ref=&quot;standard-sockets&quot;/&gt;
+       &lt;/server-group&gt;
+&lt;/server-groups&gt;
+</pre>
+        </div>
+    </div>
+    <p>
+<sub class=" ">(See</sub> <tt class=" ">domain/configuration/domain.xml</tt><sub class=" ">)</sub>    </p>
+    <p>
+In this example the server group &quot;main-server-group&quot; declares a heap size of <tt class=" ">64m</tt> and a maximum heap size of <tt class=" ">512m</tt>. Any server that belongs to this group will inherit these settings. You can change these settings for the group as a whole, or a specific server or host:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;servers&gt;
+       &lt;server name=&quot;server-one&quot; group=&quot;main-server-group&quot; auto-start=&quot;true&quot;&gt;
+           &lt;jvm name=&quot;default&quot;/&gt;
+       &lt;/server&gt;
+       &lt;server name=&quot;server-two&quot; group=&quot;main-server-group&quot; auto-start=&quot;true&quot;&gt;
+           &lt;jvm name=&quot;default&quot;&gt;
+               &lt;heap size=&quot;64m&quot; max-size=&quot;256m&quot;/&gt;
+           &lt;/jvm&gt;
+           &lt;socket-binding-group ref=&quot;standard-sockets&quot; port-offset=&quot;150&quot;/&gt;
+       &lt;/server&gt;
+       &lt;server name=&quot;server-three&quot; group=&quot;other-server-group&quot; auto-start=&quot;false&quot;&gt;
+           &lt;socket-binding-group ref=&quot;standard-sockets&quot; port-offset=&quot;250&quot;/&gt;
+       &lt;/server&gt;
+&lt;/servers&gt;</pre>
+        </div>
+    </div>
+    <p>
+<sub class=" ">(See domain/configuration/host.xml)</sub>    </p>
+    <p>
+In this case, <i class=" ">server-two</i>, belongs to the <i class=" ">main-server-group</i> and inherits the JVM settings named <i class=" ">default</i>, but declares a lower maximum heap size.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9999 /] /host=local/server-config=server-two/jvm=default:read-resource
+{
+   &quot;outcome&quot; =&gt; &quot;success&quot;,
+   &quot;result&quot; =&gt; {
+       &quot;heap-size&quot; =&gt; &quot;64m&quot;,
+       &quot;max-heap-size&quot; =&gt; &quot;256m&quot;,
+   }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="80873118_JVMsettings-StandaloneServer"  >
+        <h2>Standalone Server</h2>
+    
+    <p>
+For a standalone sever you have to pass in the JVM settings either as command line arguments when executing the <tt class=" ">$JBOSS_HOME/bin/standalone.sh</tt> script, or by declaring them in <tt class=" ">$JBOSS_HOME/bin/standalone.conf</tt>. (For Windows users, the script to execute is <tt class=" ">%JBOSS_HOME%/bin/standalone.bat</tt> while the JVM settings can be declared in <tt class=" ">%JBOSS_HOME%/bin/standalone.conf.bat.)</tt>    </p>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                      <li class="previous"><a accesskey="p" href="Deployment_Overlays.html"><strong>Prev</strong>Deployment Overlays</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="next"><a accesskey="n" href="Starting_&amp;_stopping_Servers_in_a_Managed_Domain.html"><strong>Next</strong>Starting &amp; stopping Servers in a Managed Domain</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

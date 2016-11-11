@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Published WSDL customization - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="previous"><a accesskey="p" href="WS-Policy.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="next"><a accesskey="n" href="JBoss_Modules_and_WS_applications.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </ul>
+                    <div>
+            <h1>Published WSDL customization</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+<ul class=" "><li class=" ">    <p>
+<a href="Published_WSDL_customization.html#90439832_PublishedWSDLcustomization-Endpointaddressrewrite">Endpoint address rewrite</a>    </p>
+</li><li class=" ">    <p>
+<a href="Published_WSDL_customization.html#90439832_PublishedWSDLcustomization-Systempropertyreferences">System property references</a>    </p>
+</li></ul>    <div class="section-2"  id="90439832_PublishedWSDLcustomization-Endpointaddressrewrite"  >
+        <h2>Endpoint address rewrite</h2>
+    
+    <p>
+JBossWS supports the rewrite of the <tt class=" ">&lt;soap:address&gt;</tt>&nbsp;element of endpoints published in WSDL contracts.&nbsp; This feature is useful for controlling the server address that is advertised to clients for each endpoint. The rewrite mechanism is configured at server level through a set of elements in the webservices subsystem of the WildFly management model. Please refer to the container documentation for details on the options supported in the selected container version. Below is a list of the elements available in the latest WildFly sources:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Type    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+modify-wsdl-address    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+boolean    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This boolean enables and disables the address rewrite functionality.<br/>When modify-wsdl-address is set to true and the content of &lt;soap:address&gt; is a valid URL, JBossWS will rewrite the URL using the values of wsdl-host and wsdl-port or wsdl-secure-port.<br/>When modify-wsdl-address is set to false and the content of &lt;soap:address&gt; is a valid URL, JBossWS will not rewrite the URL.&nbsp; The &lt;soap:address&gt; URL will be used.<br/>When the content of &lt;soap:address&gt; is not a valid URL, JBossWS will rewrite it no matter what the setting of modify-wsdl-address.<br/>If modify-wsdl-address is set to true and wsdl-host is not defined or explicitly set to <i class=" ">'</i><tt class=" ">jbossws.undefined.host</tt><i class=" ">'&nbsp;</i> the content of &lt;soap:address&gt; URL is use.&nbsp; JBossWS uses the requester's host when rewriting the &lt;soap:address&gt;<br/>When modify-wsdl-address is not defined JBossWS uses a default value of true.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-host    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The hostname / IP address to be used for rewriting <tt class=" ">&lt;soap:address&gt;</tt>.<br/>If&nbsp;<tt class=" ">wsdl-host</tt>&nbsp;is set to&nbsp;<tt class=" ">jbossws.undefined.host</tt>, JBossWS uses the requester's host when rewriting the&nbsp;<tt class=" ">&lt;soap:address&gt;</tt><br/>When wsdl-host is not defined JBossWS uses a default value of '<tt class=" ">jbossws.undefined.host</tt>'.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-port    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+int    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Set this property to explicitly define the HTTP port that will be used for rewriting the SOAP address.<br/>Otherwise the HTTP port will be identified by querying the list of installed HTTP connectors.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-secure-port    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+int    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Set this property to explicitly define the HTTPS port that will be used for rewriting the SOAP address.<br/>Otherwise the HTTPS port will be identified by querying the list of installed HTTPS connectors.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-uri-scheme    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This property explicitly sets the URI scheme to use for rewriting <tt class=" ">&lt;soap:address&gt;</tt> . Valid values are <tt class=" ">http</tt> and <tt class=" ">https</tt>. This configuration overrides scheme computed by processing the endpoint (even if a transport guarantee<br/>is specified). The provided values for <tt class=" ">wsdl-port</tt> and <tt class=" ">wsdl-secure-port</tt> (or their default values) are used depending on specified scheme.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl-path-rewrite-rule    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+string    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This string defines a SED substitution command (e.g., 's/regexp/replacement/g') that JBossWS executes against the path component of each &lt;soap:address&gt; URL published from the server.<br/>When wsdl-path-rewrite-rule is not defined, JBossWS retains the original path component of each &lt;soap:address&gt; URL.<br/>When 'modify-wsdl-address' is set to &quot;false&quot; this element is ignored.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+Additionally, users can override the server level configuration by requesting a specific rewrite behavior for a given endpoint deployment. That is achieved by setting one of the following properties within a <i class=" ">jboss-webservices.xml</i> descriptor:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Property    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Corresponding server option    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl.soapAddress.rewrite.modify-wsdl-address    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+modify-wsdl-address    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl.soapAddress.rewrite.wsdl-host    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+wsdl-host    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl.soapAddress.rewrite.wsdl-port    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+wsdl-port    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl.soapAddress.rewrite.wsdl-secure-port    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+wsdl-secure-port    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl.soapAddress.rewrite.wsdl-path-rewrite-rule    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+wsdl-path-rewrite-rule    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+wsdl.soapAddress.rewrite.wsdl-uri-scheme    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+wsdl-uri-scheme    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+Here is an example of partial overriding of the default configuration for a specific deployment:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;webservices version=&quot;1.2&quot;
+  xmlns=&quot;http://www.jboss.com/xml/ns/javaee&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://www.jboss.com/xml/ns/javaee&quot;&gt;
+  &lt;property&gt;
+    &lt;name&gt;wsdl.soapAddress.rewrite.wsdl-uri-scheme&lt;/name&gt;
+    &lt;value&gt;https&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;wsdl.soapAddress.rewrite.wsdl-host&lt;/name&gt;
+    &lt;value&gt;foo&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/webservices&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="90439832_PublishedWSDLcustomization-Systempropertyreferences"  >
+        <h2>System property references</h2>
+    
+    <p>
+System property references wrapped within &quot;@&quot; characters are expanded when found in WSDL attribute and element values. This allows for instance including multiple WS-Policy declarations in the contract and selecting the policy to use depending on a server wide system property; here is an example:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;wsdl:definitions ...&gt;
+  ...
+  &lt;wsdl:binding name=&quot;ServiceOneSoapBinding&quot; type=&quot;tns:EndpointOne&quot;&gt;
+    ...
+    &lt;wsp:PolicyReference URI=&quot;#@org.jboss.wsf.test.JBWS3628TestCase.policy@&quot;/&gt;
+    &lt;wsdl:operation name=&quot;echo&quot;&gt;
+      ...
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name=&quot;ServiceOne&quot;&gt;
+    &lt;wsdl:port binding=&quot;tns:ServiceOneSoapBinding&quot; name=&quot;EndpointOnePort&quot;&gt;
+      &lt;soap:address location=&quot;http://localhost:8080/jaxws-cxf-jbws3628/ServiceOne&quot;/&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+
+  &lt;wsp:Policy xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; xmlns:wsp=&quot;http://www.w3.org/ns/ws-policy&quot; wsu:Id=&quot;WS-RM_Policy&quot;&gt;
+	&lt;wsrmp:RMAssertion xmlns:wsrmp=&quot;http://schemas.xmlsoap.org/ws/2005/02/rm/policy&quot;&gt;
+          ...
+  	&lt;/wsrmp:RMAssertion&gt;
+  &lt;/wsp:Policy&gt;
+
+  &lt;wsp:Policy xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; xmlns:wsp=&quot;http://www.w3.org/ns/ws-policy&quot;
+      xmlns:wsam=&quot;http://www.w3.org/2007/05/addressing/metadata&quot; wsu:Id=&quot;WS-Addressing_policy&quot;&gt;
+    &lt;wsam:Addressing&gt;
+      &lt;wsp:Policy/&gt;
+    &lt;/wsam:Addressing&gt;
+  &lt;/wsp:Policy&gt;
+&lt;/wsdl:definitions&gt;</pre>
+        </div>
+    </div>
+    <p>
+If the <strong class=" "><i class=" ">org.jboss.wsf.test.JBWS3628TestCase.policy</i></strong> system property is defined and set to &quot;<strong class=" "><i class=" ">WS-Addressing_policy</i></strong>&quot;, WS-Addressing will be enabled for the endpoint defined by the contract above.    </p>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="previous"><a accesskey="p" href="WS-Policy.html"><strong>Prev</strong>Policy</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="JBoss_Modules_and_WS_applications.html"><strong>Next</strong>JBoss Modules and WS applications</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

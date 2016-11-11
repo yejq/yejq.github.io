@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JMX subsystem configuration - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="previous"><a accesskey="p" href="Java_EE_Application_Deployment_Configuration.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="next"><a accesskey="n" href="Logging_Configuration.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
+                    <div>
+            <h1>JMX subsystem configuration</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+The JMX subsystem registers a service with the Remoting endpoint so that remote access to JMX can be obtained over the exposed Remoting connector.    </p>
+    <p>
+This is switched on by default in standalone mode and accessible over port 9990 but in domain mode is switched off so needs to be enabled - in domain mode the port will be the port of the Remoting connector for the WildFly 8&nbsp;instance to be monitored.    </p>
+    <p>
+To use the connector you can access it in the standard way using a <tt class=" ">service:jmx</tt> URL:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">import javax.management.MBeanServerConnection;
+import javax.management.remote.JMXConnector;
+import javax.management.remote.JMXConnectorFactory;
+import javax.management.remote.JMXServiceURL;
+
+public class JMXExample {
+
+    public static void main(String[] args) throws Exception {
+        //Get a connection to the WildFly 8 MBean server on localhost
+        String host = &quot;localhost&quot;;
+        int port = 9990;  // management-web port
+        String urlString =
+            System.getProperty(&quot;jmx.service.url&quot;,&quot;service:jmx:http-remoting-jmx://&quot; + host + &quot;:&quot; + port);
+        JMXServiceURL serviceURL = new JMXServiceURL(urlString);
+        JMXConnector jmxConnector = JMXConnectorFactory.connect(serviceURL, null);
+        MBeanServerConnection connection = jmxConnector.getMBeanServerConnection();
+
+        //Invoke on the WildFly 8 MBean server
+        int count = connection.getMBeanCount();
+        System.out.println(count);
+       &nbsp;jmxConnector.close();
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+You also need to set your classpath when running the above example.&nbsp; The following script covers Linux.&nbsp; If your environment is much different, paste your script when you have it working.    </p>
+    <div class="confbox panel">
+        <p>
+!/bin/bash    </p>
+    <p>
+# specify your WildFly 8&nbsp;folder<br/>export YOUR_JBOSS_HOME=~/WildFly8    </p>
+    <p>
+java -classpath $YOUR_JBOSS_HOME/bin/client/jboss-client.jar:./ JMXExample    </p>
+    </div>
+    <p>
+You can also connect using jconsole.    </p>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+If using jconsole use the <tt class=" ">jconsole.sh</tt> and <tt class=" ">jconsole.bat</tt> scripts included in the /bin directory of the WildFly 8&nbsp;distribution as these set the classpath as required to connect over Remoting.    </p>
+    </div>
+    
+    <p>
+In addition to the standard JVM MBeans, the WildFly 8&nbsp;MBean server contains the following MBeans:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+JMX ObjectName    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.msc:type=container,name=jboss-as</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Exposes management operations on the JBoss Modular Service Container, which is the dependency injection framework at the heart of WildFly 8. It is useful for debugging dependency problems, for example if you are integrating your own subsystems, as it exposes operations to dump all services and their current states    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.naming:type=JNDIView</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Shows what is bound in JNDI    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">jboss.modules:type=ModuleLoader,name=*</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This collection of MBeans exposes management operations on JBoss Modules classloading layer. It is useful for debugging dependency problems arising from missing module dependencies    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <div class="section-2"  id="80873143_JMXsubsystemconfiguration-Auditlogging"  >
+        <h2>Audit logging</h2>
+    
+    <p>
+Audit logging for the JMX MBean server managed by the JMX subsystem. The resource is at <tt class=" ">/subsystem=jmx/configuration=audit-log</tt> and its attributes are similar to the ones mentioned for <tt class=" ">/core-service=management/access=audit/logger=audit-log</tt> in <a href="Audit_logging.html">Audit logging</a>.    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Attribute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">enabled</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> to enable logging of the JMX operations    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">log-boot</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> to log the JMX operations when booting the server, <tt class=" ">false</tt> otherwise    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">log-read-only</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+If <tt class=" ">true</tt> all operations will be audit logged, if <tt class=" ">false</tt> only operations that change the model will be logged    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+Then which handlers are used to log the management operations are configured as <tt class=" ">handler=*</tt> children of the logger. These handlers and their formatters are defined in the global <tt class=" ">/core-service=management/access=audit</tt> section mentioned in <a href="Audit_logging.html">Audit logging</a>.    </p>
+    <div class="section-3"  id="80873143_JMXsubsystemconfiguration-JSONFormatter"  >
+        <h3>JSON Formatter</h3>
+    
+    <p>
+The same JSON Formatter is used as described in <a href="Audit_logging.html">Audit logging</a>. However the records for MBean Server invocations have slightly different fields from those logged for the core management layer.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">2013-08-29 18:26:29 - {
+    &quot;type&quot; : &quot;jmx&quot;,
+    &quot;r/o&quot; : false,
+    &quot;booting&quot; : false,
+    &quot;version&quot; : &quot;8.0.0.Beta1-SNAPSHOT&quot;,
+    &quot;user&quot; : &quot;$local&quot;,
+    &quot;domainUUID&quot; : null,
+    &quot;access&quot; : &quot;JMX&quot;,
+    &quot;remote-address&quot; : &quot;127.0.0.1/127.0.0.1&quot;,
+    &quot;method&quot; : &quot;invoke&quot;,
+    &quot;sig&quot; : [
+        &quot;javax.management.ObjectName&quot;,
+        &quot;java.lang.String&quot;,
+        &quot;[Ljava.lang.Object;&quot;,
+        &quot;[Ljava.lang.String;&quot;
+    ],
+    &quot;params&quot; : [
+        &quot;java.lang:type=Threading&quot;,
+        &quot;getThreadInfo&quot;,
+        &quot;[Ljava.lang.Object;@5e6c33c&quot;,
+        &quot;[Ljava.lang.String;@4b681c69&quot;
+    ]
+}</pre>
+        </div>
+    </div>
+    <p>
+It includes an optional timestamp and then the following information in the json record    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Field name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">type</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This will have the value <tt class=" ">jmx</tt> meaning it comes from the jmx subsystem    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">r/o</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> if the operation has read only impact on the MBean(s)    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">booting</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">true</tt> if the operation was executed during the bootup process, <tt class=" ">false</tt> if it was executed once the server is up and running    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">version</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The version number of the WildFly instance    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">user</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The username of the authenticated user.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">domainUUID</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This is not currently populated for JMX operations    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">access</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+This can have one of the following values:<br/>*<tt class=" ">NATIVE</tt> - The operation came in through the native management interface, for example the CLI<br/>*<tt class=" ">HTTP</tt> - The operation came in through the domain HTTP interface, for example the admin console<br/>*<tt class=" ">JMX</tt> - The operation came in through the JMX subsystem. See <a href="JMX_subsystem_configuration.html">JMX</a> for how to configure audit logging for JMX.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">remote-address</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The address of the client executing this operation    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">method</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of the called MBeanServer method    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">sig</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The signature of the called called MBeanServer method    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">params</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The actual parameters passed in to the MBeanServer method, a simple <tt class=" ">Object.toString()</tt> is called on each parameter.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+<tt class=" ">error</tt>    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+If calling the MBeanServer method resulted in an error, this field will be populated with <tt class=" ">Throwable.getMessage()</tt>    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="previous"><a accesskey="p" href="Java_EE_Application_Deployment_Configuration.html"><strong>Prev</strong>Java EE Application Deployment Configuration</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="next"><a accesskey="n" href="Logging_Configuration.html"><strong>Next</strong>Logging Configuration</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

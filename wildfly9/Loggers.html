@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Loggers - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="previous"><a accesskey="p" href="How_To.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="next"><a accesskey="n" href="Messaging_configuration.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                    <div>
+            <h1>Loggers</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+<ul class=" "><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-Overview">Overview</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-LoggerResource">Logger Resource</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-filterspec">filter-spec</a>    </p>
+</li><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-handlers">handlers</a>    </p>
+</li><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-level">level</a>    </p>
+</li><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-useparenthandlers">use-parent-handlers</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-RootLoggerResource">Root Logger Resource</a>    </p>
+</li><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-LoggerHierarchy">Logger Hierarchy</a>    </p>
+</li></ul></li></ul>    <div class="confbox admonition admonition-info">
+            <div class="title">WIP</div>
+        
+    <p>
+This is still a work in progress. Please feel free to edit any mistakes you find     <img src="images/author/images/icons/emoticons/smile.gif" alt="images/author/images/icons/emoticons/smile.gif" />
+.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873140_Loggers-Overview"  >
+        <h2>Overview</h2>
+    
+    <p>
+Loggers are used to log messages. A logger is defined by a category generally consisting of a package name or a class name.    </p>
+    <p>
+A logger is the first step to determining if a messages should be logged or not. If a logger is defined with a level, the level of the message must be greater than the level defined on the logger. The filter is then checked next and the rules of the filter will determine whether or not the messages is said to be loggable.    </p>
+    <div class="section-3"  id="80873140_Loggers-LoggerResource"  >
+        <h3>Logger Resource</h3>
+    
+    <p>
+A logger resource uses the path <tt class=" ">subsystem=logging/logger=$category</tt> where <tt class=" ">$category</tt> is the of the logger. For example to a logger named org.wildfly.example would have a resource path of <tt class=" ">subsystem=logging/logger=org.wildfly.example</tt>.    </p>
+    <p>
+A logger as 4 writeable attributes;    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-filterspec">filter-spec</a>    </p>
+</li><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-handlers">handlers</a>    </p>
+</li><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-level">level</a>    </p>
+</li><li class=" ">    <p>
+<a href="Loggers.html#80873140_Loggers-useparenthandlers">use-parent-handlers</a>    </p>
+</li></ul>    <div class="confbox admonition admonition-info">
+        
+    <p>
+You may notice that the <tt class=" ">category</tt> and <tt class=" ">filter</tt> attributes are missing. While <tt class=" ">filter</tt> is writable it may be deprecated and removed in the future. Both attributes are still on the resource for legacy reasons.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873140_Loggers-filterspec"  >
+        <h4>filter-spec</h4>
+    
+    <p>
+The <tt class=" ">filter-spec</tt> attribute is an expression based string to define filters for the logger.    </p>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+Filters on loggers are not inherited.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-4"  id="80873140_Loggers-handlers"  >
+        <h4>handlers</h4>
+    
+    <p>
+The <tt class=" ">handlers</tt> attribute is a list of handler names that should be attached to the logger. If the <a href="Loggers.html#80873140_Loggers-useparenthandlers">use-parent-handlers</a> attribute is set to <tt class=" ">true</tt> and the log messages is determined to be loggable, parent loggers will continue to be processed.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873140_Loggers-level"  >
+        <h4>level</h4>
+    
+    <p>
+The <tt class=" ">level</tt> attribute allows the minimum level to allow messages to be logged at for the logger.    </p>
+    </div>
+    
+    <div class="section-4"  id="80873140_Loggers-useparenthandlers"  >
+        <h4>parent-handlers</h4>
+    
+    <p>
+The <tt class=" ">use-parent-handlers</tt> attribute is a boolean attribute to determine whether or not parent loggers should also process the log message.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="80873140_Loggers-RootLoggerResource"  >
+        <h3>Root Logger Resource</h3>
+    
+    <p>
+The <tt class=" ">root-logger</tt> is similar to a <a href="Loggers.html#80873140_Loggers-LoggerResource">Logger Resource</a> only it has no category and it's name is must be <tt class=" ">ROOT</tt>.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873140_Loggers-LoggerHierarchy"  >
+        <h3>Logger Hierarchy</h3>
+    
+    <p>
+A logger hierarchy is defined by it's category. The category is a <tt class=" ">.</tt> (dot) delimited string generally consisting of the package name or a class name. For example the logger <tt class=" ">org.wildfly</tt> is the parent logger of <tt class=" ">org.wildfly.example</tt>.    </p>
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="previous"><a accesskey="p" href="How_To.html"><strong>Prev</strong>How To</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="next"><a accesskey="n" href="Messaging_configuration.html"><strong>Next</strong>Messaging configuration</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

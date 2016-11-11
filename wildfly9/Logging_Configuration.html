@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Logging Configuration - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="previous"><a accesskey="p" href="JMX_subsystem_configuration.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="next"><a accesskey="n" href="Handlers.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </ul>
+                    <div>
+            <h1>Logging Configuration</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+<ul class=" "><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-Overview">Overview</a>    </p>
+</li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-Attributes">Attributes</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-%7B%7Baddloggingapidependencies%7D%7D"> <tt class=" ">add-logging-api-dependencies</tt></a>    </p>
+</li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-%7B%7Busedeploymentloggingconfig%7D%7D"> <tt class=" ">use-deployment-logging-config</tt></a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-PerdeploymentLogging">Per-deployment Logging</a>    </p>
+</li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-LoggingProfiles">Logging Profiles</a>    </p>
+</li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-DefaultLogFileLocations">Default Log File Locations</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-ManagedDomain">Managed Domain</a>    </p>
+</li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-StandaloneServer">Standalone Server</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-FilterExpressions">Filter Expressions</a>    </p>
+</li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-ListLogFilesandReadingLogFiles">List Log Files and Reading Log Files</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-ListLogFiles">List Log Files</a>    </p>
+</li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-ReadLogFile">Read Log File</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-FAQ">FAQ</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="Logging_Configuration.html#80873133_LoggingConfiguration-Whyistherea%7B%7Blogging.properties%7D%7Dfile%3F">Why is there a <tt class=" ">logging.properties</tt> file?</a>    </p>
+</li></ul></li></ul>    <p>
+    </p>
+    <div class="section-2"  id="80873133_LoggingConfiguration-Overview"  >
+        <h2>Overview</h2>
+    
+    <p>
+The overall server logging configuration is represented by the logging subsystem. It consists of four notable parts: <tt class=" ">handler</tt> configurations, <tt class=" ">logger</tt>, the <tt class=" ">root logger</tt> declarations (aka log categories) and logging profiles. Each logger does reference a handler (or set of handlers). Each handler declares the log format and output:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;subsystem xmlns=&quot;urn:jboss:domain:logging:1.0&quot;&gt;
+   &lt;console-handler name=&quot;CONSOLE&quot; autoflush=&quot;true&quot;&gt;
+       &lt;level name=&quot;DEBUG&quot;/&gt;
+       &lt;formatter&gt;
+           &lt;pattern-formatter pattern=&quot;%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n&quot;/&gt;
+       &lt;/formatter&gt;
+   &lt;/console-handler&gt;
+   &lt;periodic-rotating-file-handler name=&quot;FILE&quot; autoflush=&quot;true&quot;&gt;
+       &lt;formatter&gt;
+           &lt;pattern-formatter pattern=&quot;%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n&quot;/&gt;
+       &lt;/formatter&gt;
+       &lt;file relative-to=&quot;jboss.server.log.dir&quot; path=&quot;server.log&quot;/&gt;
+       &lt;suffix value=&quot;.yyyy-MM-dd&quot;/&gt;
+   &lt;/periodic-rotating-file-handler&gt;
+   &lt;logger category=&quot;com.arjuna&quot;&gt;
+       &lt;level name=&quot;WARN&quot;/&gt;
+   &lt;/logger&gt;
+   [...]
+   &lt;root-logger&gt;
+       &lt;level name=&quot;DEBUG&quot;/&gt;
+       &lt;handlers&gt;
+           &lt;handler name=&quot;CONSOLE&quot;/&gt;
+           &lt;handler name=&quot;FILE&quot;/&gt;
+       &lt;/handlers&gt;
+   &lt;/root-logger&gt;
+&lt;/subsystem&gt;</pre>
+        </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-2"  id="80873133_LoggingConfiguration-Attributes"  >
+        <h2>Attributes</h2>
+    
+    <p>
+The root resource contains two notable attributes <tt class=" ">add-logging-api-dependencies</tt> and <tt class=" ">use-deployment-logging-config</tt>.    </p>
+    <div class="section-3"  id="80873133_LoggingConfiguration-%7B%7Baddloggingapidependencies%7D%7D"  >
+        <h3>logging-api-dependencies</h3>
+    
+    <p>
+The <tt class=" ">add-logging-api-dependencies</tt> controls whether or not the container adds <a href="Implicit_module_dependencies_for_deployments.html#80873193_Implicitmoduledependenciesfordeployments-ImplicitmoduledependenciesfordeploymentsWhicha...">implicit</a> logging API dependencies to your deployments. If set to <tt class=" ">true</tt>, the default, all the implicit logging API dependencies are added. If set to <tt class=" ">false</tt> the dependencies are not added to your deployments.    </p>
+    </div>
+    
+    <div class="section-3"  id="80873133_LoggingConfiguration-%7B%7Busedeploymentloggingconfig%7D%7D"  >
+        <h3>deployment-logging-config</h3>
+    
+    <p>
+The <tt class=" ">use-deployment-logging-config</tt> controls whether or not your deployment is scanned for <a href="Logging_Configuration.html#80873133_LoggingConfiguration-PerdeploymentLogging">per-deployment logging</a>. If set to <tt class=" ">true</tt>, the default, <a href="Logging_Configuration.html#80873133_LoggingConfiguration-PerdeploymentLogging">per-deployment logging</a> is enabled. Set to <tt class=" ">false</tt> to disable this feature.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873133_LoggingConfiguration-PerdeploymentLogging"  >
+        <h2>deployment Logging</h2>
+    
+    <p>
+Per-deployment logging allows you to add a logging configuration file to your deployment and have the logging for that deployment configured according to the configuration file. In an EAR the configuration should be in the <tt class=" ">META-INF</tt> directory. In a WAR or JAR deployment the configuration file can be in either the <tt class=" ">META-INF</tt> or <tt class=" ">WEB-INF/classes</tt> directories.    </p>
+    <p>
+The following configuration files are allowed:    </p>
+<ul class=" "><li class=" ">    <p>
+logging.properties    </p>
+</li><li class=" ">    <p>
+jboss-logging.properties    </p>
+</li><li class=" ">    <p>
+log4j.properties    </p>
+</li><li class=" ">    <p>
+log4j.xml    </p>
+</li><li class=" ">    <p>
+jboss-log4j.xml    </p>
+</li></ul>    <p>
+You can also disable this functionality by changing the <tt class=" ">use-deployment-logging-config</tt> attribute to <tt class=" ">false</tt>.    </p>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-2"  id="80873133_LoggingConfiguration-LoggingProfiles"  >
+        <h2>Logging Profiles</h2>
+    
+    <p>
+Logging profiles are like additional logging subsystems. Each logging profile constists of three of the four notable parts listed above: <tt class=" ">handler</tt> configurations, <tt class=" ">logger</tt> and the <tt class=" ">root logger</tt> declarations.    </p>
+    <p>
+You can assign a logging profile to a deployment via the deployments manifest. Add a <tt class=" ">Logging-Profile</tt> entry to the <tt class=" ">MANIFEST.MF</tt> file with a value of the logging profile id. For example a logging profile defined on <tt class=" ">/subsystem=logging/logging-profile=ejbs</tt> the MANIFEST.MF would look like:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">Manifest-Version: 1.0
+Logging-Profile: ejbs</pre>
+        </div>
+    </div>
+    <p>
+A logging profile can be assigned to any number of deployments. Using a logging profile also allows for runtime changes to the configuration. This is an advantage over the per-deployment logging configuration as the redeploy is not required for logging changes to take affect.    </p>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-2"  id="80873133_LoggingConfiguration-DefaultLogFileLocations"  >
+        <h2>Default Log File Locations</h2>
+    
+    <div class="section-3"  id="80873133_LoggingConfiguration-ManagedDomain"  >
+        <h3>Managed Domain</h3>
+    
+    <p>
+In a managed domain two types of log files do exist: Controller and server logs. The controller components govern the domain as whole. It's their responsibility to start/stop server instances and execute managed operations throughout the domain. Server logs contain the logging information for a particular server instance. They are co-located with the host the server is running on.    </p>
+    <p>
+For the sake of simplicity we look at the default setup for managed domain. In this case, both the domain controller components and the servers are located on the same host:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Process    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Log File    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Host Controller    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+./domain/log/host-controller.log    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Process Controller    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+./domain/log/process-controller.log    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+&quot;Server One&quot;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+./domain/servers/server-one/log/server.log    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+&quot;Server Two&quot;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+./domain/servers/server-two/log/server.log    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+&quot;Server Three&quot;    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+./domain/servers/server-three/log/server.log    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    <div class="section-3"  id="80873133_LoggingConfiguration-StandaloneServer"  >
+        <h3>Standalone Server</h3>
+    
+    <p>
+The default log files for a standalone server can be found in the log subdirectory of the distribution:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Process    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Log File    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Server    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+./standalone/log/server.log    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873133_LoggingConfiguration-FilterExpressions"  >
+        <h2>Filter Expressions</h2>
+    
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Filter Type    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Expression    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Parameter(s)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Examples    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+accept    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+accept    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Accepts all log messages.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+None    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+accept    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+deny    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+deny    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+enies all log messages.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+None    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+deny    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+not    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+not(filterExpression)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Accepts a filter as an argument and inverts the returned value.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The expression takes a single filter for it's argument.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+not(match(&quot;JBAS&quot;))    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+all    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+all(filterExpressions)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A filter consisting of several filters in a chain. If any filter find the log message to be unloggable, the message will not be logged and subsequent filters will not be checked.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The expression takes a comma delimited list of filters for it's argument.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+all(match(&quot;JBAS&quot;), match(&quot;WELD&quot;))    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+any    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+any(filterExpressions)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A filter consisting of several filters in a chain. If any filter fins the log message to be loggable, the message will be logged and the subsequent filters will not be checked.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The expression takes a comma delimited list of filters for it's argument.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+any(match(&quot;JBAS&quot;), match(&quot;WELD&quot;))    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+levelChange    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+levelChange(level)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A filter which modifies the log record with a new level.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The expression takes a single string based level for it's argument.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+levelChange(WARN)    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+levels    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+levels(levels)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A filter which includes log messages with a level that is listed in the list of levels.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The expression takes a comma delimited list of string based levels for it's argument.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+levels(DEBUG, INFO, WARN, ERROR)    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+levelRange    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+levelRange([minLevel,maxLevel])    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A filter which logs records that are within the level range.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The filter expression uses a &quot;[&quot; to indicate a minimum inclusive level and a &quot;]&quot; to indicate a maximum inclusive level. Otherwise use &quot;(&quot; or &quot;)&quot; respectively indicate exclusive. The first argument for the expression is the minimum level allowed, the second argument is the maximum level allowed.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+    <ul class="alternate "><li class=" ">    <p>
+minimum level must be less than ERROR and the maximum level must be greater than DEBUG<br/><br/>levelRange(ERROR, DEBUG)    </p>
+</li><li class=" ">    <p>
+minimum level must be less than or equal to ERROR and the maximum level must be greater than DEBUG<br/><br/>levelRange[ERROR, DEBUG)    </p>
+</li><li class=" ">    <p>
+minimum level must be less than or equal to ERROR and the maximum level must be greater or equal to INFO<br/><br/>levelRange[ERROR, INFO]    </p>
+</li></ul>            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+match    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+match(&quot;pattern&quot;)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A regular-expression based filter. The raw unformatted message is used against the pattern.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The expression takes a regular expression for it's argument. match(&quot;JBAS\d+&quot;)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+                </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+substitute    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+substitute(&quot;pattern&quot;, &quot;replacement value&quot;)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A filter which replaces the first match to the pattern with the replacement value.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The first argument for the expression is the pattern the second argument is the replacement text.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+substitute(&quot;JBAS&quot;, &quot;EAP&quot;)    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+substituteAll    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+substituteAll(&quot;pattern&quot;, &quot;replacement value&quot;)    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A filter which replaces all matches of the pattern with the replacement value.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The first argument for the expression is the pattern the second argument is the replacement text.    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+substituteAll(&quot;JBAS&quot;, &quot;EAP&quot;)    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    <div class="section-2"  id="80873133_LoggingConfiguration-ListLogFilesandReadingLogFiles"  >
+        <h2>List Log Files and Reading Log Files</h2>
+    
+    <p>
+Log files can be listed and viewed via management operations. The log files allowed to be viewed are intentionally limited to files that exist in the <tt class=" ">jboss.server.log.dir</tt> and are associated with a known file handler. Known file handler types include <tt class=" ">file-handler</tt>, <tt class=" ">periodic-rotating-file-handler</tt>, <tt class=" ">periodic-size-rotating-file-handler</tt> and <tt class=" ">size-rotating-file-handler</tt>. The operations are valid in both standalone and domain modes.    </p>
+    <div class="section-3"  id="80873133_LoggingConfiguration-ListLogFiles"  >
+        <h3>List Log Files</h3>
+    
+    <p>
+The logging subsystem has a <tt class=" ">log-file</tt> resource off the subsystem root resource and off each <tt class=" ">logging-profile</tt> resource to list each log file.    </p>
+    <div class="confbox programlisting">
+                    <div class="title">CLI command and output</div>
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /subsystem=logging:read-children-names(child-type=log-file)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; [
+        &quot;server.log&quot;,
+        &quot;server.log.2014-02-12&quot;,
+        &quot;server.log.2014-02-13&quot;
+    ]
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873133_LoggingConfiguration-ReadLogFile"  >
+        <h3>Read Log File</h3>
+    
+    <p>
+The <tt class=" ">read-log-file</tt> operation is available on each <tt class=" ">log-file</tt> resource. This operation has 4 optional parameters.    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+encoding    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+the encoding the file should be read in    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+lines    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+the number of lines from the file. A value of -1 indicates all lines should be read.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+skip    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+the number of lines to skip before reading.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+tail    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+true to read from the end of the file up or false to read top down.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <div class="confbox programlisting">
+                    <div class="title">CLI command and output</div>
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /subsystem=logging/log-file=server.log:read-log-file
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; [
+        &quot;2014-02-14 14:16:48,781 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-11) JBAS015012: Started FileSystemDeploymentService for directory /home/jperkins/servers/wildfly-8.0.0.Final/standalone/deployments&quot;,
+        &quot;2014-02-14 14:16:48,782 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) JBAS010400: Bound data source [java:jboss/myDs]&quot;,
+        &quot;2014-02-14 14:16:48,782 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-15) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]&quot;,
+        &quot;2014-02-14 14:16:48,786 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-9) JBAS015876: Starting deployment of \&quot;simple-servlet.war\&quot; (runtime-name: \&quot;simple-servlet.war\&quot;)&quot;,
+        &quot;2014-02-14 14:16:48,978 INFO  [org.jboss.ws.common.management] (MSC service thread 1-10) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.2.3.Final&quot;,
+        &quot;2014-02-14 14:16:49,160 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-16) JBAS017534: Registered web context: /simple-servlet&quot;,
+        &quot;2014-02-14 14:16:49,189 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS018559: Deployed \&quot;simple-servlet.war\&quot; (runtime-name : \&quot;simple-servlet.war\&quot;)&quot;,
+        &quot;2014-02-14 14:16:49,224 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management&quot;,
+        &quot;2014-02-14 14:16:49,224 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990&quot;,
+        &quot;2014-02-14 14:16:49,225 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.0.0.Final \&quot;WildFly\&quot; started in 1906ms - Started 258 of 312 services (90 services are lazy, passive or on-demand)&quot;
+    ]
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="80873133_LoggingConfiguration-FAQ"  >
+        <h2>FAQ</h2>
+    
+    <div class="section-3"  id="80873133_LoggingConfiguration-Whyistherea%7B%7Blogging.properties%7D%7Dfile%3F"  >
+        <h3>Why is there a  logging.properties  file?</h3>
+    
+    <p>
+You may have noticed that there is a <tt class=" ">logging.properties</tt> file in the configuration directory. This is logging configuration is used when the server boots up until the logging subsystem kicks in. If the logging subsystem is not included in your configuration, then this would act as the logging configuration for the entire server.    </p>
+    <div class="confbox admonition admonition-tip">
+        
+    <p>
+The <tt class=" ">logging.properties</tt> file is overwritten at boot and with each change to the logging subsystem. Any changes made to the file are not persisted. Any changes made to the XML configuration or via management operations will be persisted to the <tt class=" ">logging.properties</tt> file and used on the next boot.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="previous"><a accesskey="p" href="JMX_subsystem_configuration.html"><strong>Prev</strong>JMX subsystem configuration</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="Handlers.html"><strong>Next</strong>Handlers</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

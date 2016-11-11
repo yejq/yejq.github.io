@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>How the JBoss AS instance is built and configured for testsuite modules. - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="previous"><a accesskey="p" href="Debug_parameters_propagation.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="next"><a accesskey="n" href="Plugin_executions_matrix.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                          </ul>
+                    <div>
+            <h1>How the JBoss AS instance is built and configured for testsuite modules.</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+Refer to <a href="https://docs.jboss.org/author/display/AS71/Shortened+Maven+Run+Overview">Shortened Maven Run Overview</a> to see the mentioned build steps.    </p>
+    <p>
+1)&nbsp; AS instance is copied from <tt class=" ">${jboss.dist</tt>} to <tt class=" ">testsuite/target/jbossas</tt>.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Defaults to AS which is built by the project (<tt class=" ">build/target/jboss-as-*</tt>).    </p>
+    <p>
+2)    </p>
+    <p>
+<strong class=" ">testsuite/pom.xml:</strong>    </p>
+    <p>
+from ${jboss.home} to ${basedir}/target/jbossas<br/>phase generate-test-resources: resource-plugin, goal copy-resources    </p>
+    <p>
+<strong class=" ">testsuite/integration/pom.xml:</strong>    </p>
+    <p>
+phase process-test-resources: antrun-plugin:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;ant antfile=&quot;$\{basedir}/src/test/scripts/basic-integration-build.xml&quot;&gt;
+    &lt;target name=&quot;build-basic-integration&quot;/&gt;
+    &lt;target name=&quot;build-basic-integration-jts&quot;/&gt;
+&lt;/ant&gt;</pre>
+        </div>
+    </div>
+    <p>
+Which invokes    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;target name=&quot;build-basic-integration&quot; description=&quot;Builds server configuration for basic-integration tests&quot;&gt;
+      &lt;build-server-config name=&quot;jbossas&quot;/&gt;</pre>
+        </div>
+    </div>
+    <p>
+Which invokes    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;!-- Copy the base distribution. --&gt;
+&lt;!-- We exclude modules and bundles as they are read-only and we locate the via sys props. --&gt;
+&lt;copy todir=&quot;@{output.dir}/@{name}&quot;&gt;
+    &lt;fileset dir=&quot;@{jboss.dist}&quot;&gt;
+        &lt;exclude name=&quot;**/modules/**&quot;/&gt;
+        &lt;exclude name=&quot;**/bundles/**&quot;/&gt;
+    &lt;/fileset&gt;
+&lt;/copy&gt;
+
+&lt;!-- overwrite with configs from test-configs and apply property filtering --&gt;
+&lt;copy todir=&quot;@{output.dir}/@{name}&quot; overwrite=&quot;true&quot; failonerror=&quot;false&quot;&gt;
+    &lt;fileset dir=&quot;@{test.configs.dir}/@{name}&quot;/&gt;
+    &lt;filterset begintoken=&quot;${&quot; endtoken=&quot;}&quot;&gt;
+        &lt;filter token=&quot;node0&quot; value=&quot;${node0}&quot;/&gt;
+        &lt;filter token=&quot;node1&quot; value=&quot;${node1}&quot;/&gt;
+        &lt;filter token=&quot;udpGroup&quot; value=&quot;${udpGroup}&quot;/&gt;
+        &lt;filter-elements/&gt;
+    &lt;/filterset&gt;
+&lt;/copy&gt;</pre>
+        </div>
+    </div>
+    <div class="section-2"  id="80873467_HowtheJBossASinstanceisbuiltandconfiguredfortestsuitemodules.-Arquillianconfigfilelocation"  >
+        <h2>Arquillian config file location</h2>
+    
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: bash; gutter: false;">-Darquillian.xml=some-file-or-classpath-resource.xml</pre>
+        </div>
+    </div>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="previous"><a accesskey="p" href="Debug_parameters_propagation.html"><strong>Prev</strong>Debug parameters propagation</a></li>
+                                                                                                                                                                                                  <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="next"><a accesskey="n" href="Plugin_executions_matrix.html"><strong>Next</strong>Plugin executions matrix</a></li>
+                                                                                                                                                                                                                                        </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

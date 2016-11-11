@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Canceling Management Operations - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                <li class="previous"><a accesskey="p" href="Audit_logging.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="next"><a accesskey="n" href="Command_line_parameters.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+                    <div>
+            <h1>Canceling Management Operations</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+WildFly 9 includes the ability to use the CLI to cancel management requests that are not proceeding normally.    </p>
+    <div class="section-2"  id="82051986_CancelingManagementOperations-The%7B%7Bcancelnonprogressingoperation%7D%7Doperation"  >
+        <h2>The  cancel-non-progressing-operation  operation</h2>
+    
+    <p>
+The <tt class=" ">cancel-non-progressing-operation</tt> operation instructs the target process to find any operation that isn't proceeding normally and cancel it.    </p>
+    <p>
+On a standalone server:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations:cancel-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; &quot;-1155777943&quot;
+}</pre>
+        </div>
+    </div>
+    <p>
+The result value is an internal identification number for the operation that was cancelled.    </p>
+    <p>
+On a managed domain host controller, the equivalent resource is in the host=&lt;hostname&gt; portion of the management resource tree:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /host=host-a/core-service=management/service=management-operations:cancel-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; &quot;2156877946&quot;
+}</pre>
+        </div>
+    </div>
+    <p>
+An operation can be cancelled on an individual managed domain server as well:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /host=host-a/server=server-one/core-service=management/service=management-operations:cancel-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; &quot;6497786512&quot;
+}</pre>
+        </div>
+    </div>
+    <p>
+An operation is considered to be not proceeding normally if it has been executing with the exclusive operation lock held for longer than 15 seconds. Read-only operations do not acquire the exclusive operation lock, so this operation will not cancel read-only operations. Operations blocking waiting for another operation to release the exclusive lock will also not be cancelled.    </p>
+    <p>
+If there isn't any operation that is failing to proceed normally, there will be a failure response:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations:cancel-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;failed&quot;,
+    &quot;failure-description&quot; =&gt; &quot;WFLYDM0089: No operation was found that has been holding the operation execution write lock for long than [15] seconds&quot;,
+    &quot;rolled-back&quot; =&gt; true
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="82051986_CancelingManagementOperations-The%7B%7Bfindnonprogressingoperation%7D%7Doperation"  >
+        <h2>The  find-non-progressing-operation  operation</h2>
+    
+    <p>
+To simply learn the id of an operation that isn't proceeding normally, but not cancel it, use the <tt class=" ">find-non-progressing-operation</tt> operation:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations:find-non-progressing-operation
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; &quot;-1155777943&quot;
+}</pre>
+        </div>
+    </div>
+    <p>
+If there is no non-progressing operation, the outcome will still be <tt class=" ">success</tt> but the result will be <tt class=" ">undefined</tt>.    </p>
+    <p>
+Once the id of the operation is known, the management resource for the operation can be examined to learn more about its status.    </p>
+    </div>
+    
+    <div class="section-2"  id="82051986_CancelingManagementOperations-Examiningthestatusofanactiveoperation"  >
+        <h2>Examining the status of an active operation</h2>
+    
+    <p>
+There is a management resource for any currently executing operation that can be queried:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations/active-operation=-1155777943:read-resource(include-runtime=true)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;access-mechanism&quot; =&gt; &quot;undefined&quot;,
+        &quot;address&quot; =&gt; [
+            (&quot;deployment&quot; =&gt; &quot;example&quot;)
+        ],
+        &quot;caller-thread&quot; =&gt; &quot;management-handler-thread - 24&quot;,
+        &quot;cancelled&quot; =&gt; false,
+        &quot;exclusive-running-time&quot; =&gt; 101918273645L,
+        &quot;execution-status&quot; =&gt; &quot;awaiting-stability&quot;,
+        &quot;operation&quot; =&gt; &quot;deploy&quot;,
+        &quot;running-time&quot; =&gt; 101918279999L
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+The response includes the following attributes:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Field    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Meaning    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+access-mechanism    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The mechanism used to submit a request to the server. NATIVE, JMX, HTTP    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+address    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The address of the resource targeted by the operation. The value in the final element of the address will be '&lt;hidden&gt;' if the caller is not authorized to address the operation's target resource.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+caller-thread    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of the thread that is executing the operation.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+cancelled    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Whether the operation has been cancelled.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+exclusive-running-time    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Amount of time in nanoseconds the operation has been executing with the exclusive operation execution lock held, or -1 if the operation does not hold the exclusive execution lock.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+execution-status    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The current activity of the operation. See below for details.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+operation    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The name of the operation, or '&lt;hidden&gt;' if the caller is not authorized to address the operation's target resource.    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+running-time    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Amount of time the operation has been executing, in nanoseconds.    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+The following are the values for the <tt class=" ">exclusive-running-time</tt> attribute:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Value    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Meaning    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+executing    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The caller thread is actively executing    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+awaiting-other-operation    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The caller thread is blocking waiting for another operation to release the exclusive execution lock    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+awaiting-stability    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The caller thread has made changes to the service container and is waiting for the service container to stabilize    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+completing    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The operation is committed and is completing execution    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+rolling-back    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+The operation is rolling back    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+All currently executing operations can be viewed in one request using the <tt class=" ">read-children-resources</tt> operation:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations:read-children-resources(child-type=active-operation)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {&quot;-1155777943&quot; =&gt; {
+        &quot;access-mechanism&quot; =&gt; &quot;undefined&quot;,
+        &quot;address&quot; =&gt; [
+            (&quot;deployment&quot; =&gt; &quot;example&quot;)
+        ],
+        &quot;caller-thread&quot; =&gt; &quot;management-handler-thread - 24&quot;,
+        &quot;cancelled&quot; =&gt; false,
+        &quot;exclusive-running-time&quot; =&gt; 101918273645L,
+        &quot;execution-status&quot; =&gt; &quot;awaiting-stability&quot;,
+        &quot;operation&quot; =&gt; &quot;deploy&quot;,
+        &quot;running-time&quot; =&gt; 101918279999L
+    },
+    {&quot;-1246693202&quot; =&gt; {
+        &quot;access-mechanism&quot; =&gt; &quot;undefined&quot;,
+        &quot;address&quot; =&gt; [
+            (&quot;core-service&quot; =&gt; &quot;management&quot;),
+            (&quot;service&quot; =&gt; &quot;management-operations&quot;)
+        ],
+        &quot;caller-thread&quot; =&gt; &quot;management-handler-thread - 30&quot;,
+        &quot;cancelled&quot; =&gt; false,
+        &quot;exclusive-running-time&quot; =&gt; -1L,
+        &quot;execution-status&quot; =&gt; &quot;executing&quot;,
+        &quot;operation&quot; =&gt; &quot;read-children-resources&quot;,
+        &quot;running-time&quot; =&gt; 3356000L
+    }}
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="82051986_CancelingManagementOperations-Cancelingaspecificoperation"  >
+        <h2>Canceling a specific operation</h2>
+    
+    <p>
+The <tt class=" ">cancel-non-progressing-operation</tt> operation is a convenience operation for identifying and canceling an operation. However, an administrator can examine the active-operation resources to identify any operation, and then directly cancel it by invoking the <tt class=" ">cancel</tt> operation on the resource for the desired operation.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] /core-service=management/service=management-operations/active-operation=-1155777943:cancel
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="82051986_CancelingManagementOperations-Controllingoperationblockingtime"  >
+        <h2>Controlling operation blocking time</h2>
+    
+    <p>
+As an operation executes, the execution thread may block at various points, particularly while waiting for the service container to stabilize following any changes. Since an operation may be holding the exclusive execution lock while blocking, in WildFly 9 execution behavior was changed to ensure that blocking will eventually time out, resulting in roll back of the operation.    </p>
+    <p>
+The default blocking timeout is 300 seconds. This is intentionally long, as the idea is to only trigger a timeout when something has definitely gone wrong with the operation, without any false positives.    </p>
+    <p>
+An administrator can control the blocking timeout for an individual operation by using the <tt class=" ">blocking-timeout</tt> operation header. For example, if a particular deployment is known to take an extremely long time to deploy, the default 300 second timeout could be increased:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] deploy /tmp/mega.war --headers={blocking-timeout=450}</pre>
+        </div>
+    </div>
+    <p>
+Note the blocking timeout is <strong class=" ">not</strong> a guaranteed maximum execution time for an operation. If it only a timeout that will be enforced at various points during operation execution.    </p>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                              <li class="previous"><a accesskey="p" href="Audit_logging.html"><strong>Prev</strong>Audit logging</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="next"><a accesskey="n" href="Command_line_parameters.html"><strong>Next</strong>Command line parameters</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

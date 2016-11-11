@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Authorizing management actions with Role Based Access Control - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </ul>
+                    <div>
+            <h1>Authorizing management actions with Role Based Access Control</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+WildFly introduces a Role Based Access Control scheme that allows different administrative users to have different sets of permissions to read and update parts of the management tree. This replaces the simple permission scheme used in JBoss AS 7, where anyone who could successfully authenticate to the management security realm would have all permissions.    </p>
+    <div class="section-2"  id="82052199_RBAC-AccessControlProviders"  >
+        <h2>Access Control Providers</h2>
+    
+    <p>
+WildFly ships with two access control &quot;providers&quot;, the &quot;simple&quot; provider, and the &quot;rbac&quot; provider. The &quot;simple&quot; provider is the default, and provides a permission scheme equivalent to the JBoss AS 7 behavior where any authenticated administrator has all permissions. The &quot;rbac&quot; provider gives the finer grained permission scheme that is the focus of this section.    </p>
+    <p>
+The access control configuration is included in the management section of a standalone server's standalone.xml, or in a new &quot;management&quot; section in a managed domain's domain.xml. The access control policy is centrally configured in a managed domain.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;management&gt;
+    . . .
+    &lt;access-control provider=&quot;simple&quot;&gt;
+        &lt;role-mapping&gt;
+            &lt;role name=&quot;SuperUser&quot;&gt;
+                &lt;include&gt;
+                    &lt;user name=&quot;$local&quot;/&gt;
+                &lt;/include&gt;
+            &lt;/role&gt;
+        &lt;/role-mapping&gt;
+    &lt;/access-control&gt;
+&lt;/management&gt;</pre>
+        </div>
+    </div>
+    <p>
+As you can see, the provider is set to &quot;simple&quot; by default. With the &quot;simple&quot; provider, the nested &quot;role-mapping&quot; section is not actually relevant. It's there to help ensure that if the provider attribute is switched to &quot;rbac&quot; there will be at least one user mapped to a role that can continue to administer the system. This default mapping assigns the &quot;$local&quot; user name to the RBAC role that provides all permissions, the &quot;SuperUser&quot; role. The &quot;$local&quot; user name is the name an administrator will be assigned if he or she uses the CLI on the same system as the WildFly instance and the <a href="Detailed_Configuration.html#80873173_DetailedConfiguration-authenticationlocal">&quot;local&quot; authentication scheme</a> is enabled.    </p>
+    </div>
+    
+    <div class="section-2"  id="82052199_RBAC-RBACprovideroverview"  >
+        <h2>RBAC provider overview</h2>
+    
+    <p>
+The access control scheme implemented by the &quot;rbac&quot; provider is based on seven standard roles. A role is a named set of permissions to perform one of the actions: addressing (i.e. looking up) a management resource, reading it, or modifying it. The different roles have constraints applied to their permissions that are used to determine whether the permission is granted.    </p>
+    <div class="section-3"  id="82052199_RBAC-RBACroles"  >
+        <h3>RBAC roles</h3>
+    
+    <p>
+The seven standard roles are divided into two broad categories, based on whether the role can deal with items that are considered to be &quot;security sensitive&quot;. Resources, attributes and operations that may affect administrative security (e.g. security realm resources and attributes that contain passwords) are &quot;security sensitive&quot;.    </p>
+    <p>
+Four roles are not given permissions for &quot;security sensitive&quot; items:    </p>
+<ul class=" "><li class=" ">    <p>
+Monitor &ndash; a read-only role. Cannot modify any resource.    </p>
+</li><li class=" ">    <p>
+Operator &ndash; Monitor permissions, plus can modify runtime state, but cannot modify anything that ends up in the persistent configuration. Could, for example, restart a server.    </p>
+</li><li class=" ">    <p>
+Maintainer &ndash; Operator permissions, plus can modify the persistent configuration.    </p>
+</li><li class=" ">    <p>
+Deployer &ndash; like a Maintainer, but with permission to modify persistent configuration constrained to resources that are considered to be &quot;application resources&quot;. A deployment is an application resource. The messaging server is not. Items like datasources and JMS destinations are not considered to be application resources by default, but this is <a href="RBAC.html#82052199_RBAC-applicationconstraint">configurable</a>.    </p>
+</li></ul>    <p>
+Three roles are granted permissions for security sensitive items:    </p>
+<ul class=" "><li class=" ">    <p>
+SuperUser &ndash; has all permissions. Equivalent to a JBoss AS 7 administrator.    </p>
+</li><li class=" ">    <p>
+Administrator &ndash; has all permissions except cannot read or write resources related to the administrative audit logging system.    </p>
+</li><li class=" ">    <p>
+Auditor &ndash; can read anything. Can only modify the resources related to the administrative audit logging system.    </p>
+</li></ul>    <p>
+The Auditor and Administrator roles are meant for organizations that want a separation of responsibilities between those who audit normal administrative actions and those who perform them, with those who perform most actions (Administrator role) not being able to read or alter the auditing configuration.    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Accesscontrolconstraints"  >
+        <h3>Access control constraints</h3>
+    
+    <p>
+The following factors are used to determine whether a given role is granted a permission:    </p>
+<ul class=" "><li class=" ">    <p>
+What the requested action is (address, read, write)    </p>
+</li><li class=" ">    <p>
+Whether the resource, attribute or operation affects the persistent configuration    </p>
+</li><li class=" ">    <p>
+Whether the resource, attribute or operation is related to the administrative audit logging function    </p>
+</li><li class=" ">    <p>
+Whether the resource, attribute or operation is configured as security sensitive    </p>
+</li><li class=" ">    <p>
+Whether an attribute or operation parameter value has a security vault expression    </p>
+</li><li class=" ">    <p>
+Whether a resource is considered to be associated with applications, as opposed to being part of a general container configuration    </p>
+</li></ul>    <p>
+The first three of these factors are non-configurable; the latter three allow some customization. See &quot;<a href="RBAC.html#82052199_RBAC-configuringconstraints">Configuring constraints</a>&quot; for details.    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Addressingaresource"  >
+        <h3>Addressing a resource</h3>
+    
+    <p>
+As mentioned above, permissions are granted to perform one of three actions, addressing a resource, reading it, and modifying. The latter two actions are fairly self-explanatory. But what is meant by &quot;addressing&quot; a resource?    </p>
+    <p>
+&quot;Addressing&quot; a resource refers to taking an action that allows the user to determine whether a resource at a given address actually exists. For example, the &quot;read-children-names&quot; operation lets a user determine valid addresses. Trying to read a resource and getting a &quot;Permission denied&quot; error also gives the user a clue that there actually is a resource at the requested address.    </p>
+    <p>
+Some resources may include sensitive information as part of their address. For example, security realm resources include the realm name as the last element in the address. That realm name is potentially security sensitive; for example it is part of the data used when creating a hash of a user password. Because some addresses may contain security sensitive data, a user needs permission to even &quot;address&quot; a resource. If a user attempts to address a resource and does not have permission, they will not receive a &quot;permission denied&quot; type error. Rather, the system will respond as if the resource does not even exist, e.g. excluding the resource from the result of the &quot;read-children-names&quot; operation or responding with a &quot;No such resource&quot; error instead of &quot;Permission denied&quot; if the user is attempting to read or write the resource.    </p>
+    <p>
+Another term for &quot;addressing&quot; a resource is &quot;looking up&quot; the resource.    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="82052199_RBAC-Switchingtothe%22rbac%22provider"  >
+        <h2>Switching to the &quot;rbac&quot; provider</h2>
+    
+    <p>
+Use the CLI to switch the access-control provider.    </p>
+    <div class="confbox admonition admonition-warning">
+        
+    <p>
+Before changing the provider to &quot;rbac&quot;, be sure your configuration has a user who will be mapped to one of the RBAC roles, preferably with at least one in the Administrator or SuperUser role. Otherwise your installation will not be manageable except by shutting it down and editing the xml configuration. If you have started with one of the standard xml configurations shipped with WildFly, the &quot;$local&quot; user will be mapped to the &quot;SuperUser&quot; role and the <a href="Detailed_Configuration.html#80873173_DetailedConfiguration-authenticationlocal">&quot;local&quot; authentication scheme</a> will be enabled. This will allow a user running the CLI on the same system as the WildFly process to have full administrative permissions. Remote CLI users and web-based admin console users will have no permissions.    </p>
+    <p>
+We recommend <a href="RBAC.html#82052199_RBAC-rolemapping">mapping at least one user</a> besides &quot;$local&quot; before switching the provider to &quot;rbac&quot;. You can do all of the configuration associated with the &quot;rbac&quot; provider even when the provider is set to &quot;simple&quot;    </p>
+    </div>
+    
+    <p>
+The management resources related to access control are located in the <tt class=" ">core-service=management/access=authorization</tt> portion of the management resource tree. Update the <tt class=" ">provider</tt> attribute to change between the &quot;simple&quot; and &quot;rbac&quot; providers. Any update requires a reload to take effect.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] cd core-service=management/access=authorization
+[standalone@localhost:9990 access=authorization] :write-attribute(name=provider,value=rbac)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;response-headers&quot; =&gt; {
+        &quot;operation-requires-reload&quot; =&gt; true,
+        &quot;process-state&quot; =&gt; &quot;reload-required&quot;
+    }
+}
+[standalone@localhost:9990 access=authorization] reload</pre>
+        </div>
+    </div>
+    <p>
+In a managed domain, the access control configuration is part of the domain wide configuration, so the resource address is the same as above:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] cd core-service=management/access=authorization
+[domain@localhost:9990 access=authorization] :write-attribute(name=provider,value=rbac)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;response-headers&quot; =&gt; {
+        &quot;operation-requires-reload&quot; =&gt; true,
+        &quot;process-state&quot; =&gt; &quot;reload-required&quot;
+    },
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {
+            &quot;outcome&quot; =&gt; &quot;success&quot;,
+            &quot;response-headers&quot; =&gt; {
+                &quot;operation-requires-reload&quot; =&gt; true,
+                &quot;process-state&quot; =&gt; &quot;reload-required&quot;
+            }
+        }},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {
+            &quot;outcome&quot; =&gt; &quot;success&quot;,
+            &quot;response-headers&quot; =&gt; {
+                &quot;operation-requires-reload&quot; =&gt; true,
+                &quot;process-state&quot; =&gt; &quot;reload-required&quot;
+            }
+        }}
+    }}}}
+}
+[domain@localhost:9990 access=authorization] reload --host=master</pre>
+        </div>
+    </div>
+    <p>
+As with a standalone server, a reload is required for the change to take effect. In this case, all hosts and servers in the domain will need to be restarted, so be sure to plan well before making this change.    </p>
+    </div>
+    
+    <div class="section-2"  id="82052199_RBAC-Mappingusersandgroupstoroles"  >
+        <h2>Mapping users and groups to roles</h2>
+    
+    <p>
+Once the &quot;rbac&quot; access control provider is enabled, only users who are mapped to one of the available roles will have any administrative permissions at all. So, to make RBAC useful, a mapping between individual users or groups of users and the available roles must be performed.    </p>
+    <div class="section-3"  id="82052199_RBAC-Mappingindividualusers"  >
+        <h3>Mapping individual users</h3>
+    
+    <p>
+The easiest way to map individual users to roles is to use the web-based admin console.    </p>
+    <p>
+Navigate to the &quot;Administration&quot; tab and the &quot;Users&quot; subtab. From there individual user mappings can be added, removed, or edited.    </p>
+    <p>
+    <img src="images/author/download/attachments/82052199/usermapping.png" alt="images/author/download/attachments/82052199/usermapping.png" />
+        </p>
+    <p>
+The CLI can also be used to map individuals users to roles.    </p>
+    <p>
+First, if one does not exist, create the parent resource for all mappings for a role. Here we create the resource for the <tt class=" ">Administrator</tt> role.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /core-service=management/access=authorization/role-mapping=Administrator:add
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    <p>
+Once this is done, map a user to the role:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /core-service=management/access=authorization/role-mapping=Administrator/include=user-jsmith:add(name=jsmith,type=USER)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    <p>
+Now if user <tt class=" ">jsmith</tt> authenticates to any security realm associated with the management interface they are using, he will be mapped to the <tt class=" ">Administrator</tt> role.    </p>
+    <p>
+To restrict the mapping to a particular security realm, change the <tt class=" ">realm</tt> attribute to the realm name. This might be useful if different realms are associated with different management interfaces, and the goal is to limit a user to a particular interface.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /core-service=management/access=authorization/role-mapping=Administrator/include=user-mjones:add(name=mjones,type=USER,realm=ManagementRealm)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Usergroups"  >
+        <h3>User groups</h3>
+    
+    <p>
+A &quot;group&quot; is an arbitrary collection of users that may exist in the end user environment. They can be named whatever the end user organization wants and can contain whatever users the end user organization wants. Some of the authentication store types supported by WildFly security realms include the ability to access information about what groups a user is a member of and associate this information with the <tt class=" ">Subject</tt> produced when the user is authenticated. This is currently supported for the following authentication store types:    </p>
+<ul class=" "><li class=" ">    <p>
+properties file (via the <tt class=" ">&lt;realm_name&gt;-groups.properties</tt> file)    </p>
+</li><li class=" ">    <p>
+LDAP (via directory-server-specific configuration)    </p>
+</li></ul>    <p>
+Groups are convenient when it comes to associating a user with a role, since entire groups can be associated with a role in a single mapping.    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Mappinggroupstoroles"  >
+        <h3>Mapping groups to roles</h3>
+    
+    <p>
+The easiest way to map groups to roles is to use the web-based admin console.    </p>
+    <p>
+Navigate to the &quot;Administration&quot; tab and the &quot;Groups&quot; subtab. From there group mappings can be added, removed, or edited.    </p>
+    <p>
+    <img src="images/author/download/attachments/82052199/groupmapping.png" alt="images/author/download/attachments/82052199/groupmapping.png" />
+        </p>
+    <p>
+The CLI can also be used to map groups to roles. The only difference to individual user mapping is the value of the <tt class=" ">type</tt> attribute should be <tt class=" ">GROUP</tt> instead of <tt class=" ">USER</tt>.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /core-service=management/access=authorization/role-mapping=Administrator/include=group-SeniorAdmins:add(name=SeniorAdmins,type=GROUP)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    <p>
+As with individual user mappings, the mapping can be restricted to users authenticating via a particular security realm:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /core-service=management/access=authorization/role-mapping=Administrator/include=group-PowerAdmins:add(name=PowerAdmins,type=GROUP,realm=ManagementRealm)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Includingallauthenticatedusersinarole"  >
+        <h3>Including all authenticated users in a role</h3>
+    
+    <p>
+It's possible to specify that all authenticated users should be mapped to a particular role. This could be used, for example, to ensure that anyone who can authenticate can at least have <tt class=" ">Monitor</tt> privileges.    </p>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+A user who can authenticate to the management security realm but who does not map to a role will not be able to perform any administrative functions, not even reads.    </p>
+    </div>
+    
+    <p>
+In the web based admin console, navigate to the &quot;Administration&quot; tab, &quot;Roles&quot; subtab, highlight the relevant role, click the &quot;Edit&quot; button and click on the &quot;Include All&quot; checkbox:    </p>
+    <p>
+    <img src="images/author/download/attachments/82052199/includeall.png" alt="images/author/download/attachments/82052199/includeall.png" />
+        </p>
+    <p>
+The same change can be made using the CLI:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /core-service=management/access=authorization/role-mapping=Monitor:write-attribute(name=include-all,value=true)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Excludingusersandgroups"  >
+        <h3>Excluding users and groups</h3>
+    
+    <p>
+It is also possible to explicitly exclude certain users and groups from a role. Exclusions take precedence over inclusions, including cases where the <tt class=" ">include-all</tt> attribute is set to true for a role.    </p>
+    <p>
+In the admin console, excludes are done in the same screens as includes. In the add dialog, simply change the &quot;Type&quot; pulldown to &quot;Exclude&quot;.    </p>
+    <p>
+    <img src="images/author/download/attachments/82052199/excludemapping.png" alt="images/author/download/attachments/82052199/excludemapping.png" />
+        </p>
+    <p>
+In the CLI, excludes are identical to includes, except the resource address has <tt class=" ">exclude</tt> instead of <tt class=" ">include</tt> as the key for the last address element:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /core-service=management/access=authorization/role-mapping=Monitor/exclude=group-Temps:add(name=Temps,type=GROUP)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    <p>
+    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Userswhomaptomultipleroles"  >
+        <h3>Users who map to multiple roles</h3>
+    
+    <p>
+It is possible that a given user will be mapped to more than one role. When this occurs, by default the user will be granted the union of the permissions of the two roles. This behavior can be changed <strong class=" ">on a global basis</strong> to instead respond to the user request with an error if this situation is detected:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] cd core-service=management/access=authorization
+[standalone@localhost:9990 access=authorization] :write-attribute(name=permission-combination-policy,value=rejecting)
+{&quot;outcome&quot; =&gt; &quot;success&quot;}</pre>
+        </div>
+    </div>
+    <p>
+Note that no reload is required; the change takes immediate effect.    </p>
+    <p>
+To restore the default behavior, set the value to &quot;permissive&quot;:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] cd core-service=management/access=authorization
+[standalone@localhost:9990 access=authorization] :write-attribute(name=permission-combination-policy,value=permissive)
+{&quot;outcome&quot; =&gt; &quot;success&quot;}</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="82052199_RBAC-Addingcustomrolesinamanageddomain"  >
+        <h2>Adding custom roles in a managed domain</h2>
+    
+    <p>
+A managed domain may involve a variety of servers running different configurations and hosting different applications. In such an environment, it is likely that there will be different teams of administrators responsible for different parts of the domain. To allow organizations to grant permissions to only parts of a domain, WildFly's RBAC scheme allows for the creation of custom &quot;scoped roles&quot;. Scoped roles are based on the seven standard roles, but with permissions limited to a portion of the domain &ndash; either to a set of server groups or to a set of hosts.    </p>
+    <div class="section-3"  id="82052199_RBAC-Servergroupscopedroles"  >
+        <h3>Server group scoped roles</h3>
+    
+    <p>
+The privileges for a server-group scoped role are constrained to resources associated with one or more server groups. Server groups are often associated with a particular application or set of applications; organizations that have separate teams responsible for different applications may find server-group scoped roles useful.    </p>
+    <p>
+A server-group scoped role is equivalent to the default role upon which it is based, but with privileges constrained to target resources in the resource trees rooted in the server group resources. The server-group scoped role can be configured to include privileges for the following resources trees logically related to the server group:    </p>
+<ul class=" "><li class=" ">    <p>
+Profile    </p>
+</li><li class=" ">    <p>
+Socket Binding Group    </p>
+</li><li class=" ">    <p>
+Deployment    </p>
+</li><li class=" ">    <p>
+Deployment override    </p>
+</li><li class=" ">    <p>
+Server group    </p>
+</li><li class=" ">    <p>
+Server config    </p>
+</li><li class=" ">    <p>
+Server    </p>
+</li></ul>    <p>
+Resources in the profile, socket binding group, server config and server portions of the tree that are not logically related to a server group associated with the server-group scoped role will not be addressable by a user in that role. So, in a domain with server groups &ldquo;a&rdquo; and &ldquo;b&rdquo;, a user in a server-group scoped role that grants access to &ldquo;a&rdquo; will not be able to address /server-group=b. The system will treat that resource as non-existent for that user.    </p>
+    <p>
+In addition to these privileges, users in a server-group scoped role will have non-sensitive read privileges (equivalent to the Monitor role) for resources other than those listed above.    </p>
+    <p>
+The easiest way to create a server-group scoped role is to <a href="RBAC.html#82052199_RBAC-adminconsolescopedroles">use the admin console</a>. But you can also use the CLI to create a server-group scoped role.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /core-service=management/access=authorization/server-group-scoped-role=MainGroupAdmins:add(base-role=Administrator,server-groups=[main-server-group])
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    <p>
+Once the role is created, users or groups can be mapped to it the same as with the seven standard roles.    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Hostscopedroles"  >
+        <h3>Host scoped roles</h3>
+    
+    <p>
+The privileges for a host-scoped role are constrained to resources associated with one or more hosts. A user with a host-scoped role cannot modify the domain wide configuration. Organizations may use host-scoped roles to give administrators relatively broad administrative rights for a host without granting such rights across the managed domain.    </p>
+    <p>
+A host-scoped role is equivalent to the default role upon which it is based, but with privileges constrained to target resources in the resource trees rooted in the host resources for one or more specified hosts.    </p>
+    <p>
+In addition to these privileges, users in a host-scoped role will have non-sensitive read privileges (equivalent to the Monitor role) for domain wide resources (i.e. those not in the /host=* section of the tree.)    </p>
+    <p>
+Resources in the /host=* portion of the tree that are unrelated to the hosts specified for the Host Scoped Role will not be visible to users in that host-scoped role. So, in a domain with hosts &ldquo;a&rdquo; and &ldquo;b&rdquo;, a user in a host-scoped role that grants access to &ldquo;a&rdquo; will not be able to address /host=b. The system will treat that resource as non-existent for that user.    </p>
+    <p>
+The easiest way to create a host-scoped role is to <a href="RBAC.html#82052199_RBAC-adminconsolescopedroles">use the admin console</a>. But you can also use the CLI to create a host scoped role.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /core-service=management/access=authorization/host-scoped-role=MasterOperators:add(base-role=Operator,hosts=[master]}
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    <p>
+Once the role is created, users or groups can be mapped to it the same as with the seven standard roles.    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Usingtheadminconsoletocreatescopedroles"  >
+        <h3>Using the admin console to create scoped roles</h3>
+    
+    <p>
+Both server-group and host scoped roles can be added, removed or edited via the admin console. Select &quot;Scoped Roles&quot; from the &quot;Administration&quot; tab, &quot;Roles&quot; subtab:    </p>
+    <p>
+    <img src="images/author/download/attachments/82052199/scopedroles.png" alt="images/author/download/attachments/82052199/scopedroles.png" />
+        </p>
+    <p>
+When adding a new scoped role, use the dialogue's &quot;Type&quot; pull down to choose between a host scoped role and a server-group scoped role. Then place the names of the relevant hosts or server groups in the &quot;Scope&quot; text are.    </p>
+    <p>
+    <img src="images/author/download/attachments/82052199/addscopedrole.png" alt="images/author/download/attachments/82052199/addscopedrole.png" />
+        </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="82052199_RBAC-Configuringconstraints"  >
+        <h2>Configuring constraints</h2>
+    
+    <p>
+The following factors are used to determine whether a given role is granted a permission:    </p>
+<ul class=" "><li class=" ">    <p>
+What the requested action is (address, read, write)    </p>
+</li><li class=" ">    <p>
+Whether the resource, attribute or operation affects the persistent configuration    </p>
+</li><li class=" ">    <p>
+Whether the resource, attribute or operation is related to the administrative audit logging function    </p>
+</li><li class=" ">    <p>
+Whether the resource, attribute or operation is configured as security sensitive    </p>
+</li><li class=" ">    <p>
+Whether an attribute or operation parameter value has a security vault expression    </p>
+</li><li class=" ">    <p>
+Whether a resource is considered to be associated with applications, as opposed to being part of a general container configuration    </p>
+</li></ul>    <p>
+The first three of these factors are non-configurable; the latter three allow some customization.    </p>
+    <div class="section-3"  id="82052199_RBAC-Configuringsensitivity"  >
+        <h3>Configuring sensitivity</h3>
+    
+    <p>
+&quot;Sensitivity&quot; constraints are about restricting access to security-sensitive data. Different organizations may have different opinions about what is security sensitive, so WildFly provides configuration options to allow users to tailor these constraints.    </p>
+    <div class="section-4"  id="82052199_RBAC-Sensitiveresources%2Cattributesandoperations"  >
+        <h4>Sensitive resources, attributes and operations</h4>
+    
+    <p>
+The developers of the WildFly core and of any subsystem may annotate resources, attributes or operations with a &quot;sensitivity classification&quot;. Classifications are either provided by the core and may be applicable anywhere in the management model, or they are scoped to a particular subsystem. For each classification, there will be a setting declaring whether by default the addressing, read and write actions are considered to be sensitive. If an action is sensitive, only users in the roles able to deal with sensitive data (Administrator, Auditor, SuperUser) will have permissions.    </p>
+    <p>
+Using the CLI, administrators can see the settings for a classification. For example, there is a core classification called &quot;socket-config&quot; that is applied to elements throughout the model that relate to configuring sockets:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] cd core-service=management/access=authorization/constraint=sensitivity-classification/type=core/classification=socket-config
+[domain@localhost:9990 classification=socket-config] ls -l
+ATTRIBUTE                       VALUE     TYPE    
+configured-requires-addressable undefined BOOLEAN 
+configured-requires-read        undefined BOOLEAN 
+configured-requires-write       undefined BOOLEAN 
+default-requires-addressable    false     BOOLEAN 
+default-requires-read           false     BOOLEAN 
+default-requires-write          true      BOOLEAN 
+
+CHILD      MIN-OCCURS MAX-OCCURS 
+applies-to n/a        n/a   </pre>
+        </div>
+    </div>
+    <p>
+The various <tt class=" ">default-requires-...</tt> attributes indicate whether a user must be in a role that allows security sensitive actions in order to perform the action. In the <tt class=" ">socket-config</tt> example above, <tt class=" ">default-requires-write</tt> is true, while the others are false. So, by default modifying a setting involving socket configuration is considered sensitive, while addressing those resources or doing reads is not sensitive.    </p>
+    <p>
+The <tt class=" ">default-requires-...</tt> attributes are read-only. The <tt class=" ">configured-requires-...</tt> attributes however can be modified to override the default settings with ones appropriate for your organization. For example, if your organization doesn't regard modifying socket configuration settings to be security sensitive, you can change that setting:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 classification=socket-config] :write-attribute(name=configured-requires-write,value=false)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    <p>
+Administrators can also read the management model to see to which resources, attributes and operations a particular sensitivity classification applies:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 classification=socket-config] :read-children-resources(child-type=applies-to)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;/host=master&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/host=master&quot;,
+            &quot;attributes&quot; =&gt; [],
+            &quot;entire-resource&quot; =&gt; false,
+            &quot;operations&quot; =&gt; [&quot;resolve-internet-address&quot;]
+        },
+        &quot;/host=master/core-service=host-environment&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/host=master/core-service=host-environment&quot;,
+            &quot;attributes&quot; =&gt; [
+                &quot;host-controller-port&quot;,
+                &quot;host-controller-address&quot;,
+                &quot;process-controller-port&quot;,
+                &quot;process-controller-address&quot;
+            ],
+            &quot;entire-resource&quot; =&gt; false,
+            &quot;operations&quot; =&gt; []
+        },
+        &quot;/host=master/core-service=management/management-interface=http-interface&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/host=master/core-service=management/management-interface=http-interface&quot;,
+            &quot;attributes&quot; =&gt; [
+                &quot;port&quot;,
+                &quot;secure-interface&quot;,
+                &quot;secure-port&quot;,
+                &quot;interface&quot;
+            ],
+            &quot;entire-resource&quot; =&gt; false,
+            &quot;operations&quot; =&gt; []
+        },
+        &quot;/host=master/core-service=management/management-interface=native-interface&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/host=master/core-service=management/management-interface=native-interface&quot;,
+            &quot;attributes&quot; =&gt; [
+                &quot;port&quot;,
+                &quot;interface&quot;
+            ],
+            &quot;entire-resource&quot; =&gt; false,
+            &quot;operations&quot; =&gt; []
+        },
+        &quot;/host=master/interface=*&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/host=master/interface=*&quot;,
+            &quot;attributes&quot; =&gt; [],
+            &quot;entire-resource&quot; =&gt; true,
+            &quot;operations&quot; =&gt; [&quot;resolve-internet-address&quot;]
+        },
+        &quot;/host=master/server-config=*/interface=*&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/host=master/server-config=*/interface=*&quot;,
+            &quot;attributes&quot; =&gt; [],
+            &quot;entire-resource&quot; =&gt; true,
+            &quot;operations&quot; =&gt; []
+        },
+        &quot;/interface=*&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/interface=*&quot;,
+            &quot;attributes&quot; =&gt; [],
+            &quot;entire-resource&quot; =&gt; true,
+            &quot;operations&quot; =&gt; []
+        },
+        &quot;/profile=*/subsystem=messaging/hornetq-server=*/broadcast-group=*&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/profile=*/subsystem=messaging/hornetq-server=*/broadcast-group=*&quot;,
+            &quot;attributes&quot; =&gt; [
+                &quot;group-address&quot;,
+                &quot;group-port&quot;,
+                &quot;local-bind-address&quot;,
+                &quot;local-bind-port&quot;
+            ],
+            &quot;entire-resource&quot; =&gt; false,
+            &quot;operations&quot; =&gt; []
+        },
+        &quot;/profile=*/subsystem=messaging/hornetq-server=*/discovery-group=*&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/profile=*/subsystem=messaging/hornetq-server=*/discovery-group=*&quot;,
+            &quot;attributes&quot; =&gt; [
+                &quot;group-address&quot;,
+                &quot;group-port&quot;,
+                &quot;local-bind-address&quot;
+            ],
+            &quot;entire-resource&quot; =&gt; false,
+            &quot;operations&quot; =&gt; []
+        },
+        &quot;/profile=*/subsystem=transactions&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/profile=*/subsystem=transactions&quot;,
+            &quot;attributes&quot; =&gt; [&quot;process-id-socket-max-ports&quot;],
+            &quot;entire-resource&quot; =&gt; false,
+            &quot;operations&quot; =&gt; []
+        },
+        &quot;/server-group=*&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/server-group=*&quot;,
+            &quot;attributes&quot; =&gt; [&quot;socket-binding-port-offset&quot;],
+            &quot;entire-resource&quot; =&gt; false,
+            &quot;operations&quot; =&gt; []
+        },
+        &quot;/socket-binding-group=*&quot; =&gt; {
+            &quot;address&quot; =&gt; &quot;/socket-binding-group=*&quot;,
+            &quot;attributes&quot; =&gt; [],
+            &quot;entire-resource&quot; =&gt; true,
+            &quot;operations&quot; =&gt; []
+        }
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+There will be a separate child for each address to which the classification applies. The <tt class=" ">entire-resource</tt> attribute will be true if the classification applies to the entire resource. Otherwise, the <tt class=" ">attributes</tt> and <tt class=" ">operations</tt> attributes will include the names of attributes or operations to which the classification applies.    </p>
+    <div class="section-5"  id="82052199_RBAC-Classificationswithbroaduse"  >
+        <h5>Classifications with broad use</h5>
+    
+    <p>
+Several of the core sensitivity classifications are commonly used across the management model and deserve special mention.    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Name    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+credential    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+An attribute whose value is some sort of credential, e.g. a password or a username. By default sensitive for both reads and writes    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+security-domain-ref    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+An attribute whose value is the name of a security domain. By default sensitive for both reads and writes    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+security-realm-ref    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+An attribute whose value is the name of a security realm. By default sensitive for both reads and writes    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+socket-binding-ref    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+An attribute whose value is the name of a socket binding. By default not sensitive for any action    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+socket-config    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+A resource, attribute or operation that somehow relates to configuring a socket. By default sensitive for writes    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-4"  id="82052199_RBAC-Valueswithsecurityvaultexpressions"  >
+        <h4>Values with security vault expressions</h4>
+    
+    <p>
+By default any attribute or operation parameter whose value includes a security vault expression will be treated as sensitive, even if no sensitivity classification applies or the classification does not treat the action as sensitive.    </p>
+    <p>
+This setting can be <strong class=" ">globally</strong> changed via the CLI. There is a resource for this configuration:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] cd core-service=management/access=authorization/constraint=vault-expression
+[domain@localhost:9990 constraint=vault-expression] ls -l
+ATTRIBUTE                 VALUE     TYPE    
+configured-requires-read  undefined BOOLEAN 
+configured-requires-write undefined BOOLEAN 
+default-requires-read     true      BOOLEAN 
+default-requires-write    true      BOOLEAN</pre>
+        </div>
+    </div>
+    <p>
+The various <tt class=" ">default-requires-...</tt> attributes indicate whether a user must be in a role that allows security sensitive actions in order to perform the action. So, by default both reading and writing attributes whose values include vault expressions requires a user to be in one of the roles with sensitive data permissions.    </p>
+    <p>
+The <tt class=" ">default-requires-...</tt> attributes are read-only. The <tt class=" ">configured-requires-...</tt> attributes however can be modified to override the default settings with settings appropriate for your organization. For example, if your organization doesn't regard reading vault expressions to be security sensitive, you can change that setting:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 constraint=vault-expression] :write-attribute(name=configured-requires-read,value=false)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    <div class="confbox admonition admonition-note">
+        
+    <p>
+This vault-expression constraint overlaps somewhat with the <a href="RBAC.html#82052199_RBAC-commonsensitivityclassifications">core &quot;credential&quot; sensitivity classification</a> in that the most typical uses of a vault expression are in attributes that contain a user name or password, and those will typically be annotated with the &quot;credential&quot; sensitivity classification. So, if you change the settings for the &quot;credential&quot; sensitivity classification you may also need to make a corresponding change to the vault-expression constraint settings, or your change will not have full effect.    </p>
+    <p>
+Be aware though, that vault expressions can be used in any attribute that supports expressions, not just in credential-type attributes. So it is important to be familiar with where and how your organization uses vault expressions before changing these settings.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Configuring%22Deployer%22roleaccess"  >
+        <h3>Configuring &quot;Deployer&quot; role access</h3>
+    
+    <p>
+The standard <a href="RBAC.html#82052199_RBAC-standardrbacroles">Deployer role</a> has its write permissions limited to resources that are considered to be &quot;application resources&quot;; i.e. conceptually part of an application and not part of the general server configuration. By default, only deployment resources are considered to be application resources. However, different organizations may have different opinions on what qualifies as an application resource, so for resource types that subsystems authors consider <i class=" ">potentially</i> to be application resources, WildFly provides a configuration option to declare them as such. Such resources will be annotated with an &quot;application classification&quot;.    </p>
+    <p>
+For example, the mail subsystem provides such a classification:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] cd /core-service=management/access=authorization/constraint=application-classification/type=mail/classification=mail-session
+[domain@localhost:9990 classification=mail-session] ls -l
+ATTRIBUTE              VALUE     TYPE    
+configured-application undefined BOOLEAN 
+default-application    false     BOOLEAN 
+
+CHILD      MIN-OCCURS MAX-OCCURS 
+applies-to n/a        n/a</pre>
+        </div>
+    </div>
+    <p>
+Use <tt class=" ">read-resource</tt> or <tt class=" ">read-children-resources</tt> to see what resources have this classification applied:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 classification=mail-session] :read-children-resources(child-type=applies-to)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {&quot;/profile=*/subsystem=mail/mail-session=*&quot; =&gt; {
+        &quot;address&quot; =&gt; &quot;/profile=*/subsystem=mail/mail-session=*&quot;,
+        &quot;attributes&quot; =&gt; [],
+        &quot;entire-resource&quot; =&gt; true,
+        &quot;operations&quot; =&gt; []
+    }}
+}</pre>
+        </div>
+    </div>
+    <p>
+This indicates that this classification, intuitively enough, only applies to mail subsystem mail-session resources.    </p>
+    <p>
+To make resources with this classification writeable by users in the Deployer role, set the <tt class=" ">configured-application</tt> attribute to true.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 classification=mail-session] :write-attribute(name=configured-application,value=true)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;server-groups&quot; =&gt; {&quot;main-server-group&quot; =&gt; {&quot;host&quot; =&gt; {&quot;master&quot; =&gt; {
+        &quot;server-one&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}},
+        &quot;server-two&quot; =&gt; {&quot;response&quot; =&gt; {&quot;outcome&quot; =&gt; &quot;success&quot;}}
+    }}}}
+}</pre>
+        </div>
+    </div>
+    <div class="section-4"  id="82052199_RBAC-ApplicationclassificationsshippedwithWildFly"  >
+        <h4>Application classifications shipped with WildFly</h4>
+    
+    <p>
+The subsystems shipped with the full WildFly distribution include the following application classifications:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Subsystem    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Classification    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+datasources    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+data-source    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+datasources    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+jdbc-driver    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+datasources    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+xa-data-source    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+logging    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+logger    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+logging    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+logging-profile    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+mail    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+mail-session    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+messaging    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+jms-queue    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+messaging    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+jms-topic    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+messaging    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+queue    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+messaging    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+security-setting    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+naming    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+binding    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+resource-adapters    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+resource-adapter    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+security    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+security-domain    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+In each case the classification applies to the resources you would expect, given its name.    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="82052199_RBAC-RBACeffectonadministratoruserexperience"  >
+        <h2>RBAC effect on administrator user experience</h2>
+    
+    <p>
+The RBAC scheme will result in reduced permissions for administrators who do not map to the SuperUser role, so this will of course have some impact on their experience when using administrative tools like the admin console and the CLI.    </p>
+    <div class="section-3"  id="82052199_RBAC-Adminconsole"  >
+        <h3>Admin console</h3>
+    
+    <p>
+The admin console takes great pains to provide a good user experience even when the user has reduced permissions. Resources the user is not permitted to see will simply not be shown, or if appropriate will be replaced in the UI with an indication that the user is not authorized. Interaction units like &quot;Add&quot; and &quot;Remove&quot; buttons and &quot;Edit&quot; links will be suppressed if the user has no write permissions.    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-CLI"  >
+        <h3>CLI</h3>
+    
+    <p>
+The CLI is a much more unconstrained tool than the admin console is, allowing users to try to execute whatever operations they wish, so it's more likely that users who attempt to do things for which they lack necessary permissions will receive failure messages. For example, a user in the Monitor role cannot read passwords:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /profile=default/subsystem=datasources/data-source=ExampleDS:read-attribute(name=password)
+{
+    &quot;outcome&quot; =&gt; &quot;failed&quot;,
+    &quot;result&quot; =&gt; undefined,
+    &quot;failure-description&quot; =&gt; &quot;WFLYCTL0313: Unauthorized to execute operation 'read-attribute' for resource '[
+    (\&quot;profile\&quot; =&gt; \&quot;default\&quot;),
+    (\&quot;subsystem\&quot; =&gt; \&quot;datasources\&quot;),
+    (\&quot;data-source\&quot; =&gt; \&quot;ExampleDS\&quot;)
+]' -- \&quot;WFLYCTL0332: Permission denied\&quot;&quot;,
+    &quot;rolled-back&quot; =&gt; true
+}</pre>
+        </div>
+    </div>
+    <p>
+If the user isn't even allowed to <a href="RBAC.html#82052199_RBAC-addressaction">address the resource</a> then the response would be as if the resource doesn't exist, even though it actually does:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /profile=default/subsystem=security/security-domain=other:read-resource
+{
+    &quot;outcome&quot; =&gt; &quot;failed&quot;,
+    &quot;failure-description&quot; =&gt; &quot;WFLYCTL0216: Management resource '[
+    (\&quot;profile\&quot; =&gt; \&quot;default\&quot;),
+    (\&quot;subsystem\&quot; =&gt; \&quot;security\&quot;),
+    (\&quot;security-domain\&quot; =&gt; \&quot;other\&quot;)
+]' not found&quot;,
+    &quot;rolled-back&quot; =&gt; true
+}</pre>
+        </div>
+    </div>
+    <p>
+This prevents unauthorized users fishing for sensitive data in resource addresses by checking for &quot;Permission denied&quot; type failures.    </p>
+    <p>
+Users who use the <tt class=" ">read-resource</tt> operation may ask for data, some of which they are allowed to see and some of which they are not. If this happens, the request will not fail, but inaccessible data will be elided and a response header will be included advising on what was not included. Here we show the effect of a Monitor trying to recursively read the security subsystem configuration:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] /profile=default/subsystem=security:read-resource(recursive=true)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;deep-copy-subject-mode&quot; =&gt; undefined,
+        &quot;security-domain&quot; =&gt; undefined,
+        &quot;vault&quot; =&gt; undefined
+    },
+    &quot;response-headers&quot; =&gt; {&quot;access-control&quot; =&gt; [{
+        &quot;absolute-address&quot; =&gt; [
+            (&quot;profile&quot; =&gt; &quot;default&quot;),
+            (&quot;subsystem&quot; =&gt; &quot;security&quot;)
+        ],
+        &quot;relative-address&quot; =&gt; [],
+        &quot;filtered-attributes&quot; =&gt; [&quot;deep-copy-subject-mode&quot;],
+        &quot;filtered-children-types&quot; =&gt; [&quot;security-domain&quot;]
+    }]}
+}</pre>
+        </div>
+    </div>
+    <p>
+The <tt class=" ">response-headers</tt> section includes access control data in a list with one element per relevant resource. (In this case there's just one.) The absolute and relative address of the resource is shown, along with the fact that the value of the <tt class=" ">deep-copy-subject-mode</tt> attribute has been filtered (i.e. undefined is shown as the value, which may not be the real value) as well as the fact that child resources of type <tt class=" ">security-domain</tt> have been filtered.    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Descriptionofaccesscontrolconstraintsinthemanagementmodelmetadata"  >
+        <h3>Description of access control constraints in the management model metadata</h3>
+    
+    <p>
+The management model descriptive metadata returned from operations like <tt class=" ">read-resource-description</tt> and <tt class=" ">read-operation-description</tt> can be configured to include information describing the access control constraints relevant to the resource, This is done by using the <tt class=" ">access-control</tt> parameter. The output will be tailored to the caller's permissions. For example, a user who maps to the Monitor role could ask for information about a resource in the mail subsystem:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] cd /profile=default/subsystem=mail/mail-session=default/server=smtp
+[domain@localhost:9990 server=smtp] :read-resource-description(access-control=trim-descriptions)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;description&quot; =&gt; undefined,
+        &quot;access-constraints&quot; =&gt; {&quot;application&quot; =&gt; {&quot;mail-session&quot; =&gt; {&quot;type&quot; =&gt; &quot;mail&quot;}}},
+        &quot;attributes&quot; =&gt; undefined,
+        &quot;operations&quot; =&gt; undefined,
+        &quot;children&quot; =&gt; {},
+        &quot;access-control&quot; =&gt; {
+            &quot;default&quot; =&gt; {
+                &quot;read&quot; =&gt; true,
+                &quot;write&quot; =&gt; false,
+                &quot;attributes&quot; =&gt; {
+                    &quot;outbound-socket-binding-ref&quot; =&gt; {
+                        &quot;read&quot; =&gt; true,
+                        &quot;write&quot; =&gt; false
+                    },
+                    &quot;username&quot; =&gt; {
+                        &quot;read&quot; =&gt; false,
+                        &quot;write&quot; =&gt; false
+                    },
+                    &quot;tls&quot; =&gt; {
+                        &quot;read&quot; =&gt; true,
+                        &quot;write&quot; =&gt; false
+                    },
+                    &quot;ssl&quot; =&gt; {
+                        &quot;read&quot; =&gt; true,
+                        &quot;write&quot; =&gt; false
+                    },
+                    &quot;password&quot; =&gt; {
+                        &quot;read&quot; =&gt; false,
+                        &quot;write&quot; =&gt; false
+                    }
+                }
+            },
+            &quot;exceptions&quot; =&gt; {}
+        }
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+    </p>
+    <p>
+Because <tt class=" ">trim-descriptions</tt> was used as the value for the <tt class=" ">access-control</tt> parameter, the typical &quot;description&quot;, &quot;attributes&quot;, &quot;operations&quot; and &quot;children&quot; data is largely suppressed. (For more on this, <a href="RBAC.html#82052199_RBAC-accesscontrolparam">see below</a>.) The <tt class=" ">access-constraints</tt> field indicates that this resource is annotated with an <span class=" error">[application constraint]</span>. The <tt class=" ">access-control</tt> field includes information about the permissions the current caller has for this resource. The <tt class=" ">default</tt> section shows the default settings for resources of this type. The <tt class=" ">read</tt> and <tt class=" ">write</tt> fields directly under <tt class=" ">default</tt> show that the caller can, in general, read this resource but cannot write it. The <tt class=" ">attributes</tt> section shows the individual attribute settings. Note that Monitor cannot read the <tt class=" ">username</tt> and <tt class=" ">password</tt> attributes.    </p>
+    <p>
+    <span id="82052199_RBAC-accesscontrolparam"><a name="82052199_RBAC-accesscontrolparam"></a></span>
+There are three valid values for the <tt class=" ">access-control</tt> parameter to <tt class=" ">read-resource-description</tt> and <tt class=" ">read-operation-description</tt>:    </p>
+<ul class=" "><li class=" ">    <p>
+<strong class=" ">none</strong> &ndash; do not include access control information in the response. This is the default behavior if no parameter is included.    </p>
+</li><li class=" ">    <p>
+<strong class=" ">trim-descriptions</strong> &ndash; remove the normal description details, as shown in the example above    </p>
+</li><li class=" ">    <p>
+<strong class=" ">combined-descriptions</strong> &ndash; include both the normal output and the access control data    </p>
+</li></ul>    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="82052199_RBAC-Learningaboutyourownrolemappings"  >
+        <h2>Learning about your own role mappings</h2>
+    
+    <p>
+Users can learn in which roles they are operating. In the admin console, click on your name in the top right corner; the roles you are in will be shown.    </p>
+    <p>
+    <img src="images/author/download/attachments/82052199/callersroles.png" alt="images/author/download/attachments/82052199/callersroles.png" />
+        </p>
+    <p>
+CLI users should use the <tt class=" ">whoami</tt> operation with the <tt class=" ">verbose</tt> attribute set:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[domain@localhost:9990 /] :whoami(verbose=true)
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;identity&quot; =&gt; {
+            &quot;username&quot; =&gt; &quot;aadams&quot;,
+            &quot;realm&quot; =&gt; &quot;ManagementRealm&quot;
+        },
+        &quot;mapped-roles&quot; =&gt; [
+            &quot;Maintainer&quot;
+        ]
+    }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="82052199_RBAC-%22Runas%22capabilityforSuperUsers"  >
+        <h2>&quot;Run-as&quot; capability for SuperUsers</h2>
+    
+    <p>
+If a user maps to the SuperUser role, WildFly also supports letting that user request that they instead map to one or more other roles. This can be useful when doing demos, or when the SuperUser is changing the RBAC configuration and wants to see what effect the changes have from the perspective of a user in another role. This capability is only available to the SuperUser role, so it can only be used to narrow a user's permissions, not to potentially increase them.    </p>
+    <div class="section-3"  id="82052199_RBAC-CLIrunas"  >
+        <h3>CLI run-as</h3>
+    
+    <p>
+With the CLI, run-as capability is on a per-request basis. It is done by using the &quot;roles&quot; operation header, the value of which can be the name of a single role or a bracket-enclosed, comma-delimited list of role names.    </p>
+    <p>
+Example with a low level operation:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] :whoami(verbose=true){roles=[Operator,Auditor]}
+{
+    &quot;outcome&quot; =&gt; &quot;success&quot;,
+    &quot;result&quot; =&gt; {
+        &quot;identity&quot; =&gt; {
+            &quot;username&quot; =&gt; &quot;$local&quot;,
+            &quot;realm&quot; =&gt; &quot;ManagementRealm&quot;
+        },
+        &quot;mapped-roles&quot; =&gt; [
+            &quot;Auditor&quot;,
+            &quot;Operator&quot;
+        ]
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+Example with a CLI command:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">[standalone@localhost:9990 /] deploy /tmp/helloworld.war --headers={roles=Monitor}
+{&quot;WFLYCTL0062: Composite operation failed and was rolled back. Steps that failed:&quot; =&gt; {&quot;Operation step-1&quot; =&gt; &quot;WFLYCTL0313: Unauthorized to execute operation 'add' for resource '[(\&quot;deployment\&quot; =&gt; \&quot;helloworld.war\&quot;)]' -- \&quot;WFLYCTL0332: Permission denied\&quot;&quot;}}
+[standalone@localhost:9990 /] deploy /tmp/helloworld.war --headers={roles=Maintainer}</pre>
+        </div>
+    </div>
+    <p>
+Here we show the effect of switching to a role that isn't granted the necessary permission.    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Adminconsolerunas"  >
+        <h3>Admin console run-as</h3>
+    
+    <p>
+Admin console users can change the role in which they operate by clicking on their name in the top right corner and clicking on the &quot;Run as...&quot; link.    </p>
+    <p>
+    <img src="images/author/download/attachments/82052199/callersroles.png" alt="images/author/download/attachments/82052199/callersroles.png" />
+        </p>
+    <p>
+Then select the role in which you wish to operate:    </p>
+    <p>
+    <img src="images/author/download/attachments/82052199/runasrole.png" alt="images/author/download/attachments/82052199/runasrole.png" />
+        </p>
+    <p>
+The console will need to be restarted in order for the change to take effect.    </p>
+    </div>
+    
+    <div class="section-3"  id="82052199_RBAC-Usingrunasroleswiththe%22simple%22accesscontrolprovider"  >
+        <h3>Using run-as roles with the &quot;simple&quot; access control provider</h3>
+    
+    <p>
+This &quot;run-as&quot; capability is available even if the &quot;simple&quot; access control provider is used. When the &quot;simple&quot; provider is used, any authenticated administrator is treated the same as if they would map to SuperUser when the &quot;rbac&quot; provider is used.<br/>However, the &quot;simple&quot; provider actually understands all of the &quot;rbac&quot; provider configuration settings described above, but only makes use of them if the &quot;run-as&quot; capability is used for a request. Otherwise, the SuperUser role has all permissions, so detailed configuration is irrelevant.    </p>
+    <p>
+Using the run-as capability with the &quot;simple&quot; provider may be useful if an administrator is setting up an rbac provider configuration before switching the provider to rbac to make that configuration take effect. The administrator can then run-as different roles to see the effect of the planned settings.    </p>
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

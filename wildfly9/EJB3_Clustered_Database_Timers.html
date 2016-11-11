@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EJB3 Clustered Database Timers - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="previous"><a accesskey="p" href="Container_interceptors.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="next"><a accesskey="n" href="EJB3_subsystem_configuration_guide.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </ul>
+                    <div>
+            <h1>EJB3 Clustered Database Timers</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <div class="section-2"  id="81855145_EJB3ClusteredDatabaseTimers-Overview"  >
+        <h2>Overview</h2>
+    
+    <p>
+Wildfly now supports clustered database backed timers. The clustering support is provided through the database, and as a result it is not intended to be a super high performance solution that supports thousands of timers going off a second, however properly tuned it should provide sufficient performance for most use cases.    </p>
+    <p>
+Note that database timers can also be used in non-clustered mode.    </p>
+    <div class="confbox admonition admonition-warning">
+        
+    <p>
+Note that for this to work correctly the underlying database must support&nbsp; the READ_COMMITTED or SERIALIZABLE isolation mode and the datasource must be configured accordingly    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="81855145_EJB3ClusteredDatabaseTimers-Setup"  >
+        <h2>Setup</h2>
+    
+    <p>
+In order to use clustered timers it is necessary to add a database backed timer store. This can be done from the CLI with the following command:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">/subsystem=ejb3/service=timer-service/database-data-store=my-clustered-store:add(allow-execution=true, datasource-jndi-name='java:/MyDatasource', refresh-interval=60000, database='postgresql', partition='mypartition')</pre>
+        </div>
+    </div>
+    <p>
+An explanation of the parameters is below:    </p>
+<ul class=" "><li class=" ">    <p>
+<strong class=" ">allow-execution</strong> - If this node is allowed to execute timers. If this is false then timers added on this node will be added to the database for another node to execute. This allows you to limit timer execution to a few nodes in a cluster, which can greatly reduce database load for large clusters.    </p>
+</li><li class=" ">    <p>
+<strong class=" ">datasource-jndi-name</strong> - The datasource to use    </p>
+</li><li class=" ">    <p>
+<strong class=" ">refresh-interval</strong> - The refresh interval in milliseconds. This is the period of time that must elapse before this node will check the database for new timers added by other nodes. A smaller value means that timers will be picked up more quickly, however it will result in more load on the database. This is most important to tune if you are adding timers that will expire quickly. If the node that added the timer cannot execute it (e.g. because it has failed or because allow-execution is false), this timer may not be executed until a node has refreshed.    </p>
+</li><li class=" ">    <p>
+<strong class=" ">database</strong> - Define the type of database that is in use. Some SQL statements are customised by database, and this tells the data store which version of the SQL to use.<br/>Without this attribute the server try to detected the type automatically, current supported types are <i class=" ">postgresql, mysql, oracle, db2, hsql</i> and <i class=" ">h2</i>.<br/>Note that this SQL resides in the file <i class=" ">modules/system/layers/base/org/jboss/as/ejb3/main/timers/timer-sql.properties</i><br/>And as such is it possible to modify the SQL that is executed or add support for new databases by adding new DB specific SQL to this file (if you do add support for a new database it would be greatly appreciated if you could contribute the SQL back to the project).    </p>
+</li></ul><ul class=" "><li class=" ">    <p>
+<strong class=" ">partition</strong> - A node will only see timers from other nodes that have the same partition name. This allows you to break a large cluster up into several smaller clusters, which should improve performance. e.g. instead of having a cluster of 100 nodes, where all hundred are trying to execute and refresh the same timers, you can create 20 clusters of 5 nodes by giving ever group of 5 a different partition name.    </p>
+</li></ul>    <div class="section-3"  id="81855145_EJB3ClusteredDatabaseTimers-Nonclusteredtimers"  >
+        <h3>Non clustered timers</h3>
+    
+    <p>
+Note that you can still use the database data store for non-clustered timers, in which case set the refresh interval to zero and make sure that every node has a unique partition name (or uses a different database).    </p>
+    </div>
+    
+    </div>
+    
+    <div class="section-2"  id="81855145_EJB3ClusteredDatabaseTimers-Usingclusteredtimersinadeployment"  >
+        <h2>Using clustered timers in a deployment</h2>
+    
+    <p>
+It is possible to use the data store as default for all applications by changing the default-data-store within the ejb3 subsystem:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">    &lt;timer-service thread-pool-name=&quot;timer&quot; default-data-store=&quot;clustered-store&quot;&gt;
+        &lt;data-stores&gt;
+            &lt;database-data-store name=&quot;clustered-store&quot; datasource-jndi-name=&quot;java:jboss/datasources/ExampleDS&quot; partition=&quot;timer&quot;/&gt;
+        &lt;/data-stores&gt;
+    &lt;/timer-service&gt;</pre>
+        </div>
+    </div>
+    <p>
+Another option is to use a separate data store for specific applications, all that is required is to set the timer data store name in jboss-ejb3.xml:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;?xml version=&quot;1.1&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;jboss:ejb-jar xmlns:jboss=&quot;http://www.jboss.com/xml/ns/javaee&quot;
+               xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;
+               xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+               xmlns:timer=&quot;urn:timer-service:1.0&quot;
+               xsi:schemaLocation=&quot;http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-ejb3-2_0.xsd
+                     http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd&quot;
+               version=&quot;3.1&quot;
+               impl-version=&quot;2.0&quot;&gt;
+    &lt;assembly-descriptor&gt;
+            &lt;timer:timer&gt;
+                &lt;ejb-name&gt;*&lt;/ejb-name&gt;
+                &lt;timer:persistence-store-name&gt;my-clustered-store&lt;/timer:persistence-store-name&gt;
+            &lt;/timer:timer&gt;
+        &lt;/assembly-descriptor&gt;
+&lt;/jboss:ejb-jar&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="81855145_EJB3ClusteredDatabaseTimers-Technicaldetails"  >
+        <h2>Technical details</h2>
+    
+    <p>
+Internally every node that is allowed to execute timers schedules a timeout for every timer is knows about. When this timeout expires then this node attempts to 'lock' the timer, by updating its state to running. The query this executes looks like:    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">UPDATE JBOSS_EJB_TIMER SET TIMER_STATE=? WHERE ID=? AND TIMER_STATE&lt;&gt;? AND NEXT_DATE=?;</pre>
+        </div>
+    </div>
+    <p>
+Due to the use of a transaction and READ_COMMITTED or SERIALIZABLE isolation mode only one node will succeed in updating the row, and this is the node that the timer will run on.    </p>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="previous"><a accesskey="p" href="Container_interceptors.html"><strong>Prev</strong>Container interceptors</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="next"><a accesskey="n" href="EJB3_subsystem_configuration_guide.html"><strong>Next</strong>EJB3 subsystem configuration guide</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

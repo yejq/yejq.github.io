@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ActAs WS-Trust Scenario - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="previous"><a accesskey="p" href="WS-Trust_and_STS.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <li class="next"><a accesskey="n" href="OnBehalfOf_WS-Trust_Scenario.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </ul>
+                    <div>
+            <h1>ActAs WS-Trust Scenario</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+<ul class=" "><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-ActAsWSTrustScenario">ActAs WS-Trust Scenario</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-Webserviceprovider">Web service provider</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-WebserviceproviderWSDL">Web service provider WSDL</a>    </p>
+</li><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-WebServiceInterface">Web Service Interface</a>    </p>
+</li><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-WebServiceImplementation">Web Service Implementation</a>    </p>
+</li><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-ActAsCallbackHandler">ActAsCallbackHandler</a>    </p>
+</li><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-UsernameTokenCallbackHandler">UsernameTokenCallbackHandler</a>    </p>
+</li><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-Cryptopropertiesandkeystorefiles">Crypto properties and keystore files</a>    </p>
+</li><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-MANIFEST.MF">MANIFEST.MF</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-SecurityTokenService">Security Token Service</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-STSImplementationclass">STS Implementation class</a>    </p>
+</li><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-STSCallbackHandler">STSCallbackHandler</a>    </p>
+</li></ul></li><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-Webservicerequester">Web service requester</a>    </p>
+<ul class=" "><li class=" ">    <p>
+<a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-WebservicerequesterImplementation">Web service requester Implementation</a>    </p>
+</li></ul></li></ul></li></ul>    <div class="section-2"  id="90439847_ActAsWS-TrustScenario-ActAsWSTrustScenario"  >
+        <h2>ActAs WS-Trust Scenario</h2>
+    
+    <p>
+The ActAs feature is used in scenarios that require composite  delegation.&nbsp; It is commonly used in multi-tiered systems where an  application calls a service on behalf of a logged in user or a service  calls another service on behalf of the original caller.    </p>
+    <p>
+ActAs  is nothing more than a new sub-element in the RequestSecurityToken  (RST).&nbsp; It provides additional information about the original caller  when a token is negotiated with the STS.&nbsp; The ActAs element usually  takes the form of a token with identity claims such as name, role, and  authorization code, for the client to access the service.    </p>
+    <p>
+The ActAs scenario is an extension of <a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-ABasicWSTrustScenario">the basic WS-Trust scenario</a>.&nbsp;  In this example the ActAs service calls the ws-service on behalf of a  user.&nbsp; There are only a couple of additions to the basic scenario's  code.&nbsp; An ActAs web service provider and callback handler have been  added.&nbsp; The ActAs web services' WSDL&nbsp; imposes the same security policies  as the ws-provider. UsernameTokenCallbackHandler is new.&nbsp; It is a  utility that generates the content for the ActAs element.&nbsp; And lastly  there are a couple of code additions in the STS to support the ActAs  request.    </p>
+    <div class="section-3"  id="90439847_ActAsWS-TrustScenario-Webserviceprovider"  >
+        <h3>Web service provider</h3>
+    
+    <p>
+This section examines the web service elements from the basic  WS-Trust scenario that have been changed to address the needs of the  ActAs example.&nbsp; The components are    </p>
+<ul class=" "><li class=" ">    <p>
+ActAs web service provider's WSDL    </p>
+</li><li class=" ">    <p>
+ActAs web service provider's Interface and Implementation classes.    </p>
+</li><li class=" ">    <p>
+ActAsCallbackHandler class    </p>
+</li><li class=" ">    <p>
+UsernameTokenCallbackHandler    </p>
+</li><li class=" ">    <p>
+Crypto properties and keystore files    </p>
+</li><li class=" ">    <p>
+MANIFEST.MF    </p>
+</li></ul>    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-WebserviceproviderWSDL"  >
+        <h4>Web service provider WSDL</h4>
+    
+    <p>
+The ActAs web service provider's WSDL is a clone of the ws-provider's  WSDL.&nbsp; The wsp:Policy section is the same. There are&nbsp; changes to the  service endpoint,&nbsp; targetNamespace, portType, binding name, and service.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;definitions targetNamespace=&quot;http://www.jboss.org/jbossws/ws-extensions/actaswssecuritypolicy&quot; name=&quot;ActAsService&quot;
+             xmlns:tns=&quot;http://www.jboss.org/jbossws/ws-extensions/actaswssecuritypolicy&quot;
+             xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+             xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+             xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot;
+             xmlns:wsp=&quot;http://www.w3.org/ns/ws-policy&quot;
+             xmlns:wsam=&quot;http://www.w3.org/2007/05/addressing/metadata&quot;
+             xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+             xmlns:wsaws=&quot;http://www.w3.org/2005/08/addressing&quot;
+             xmlns:sp=&quot;http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702&quot;
+             xmlns:t=&quot;http://docs.oasis-open.org/ws-sx/ws-trust/200512&quot;&gt;
+    &lt;types&gt;
+        &lt;xsd:schema&gt;
+            &lt;xsd:import namespace=&quot;http://www.jboss.org/jbossws/ws-extensions/actaswssecuritypolicy&quot;
+                    schemaLocation=&quot;ActAsService_schema1.xsd&quot;/&gt;
+        &lt;/xsd:schema&gt;
+    &lt;/types&gt;
+    &lt;message name=&quot;sayHello&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;tns:sayHello&quot;/&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;sayHelloResponse&quot;&gt;
+        &lt;part name=&quot;parameters&quot; element=&quot;tns:sayHelloResponse&quot;/&gt;
+    &lt;/message&gt;
+    &lt;portType name=&quot;ActAsServiceIface&quot;&gt;
+        &lt;operation name=&quot;sayHello&quot;&gt;
+            &lt;input message=&quot;tns:sayHello&quot;/&gt;
+            &lt;output message=&quot;tns:sayHelloResponse&quot;/&gt;
+        &lt;/operation&gt;
+    &lt;/portType&gt;
+    &lt;binding name=&quot;ActAsServicePortBinding&quot; type=&quot;tns:ActAsServiceIface&quot;&gt;
+        &lt;wsp:PolicyReference URI=&quot;#AsymmetricSAML2Policy&quot; /&gt;
+        &lt;soap:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot;/&gt;
+        &lt;operation name=&quot;sayHello&quot;&gt;
+            &lt;soap:operation soapAction=&quot;&quot;/&gt;
+            &lt;input&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+                &lt;wsp:PolicyReference URI=&quot;#Input_Policy&quot; /&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:body use=&quot;literal&quot;/&gt;
+                &lt;wsp:PolicyReference URI=&quot;#Output_Policy&quot; /&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+    &lt;/binding&gt;
+    &lt;service name=&quot;ActAsService&quot;&gt;
+        &lt;port name=&quot;ActAsServicePort&quot; binding=&quot;tns:ActAsServicePortBinding&quot;&gt;
+            &lt;soap:address location=&quot;http://@jboss.bind.address@:8080/jaxws-samples-wsse-policy-trust-actas/ActAsService&quot;/&gt;
+        &lt;/port&gt;
+    &lt;/service&gt;
+
+&lt;/definitions&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-WebServiceInterface"  >
+        <h4>Web Service Interface</h4>
+    
+    <p>
+The web service provider interface class, ActAsServiceIface, is a simple web service definition.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">package org.jboss.test.ws.jaxws.samples.wsse.policy.trust.actas;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+@WebService
+(
+   targetNamespace = &quot;http://www.jboss.org/jbossws/ws-extensions/actaswssecuritypolicy&quot;
+)
+public interface ActAsServiceIface
+{
+   @WebMethod
+   String sayHello();
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-WebServiceImplementation"  >
+        <h4>Web Service Implementation</h4>
+    
+    <p>
+The web service provider implementation class, ActAsServiceImpl, is a  simple POJO.&nbsp; It uses the standard WebService annotation to define the  service endpoint&nbsp; and two Apache WSS4J annotations, EndpointProperties  and EndpointProperty used for configuring the endpoint for the CXF  runtime.&nbsp; The WSS4J configuration information provided is for WSS4J's  Crypto Merlin implementation.    </p>
+    <p>
+ActAsServiceImpl  is calling ServiceImpl acting on behalf of the user.&nbsp; Method  setupService performs the requisite configuration setup.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">package org.jboss.test.ws.jaxws.samples.wsse.policy.trust.actas;
+
+import org.apache.cxf.Bus;
+import org.apache.cxf.BusFactory;
+import org.apache.cxf.annotations.EndpointProperties;
+import org.apache.cxf.annotations.EndpointProperty;
+import org.apache.cxf.ws.security.SecurityConstants;
+import org.apache.cxf.ws.security.trust.STSClient;
+import org.jboss.test.ws.jaxws.samples.wsse.policy.trust.service.ServiceIface;
+import org.jboss.test.ws.jaxws.samples.wsse.policy.trust.shared.WSTrustAppUtils;
+
+import javax.jws.WebService;
+import javax.xml.namespace.QName;
+import javax.xml.ws.BindingProvider;
+import javax.xml.ws.Service;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Map;
+
+@WebService
+(
+   portName = &quot;ActAsServicePort&quot;,
+   serviceName = &quot;ActAsService&quot;,
+   wsdlLocation = &quot;WEB-INF/wsdl/ActAsService.wsdl&quot;,
+   targetNamespace = &quot;http://www.jboss.org/jbossws/ws-extensions/actaswssecuritypolicy&quot;,
+   endpointInterface = &quot;org.jboss.test.ws.jaxws.samples.wsse.policy.trust.actas.ActAsServiceIface&quot;
+)
+
+@EndpointProperties(value = {
+      @EndpointProperty(key = &quot;ws-security.signature.username&quot;, value = &quot;myactaskey&quot;),
+      @EndpointProperty(key = &quot;ws-security.signature.properties&quot;, value =  &quot;actasKeystore.properties&quot;),
+      @EndpointProperty(key = &quot;ws-security.encryption.properties&quot;, value = &quot;actasKeystore.properties&quot;),
+      @EndpointProperty(key = &quot;ws-security.callback-handler&quot;, value = &quot;org.jboss.test.ws.jaxws.samples.wsse.policy.trust.actas.ActAsCallbackHandler&quot;)
+})
+
+public class ActAsServiceImpl implements ActAsServiceIface
+{
+   public String sayHello() {
+      try {
+         ServiceIface proxy = setupService();
+         return &quot;ActAs &quot; + proxy.sayHello();
+      } catch (MalformedURLException e) {
+         e.printStackTrace();
+      }
+      return null;
+   }
+
+   private  ServiceIface setupService()throws MalformedURLException {
+      ServiceIface proxy = null;
+      Bus bus = BusFactory.newInstance().createBus();
+
+      try {
+         BusFactory.setThreadDefaultBus(bus);
+
+         final String serviceURL = &quot;http://&quot; + WSTrustAppUtils.getServerHost() + &quot;:8080/jaxws-samples-wsse-policy-trust/SecurityService&quot;;
+         final QName serviceName = new QName(&quot;http://www.jboss.org/jbossws/ws-extensions/wssecuritypolicy&quot;, &quot;SecurityService&quot;);
+         final URL wsdlURL = new URL(serviceURL + &quot;?wsdl&quot;);
+         Service service = Service.create(wsdlURL, serviceName);
+         proxy = (ServiceIface) service.getPort(ServiceIface.class);
+
+         Map&lt;String, Object&gt; ctx = ((BindingProvider) proxy).getRequestContext();
+         ctx.put(SecurityConstants.CALLBACK_HANDLER, new ActAsCallbackHandler());
+
+         ctx.put(SecurityConstants.SIGNATURE_PROPERTIES,
+            Thread.currentThread().getContextClassLoader().getResource(&quot;actasKeystore.properties&quot; ));
+         ctx.put(SecurityConstants.SIGNATURE_USERNAME, &quot;myactaskey&quot; );
+         ctx.put(SecurityConstants.ENCRYPT_PROPERTIES,
+            Thread.currentThread().getContextClassLoader().getResource(&quot;../../META-INF/clientKeystore.properties&quot; ));
+         ctx.put(SecurityConstants.ENCRYPT_USERNAME, &quot;myservicekey&quot;);
+
+         STSClient stsClient = new STSClient(bus);
+         Map&lt;String, Object&gt; props = stsClient.getProperties();
+         props.put(SecurityConstants.USERNAME, &quot;alice&quot;);
+         props.put(SecurityConstants.ENCRYPT_USERNAME, &quot;mystskey&quot;);
+         props.put(SecurityConstants.STS_TOKEN_USERNAME, &quot;myactaskey&quot; );
+         props.put(SecurityConstants.STS_TOKEN_PROPERTIES,
+            Thread.currentThread().getContextClassLoader().getResource(&quot;actasKeystore.properties&quot; ));
+         props.put(SecurityConstants.STS_TOKEN_USE_CERT_FOR_KEYINFO, &quot;true&quot;);
+
+         ctx.put(SecurityConstants.STS_CLIENT, stsClient);
+
+      } finally {
+         bus.shutdown(true);
+      }
+
+      return proxy;
+   }
+
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-ActAsCallbackHandler"  >
+        <h4>ActAsCallbackHandler</h4>
+    
+    <p>
+ActAsCallbackHandler is a callback handler for the WSS4J Crypto API.&nbsp; It  is used to obtain the password for the private key in the keystore.&nbsp;  This class enables CXF to retrieve the password of the user name to use  for the message signature.&nbsp; This class has been revised to return the  passwords for this service, myactaskey and the &quot;actas&quot; user,  alice.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">package org.jboss.test.ws.jaxws.samples.wsse.policy.trust.actas;
+
+import org.jboss.wsf.stack.cxf.extensions.security.PasswordCallbackHandler;
+import java.util.HashMap;
+import java.util.Map;
+
+public class ActAsCallbackHandler extends PasswordCallbackHandler {
+
+   public ActAsCallbackHandler()
+   {
+      super(getInitMap());
+   }
+
+   private static Map&lt;String, String&gt; getInitMap()
+   {
+      Map&lt;String, String&gt; passwords = new HashMap&lt;String, String&gt;();
+      passwords.put(&quot;myactaskey&quot;, &quot;aspass&quot;);
+      passwords.put(&quot;alice&quot;, &quot;clarinet&quot;);
+      return passwords;
+   }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-UsernameTokenCallbackHandler"  >
+        <h4>UsernameTokenCallbackHandler</h4>
+    
+    <p>
+    <span style="color: #000000;">
+The ActAs and OnBeholdOf sub-elements of the RequestSecurityToken are  required to be defined as WSSE Username Tokens.&nbsp; This utility generates  the properly formated element.    </span>
+    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">package org.jboss.test.ws.jaxws.samples.wsse.policy.trust.shared;
+
+import org.apache.cxf.helpers.DOMUtils;
+import org.apache.cxf.message.Message;
+import org.apache.cxf.ws.security.SecurityConstants;
+import org.apache.cxf.ws.security.trust.delegation.DelegationCallback;
+import org.apache.ws.security.WSConstants;
+import org.apache.ws.security.message.token.UsernameToken;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSSerializer;
+
+import javax.security.auth.callback.Callback;
+import javax.security.auth.callback.CallbackHandler;
+import javax.security.auth.callback.UnsupportedCallbackException;
+import java.io.IOException;
+import java.util.Map;
+
+/**
+* A utility to provide the 3 different input parameter types for jaxws property
+* &quot;ws-security.sts.token.act-as&quot; and &quot;ws-security.sts.token.on-behalf-of&quot;.
+* This implementation obtains a username and password via the jaxws property
+* &quot;ws-security.username&quot; and &quot;ws-security.password&quot; respectively, as defined
+* in SecurityConstants.  It creates a wss UsernameToken to be used as the
+* delegation token.
+*/
+
+public class UsernameTokenCallbackHandler implements CallbackHandler {
+
+   public void handle(Callback[] callbacks)
+      throws IOException, UnsupportedCallbackException {
+      for (int i = 0; i &lt; callbacks.length; i++) {
+         if (callbacks[i] instanceof DelegationCallback) {
+            DelegationCallback callback = (DelegationCallback) callbacks[i];
+            Message message = callback.getCurrentMessage();
+
+            String username =
+               (String)message.getContextualProperty(SecurityConstants.USERNAME);
+            String password =
+               (String)message.getContextualProperty(SecurityConstants.PASSWORD);
+            if (username != null) {
+               Node contentNode = message.getContent(Node.class);
+               Document doc = null;
+               if (contentNode != null) {
+                  doc = contentNode.getOwnerDocument();
+               } else {
+                  doc = DOMUtils.createDocument();
+               }
+               UsernameToken usernameToken = createWSSEUsernameToken(username,password, doc);
+               callback.setToken(usernameToken.getElement());
+            }
+         } else {
+            throw new UnsupportedCallbackException(callbacks[i], &quot;Unrecognized Callback&quot;);
+         }
+      }
+   }
+
+   /**
+    * Provide UsernameToken as a string.
+    * @param ctx
+    * @return
+    */
+   public String getUsernameTokenString(Map&lt;String, Object&gt; ctx){
+      Document doc = DOMUtils.createDocument();
+      String result = null;
+      String username = (String)ctx.get(SecurityConstants.USERNAME);
+      String password = (String)ctx.get(SecurityConstants.PASSWORD);
+      if (username != null) {
+         UsernameToken usernameToken = createWSSEUsernameToken(username,password, doc);
+         result = toString(usernameToken.getElement().getFirstChild().getParentNode());
+      }
+      return result;
+   }
+
+   /**
+    *
+    * @param username
+    * @param password
+    * @return
+    */
+   public String getUsernameTokenString(String username, String password){
+      Document doc = DOMUtils.createDocument();
+      String result = null;
+      if (username != null) {
+         UsernameToken usernameToken = createWSSEUsernameToken(username,password, doc);
+         result = toString(usernameToken.getElement().getFirstChild().getParentNode());
+      }
+      return result;
+   }
+
+   /**
+    * Provide UsernameToken as a DOM Element.
+    * @param ctx
+    * @return
+    */
+   public Element getUsernameTokenElement(Map&lt;String, Object&gt; ctx){
+      Document doc = DOMUtils.createDocument();
+      Element result = null;
+      UsernameToken usernameToken = null;
+         String username = (String)ctx.get(SecurityConstants.USERNAME);
+      String password = (String)ctx.get(SecurityConstants.PASSWORD);
+      if (username != null) {
+         usernameToken = createWSSEUsernameToken(username,password, doc);
+         result = usernameToken.getElement();
+      }
+      return result;
+   }
+
+   /**
+    *
+    * @param username
+    * @param password
+    * @return
+    */
+   public Element getUsernameTokenElement(String username, String password){
+      Document doc = DOMUtils.createDocument();
+      Element result = null;
+      UsernameToken usernameToken = null;
+      if (username != null) {
+         usernameToken = createWSSEUsernameToken(username,password, doc);
+         result = usernameToken.getElement();
+      }
+      return result;
+   }
+
+   private UsernameToken createWSSEUsernameToken(String username, String password, Document doc) {
+
+      UsernameToken usernameToken = new UsernameToken(true, doc,
+         (password == null)? null: WSConstants.PASSWORD_TEXT);
+      usernameToken.setName(username);
+      usernameToken.addWSUNamespace();
+      usernameToken.addWSSENamespace();
+      usernameToken.setID(&quot;id-&quot; + username);
+
+      if (password != null){
+         usernameToken.setPassword(password);
+      }
+
+      return usernameToken;
+   }
+
+
+   private String toString(Node node) {
+      String str = null;
+
+      if (node != null) {
+         DOMImplementationLS lsImpl = (DOMImplementationLS)
+            node.getOwnerDocument().getImplementation().getFeature(&quot;LS&quot;, &quot;3.0&quot;);
+         LSSerializer serializer = lsImpl.createLSSerializer();
+         serializer.getDomConfig().setParameter(&quot;xml-declaration&quot;, false); //by default its true, so set it to false to get String without xml-declaration
+         str = serializer.writeToString(node);
+      }
+      return str;
+   }
+
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-Cryptopropertiesandkeystorefiles"  >
+        <h4>Crypto properties and keystore files</h4>
+    
+    <p>
+    <span style="color: #000000;">
+The ActAs service must provide its own  credentials.&nbsp; The requisite properties file, actasKeystore.properties,  and keystore, actasstore.jks, were created.    </span>
+    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">org.apache.ws.security.crypto.provider=org.apache.ws.security.components.crypto.Merlin
+org.apache.ws.security.crypto.merlin.keystore.type=jks
+org.apache.ws.security.crypto.merlin.keystore.password=aapass
+org.apache.ws.security.crypto.merlin.keystore.alias=myactaskey
+org.apache.ws.security.crypto.merlin.keystore.file=actasstore.jks</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-MANIFEST.MF"  >
+        <h4>MANIFEST.MF</h4>
+    
+    <p>
+    <span style="color: #000000;">
+When deployed on WildFly this application requires  access to the JBossWs and CXF APIs provided in modules  org.jboss.ws.cxf.jbossws-cxf-client and org.apache.cxf.&nbsp; The Apache CXF internals,  org.apache.cxf.impl,&nbsp; are needed in handling the ActAs and OnBehalfOf  extensions.&nbsp; The dependency statement directs the server to  provide them at deployment.    </span>
+    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.7.0_25-b15 (Oracle Corporation)
+Dependencies: org.jboss.ws.cxf.jbossws-cxf-client, org.apache.cxf.impl</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="90439847_ActAsWS-TrustScenario-SecurityTokenService"  >
+        <h3>Security Token Service</h3>
+    
+    <p>
+This section examines the STS elements from the basic WS-Trust  scenario that have been changed to address the needs of the ActAs  example.&nbsp; The components are.    </p>
+<ul class=" "><li class=" ">    <p>
+STS's implementation class.    </p>
+</li><li class=" ">    <p>
+STSCallbackHandler class    </p>
+</li></ul>    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-STSImplementationclass"  >
+        <h4>STS Implementation class</h4>
+    
+    <p>
+The initial description of SampleSTS can be found <a href="ActAs_WS-Trust_Scenario.html#90439847_ActAsWS-TrustScenario-STSImplementation">here</a>.    </p>
+    <p>
+The  declaration of the set of allowed token recipients by address has  been extended to accept ActAs addresses and OnBehalfOf  addresses.&nbsp; The addresses are specified as reg-ex  patterns.    </p>
+    <p>
+The  TokenIssueOperation requires class, UsernameTokenValidator be provided  in order to validate the contents of the OnBehalfOf claims and class,  UsernameTokenDelegationHandler to be provided in order to process the  token delegation request of the ActAs on OnBehalfOf user.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;"> package org.jboss.test.ws.jaxws.samples.wsse.policy.trust.sts;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.xml.ws.WebServiceProvider;
+
+import org.apache.cxf.annotations.EndpointProperties;
+import org.apache.cxf.annotations.EndpointProperty;
+import org.apache.cxf.interceptor.InInterceptors;
+import org.apache.cxf.sts.StaticSTSProperties;
+import org.apache.cxf.sts.operation.TokenIssueOperation;
+import org.apache.cxf.sts.operation.TokenValidateOperation;
+import org.apache.cxf.sts.service.ServiceMBean;
+import org.apache.cxf.sts.service.StaticService;
+import org.apache.cxf.sts.token.delegation.UsernameTokenDelegationHandler;
+import org.apache.cxf.sts.token.provider.SAMLTokenProvider;
+import org.apache.cxf.sts.token.validator.SAMLTokenValidator;
+import org.apache.cxf.sts.token.validator.UsernameTokenValidator;
+import org.apache.cxf.ws.security.sts.provider.SecurityTokenServiceProvider;
+
+@WebServiceProvider(serviceName = &quot;SecurityTokenService&quot;,
+      portName = &quot;UT_Port&quot;,
+      targetNamespace = &quot;http://docs.oasis-open.org/ws-sx/ws-trust/200512/&quot;,
+      wsdlLocation = &quot;WEB-INF/wsdl/ws-trust-1.4-service.wsdl&quot;)
+//be sure to have dependency on org.apache.cxf module when on AS7, otherwise Apache CXF annotations are ignored
+@EndpointProperties(value = {
+      @EndpointProperty(key = &quot;ws-security.signature.username&quot;, value = &quot;mystskey&quot;),
+      @EndpointProperty(key = &quot;ws-security.signature.properties&quot;, value = &quot;stsKeystore.properties&quot;),
+      @EndpointProperty(key = &quot;ws-security.callback-handler&quot;, value = &quot;org.jboss.test.ws.jaxws.samples.wsse.policy.trust.sts.STSCallbackHandler&quot;),
+      @EndpointProperty(key = &quot;ws-security.validate.token&quot;, value = &quot;false&quot;) //to let the JAAS integration deal with validation through the interceptor below
+})
+@InInterceptors(interceptors = {&quot;org.jboss.wsf.stack.cxf.security.authentication.SubjectCreatingPolicyInterceptor&quot;})
+public class SampleSTS extends SecurityTokenServiceProvider
+{
+   public SampleSTS() throws Exception
+   {
+      super();
+
+      StaticSTSProperties props = new StaticSTSProperties();
+      props.setSignatureCryptoProperties(&quot;stsKeystore.properties&quot;);
+      props.setSignatureUsername(&quot;mystskey&quot;);
+      props.setCallbackHandlerClass(STSCallbackHandler.class.getName());
+      props.setIssuer(&quot;DoubleItSTSIssuer&quot;);
+
+      List&lt;ServiceMBean&gt; services = new LinkedList&lt;ServiceMBean&gt;();
+      StaticService service = new StaticService();
+      service.setEndpoints(Arrays.asList(
+         &quot;http://localhost:(\\d)*/jaxws-samples-wsse-policy-trust/SecurityService&quot;,
+         &quot;http://\\[::1\\]:(\\d)*/jaxws-samples-wsse-policy-trust/SecurityService&quot;,
+         &quot;http://\\[0:0:0:0:0:0:0:1\\]:(\\d)*/jaxws-samples-wsse-policy-trust/SecurityService&quot;,
+
+         &quot;http://localhost:(\\d)*/jaxws-samples-wsse-policy-trust-actas/ActAsService&quot;,
+         &quot;http://\\[::1\\]:(\\d)*/jaxws-samples-wsse-policy-trust-actas/ActAsService&quot;,
+         &quot;http://\\[0:0:0:0:0:0:0:1\\]:(\\d)*/jaxws-samples-wsse-policy-trust-actas/ActAsService&quot;,
+
+         &quot;http://localhost:(\\d)*/jaxws-samples-wsse-policy-trust-onbehalfof/OnBehalfOfService&quot;,
+         &quot;http://\\[::1\\]:(\\d)*/jaxws-samples-wsse-policy-trust-onbehalfof/OnBehalfOfService&quot;,
+         &quot;http://\\[0:0:0:0:0:0:0:1\\]:(\\d)*/jaxws-samples-wsse-policy-trust-onbehalfof/OnBehalfOfService&quot;
+      ));
+      services.add(service);
+
+      TokenIssueOperation issueOperation = new TokenIssueOperation();
+      issueOperation.setServices(services);
+      issueOperation.getTokenProviders().add(new SAMLTokenProvider());
+      // required for OnBehalfOf
+      issueOperation.getTokenValidators().add(new UsernameTokenValidator());
+      // added for OnBehalfOf and ActAs
+      issueOperation.getDelegationHandlers().add(new UsernameTokenDelegationHandler());
+      issueOperation.setStsProperties(props);
+
+      TokenValidateOperation validateOperation = new TokenValidateOperation();
+      validateOperation.getTokenValidators().add(new SAMLTokenValidator());
+      validateOperation.setStsProperties(props);
+
+      this.setIssueOperation(issueOperation);
+      this.setValidateOperation(validateOperation);
+   }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-STSCallbackHandler"  >
+        <h4>STSCallbackHandler</h4>
+    
+    <p>
+The user, alice, and corresponding password was required to be added for the ActAs example.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">package org.jboss.test.ws.jaxws.samples.wsse.policy.trust.sts;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.jboss.wsf.stack.cxf.extensions.security.PasswordCallbackHandler;
+
+public class STSCallbackHandler extends PasswordCallbackHandler
+{
+   public STSCallbackHandler()
+   {
+      super(getInitMap());
+   }
+
+   private static Map&lt;String, String&gt; getInitMap()
+   {
+      Map&lt;String, String&gt; passwords = new HashMap&lt;String, String&gt;();
+      passwords.put(&quot;mystskey&quot;, &quot;stskpass&quot;);
+      passwords.put(&quot;alice&quot;, &quot;clarinet&quot;);
+      return passwords;
+   }
+}</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="section-3"  id="90439847_ActAsWS-TrustScenario-Webservicerequester"  >
+        <h3>Web service requester</h3>
+    
+    <p>
+This section examines the ws-requester elements from the basic  WS-Trust  scenario that have been changed to address the needs of the ActAs  example.&nbsp; The component is    </p>
+<ul class=" "><li class=" ">    <p>
+ActAs&nbsp; web service requester implementation class    </p>
+</li></ul>    <div class="section-4"  id="90439847_ActAsWS-TrustScenario-WebservicerequesterImplementation"  >
+        <h4>Web service requester Implementation</h4>
+    
+    <p>
+The ActAs ws-requester, the client, uses standard procedures for  creating a reference to the web service in the first four lines.&nbsp; To  address the endpoint security requirements, the web service's &quot;Request  Context&quot; is configured via the BindingProvider. Information needed in  the message generation is provided through it.&nbsp; The ActAs user, myactaskey, is declared in this section and  UsernameTokenCallbackHandler is used to provide the contents of the ActAs element to the STSClient.&nbsp; In this example a  STSClient object is created and provided to the proxy's request context.  The alternative is to provide keys tagged with the &quot;.it&quot; suffix as was  done in <a href="https://docs.jboss.org/author/display/JBWS/WS-Trust+and+STS#WS-TrustandSTS-WebservicerequesterImplementation">the Basic Scenario client</a>. The use of ActAs is configured through the props map using the SecurityConstants.STS_TOKEN_ACT_AS key.&nbsp; The alternative is to use the STSClient.setActAs method.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;"> final QName serviceName = new QName(&quot;http://www.jboss.org/jbossws/ws-extensions/actaswssecuritypolicy&quot;, &quot;ActAsService&quot;);
+final URL wsdlURL = new URL(serviceURL + &quot;?wsdl&quot;);
+Service service = Service.create(wsdlURL, serviceName);
+ActAsServiceIface proxy = (ActAsServiceIface) service.getPort(ActAsServiceIface.class);
+
+Bus bus = BusFactory.newInstance().createBus();
+try {
+    BusFactory.setThreadDefaultBus(bus);
+
+    Map&lt;String, Object&gt; ctx = proxy.getRequestContext();
+
+    ctx.put(SecurityConstants.CALLBACK_HANDLER, new ClientCallbackHandler());
+    ctx.put(SecurityConstants.ENCRYPT_PROPERTIES,
+        Thread.currentThread().getContextClassLoader().getResource(
+        &quot;META-INF/clientKeystore.properties&quot;));
+    ctx.put(SecurityConstants.ENCRYPT_USERNAME, &quot;myactaskey&quot;);
+    ctx.put(SecurityConstants.SIGNATURE_PROPERTIES,
+        Thread.currentThread().getContextClassLoader().getResource(
+        &quot;META-INF/clientKeystore.properties&quot;));
+    ctx.put(SecurityConstants.SIGNATURE_USERNAME, &quot;myclientkey&quot;);
+
+    // Generate the ActAs element contents and pass to the STSClient as a string
+    UsernameTokenCallbackHandler ch = new UsernameTokenCallbackHandler();
+    String str = ch.getUsernameTokenString(&quot;alice&quot;,&quot;clarinet&quot;);
+    ctx.put(SecurityConstants.STS_TOKEN_ACT_AS, str);
+
+    STSClient stsClient = new STSClient(bus);
+    Map&lt;String, Object&gt; props = stsClient.getProperties();
+    props.put(SecurityConstants.USERNAME, &quot;bob&quot;);
+    props.put(SecurityConstants.CALLBACK_HANDLER, new ClientCallbackHandler());
+    props.put(SecurityConstants.ENCRYPT_PROPERTIES,
+        Thread.currentThread().getContextClassLoader().getResource(
+        &quot;META-INF/clientKeystore.properties&quot;));
+    props.put(SecurityConstants.ENCRYPT_USERNAME, &quot;mystskey&quot;);
+    props.put(SecurityConstants.STS_TOKEN_USERNAME, &quot;myclientkey&quot;);
+    props.put(SecurityConstants.STS_TOKEN_PROPERTIES,
+        Thread.currentThread().getContextClassLoader().getResource(
+        &quot;META-INF/clientKeystore.properties&quot;));
+    props.put(SecurityConstants.STS_TOKEN_USE_CERT_FOR_KEYINFO, &quot;true&quot;);
+
+    ctx.put(SecurityConstants.STS_CLIENT, stsClient);
+} finally {
+    bus.shutdown(true);
+}
+proxy.sayHello();</pre>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="previous"><a accesskey="p" href="WS-Trust_and_STS.html"><strong>Prev</strong>Trust and STS</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="OnBehalfOf_WS-Trust_Scenario.html"><strong>Next</strong>OnBehalfOf WS-Trust Scenario</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

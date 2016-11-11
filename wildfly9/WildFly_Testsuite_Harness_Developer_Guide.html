@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WildFly Testsuite Harness Developer Guide - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="previous"><a accesskey="p" href="Troubleshooting_Common_Issues.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <li class="next"><a accesskey="n" href="Debug_parameters_propagation.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                  </ul>
+                    <div>
+            <h1>WildFly Testsuite Harness Developer Guide</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <p>
+<strong class=" ">Audience:</strong> Whoever wants to change the testsuite harness    </p>
+    <p>
+<strong class=" ">JIRA</strong>:&nbsp;<a href="https://issues.jboss.org/browse/WFLY-576">WFLY-576</a>    </p>
+    <div class="section-2"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-Testsuiterequirements"  >
+        <h2>Testsuite requirements</h2>
+    
+    <p>
+<a href="http://community.jboss.org/wiki/ASTestsuiteRequirements">http://community.jboss.org/wiki/ASTestsuiteRequirements</a> will probably be merged here later.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-Addinganewmavenplugin"  >
+        <h2>Adding a new maven plugin</h2>
+    
+    <p>
+The plugin version needs to be specified in jboss-parent. See <a href="https://github.com/jboss/jboss-parent-pom/blob/master/pom.xml#L65">https://github.com/jboss/jboss-parent-pom/blob/master/pom.xml#L65</a> .    </p>
+    </div>
+    
+    <div class="section-2"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-ShortenedMavenrunoverview"  >
+        <h2>Shortened Maven run overview</h2>
+    
+    <p>
+See <a href="https://docs.jboss.org/author/display/AS71/Shortened+Maven+Run+Overview">Shortened Maven Run Overview</a>.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-HowtheASinstanceisbuilt"  >
+        <h2>How the AS instance is built</h2>
+    
+    <p>
+See <a href="https://docs.jboss.org/author/display/AS71/How+the+JBoss+AS+instance+is+built+and+configured+for+testsuite+modules.">How the JBoss AS instance is built and configured for testsuite modules.</a>    </p>
+    </div>
+    
+    <div class="section-2"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-Propertiesandtheirpropagation"  >
+        <h2>Properties and their propagation</h2>
+    
+    <p>
+&#65279;Propagated to tests through arquillian.xml:<br/>&nbsp;&nbsp;&nbsp;&nbsp; <tt class=" ">&lt;property name=&quot;javaVmArguments&quot;&gt;${server.jvm.args}&lt;/property&gt;</tt><br/>TBD: <a href="https://issues.jboss.org/browse/ARQ-647">https://issues.jboss.org/browse/ARQ-647</a>    </p>
+    <div class="section-3"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-JBossASinstancedir"  >
+        <h3>JBoss AS instance dir</h3>
+    
+    <p>
+<strong class=" ">integration/pom.xml</strong>    </p>
+    <p>
+(currently nothing)    </p>
+    <p>
+<strong class=" ">*-arquillian.xml</strong>    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;container qualifier=&quot;jboss&quot; default=&quot;true&quot;&gt;
+    &lt;configuration&gt;
+        &lt;property name=&quot;jbossHome&quot;&gt;${basedir}/target/jbossas&lt;/property&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-ServerJVMarguments"  >
+        <h3>Server JVM arguments</h3>
+    
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;surefire.memory.args&gt;-Xmx512m -XX:MaxPermSize=256m&lt;/surefire.memory.args&gt;
+    &lt;surefire.jpda.args&gt;&lt;/surefire.jpda.args&gt;
+    &lt;surefire.system.args&gt;${surefire.memory.args} ${surefire.jpda.args}&lt;/surefire.system.args&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-3"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-IPsettings"  >
+        <h3>IP settings</h3>
+    
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">${ip.server.stack</tt><strong class=" ">}</strong> - used in <tt class=" ">&lt;systemPropertyVariables&gt; / &lt;server.jvm.args&gt;</tt> which is used in <tt class=" ">*-arquillian.xml</tt>.    </p>
+</li></ul>    </div>
+    
+    <div class="section-3"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-Testsuitedirectories"  >
+        <h3>Testsuite directories</h3>
+    
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">${jbossas.ts.integ.dir</tt>}    </p>
+</li><li class=" ">    <p>
+<tt class=" ">${jbossas.ts.dir</tt>}    </p>
+</li><li class=" ">    <p>
+<tt class=" ">${jbossas.project.dir</tt>}    </p>
+</li></ul>    </div>
+    
+    <div class="section-3"  id="80873465_WildFlyTestsuiteHarnessDeveloperGuide-Clusteringproperties"  >
+        <h3>Clustering properties</h3>
+    
+<ul class=" "><li class=" ">    <p>
+node0    </p>
+</li><li class=" ">    <p>
+node1    </p>
+</li></ul>    </div>
+    
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <li class="previous"><a accesskey="p" href="Troubleshooting_Common_Issues.html"><strong>Prev</strong>Troubleshooting Common Issues</a></li>
+                                                                                                                                                                                                                              <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="next"><a accesskey="n" href="Debug_parameters_propagation.html"><strong>Next</strong>Debug parameters propagation</a></li>
+                                                                                                                                                                                                                                                                                </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>

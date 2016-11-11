@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Java API for RESTful Web Services (JAX-RS) - WildFly 9</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta content="Scroll Wiki Publisher" name="generator"/>
+
+    <link type="text/css" rel="stylesheet" href="css/blueprint/liquid.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/blueprint/print.css" media="print"/>
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+    <link type="text/css" rel="stylesheet" href="css/content-style.css" media="screen, projection, print"/>
+    <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen, projection"/>
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+    
+    <link type="text/css" rel="stylesheet" href="css/jbossorg.css"/>
+    <link type="text/css" rel="stylesheet" href="css/docnav.css"/>    
+    
+    <link type="text/css" rel="stylesheet" href="sh/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="sh/shCoreDefault.css"/>
+    <script type="text/javascript" src="sh/shCore.js"></script>
+    <script type="text/javascript" src="sh/shBrushAppleScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushAS3.js"></script>
+    <script type="text/javascript" src="sh/shBrushBash.js"></script>
+    <script type="text/javascript" src="sh/shBrushCpp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="sh/shBrushCss.js"></script>
+    <script type="text/javascript" src="sh/shBrushDiff.js"></script>
+    <script type="text/javascript" src="sh/shBrushErlang.js"></script>
+    <script type="text/javascript" src="sh/shBrushGroovy.js"></script>
+    <script type="text/javascript" src="sh/shBrushJava.js"></script>
+    <script type="text/javascript" src="sh/shBrushJavaFX.js"></script>
+    <script type="text/javascript" src="sh/shBrushJScript.js"></script>
+    <script type="text/javascript" src="sh/shBrushPerl.js"></script>
+    <script type="text/javascript" src="sh/shBrushPhp.js"></script>
+    <script type="text/javascript" src="sh/shBrushPlain.js"></script>
+    <script type="text/javascript" src="sh/shBrushPython.js"></script>
+    <script type="text/javascript" src="sh/shBrushRuby.js"></script>
+    <script type="text/javascript" src="sh/shBrushScala.js"></script>
+    <script type="text/javascript" src="sh/shBrushSql.js"></script>
+    <script type="text/javascript" src="sh/shBrushVb.js"></script>
+    <script type="text/javascript" src="sh/shBrushXml.js"></script>
+    
+</head>
+<body>
+    <div class="container" style="min-width: 760px;">
+        <div class="block header">
+          <p id="title">
+            <a class="site_href" href="http://www.jboss.org"><strong>JBoss.org</strong></a>
+            <a class="doc_href" href="http://docs.jboss.org"><strong>Community Documentation</strong></a>
+          </p>
+                  <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <li class="previous"><a accesskey="p" href="Standard_JavaEE_6_Technologies.html"><strong>Prev</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="next"><a accesskey="n" href="Java_Servlet_Technology.html"><strong>Next</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </ul>
+                    <div>
+            <h1>Java API for RESTful Web Services (JAX-RS)</h1>
+          </div>          
+          </div>
+
+        <div class="block content">
+    <div class="section-2"  id="80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-Content"  >
+        <h2>Content</h2>
+    
+<ul class=" "><li class=" ">    <p>
+<a href="Java_API_for_RESTful_Web_Services_(JAX-RS).html#80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-TutorialOverview">Tutorial Overview</a>    </p>
+</li><li class=" ">    <p>
+<a href="Java_API_for_RESTful_Web_Services_(JAX-RS).html#80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-WhatareRESTfulWebServices%3F">What are RESTful Web Services?</a>    </p>
+</li><li class=" ">    <p>
+<a href="Java_API_for_RESTful_Web_Services_(JAX-RS).html#80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-CreatingaRESTfulendpoint">Creating a RESTful endpoint</a>    </p>
+</li><li class=" ">    <p>
+<a href="Java_API_for_RESTful_Web_Services_(JAX-RS).html#80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-Packageandbuildtheendpoint">Package and build the endpoint</a>    </p>
+</li><li class=" ">    <p>
+<a href="Java_API_for_RESTful_Web_Services_(JAX-RS).html#80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-DeploytheendpointtoOpenShift">Deploy the endpoint to OpenShift</a>    </p>
+</li><li class=" ">    <p>
+<a href="Java_API_for_RESTful_Web_Services_(JAX-RS).html#80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-Buildingthemobileclient">Building the mobile client</a>    </p>
+</li><li class=" ">    <p>
+<a href="Java_API_for_RESTful_Web_Services_(JAX-RS).html#80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-Exploringthemobileclient">Exploring the mobile client</a>    </p>
+</li></ul>    </div>
+    
+    <div class="section-2"  id="80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-TutorialOverview"  >
+        <h2>Tutorial Overview</h2>
+    
+    <p>
+This chapter describes the Java API for RESTful web services (JAX-RS, defined in <a href="http://jcp.org/en/jsr/detail?id=311">JSR331</a>). <a href="http://www.jboss.org/resteasy">RESTEasy</a> is an portable implementation of this specification which can run in any Servlet container. Tight integration with JBoss Application Server is available for optimal user experience in that environment. While JAX-RS is only a server-side specification, RESTeasy has innovated to bring JAX-RS to the client through the RESTEasy JAX-RS Client Framework.    </p>
+    <p>
+Detailed documentation on RESTEasy is available <a href="http://www.jboss.org/resteasy/docs.html">here</a>.<br/>The source for this tutorial is in github repository <a href="https://github.com/tdiesler/javaee-tutorial">git://github.com/tdiesler/javaee-tutorial.git</a>    </p>
+    <p>
+<a href="https://openshift.redhat.com/app">OpenShift</a>, is a portfolio of portable cloud services for deploying and managing applications in the cloud. This tutorial shows how to deploy a RESTful web service on the free OpenShift Express JavaEE cartridge that runs <a href="http://www.jboss.org/jbossas">JBossAS 7</a>.    </p>
+    <p>
+An application running on <a href="http://www.android.com">Android</a> shows how to leverage JBoss technology on mobile devices. Specifically, we show how use the RESTEasy client API from an Android device to integrate with a RESTful service running on a JBossAS 7 instance in the cloud.    </p>
+    <p>
+The following topics are addressed    </p>
+<ul class=" "><li class=" ">    <p>
+What are RESTful web services    </p>
+</li><li class=" ">    <p>
+Creating a RESTful server endpoint    </p>
+</li><li class=" ">    <p>
+Deploying a RESTful endpoint to a JBossAS instance in the cloud    </p>
+</li><li class=" ">    <p>
+RESTEasy client running on an Android mobile device    </p>
+</li></ul>    </div>
+    
+    <div class="section-2"  id="80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-WhatareRESTfulWebServices%3F"  >
+        <h2>What are RESTful Web Services?</h2>
+    
+    <div class="confbox admonition admonition-info">
+            <div class="title">Coming Soon</div>
+        
+    <p>
+This section is still under development.    </p>
+    </div>
+    
+    <p>
+RESTful web services are designed to expose APIs on the web. REST stands for <strong class=" ">Re</strong>presentational <strong class=" ">S</strong>tate <strong class=" ">T</strong>ransfer. It aims to provide better performance, scalability, and flexibility than traditinoal web services, by allowing clients to access data and resources using predictable URLs. Many well-known public web services expose RESTful APIs.    </p>
+    <p>
+The Java 6 Enterprise Edition specification for RESTful services is JAX-RS. It is covered by JSR-311 (<a href="http://jcp.org/jsr/detail/311.jsp">http://jcp.org/jsr/detail/311.jsp</a>). In the REST model, the server exposes APIs through specific URIs (typically URLs), and clients access those URIs to query or modify data. REST uses a stateless communication protocol. Typically, this is HTTP.    </p>
+    <p>
+The following is a summary of RESTful design principles:    </p>
+<ul class=" "><li class=" ">    <p>
+A URL is tied to a resource using the <tt class=" ">@Path</tt> annotation. Clients access the resource using the URL.    </p>
+</li><li class=" ">    <p>
+Create, Read, Update, and Delete (CRUD) operations are accessed via <tt class=" ">PUT</tt>, <tt class=" ">GET</tt>, <tt class=" ">POST</tt>, and <tt class=" ">DELETE</tt> requests in the HTTP protocol.    </p>
+<ul class=" "><li class=" ">    <p>
+<tt class=" ">PUT</tt> creates a new resource.&nbsp;    </p>
+</li><li class=" ">    <p>
+<tt class=" ">DELETE</tt> deletes a resource.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">GET</tt> retrieves the current state of a resource.    </p>
+</li><li class=" ">    <p>
+<tt class=" ">POST</tt> updates a resources's state.    </p>
+</li></ul></li><li class=" ">    <p>
+Resources are decoupled from their representation, so that clients can request the data in a variety of different formats.    </p>
+</li><li class=" ">    <p>
+Stateful interactions require explicit state transfer, in the form of URL rewriting, cookies, and hidden form fields. State can also be embedded in response messages.    </p>
+</li></ul>    </div>
+    
+    <div class="section-2"  id="80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-CreatingaRESTfulendpoint"  >
+        <h2>Creating a RESTful endpoint</h2>
+    
+    <p>
+A RESTful endpoint is deployed as JavaEE web archive (WAR). For this tutorial we use a simple library application to manage some books. There are two classes in this application:    </p>
+<ul class=" "><li class=" ">    <p>
+Library    </p>
+</li><li class=" ">    <p>
+Book    </p>
+</li></ul>    <p>
+The Book is a plain old Java object (POJO) with two attributes. This is a simple Java representation of a RESTful entity.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">public class Book {
+
+    private String isbn;
+    private String title;
+
+    ...
+}</pre>
+        </div>
+    </div>
+    <p>
+The Library is the RESTful Root Resource. Here we use a set of standard JAX-RS annotations to define    </p>
+<ul class=" "><li class=" ">    <p>
+The root path to the library resource    </p>
+</li><li class=" ">    <p>
+The wire representation of the data (MIME type)    </p>
+</li><li class=" ">    <p>
+The Http methods and corresponding paths    </p>
+</li></ul>    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">@Path(&quot;/library&quot;)
+@Consumes({ &quot;application/json&quot; })
+@Produces({ &quot;application/json&quot; })
+public class Library {
+
+    @GET
+    @Path(&quot;/books&quot;)
+    public Collection&lt;Book&gt; getBooks() {
+    ...
+    }
+
+    @GET
+    @Path(&quot;/book/{isbn}&quot;)
+    public Book getBook(@PathParam(&quot;isbn&quot;) String id) {
+    ...
+    }
+
+    @PUT
+    @Path(&quot;/book/{isbn}&quot;)
+    public Book addBook(@PathParam(&quot;isbn&quot;) String id, @QueryParam(&quot;title&quot;) String title) {
+    ...
+    }
+
+    @POST
+    @Path(&quot;/book/{isbn}&quot;)
+    public Book updateBook(@PathParam(&quot;isbn&quot;) String id, String title) {
+    ...
+    }
+
+    @DELETE
+    @Path(&quot;/book/{isbn}&quot;)
+    public Book removeBook(@PathParam(&quot;isbn&quot;) String id) {
+    ...
+    }
+}</pre>
+        </div>
+    </div>
+    <p>
+The Library root resource uses these JAX-RS annotations:    </p>
+    <div class="tablewrap">
+        <table>
+<thead class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+Annotation    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Description    </p>
+            </td>
+        </tr>
+</thead><tfoot class=" "></tfoot><tbody class=" ">    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+@Path    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Identifies the URI path that a resource class or class method will serve requests for    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+@Consumes    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Defines the media types that the methods of a resource class can accept    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+@Produces    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Defines the media type(s) that the methods of a resource class can produce    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+@GET    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Indicates that the annotated method responds to HTTP GET requests    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+@PUT    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Indicates that the annotated method responds to HTTP PUT requests    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+@POST    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Indicates that the annotated method responds to HTTP POST requests    </p>
+            </td>
+        </tr>
+    <tr>
+            <td rowspan="1" colspan="1">
+        <p>
+@DELETE    </p>
+            </td>
+                <td rowspan="1" colspan="1">
+        <p>
+Indicates that the annotated method responds to HTTP DELETE requests    </p>
+            </td>
+        </tr>
+</tbody>        </table>
+            </div>
+    <p>
+For a full description of the available JAX-RS annotations, see the <a href="http://download.oracle.com/javaee/6/api/javax/ws/rs/package-summary.html">JAX-RS API</a> documentation.    </p>
+    </div>
+    
+    <div class="section-2"  id="80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-Packageandbuildtheendpoint"  >
+        <h2>Package and build the endpoint</h2>
+    
+    <p>
+To package the endpoint we create a simple web archive and include a web.xml with the following content    </p>
+    <div class="confbox admonition admonition-note">
+            <div class="title">Review</div>
+        
+    <p>
+<a href="https://issues.jboss.org/browse/AS7-1674">AS7-1674</a> Remove or explain why web.xml is needed for RESTful endpoints    </p>
+    </div>
+    
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;web-app version=&quot;2.4&quot; xmlns=&quot;http://java.sun.com/xml/ns/j2ee&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;javax.ws.rs.core.Application&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</pre>
+        </div>
+    </div>
+    <p>
+The root context is defined in jboss-web.xml    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: xml; gutter: false;">&lt;jboss-web&gt;
+  &lt;context-root&gt;jaxrs-sample&lt;/context-root&gt;
+&lt;/jboss-web&gt;</pre>
+        </div>
+    </div>
+    <p>
+The code for the JAX-RS part of this tutorial is available on <a href="https://github.com/tdiesler/javaee-tutorial/tree/master/jaxrs">https://github.com/tdiesler/javaee-tutorial/tree/master/jaxrs</a>. In this step we clone the repository and build the endpoint using <a href="http://maven.apache.org">maven</a>. There are a number of JAX-RS client tests that run against a local JBossAS 7 instance. Before we build the project, we set the JBOSS_HOME environment variable accordingly.    </p>
+    <p>
+<a href="http://www.jboss.org/arquillian">Arquillian</a>, the test framework we use throughout this tutorial, can manage server startup/shutdown. It is however also possible to startup the server instance manually before you run the tests. The latter allows you to look at the console and see what log output the deployment phase and JAX-RS endpoint invocations produce.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$ git clone git://github.com/tdiesler/javaee-tutorial.git
+Cloning into javaee-tutorial...
+
+$ cd javaee-tutorial/jaxrs
+$ export JBOSS_HOME=~/workspace/jboss-as-7.0.1.Final
+$ mvn install
+...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] JavaEE Tutorial - JAX-RS .......................... SUCCESS [1.694s]
+[INFO] JavaEE Tutorial - JAX-RS Server ................... SUCCESS [2.392s]
+[INFO] JavaEE Tutorial - JAX-RS Client ................... SUCCESS [7.304s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 12.142s</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-DeploytheendpointtoOpenShift"  >
+        <h2>Deploy the endpoint to OpenShift</h2>
+    
+    <p>
+First we need to create a free <a href="https://openshift.redhat.com/app/express">OpenShift Express</a> account and select the JavaEE cartridge that runs JBossAS 7. Once we have received the confirmation email from OpenShift we can continue to create our subdomain and deploy the RESTful endpoint. A series of videos on the OpenShift Express page shows you how to do this. There is also an excellent <a href="https://openshift.redhat.com/app/express#quickstart">quick start document</a> that you have access to after login.    </p>
+    <p>
+For this tutorial we assume you have done the above and that we can continue by creating the OpenShift application. This step sets up your JBossAS 7 instance in the cloud. Additionally a <a href="http://git-scm.com">Git</a> repository is configured that gives access to your deployed application.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$ rhc-create-app -a tutorial -t jbossas-7.0
+Password:
+
+Attempting to create remote application space: tutorial
+Successfully created application: tutorial
+Now your new domain name is being propagated worldwide (this might take a minute)...
+
+Success!  Your application is now published here:
+
+      http://tutorial-tdiesler.rhcloud.com/
+
+The remote repository is located here:
+
+    ssh://79dcb9db5e134cccb9d1ba33e6089667@tutorial-tdiesler.rhcloud.com/~/git/tutorial.git/</pre>
+        </div>
+    </div>
+    <p>
+Next, we can clone the remote Git repository to our local workspace    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$ git clone ssh://79dcb9db5e134cccb9d1ba33e6089667@tutorial-tdiesler.rhcloud.com/~/git/tutorial.git
+Cloning into tutorial...
+remote: Counting objects: 24, done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 24 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (24/24), 21.84 KiB, done.
+
+ls -1 tutorial
+deployments
+pom.xml
+README
+src</pre>
+        </div>
+    </div>
+    <p>
+Because we want to deploy an already existing web application, which we'll build in the next step, we can safely remove the source artefacts from the repository.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$ rm -rf tutorial/src tutorial/pom.xml</pre>
+        </div>
+    </div>
+    <p>
+Now we copy the JAX-RS endpoint webapp that we build above to the 'deployments' folder and commit the changes.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$ cp javaee-tutorial/jaxrs/server/target/javaee-tutorial-jaxrs-server-1.0.0-SNAPSHOT.war tutorial/deployments
+$ cd tutorial; git commit -a -m &quot;Initial jaxrs endpoint deployment&quot;
+[master be5b5a3] Initial jaxrs endpoint deployment
+ 7 files changed, 0 insertions(+), 672 deletions(-)
+ create mode 100644 deployments/javaee-tutorial-jaxrs-server-1.0.0-SNAPSHOT.war
+ delete mode 100644 pom.xml
+ delete mode 100644 src/main/java/.gitkeep
+ delete mode 100644 src/main/resources/.gitkeep
+ delete mode 100644 src/main/webapp/WEB-INF/web.xml
+ delete mode 100644 src/main/webapp/health.jsp
+ delete mode 100644 src/main/webapp/images/jbosscorp_logo.png
+ delete mode 100644 src/main/webapp/index.html
+ delete mode 100644 src/main/webapp/snoop.jsp
+
+$ git push origin
+Counting objects: 6, done.
+...
+remote: Starting application...Done</pre>
+        </div>
+    </div>
+    <p>
+You can now use curl or your browser to see the JAX-RS endpoint in action. The following URL lists the books that are currently registered in the library.    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">$ curl http://tutorial-tdiesler.rhcloud.com/jaxrs-sample/library/books
+[
+{&quot;title&quot;:&quot;The Judgment&quot;,&quot;isbn&quot;:&quot;001&quot;},
+{&quot;title&quot;:&quot;The Stoker&quot;,&quot;isbn&quot;:&quot;002&quot;},
+{&quot;title&quot;:&quot;Jackals and Arabs&quot;,&quot;isbn&quot;:&quot;003&quot;},
+{&quot;title&quot;:&quot;The Refusal&quot;,&quot;isbn&quot;:&quot;004&quot;}
+]</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-Buildingthemobileclient"  >
+        <h2>Building the mobile client</h2>
+    
+    <p>
+The source associated with this tutorial contains a fully working mobile client application for the Android framework. If not done so already please follow steps described in <a href="http://developer.android.com/sdk/installing.html">Installing the SDK</a>. In addition to the Android SDK, I recommend installing the <a href="http://m2eclipse.sonatype.org/installing-m2eclipse.html">m2eclipse</a> and the <a href="http://www.eclipse.org/egit/download/">EGit</a> plugin to <a href="http://www.eclipse.org/downloads/packages/eclipse-classic-37/indigor">Eclipse</a>.    </p>
+    <p>
+First, go to File|Import... and choose &quot;Existing Maven Projects&quot; to import the tutorial sources    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/ImportExistingMavenProject.png" alt="images/author/download/attachments/80873424/ImportExistingMavenProject.png" />
+        </p>
+    <p>
+You project view should look like this    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/ProjectExplorerA.png" alt="images/author/download/attachments/80873424/ProjectExplorerA.png" />
+        </p>
+    <p>
+Then go to File|New|Android Project and fill out the first wizard page like this    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/NewAndroidProject.png" alt="images/author/download/attachments/80873424/NewAndroidProject.png" />
+        </p>
+    <p>
+Click Finish. Next, go to Project|Properties|Build Path|Libraries and add these external libraries to your android project.    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/AndroidLibraries.png" alt="images/author/download/attachments/80873424/AndroidLibraries.png" />
+        </p>
+    <p>
+You final project view should look like this    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/ProjectExplorerB.png" alt="images/author/download/attachments/80873424/ProjectExplorerB.png" />
+        </p>
+    <p>
+To run the application in the emulator, we need an Android Virtual Device (AVD). Go to Window|Android SDK and AVD Manager and create a new AVD like this    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/CreateAVD_.png" alt="images/author/download/attachments/80873424/CreateAVD_.png" />
+        </p>
+    <p>
+Now go to Run|Configuration to create a new run configuration for the client app.    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/RunConfiguration.png" alt="images/author/download/attachments/80873424/RunConfiguration.png" />
+        </p>
+    <p>
+Now you should be able to launch the application in the debugger. Right click on the javaee-tutorial-jaxrs-android project and select Debug As|Android Application. This should launch the emulator, which now goes though a series of boot screens until it eventually displays the Android home screen. This will take a minute or two if you do this for the first time.    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/2_2_HVGA_Initial.png" alt="images/author/download/attachments/80873424/2_2_HVGA_Initial.png" />
+        </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/2_2_HVGA_Next.png" alt="images/author/download/attachments/80873424/2_2_HVGA_Next.png" />
+        </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/2_2_HVGA_Final.png" alt="images/author/download/attachments/80873424/2_2_HVGA_Final.png" />
+        </p>
+    <p>
+When you unlock the home screen by dragging the little green lock to the right. You should see the the running JAX-RS client application.    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/NoBooks.png" alt="images/author/download/attachments/80873424/NoBooks.png" />
+        </p>
+    <p>
+Finally, you need to configure the host that the client app connects to. This would be the same as you used above to curl the library list. In the emulator click Menu|Host Settings and enter the host address of your OpenShift application.    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/HostSettings.png" alt="images/author/download/attachments/80873424/HostSettings.png" />
+        </p>
+    <p>
+When going back to the application using the little back arrow next to Menu, you should see a list of books.    </p>
+    <p>
+    <img src="images/author/download/attachments/80873424/ListOfBooks.png" alt="images/author/download/attachments/80873424/ListOfBooks.png" />
+        </p>
+    <p>
+You can now add, edit and delete books and switch between your browser and the emulator to verify that the client app is not cheating and that the books are in fact in the cloud on your JBossAS 7 instance.    </p>
+    <p>
+In Eclipse you can go to the Debug perspective and click on the little Android robot in the lower right corner. This will display the LogCat view, which should display log output from that Android system as well as from this client app    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">08-30 09:05:46.180: INFO/JaxrsSample(269): removeBook: Book [isbn=1234, title=1234]
+08-30 09:05:46.210: INFO/JaxrsSample(269): requestURI: http://tutorial-tdiesler.rhcloud.com:80/jaxrs-sample/library
+08-30 09:05:46.860: INFO/global(269): Default buffer size used in BufferedInputStream constructor. It would be better to be explicit if an 8k buffer is required.
+08-30 09:05:46.920: INFO/JaxrsSample(269): getBooks: [Book [isbn=001, title=The Judgment], Book [isbn=002, title=The Stoker], Book [isbn=003, title=Jackals and Arabs], Book [isbn=004, title=The Refusal]]</pre>
+        </div>
+    </div>
+    </div>
+    
+    <div class="section-2"  id="80873424_JavaAPIforRESTfulWebServices%28JAX-RS%29-Exploringthemobileclient"  >
+        <h2>Exploring the mobile client</h2>
+    
+    <p>
+There is a lot to writing high quality mobile applications. The goal of this little application is to get you started with JBossAS 7 / Android integration. There is also a portable approach to writing mobile applications. A popular one would be through <a href="http://www.phonegap.com">PhoneGap</a>. With PhoneGap you write your application in HTML+CSS+Java Script. It then runs in the browser of your mobile device. Naturally, <a href="http://www.phonegap.com/about/features">not the full set</a> of mobile platform APIs would be available through this approach.    </p>
+    <p>
+The JAX-RS client application uses an annotated library client interface    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">@Consumes({ &quot;application/json&quot; })
+@Produces({ &quot;application/json&quot; })
+public interface LibraryClient {
+
+    @GET
+    @Path(&quot;/books&quot;)
+    public List&lt;Book&gt; getBooks();
+
+    @GET
+    @Path(&quot;/book/{isbn}&quot;)
+    public Book getBook(@PathParam(&quot;isbn&quot;) String id);
+
+    @PUT
+    @Path(&quot;/book/{isbn}&quot;)
+    public Book addBook(@PathParam(&quot;isbn&quot;) String id, @QueryParam(&quot;title&quot;) String title);
+
+    @POST
+    @Path(&quot;/book/{isbn}&quot;)
+    public Book updateBook(@PathParam(&quot;isbn&quot;) String id, String title);
+
+    @DELETE
+    @Path(&quot;/book/{isbn}&quot;)
+    public Book removeBook(@PathParam(&quot;isbn&quot;) String id);
+}</pre>
+        </div>
+    </div>
+    <p>
+There are two implementations of this interface available.    </p>
+<ul class=" "><li class=" ">    <p>
+LibraryHttpclient    </p>
+</li><li class=" ">    <p>
+LibraryResteasyClient    </p>
+</li></ul>    <p>
+The first uses APIs that are available in the Android SDK natively. The code is much more involved, but there would be no need to add external libraries (i.e. resteasy, jackson, etc). The effect is that the total size of the application is considerably smaller in size (i.e. 40k)    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">    @Override
+    public List&lt;Book&gt; getBooks() {
+        List&lt;Book&gt; result = new ArrayList&lt;Book&gt;();
+        String content = get(&quot;books&quot;);
+        Log.d(LOG_TAG, &quot;Result content:&quot; + content);
+        if (content != null) {
+            try {
+                JSONTokener tokener = new JSONTokener(content);
+                JSONArray array = (JSONArray) tokener.nextValue();
+                for (int i = 0; i &lt; array.length(); i++) {
+                    JSONObject obj = array.getJSONObject(i);
+                    String title = obj.getString(&quot;title&quot;);
+                    String isbn = obj.getString(&quot;isbn&quot;);
+                    result.add(new Book(isbn, title));
+                }
+            } catch (JSONException ex) {
+                ex.printStackTrace();
+            }
+        }
+        Log.i(LOG_TAG, &quot;getBooks: &quot; + result);
+        return result;
+    }
+
+    private String get(String path) {
+        try {
+            HttpGet request = new HttpGet(getRequestURI(path));
+            HttpResponse res = httpClient.execute(request);
+            String content = EntityUtils.toString(res.getEntity());
+            return content;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }</pre>
+        </div>
+    </div>
+    <p>
+The second implementation uses the fabulous RESTEasy client proxy to interact with the JAX-RS endpoint. The details of Http connectivity and JSON data binding is transparently handled by RESTEasy. The total size of the application is considerably bigger in size (i.e. 400k)    </p>
+    <div class="confbox programlisting">
+                <div class="content">
+        <pre class="brush: java; gutter: false;">    @Override
+    public List&lt;Book&gt; getBooks() {
+        List&lt;Book&gt; result = new ArrayList&lt;Book&gt;();
+        try {
+            result = getLibraryClient().getBooks();
+        } catch (RuntimeException ex) {
+            ex.printStackTrace();
+        }
+        Log.i(LOG_TAG, &quot;getBooks: &quot; + result);
+        return result;
+    }</pre>
+        </div>
+    </div>
+    <p>
+Stay tuned for an update on a much more optimized version of the RESTEasy mobile client. Feasible is also a RESTEasy JavaScript library that would enable the portable PhoneGap approach.    </p>
+    </div>
+    
+        </div>
+              <ul class="docnav">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="previous"><a accesskey="p" href="Standard_JavaEE_6_Technologies.html"><strong>Prev</strong>Standard JavaEE 6 Technologies</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li>
+          <li class="home"><a accesskey="h" href="Documentation.html"><strong>Front page</strong></a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="next"><a accesskey="n" href="Java_Servlet_Technology.html"><strong>Next</strong>Java Servlet Technology</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+          </div>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+</body>
+</html>
